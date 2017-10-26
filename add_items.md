@@ -46,7 +46,7 @@ Now all is left is to implement the `addItem` method, which receives a string an
 
 ```ts
 addItem(title: string): void {    
-  this.todoList.push({ title });
+  this.todoList.push({ title: title });
 }
 ```
 
