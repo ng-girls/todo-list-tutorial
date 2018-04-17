@@ -10,7 +10,7 @@ By the end of this tutorial, you'll have a ready todo-list application, that sho
 
 The list is saved in the browser's local storage. All the changes will remain even when you refresh the browser or even turn off your computer \(as long as you use the same browser on the same computer and not in private mode\).
 
-You will even publish the application on the Web, so that other could use it!
+You will even publish the application on the Web, so that others could use it!
 
 After completing this tutorial, we encourage you to continue developing the application and adding your personal touch.
 
