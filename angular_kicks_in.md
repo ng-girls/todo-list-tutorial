@@ -1,6 +1,6 @@
 # Angular kicks in
 
-Let's look at the project and how Angular gets in the picture. All the relevant files at this stage on exist inside the `src` folder.
+Let's look at the project and how Angular gets in the picture. All the relevant files at this stage exist inside the `src` folder.
 
 Open the file `index.html`. The content that is rendered in the browser's window is everything you see inside the `<body>` element. All you can see there now is another, non-HTML element: `<todo-root>`. This element is a actually an Angular Component, defined in the file `app/app.component.ts` with the class named **AppComponent**. \(We'll take a look at it in the next chapter\).
 
