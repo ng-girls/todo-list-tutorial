@@ -5,7 +5,7 @@ Let's look at the project and how Angular gets in the picture. All the relevant 
 Open the file `index.html`. The content that is rendered in the browser's window is everything you see inside the `<body>` element. All you can see there now is another, non-HTML element: `<todo-root>`. This element is a actually an Angular Component, defined in the file `app/app.component.ts` with the class named **AppComponent**. \(We'll take a look at it in the next chapter\).
 
 **Note:** StackBlitz is creating the project by default without a prefix. Then the element you'll see will be `<app-root>`. `app` is the default prefix for the project's component selectors. You can change the configuration in the file `.angular-cli.json`.
-Our starting point use the prefix `todo-`.
+Our starting point uses the prefix `todo-`.
 
 Angular can be defined in many ways. One of them is JavaScript code which runs when the application is presented in the browser. All the code you will write - components, modules, services, etc. - will be recognized by Angular. Angular will perform actions accordingly. For example, components you will write and use will be compiled to JavaScript functions. These functions insert the component content into the DOM - the Document Object Model - which the browser uses to show the application. That's how you'll see the component you created on the screen.
 
