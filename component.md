@@ -19,17 +19,17 @@ Just like ngModules that we saw in the previous chapter, a component is also def
 
 ```ts
 export class AppComponent {
-  title = 'todo';
+  name = 'todo';
 }
 ```
 
-It has one member called "title". It is a property to which you can assign a value. The value assigned to it here is the string "todo".
+It has one member called "name". It is a property to which you can assign a value. The value assigned to it here is the string "todo".
 
-Angular takes care of synchronizing the members of the component with the component template. So we can easily use the member `title` in the template. Take a look at the template attached to the component in the file `app.component.html`. Near the top, you'll see code like this:
+Angular takes care of synchronizing the members of the component with the component template. So we can easily use the member `name` in the template. Take a look at the template attached to the component in the file `app.component.html`. Near the top, you'll see code like this:
 
 ```html
 <h1>
-  Welcome to {{ title }}!
+  Welcome to {{ name }}!
 </h1>
 ```
 
@@ -37,11 +37,11 @@ The double curly braces and their content are called **Interpolation**. This is 
 
 Interpolation is one of the strongest, most basic features in Angular. It has existed from the very beginning of Angular - in the first version. It makes it really simple to insert dynamic data into the view.
 
-In this component, the expression is simply the member of the component class, `title`. **Let's try to change it.** Try out the following and see the result in the browser. \(With every change you make in the file, the browser will refresh automatically!\)
+In this component, the expression is simply the member of the component class, `name`. **Let's try to change it.** Try out the following and see the result in the browser. \(With every change you make in the file, the browser will refresh automatically!\)
 
-* Remove the curly braces and keep just the content `title`.
+* Remove the curly braces and keep just the content `name`.
 * Put the curly braces back and replace the content with some mathematical expression, for example: `{{ 2 + 2 }}`. \(The spaces are not mandatory, they just make the code more readable.\)
-* Write a mathematical expression combined with the `title` member: `{{ title + 10 }}`
+* Write a mathematical expression combined with the `name` member: `{{ name + 10 }}`
 * Pass an undefined variable to the expression - a variable which was not declared in the component class. For example: `{{ x }}`
 * Try out anything you'd like. Don't worry - you can't do any harm to the browser or the computer! In the worst case, the browser will run out of memory and will get stuck. \(But you'll have to write something really complicated to make that happen!\)
 
@@ -107,7 +107,7 @@ template: `
   <!--The content below is only a placeholder and can be replaced.-->
   <div style="text-align:center">
     <h1>
-      Welcome to {{ title }}!
+      Welcome to {{ name }}!
     </h1>
     <img width="300" alt="Angular Logo" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNTAgMjUwIj4KICAgIDxwYXRoIGZpbGw9IiNERDAwMzEiIGQ9Ik0xMjUgMzBMMzEuOSA2My4ybDE0LjIgMTIzLjFMMTI1IDIzMGw3OC45LTQzLjcgMTQuMi0xMjMuMXoiIC8+CiAgICA8cGF0aCBmaWxsPSIjQzMwMDJGIiBkPSJNMTI1IDMwdjIyLjItLjFWMjMwbDc4LjktNDMuNyAxNC4yLTEyMy4xTDEyNSAzMHoiIC8+CiAgICA8cGF0aCAgZmlsbD0iI0ZGRkZGRiIgZD0iTTEyNSA1Mi4xTDY2LjggMTgyLjZoMjEuN2wxMS43LTI5LjJoNDkuNGwxMS43IDI5LjJIMTgzTDEyNSA1Mi4xem0xNyA4My4zaC0zNGwxNy00MC45IDE3IDQwLjl6IiAvPgogIDwvc3ZnPg==">
   </div>
@@ -133,7 +133,7 @@ In fact, there's a lot of stuff we don't need in this template, so let's get rid
 ```ts
 template: `
   <h1>
-    Welcome to {{ title }}!
+    Welcome to {{ name }}!
   </h1>
 `,
 ```
