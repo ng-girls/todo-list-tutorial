@@ -30,7 +30,13 @@ Inside the newly generated `ItemComponent` class, add the line:
 @Input() itemTitle: string;
 ```
 
-It tells the component to expect an input of type string and to assign it to the class member called `itemTitle`. Make sure that `Input` is added to the import statement in the first line in the file. Now we can use it inside the `ItemComponent` template:
+It tells the component to expect an input of type string and to assign it to the class member called `itemTitle`. **Make sure that `Input` is added to the import statement in the first line in the file**. 
+
+```js
+import { Component, OnInit, Input } from '@angular/core';
+```
+
+Now we can use it inside the `ItemComponent` template:
 
 ```html
 {{ itemTitle }}
