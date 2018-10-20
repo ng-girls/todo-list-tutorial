@@ -29,7 +29,7 @@ export class TodoListService {
 
 In version 6 of the Angular CLI you don't need to provide the service by yourself - the CLI adds it to the root `NgModule`. But you can keep on reading to understand what happens and what it means.
 
-To start using the service, we first need to _provide_ it in an `NgModule`. We have only one `NgModule` in our app - the `AppModule` located in `/src/app/app.module.ts`. It's an empty class preceded by the `@NgModule` decorator to which we pass a configuration object. One of the properties of this object is a `providers` list which is currently empty. We'll add our new service to the list. 
+To start using the service, we first need to _provide_ it in an `NgModule`. We have only one `NgModule` in our app - the `AppModule` located in `/src/app/app.module.ts`. It's an empty class preceded by the `@NgModule` decorator to which we pass a configuration object. One of the properties of this object is a `providers` list which is currently empty. We'll add our new service to the list.
 
 {% code-tabs %}
 {% code-tabs-item title="src/app/app.module.ts" %}
@@ -105,7 +105,7 @@ import { TodoItem } from '../interfaces/todo-item';
 @Injectable()
 export class TodoListService {
 
-  private todoList = [
+  private todoList: TodoItem[] = [
     {title: 'install NodeJS'},
     {title: 'install Angular CLI'},
     {title: 'create new app'},
@@ -134,13 +134,13 @@ constructor(todoListService: TodoListService) {
 }
 ```
 
-Typescript helps us furthermore by giving a shortcut for assigning the parameter to a class member. By adding `private` or `public` before the parameter name it is automatically assigned to `this`. So instead of declaring and assigning the property by ourselves: 
+Typescript helps us furthermore by giving a shortcut for assigning the parameter to a class member. By adding `private` or `public` before the parameter name it is automatically assigned to `this`. So instead of declaring and assigning the property by ourselves:
 
 ```typescript
 export class ListManagerComponent implements OnInit {
   todoListService: TodoListService;
-  
-  constructor(todoListService:TodoListService) { 
+
+  constructor(todoListService:TodoListService) {
     this.todoListService = todoListService;
   }
 }
@@ -150,7 +150,7 @@ export class ListManagerComponent implements OnInit {
 
 ```typescript
 export class ListManagerComponent implements OnInit {
-  
+
   constructor(private todoListService:TodoListService) { }
 }
 ```
@@ -158,12 +158,12 @@ export class ListManagerComponent implements OnInit {
 So let's go on and use the service in the `list-manager` component.
 
 * Remove the hard-coded list from the component, keep only the `todoList` property declaration.
-* Inject the `TodoListService` using the constructor. 
+* Inject the `TodoListService` using the constructor.
 
 ```typescript
 export class ListManagerComponent implements OnInit {
   todoList: TodoItem[];
-  
+
   constructor(private todoListService:TodoListService) { }
 ```
 
