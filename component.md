@@ -150,7 +150,7 @@ At this point you can delete the file `app.component.html`.
 
 **We recommend continuing this tutorial using inline templates in the components.** Especially if you're working on a laptop with a small screen, where there isn't enough space to open two files side-by-side.
 
-Let's configure the Angular CLI to give us inline-template as a default. In the terminal run the command: `ng set defaults.component.inlineTemplate true`. Now every component that you'll generate will have an inline template, and an HTML file will not be created.
+Let's configure the Angular CLI to give us inline-template as a default. In the terminal run the command: `ng config schematics.@schematics/angular.component.inlineTemplate true`. Now every component that you'll generate will have an inline template, and an HTML file will not be created.
 
 If you wish to continue this tutorial with templates in separate HTML files, do not run this command, and use the generated `.html` files for the templates.
 
