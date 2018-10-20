@@ -80,7 +80,7 @@ template: `
 
 ### Listening to the event
 
-Now all we need to do is catch the event in the parent component and attach logic to it. Go to the `app-root` component and bind to the `submit` event in the `<app-input-butoon-unit>` component:
+Now all we need to do is catch the event in the parent component and attach logic to it. Go to the `app-root` component and bind to the `submit` event in the `<app-input-button-unit>` component:
 
 {% code-tabs %}
 {% code-tabs-item title="src/app/app.component.ts" %}
