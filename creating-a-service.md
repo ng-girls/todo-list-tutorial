@@ -15,7 +15,9 @@ This command will generate the service in the file `src/app/services/todo-list.s
 ```text
 import { Injectable } from '@angular/core';
 
-@Injectable()
+@Injectable({
+  providedIn: 'root'
+})
 export class TodoListService {
 
   constructor() { }
@@ -27,42 +29,9 @@ export class TodoListService {
 
 ## Provide the service
 
-In version 6 of the Angular CLI you don't need to provide the service by yourself - the CLI adds it to the root `NgModule`. But you can keep on reading to understand what happens and what it means.
+In version 6 of the Angular CLI you don't need to provide the service by yourself - the CLI adds the `providedIn` notation which provides this service in the root `NgModule`. But you can keep on reading to understand what happens and what it means.
 
-To start using the service, we first need to _provide_ it in an `NgModule`. We have only one `NgModule` in our app - the `AppModule` located in `/src/app/app.module.ts`. It's an empty class preceded by the `@NgModule` decorator to which we pass a configuration object. One of the properties of this object is a `providers` list which is currently empty. We'll add our new service to the list. 
-
-{% code-tabs %}
-{% code-tabs-item title="src/app/app.module.ts" %}
-```typescript
-@NgModule({
-  declarations: [
-    AppComponent,
-    InputButtonUnitComponent,
-    TodoItemComponent,
-    ListManagerComponent
-  ],
-  imports: [
-    BrowserModule
-  ],
-  providers: [TodoListService],
-  bootstrap: [AppComponent]
-})
-export class AppModule { }
-```
-{% endcode-tabs-item %}
-{% endcode-tabs %}
-
-The `providers` array tells Angular how to provide a service we're looking for \(usually in a component or another service\). This time the recipe is simple: When we ask for the `TodoListComponent` class we expect to get an instance of this class. Angular will create only one instance that we can access from anywhere in our application \(a Singleton\), so we can use it to share data between different parts of the application.
-
-Make sure that the service is imported:
-
-{% code-tabs %}
-{% code-tabs-item title="src/app/app.module.ts" %}
-```typescript
-import { TodoListService } from './services/todo-list.service';
-```
-{% endcode-tabs-item %}
-{% endcode-tabs %}
+To start using the service, we first need to _provide_ it in an `NgModule`. The root `NgModule` of this app is the `AppModule` located in `/src/app/app.module.ts`. It's an empty class preceded by the `@NgModule` decorator to which we pass a configuration object. By providing this service in `root`, this service will be availabe everywhere in the application. Angular will create only one instance that we can access from anywhere in our application \(a Singleton\), so we can use it to share data between different parts of the application.
 
 ## Share data
 
