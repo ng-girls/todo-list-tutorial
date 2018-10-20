@@ -180,7 +180,7 @@ import { TodoListService } from '../services/todo-list.service';
 * Get the list from the service in the `ngOnInit` method.
 
 {% code-tabs %}
-{% code-tabs-item title="src/app/list-manager/list-manager.component.css" %}
+{% code-tabs-item title="src/app/list-manager/list-manager.component.ts" %}
 ```typescript
 ngOnInit() {
   this.todoList = this.todoListService.getTodoList();
