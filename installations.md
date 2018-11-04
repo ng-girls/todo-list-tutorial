@@ -32,6 +32,8 @@ Plugins help the IDE understand the code. Webstorm ships with the necessary plug
 
 ![VS Code Plugins for Angular](https://github.com/ng-girls/todo-list-tutorial/raw/master/assets/VS-Code-Plugins.png)
 
+alternative you can also install [Angular Essentials](https://marketplace.visualstudio.com/items?itemName=johnpapa.angular-essentials) this will group a lot of these plugins together
+
 ## NodeJS and NPM
 
 **Please check the** [**Angular CLI docs**](https://github.com/angular/angular-cli#prerequisites) **for the up-to-date prerequisites \(NodeJS and NPM versions\)!**
