@@ -39,8 +39,8 @@ When we click on the checkbox, it will run the `completeItem` method. Let's talk
 ```javascript
 export class TodoItemComponent implements OnInit {
   @Input() item: TodoItem;
-  @Output() remove: EventEmitter<TodoItem> = new EventEmitter();
-  @Output() update: EventEmitter<any> = new EventEmitter();
+  @Output() remove = new EventEmitter<TodoItem>();
+  @Output() update = new EventEmitter<any>();
 
   // put this method below ngOnInit
   completeItem() {
