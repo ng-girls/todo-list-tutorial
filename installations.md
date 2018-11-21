@@ -117,7 +117,8 @@ ng new todo-list
 {% endcode-tabs-item %}
 {% endcode-tabs %}
 
-This can take a while, since many packages are being downloaded from the web and installed.
+If you are prompted for additional information, accept the defaults by pressing the Enter or Return key.
+Running the command can take a while, since many packages are being downloaded from the web and installed.
 
 Now enter the new folder that the Angular CLI created for this project:
 
