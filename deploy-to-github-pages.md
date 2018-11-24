@@ -44,8 +44,10 @@ Then simply run:
 
 ```text
 ng build --prod --base-href="/[your-repo-name]/"
-angular-cli-ghpages
+angular-cli-ghpages --dir=dist/[your-project-name]
 ```
+
+In most cases, [your-project-name] can be found in the angular.json file, or you can check under the dist folder.
 
 Your app will be available at \[[https://\[your-GH-username\].github.io/\[repo-name\]\(https://\[your-GH-username\].github.io/\[repo-name\)\](https://[your-GH-username].github.io/[repo-name]%28https://[your-GH-username].github.io/[repo-name%29\)\]
 
