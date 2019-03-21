@@ -29,7 +29,7 @@ Add a new output to the `TodoItemComponent` class, which will emit the removed i
 {% code-tabs %}
 {% code-tabs-item title="src/app/todo-item/todo-item.component.ts" %}
 ```typescript
-@Output() remove: EventEmitter<TodoItem> = new EventEmitter();
+@Output() remove = new EventEmitter<TodoItem>();
 ```
 {% endcode-tabs-item %}
 {% endcode-tabs %}

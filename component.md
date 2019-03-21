@@ -150,14 +150,14 @@ At this point you can delete the file `app.component.html`.
 
 **We recommend continuing this tutorial using inline templates in the components.** Especially if you're working on a laptop with a small screen, where there isn't enough space to open two files side-by-side.
 
-Let's configure the Angular CLI to give us inline-template as a default. In the terminal run the command: `ng set defaults.component.inlineTemplate true` (or `ng config schematics.@schematics/angular.component.inlineTemplate true` in Angular cli v6+)`. Now every component that you'll generate will have an inline template, and an HTML file will not be created.
+Let's configure the Angular CLI to give us inline-template as a default. In the terminal run the command: `ng config schematics.@schematics/angular.component.inlineTemplate true` (or `ng config schematics.@schematics/angular.component.inlineTemplate true` in Angular cli v6+)`. Now every component that you'll generate will have an inline template, and an HTML file will not be created.
 
 If you wish to continue this tutorial with templates in separate HTML files, do not run this command, and use the generated `.html` files for the templates.
 
 > **Note:** You can specify that you'd like to use inline-template throughout the project in several ways:
 >
 > * When generating a project, pass the flag `-it` or `--inline-template` like this: `ng new todo-list -it`
-> * After generating a project, add it to the configuration so that components generated from this point on will have an inline template: `ng set defaults.component.inlineTemplate true`. \(From version 6 you'll need to use the command `ng config projects.YOURPROJECTNAME.schematics.@schematics/angular:component.inlineTemplate true` instead\) This adds the line `inlineTemplate: true` in the Angular CLI configuration file `.angular-cli.json` \(`angular.json` from version 6\). You can also edit the file directly.
+> * After generating a project, add it to the configuration so that components generated from this point on will have an inline template: `ng config schematics.@schematics/angular.component.inlineTemplate true`. \(From version 6 you'll need to use the command `ng config projects.YOURPROJECTNAME.schematics.@schematics/angular:component.inlineTemplate true` instead\) This adds the line `inlineTemplate: true` in the Angular CLI configuration file `.angular-cli.json` \(`angular.json` from version 6\). You can also edit the file directly.
 > * If you haven't configured to have inline templates as a default, you can specify this per component when you generate it, by passing the flag `-it` or `--inline-template`. For example: `ng generate header -it`.
 
 The same way we use inline template, we can use also inline styles. But for now we will keep the styles in a separate file.

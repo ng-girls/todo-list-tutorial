@@ -15,7 +15,7 @@ Add the following line inside the `InputButtonUnitComponent` Class, which define
 {% code-tabs %}
 {% code-tabs-item title="src/app/input-button-unit.component.ts" %}
 ```typescript
-@Output() submit: EventEmitter<string> = new EventEmitter();
+@Output() submit = new EventEmitter<string>();
 ```
 {% endcode-tabs-item %}
 {% endcode-tabs %}
