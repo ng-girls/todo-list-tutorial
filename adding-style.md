@@ -68,22 +68,6 @@ ol, ul {
 {% endcode-tabs-item %}
 {% endcode-tabs %}
 
-> How does the project know to look at this file? In the Angular CLI configuration file `.angular-cli.json` under `apps[0].styles`, you can state the files for the build tool to take and add to the project. You can open the browser's dev tools and see the style inside the element:
->
-> ```markup
-> <html>
->  ...
->  <head>
->    ...
->    <style type="text/css">
->    ...Your style is here
->    </style>
->    ...
->  </head>
->  ...
-> </html>
-> ```
-
 We added style directly to elements \(`html, body, div, span, h1, p, ul, li`\) which will affect our app immediately. We also added styles using css-class selectors. We need to add these class names to the relevant elements.
 
 In `app-root` add the class `app-title` to the `h1` element:
