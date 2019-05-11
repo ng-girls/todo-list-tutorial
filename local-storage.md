@@ -140,6 +140,10 @@ export class TodoListService {
   todoList: TodoItem[];
 
   constructor(private storageService: StorageService) { }
+
+  getTodoList() {
+    return this.todoList;
+  }
 }
 ```
 {% endcode-tabs-item %}
@@ -268,10 +272,14 @@ export class TodoListService {
     this.todoList = 
       storageService.getData(todoListStorageKey) || defaultTodoList;
   }
+  
+  getTodoList() {
+    return this.todoList;
+  }
 
   saveList() {
     this.storageService.setData(todoListStorageKey, this.todoList);
-}
+  }
 
   addItem(item: TodoItem) {
     this.todoList.push(item);
