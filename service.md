@@ -4,20 +4,16 @@ In Angular, a service is \(typically\) a JavaScript class that's responsible for
 
 ## Create the service
 
-In order to create a new service with the Angular CLI, make sure you're in the root folder of your application, then right click and select service as option.
+In order to create a new service with the Angular CLI, make sure you're in the root folder of your application, then right click and select service as option. Name the service ```todoList```. 
 
-Name the service `ng g s todoList`
-
-This command will generate the service and put it in the folder 📁 **src/app**   ![](.gitbook/assets/service.svg)**todo-list.service.ts**.
-
-If you're using Stackblitz, right click on the app folder, and select "Service". Name the service ```todoList```. It will generate the service and put it under `src/app/todo-list.service.ts`.
+It will generate the service and put it under `src/app/todo-list.service.ts`. It has the decorator `@Injectable` which allows it to use Dependency Injection.
 
 ## Make the service a provider
 
-To start using the service, we first need to _provide_ it in an ngModule. Start by adding this code in ![](.gitbook/assets/module.svg) **app.module.ts**:
+To start using the service, we first need to _provide_ it in an ngModule. Start by adding this code in ![](.gitbook/assets/module.svg) **src/app/app.module.ts**:
 
 {% code-tabs %}
-{% code-tabs-item title="app.module.ts" %}
+{% code-tabs-item title="src/app/app.module.ts" %}
 ```typescript
 import { TodoListService } from './todo-list.service';
 ```
@@ -27,7 +23,7 @@ import { TodoListService } from './todo-list.service';
 Next, add the service to the `providers` array, so that the ngModule looks like this:
 
 {% code-tabs %}
-{% code-tabs-item title="app.module.ts:" %}
+{% code-tabs-item title="src/app/app.module.ts:" %}
 ```typescript
 @NgModule({
   declarations: [
@@ -54,7 +50,7 @@ This tells Angular to provide \(that is, create and inject\) an instance of our 
 We now need to move the `todoList` array from `ListManagerComponent` to our new service. Go to the generated service file, ![](.gitbook/assets/service.svg)**todo-list.service.ts**, and add this code just above the constructor:
 
 {% code-tabs %}
-{% code-tabs-item title="todo-list.service.ts" %}
+{% code-tabs-item title="src/app/todo-list.service.ts" %}
 ```typescript
   private todoList = [
     { title: 'install NodeJS' },
@@ -73,7 +69,7 @@ We now need to move the `todoList` array from `ListManagerComponent` to our new 
 Now add a `getTodoList` method that will return the `todoList` array. The service will look like this:
 
 {% code-tabs %}
-{% code-tabs-item title="todo-list.service.ts" %}
+{% code-tabs-item title="src/app/todo-list.service.ts" %}
 ```typescript
 import { Injectable } from '@angular/core';
 
@@ -104,7 +100,7 @@ export class TodoListService {
 After creating the service, we can inject it into our list-manager component. Go to the folder 📁 **src/app/list-manager/** ![](.gitbook/assets/component.svg) **list-manager.component.ts** and add the following import code:
 
 {% code-tabs %}
-{% code-tabs-item title="list-manager.component.ts" %}
+{% code-tabs-item title="src/app/list-manager/list-manager.component.ts" %}
 ```typescript
 import { TodoListService } from '../todo-list.service';
 ```
@@ -114,7 +110,7 @@ import { TodoListService } from '../todo-list.service';
 Now remove the `todoList` array, but keep the `todoList` member:
 
 {% code-tabs %}
-{% code-tabs-item title="list-manager.component.ts" %}
+{% code-tabs-item title="src/app/list-manager/list-manager.component.ts" %}
 ```typescript
   todoList;
 ```
@@ -124,7 +120,7 @@ Now remove the `todoList` array, but keep the `todoList` member:
 Change the constructor to be:
 
 {% code-tabs %}
-{% code-tabs-item title="list-manager.component.ts" %}
+{% code-tabs-item title="src/app/list-manager/list-manager.component.ts" %}
 ```typescript
 constructor(private todoListService:TodoListService) { }
 ```
@@ -134,7 +130,7 @@ constructor(private todoListService:TodoListService) { }
 And now use the service to assign the `todoList` array inside the `ngOnInit` method:
 
 {% code-tabs %}
-{% code-tabs-item title="list-manager.component.ts" %}
+{% code-tabs-item title="src/app/list-manager/list-manager.component.ts" %}
 ```typescript
 ngOnInit() {
   this.todoList = this.todoListService.getTodoList();
