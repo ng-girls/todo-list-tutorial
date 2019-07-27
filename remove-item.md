@@ -44,7 +44,7 @@ import { Component, OnInit, Input, EventEmitter, Output } from '@angular/core';
 {% endcode-tabs-item %}
 {% endcode-tabs %}
 
-Add a method to the `ItemComponent` class to actually emit the event. This method will be called when the user clicks the "remove" button:
+Add a method to the `TodoItemComponent` class to actually emit the event. This method will be called when the user clicks the "remove" button:
 
 ```typescript
 removeItem() {
