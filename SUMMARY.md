@@ -34,10 +34,11 @@
 * [Appendix 2: Tutorial Extensions](appendix-2-tutorial-extensions.md)
 * [Troubleshooting](troubleshooting/README.md)
   * [Installation](troubleshooting/installation.md)
-* [2nd Workshops]()
-  * [Local server](crud-and-http/LOCAL_SERVER.md)
 
-* [2nd Workshops](crud-and-http/CRUD_HTTP.md)
+* [2nd Workshops](crud-and-http/CRUD_http.md)
+  * [Explanation in diagrams](crud-and-http/CRUDalize_diagrams.md)
+  * [Local server](crud-and-http/LOCAL_SERVER.md)
   * [MongoDB](crud-and-http/MONGO_DB.md)
+
 
 
