@@ -1,6 +1,6 @@
 # \#3: 📐 Component
 
-One approach in Web development \(and software development generally\) is component-based architecture. In the past years it has gained a lot of popularity. What is a component?
+One approach in Web development \(and software development in general\) is component-based architecture. In the past years it has gained a lot of popularity. What is a component?
 
 In [Service-Oriented Architecture \(SOA\) vs. Component Based Architecture](http://petritsch.co.at/download/SOA_vs_component_based.pdf), Helmut Petritsch defines a component as follows:
 
@@ -124,7 +124,7 @@ template: ``,
 {% endcode-tabs-item %}
 {% endcode-tabs %}
 
-Notice the **backticks** - **\`** - they are used to define Template Literals, which are new in JavaScript \(ES6\). This way you can define multi-line strings. They have another cool ability: to easily use JavaScript variables and expressions within the string \(with no relation to Angular binding expressions in the template\). Read about it in the [MDN documentation](https://developer.mozilla.org/en/docs/Web/JavaScript/Reference/Template_literals).
+Notice the **backticks** - **\`\`** - they are used to define Template Literals, which are new in JavaScript \(ES6\). This way you can define multi-line strings. They have another cool ability: to easily use JavaScript variables and expressions within the string \(with no relation to Angular binding expressions in the template\). Read about it in the [MDN documentation](https://developer.mozilla.org/en/docs/Web/JavaScript/Reference/Template_literals).
 
 Make sure you replace `templateUrl` with `template`, and don't forget the comma at the end of the line.
 
