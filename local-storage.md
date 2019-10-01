@@ -275,6 +275,11 @@ export class TodoListService {
     this.todoList = 
       storageService.getData(todoListStorageKey) || defaultTodoList;
   }
+  
+  getTodoList() {
+    return this.todoList;
+  }
+
 
   saveList() {
     this.storageService.setData(todoListStorageKey, this.todoList);
