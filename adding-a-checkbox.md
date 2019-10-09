@@ -50,7 +50,7 @@ export class TodoItemComponent implements OnInit {
   @Output() update: EventEmitter<any> = new EventEmitter();
 
   // put this method below ngOnInit
-  completeItem() {
+  completeItem(): void {
     this.update.emit({
       item: this.item,
       changes: {completed: !this.item.completed}
