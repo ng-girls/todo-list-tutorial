@@ -1,21 +1,23 @@
-# \#19: 🔘 Adding a checkbox
+# \#19: ☑️ Adding a checkbox
 
 We are now able to interact with our todo list by removing items. But what if we want to complete items and still be able to see them in our list, with a line through the item's title? Enter the checkbox!
 
 We will look at:
 
-* Adding a checkbox
-* Adding functionality when you click the checkbox so that a CSS class, which adds a ~~strikethrough~~ style, is added to our todo items
-* Editing the todo title so that it responds to the checkbox
-* Adding a new CSS Class
+- Adding a checkbox
+- Adding functionality when you click the checkbox so that a CSS class, which adds a ~~strikethrough~~ style, is added to our todo items
+- Editing the todo title so that it responds to the checkbox
+- Adding a new CSS Class
 
 Let's go ahead and add a checkbox into our `todo-item.component.ts` file. Place the following code right before `{{ item.title }}`:
 
 {% code-tabs %}
 {% code-tabs-item title="src/app/todo-item/todo-item.component.ts" %}
+
 ```markup
 <input type="checkbox"/>
 ```
+
 {% endcode-tabs-item %}
 {% endcode-tabs %}
 
@@ -23,6 +25,7 @@ Now, in order for the checkbox to do anything, we need to add a `click` event ha
 
 {% code-tabs %}
 {% code-tabs-item title="src/app/todo-item/todo-item.component.ts" %}
+
 ```markup
 <div>
   <input type="checkbox"
@@ -31,6 +34,7 @@ Now, in order for the checkbox to do anything, we need to add a `click` event ha
   {{ item.title }}
 </div>
 ```
+
 {% endcode-tabs-item %}
 {% endcode-tabs %}
 
@@ -38,6 +42,7 @@ When we click on the checkbox, it will run the `completeItem` method. Let's talk
 
 {% code-tabs %}
 {% code-tabs-item title="src/app/todo-item/todo-item.component.ts" %}
+
 ```javascript
 export class TodoItemComponent implements OnInit {
   @Input() item: TodoItem;
@@ -52,6 +57,7 @@ export class TodoItemComponent implements OnInit {
     });
   }
 ```
+
 {% endcode-tabs-item %}
 {% endcode-tabs %}
 
@@ -74,20 +80,22 @@ Let's wrap the item title in a `<span>`, then use NgClass to apply the styling. 
 And finally, add the CSS to our `todo-item.component.css` file:
 
 ```css
-  .todo-complete {
-    text-decoration: line-through;
-  }
+.todo-complete {
+  text-decoration: line-through;
+}
 ```
 
 Next step is to tell the parent element list-manager what to do, when update event is emitted. In order to do so we have to bind update action and update method that will trigger a proper function in TodoListService. So we apply here:
 
 {% code-tabs %}
 {% code-tabs-item title="src/app/list-manager/list-manager.component.ts" %}
+
 ```markup
 <app-todo-item [item]="todoItem"
                (remove)="removeItem($event)"></app-todo-item>
 </li>
 ```
+
 {% endcode-tabs-item %}
 {% endcode-tabs %}
 
@@ -95,12 +103,14 @@ Next modifications:
 
 {% code-tabs %}
 {% code-tabs-item title="src/app/list-manager/list-manager.component.ts" %}
+
 ```markup
 <app-todo-item [item]="todoItem"
              (remove)="removeItem($event)"
              (update)="updateItem($event.item, $event.changes)"></app-todo-item>
 </li>
 ```
+
 {% endcode-tabs-item %}
 {% endcode-tabs %}
 
@@ -108,16 +118,17 @@ And create additional method to handle this update item event. Very similar to `
 
 {% code-tabs %}
 {% code-tabs-item title="src/app/list-manager/list-manager.component.ts" %}
+
 ```markup
 updateItem(item, changes) {
   this.todoListService.updateItem(item, changes);
 }
 ```
+
 {% endcode-tabs-item %}
 {% endcode-tabs %}
 
 Voila! Checking the checkbox should apply a line through the todo title, and unchecking the checkbox should remove the line.
-
 
 {% hint style="success" %}
 [See the results on StackBlitz](https://stackblitz.com/github/ng-girls/todo-list-tutorial/tree/master/examples/19-adding-a-checkbox)
