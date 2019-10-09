@@ -8,18 +8,16 @@ The `input-button-unit` component should look like this:
 
 {% code-tabs %}
 {% code-tabs-item title="src/app/input-button-unit/input-button-unit.component.ts" %}
+
 ```typescript
 import { Component, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-input-button-unit',
   template: `
-    <p>
-      input-button-unit works!
-      The title is: {{ title }}
-    </p>
+    <p>input-button-unit works! The title is: {{ title }}</p>
 
-    <input [value]="title">
+    <input [value]="title" />
     <button>Save</button>
   `,
   styleUrls: ['./input-button-unit.component.css']
@@ -27,12 +25,12 @@ import { Component, OnInit } from '@angular/core';
 export class InputButtonUnitComponent implements OnInit {
   title = 'Hello World';
 
-  constructor() { }
+  constructor() {}
 
-  ngOnInit() {
-  }
+  ngOnInit() {}
 }
 ```
+
 {% endcode-tabs-item %}
 {% endcode-tabs %}
 
@@ -42,11 +40,13 @@ First, let's implement `changeTitle`. It will receive the new title as its argum
 
 {% code-tabs %}
 {% code-tabs-item title="src/app/input-button-unit/input-button-unit.component.ts" %}
+
 ```typescript
 changeTitle(newTitle: string) {
   this.title = newTitle;
 }
 ```
+
 {% endcode-tabs-item %}
 {% endcode-tabs %}
 
@@ -58,6 +58,7 @@ Let's try a simple example, where the title is changed when the user clicks on t
 
 {% code-tabs %}
 {% code-tabs-item title="src/app/input-button-unit/input-button-unit.component.ts" %}
+
 ```markup
 template: `
   <p>
@@ -71,6 +72,7 @@ template: `
   </button>
 `,
 ```
+
 {% endcode-tabs-item %}
 {% endcode-tabs %}
 
@@ -90,9 +92,11 @@ When the user types, keyboard events are emitted. For example `keydown` and `key
 
 {% code-tabs %}
 {% code-tabs-item title="src/app/input-button-unit/input-button-unit.component.ts" %}
+
 ```markup
 <input [value]="title" (keyup)="changeTitle('Button Clicked!')">
 ```
+
 {% endcode-tabs-item %}
 {% endcode-tabs %}
 
@@ -102,14 +106,16 @@ Now when the user types in the input box, the title is changed to "Button Clicke
 
 {% code-tabs %}
 {% code-tabs-item title="src/app/input-button-unit/input-button-unit.component.ts" %}
+
 ```markup
 <input [value]="title"
        (keyup)="changeTitle('Button Clicked!')">
 ```
+
 {% endcode-tabs-item %}
 {% endcode-tabs %}
 
-### The $event object
+### The \$event object
 
 Now we just react when the `keyup` event occurs. Angular allows us to get the event object itself. It is passed to the event binding as `$event` - so we can use it when we call `changeTitle()`.
 
@@ -117,10 +123,12 @@ The event object emitted on `keyup` events has a reference to the element that e
 
 {% code-tabs %}
 {% code-tabs-item title="src/app/input-button-unit/input-button-unit.component.ts" %}
+
 ```markup
 <input [value]="title"
        (keyup)="changeTitle($event.target.value)">
 ```
+
 {% endcode-tabs-item %}
 {% endcode-tabs %}
 
@@ -132,16 +140,18 @@ You can limit the change to only a special key stroke, in our case it's the Ente
 
 {% code-tabs %}
 {% code-tabs-item title="src/app/input-button-unit/input-button-unit.component.ts" %}
+
 ```markup
 <input [value]="title"
        (keyup.enter)="changeTitle($event.target.value)">
 ```
+
 {% endcode-tabs-item %}
 {% endcode-tabs %}
 
 Now the title will change only when the user hits the Enter key while typing in the input.
 
-### Explore the $event
+### Explore the \$event
 
 ![lab-icon](.gitbook/assets/lab%20%281%29.jpg)**Playground:** You can change the changeTitle method to log the `$event` object in the console. This way you can explore it and see what properties it has.
 
@@ -149,12 +159,14 @@ Change the method `changeTitle`:
 
 {% code-tabs %}
 {% code-tabs-item title="src/app/input-button-unit/input-button-unit.component.ts" %}
+
 ```typescript
 changeTitle(event): void {
   console.log(event);
   this.title = event.target.value; // the original functionality still works
 }
 ```
+
 {% endcode-tabs-item %}
 {% endcode-tabs %}
 
@@ -162,10 +174,12 @@ Now change the argument you're passing in the template, to pass the whole `$even
 
 {% code-tabs %}
 {% code-tabs-item title="src/app/input-button-unit/input-button-unit.component.ts" %}
+
 ```markup
 <input [value]="title"
        (keyup.enter)="changeTitle($event)">
 ```
+
 {% endcode-tabs-item %}
 {% endcode-tabs %}
 
@@ -175,19 +189,16 @@ Try it out!
 
 {% code-tabs %}
 {% code-tabs-item title="src/app/input-button-unit/input-button-unit.component.ts" %}
+
 ```typescript
 import { Component, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-input-button-unit',
   template: `
-    <p>
-      input-button-unit works!
-      The title is: {{ title }}
-    </p>
+    <p>input-button-unit works! The title is: {{ title }}</p>
 
-    <input [value]="title"
-           (keyup.enter)="changeTitle($event.target.value)">
+    <input [value]="title" (keyup.enter)="changeTitle($event.target.value)" />
 
     <button (click)="changeTitle('Button Clicked!')">
       Save
@@ -198,19 +209,18 @@ import { Component, OnInit } from '@angular/core';
 export class InputButtonUnitComponent implements OnInit {
   title = 'Hello World';
 
-  constructor() { }
+  constructor() {}
 
-  ngOnInit() {
-  }
+  ngOnInit() {}
 
-  changeTitle(newTitle: string) {
+  changeTitle(newTitle: string): void {
     this.title = newTitle;
   }
 }
 ```
+
 {% endcode-tabs-item %}
 {% endcode-tabs %}
-
 
 {% hint style="success" %}
 [See the results on StackBlitz](https://stackblitz.com/github/ng-girls/todo-list-tutorial/tree/master/examples/07-event-binding)
