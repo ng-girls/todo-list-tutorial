@@ -20,11 +20,13 @@ Just like ngModules that we saw in the previous chapter, a component is also def
 
 {% code-tabs %}
 {% code-tabs-item title="src/app/app.component.ts" %}
+
 ```typescript
 export class AppComponent {
   title = 'todo-list';
 }
 ```
+
 {% endcode-tabs-item %}
 {% endcode-tabs %}
 
@@ -34,9 +36,11 @@ Angular takes care of synchronizing the members of the component with the compon
 
 {% code-tabs %}
 {% code-tabs-item title="src/app/app.component.html" %}
+
 ```markup
 <span>{{ title }} app is running!</span>
 ```
+
 {% endcode-tabs-item %}
 {% endcode-tabs %}
 
@@ -46,11 +50,11 @@ Interpolation is one of the strongest, most basic features in Angular. It has ex
 
 In this component, the expression is simply the member of the component class, `title`. **Let's try to change it.** Try out the following and see the result in the browser. \(With every change you save in the file, the browser will refresh automatically!\)
 
-* Remove the curly braces and keep just the content `title`.
-* Put the curly braces back and replace the content with some mathematical expression, for example: `{{ 2 + 2 }}`. \(The spaces are not mandatory, they just make the code more readable.\)
-* Write a mathematical expression combined with the `title` member: `{{ title + 10 }}`
-* Pass an undefined variable to the expression - a variable which was not declared in the component class. For example: `{{ x }}`
-* Try out anything you'd like. Don't worry - you can't do any harm to the browser or the computer! In the worst case, the browser will run out of memory and will get stuck. \(But you'll have to write something really complicated to make that happen!\)
+- Remove the curly braces and keep just the content `title`.
+- Put the curly braces back and replace the content with some mathematical expression, for example: `{{ 2 + 2 }}`. \(The spaces are not mandatory, they just make the code more readable.\)
+- Write a mathematical expression combined with the `title` member: `{{ title + 10 }}`
+- Pass an undefined variable to the expression - a variable which was not declared in the component class. For example: `{{ x }}`
+- Try out anything you'd like. Don't worry - you can't do any harm to the browser or the computer! In the worst case, the browser will run out of memory and will get stuck. \(But you'll have to write something really complicated to make that happen!\)
 
 This is one way that you can bind members of the component's controller to its template. How does Angular know that this is the template of the App component?
 
@@ -58,6 +62,7 @@ Let's go back to the file `app.component.ts` and look at the component's metadat
 
 {% code-tabs %}
 {% code-tabs-item title="src/app/app.component.ts" %}
+
 ```typescript
 @Component({
   selector: 'app-root',
@@ -65,6 +70,7 @@ Let's go back to the file `app.component.ts` and look at the component's metadat
   styleUrls: ['./app.component.css']
 })
 ```
+
 {% endcode-tabs-item %}
 {% endcode-tabs %}
 
@@ -74,11 +80,13 @@ The third property, `styleUrls`, tells Angular where to look for the CSS files t
 
 {% code-tabs %}
 {% code-tabs-item title="src/app/app.component.css" %}
+
 ```css
 h1 {
   color: red;
 }
 ```
+
 {% endcode-tabs-item %}
 {% endcode-tabs %}
 
@@ -90,11 +98,13 @@ The first property, `selector`, tells Angular what will be the name of the tag t
 
 {% code-tabs %}
 {% code-tabs-item title="src/index.html" %}
+
 ```markup
 <body>
   <app-root></app-root>
 </body>
 ```
+
 {% endcode-tabs-item %}
 {% endcode-tabs %}
 
@@ -108,9 +118,11 @@ Let's move the template to be **inline** in the component definition. This will 
 
 {% code-tabs %}
 {% code-tabs-item title="src/app/app.component.ts" %}
+
 ```typescript
 templateUrl: './app.component.html',
 ```
+
 {% endcode-tabs-item %}
 {% endcode-tabs %}
 
@@ -118,9 +130,11 @@ with
 
 {% code-tabs %}
 {% code-tabs-item title="src/app/app.component.ts" %}
+
 ```typescript
 template: ``,
 ```
+
 {% endcode-tabs-item %}
 {% endcode-tabs %}
 
@@ -132,13 +146,15 @@ Now instead of taking the content from the original template, we'll insert a mor
 
 {% code-tabs %}
 {% code-tabs-item title="src/app/app.component.ts" %}
+
 ```markup
 template: `
   <h1>
     Welcome to {{ title }}!
-  </h1>  
+  </h1>
 `,
 ```
+
 {% endcode-tabs-item %}
 {% endcode-tabs %}
 
@@ -154,9 +170,9 @@ If you wish to continue this tutorial with templates in separate HTML files, do 
 
 > **Background:** You can specify that you'd like to use inline-template throughout the project in several ways:
 >
-> * When generating a project, pass the flag `-it` or `--inline-template` like this: `ng new todo-list -it`
-> * After generating a project, add it to the configuration so that components generated from this point on will have an inline template: `ng config projects.YOURPROJECTNAME.schematics.@schematics/angular:component.inlineTemplate true`. This adds the line `inlineTemplate: true` in the Angular CLI configuration file `angular.json`. You can also edit the file directly.
-> * If you haven't configured to have inline templates as a default, you can specify this per component when you generate it, by passing the flag `-it` or `--inline-template`. For example: `ng generate header -it`.
+> - When generating a project, pass the flag `-it` or `--inline-template` like this: `ng new todo-list -it`
+> - After generating a project, add it to the configuration so that components generated from this point on will have an inline template: `ng config projects.YOURPROJECTNAME.schematics.@schematics/angular:component.inlineTemplate true`. This adds the line `inlineTemplate: true` in the Angular CLI configuration file `angular.json`. You can also edit the file directly.
+> - If you haven't configured to have inline templates as a default, you can specify this per component when you generate it, by passing the flag `-it` or `--inline-template`. For example: `ng generate header -it`.
 
 The same way we use inline template, we can use also inline styles. But for now we will keep the styles in a separate file.
 
@@ -170,7 +186,6 @@ StackBlitz doesn't support the inline template configuration setting. We will ne
 
 We have explored the root component that was generated for us by the Angular CLI, and even refactored it. In the next chapter, we will create a new component. We will start building the tree of components, which defines the structure of the application.
 
-
 {% hint style="success" %}
-[See the results on StackBlitz](https://stackblitz.com/github/ng-girls/todo-list-tutorial/tree/master/examples/03-component )
+[See the results on StackBlitz](https://stackblitz.com/github/ng-girls/todo-list-tutorial/tree/master/examples/03-component)
 {% endhint %}
