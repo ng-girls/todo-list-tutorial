@@ -14,9 +14,11 @@ Add the following line inside the `InputButtonUnitComponent` Class, which define
 
 {% code-tabs %}
 {% code-tabs-item title="src/app/input-button-unit/input-button-unit.component.ts" %}
+
 ```typescript
 @Output() submit: EventEmitter<string> = new EventEmitter();
 ```
+
 {% endcode-tabs-item %}
 {% endcode-tabs %}
 
@@ -26,9 +28,11 @@ Make sure that `Output` and `EventEmitter` are added to the import declaration i
 
 {% code-tabs %}
 {% code-tabs-item title="src/app/input-button-unit.component.ts" %}
+
 ```typescript
-import { Component, OnInit, Output, EventEmitter} from '@angular/core';
+import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 ```
+
 {% endcode-tabs-item %}
 {% endcode-tabs %}
 
@@ -36,11 +40,13 @@ Now, whenever we call `this.submit.emit()`, an event will be emitted to the pare
 
 {% code-tabs %}
 {% code-tabs-item title="src/app/input-button-unit/input-button-unit.component.ts" %}
+
 ```typescript
-changeTitle(newTitle: string) {
+changeTitle(newTitle: string): void {
   this.submit.emit(newTitle);
 }
 ```
+
 {% endcode-tabs-item %}
 {% endcode-tabs %}
 
@@ -52,16 +58,19 @@ The method name no longer matches the action it provides. Let's change it to som
 
 {% code-tabs %}
 {% code-tabs-item title="src/app/input-button-unit/input-button-unit.component.ts" %}
+
 ```typescript
-submitValue(newTitle: string) {
+submitValue(newTitle: string): void {
   this.submit.emit(newTitle);
 }
 ```
+
 {% endcode-tabs-item %}
 {% endcode-tabs %}
 
 {% code-tabs %}
 {% code-tabs-item title="src/app/input-button-unit/input-button-unit.component.ts" %}
+
 ```markup
 template: `
   <input #inputElementRef
@@ -73,6 +82,7 @@ template: `
   </button>
 `,
 ```
+
 {% endcode-tabs-item %}
 {% endcode-tabs %}
 
@@ -82,9 +92,11 @@ Now all we need to do is catch the event in the parent component and attach logi
 
 {% code-tabs %}
 {% code-tabs-item title="src/app/app.component.ts" %}
+
 ```markup
 <app-input-button-unit (submit)="addItem($event)"></app-input-button-unit>
 ```
+
 {% endcode-tabs-item %}
 {% endcode-tabs %}
 
@@ -92,11 +104,13 @@ Now all that's left is to implement the `addItem` method, which receives a strin
 
 {% code-tabs %}
 {% code-tabs-item title="src/app/app.component.ts" %}
+
 ```typescript
-addItem(title: string) {    
+addItem(title: string): void {
   this.todoList.push({ title });
 }
 ```
+
 {% endcode-tabs-item %}
 {% endcode-tabs %}
 
@@ -106,14 +120,15 @@ Try it out - enter a new todo item title in the input field and submit it!
 
 {% code-tabs %}
 {% code-tabs-item title="code for example" %}
+
 ```typescript
-addItem(value: string) {    
+addItem(value: string): void {
   this.todoList.push({ title: value });
 }
 ```
+
 {% endcode-tabs-item %}
 {% endcode-tabs %}
-
 
 {% hint style="success" %}
 [See the results on StackBlitz](https://stackblitz.com/github/ng-girls/todo-list-tutorial/tree/master/examples/12-add-items)

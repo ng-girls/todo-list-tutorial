@@ -20,6 +20,7 @@ Use the new component in the template of `app-root` component - inside the `<li>
 
 {% code-tabs %}
 {% code-tabs-item title="src/app/app.component.ts" %}
+
 ```markup
 <ul>
   <li *ngFor="let todoItem of todoList">
@@ -27,6 +28,7 @@ Use the new component in the template of `app-root` component - inside the `<li>
   </li>
 </ul>
 ```
+
 {% endcode-tabs-item %}
 {% endcode-tabs %}
 
@@ -42,9 +44,11 @@ Inside the newly generated `TodoItemComponent` class in `todo-item.component.ts`
 
 {% code-tabs %}
 {% code-tabs-item title="src/app/todo-item/todo-item.component.ts" %}
+
 ```typescript
 @Input() item;
 ```
+
 {% endcode-tabs-item %}
 {% endcode-tabs %}
 
@@ -54,6 +58,7 @@ The component should look like this now:
 
 {% code-tabs %}
 {% code-tabs-item title="src/app/todo-item/todo-item.component.ts" %}
+
 ```typescript
 import { Component, Input, OnInit } from '@angular/core';
 
@@ -67,13 +72,12 @@ import { Component, Input, OnInit } from '@angular/core';
 export class TodoItemComponent implements OnInit {
   @Input() item;
 
-  constructor() { }
+  constructor() {}
 
-  ngOnInit() {
-  }
-
+  ngOnInit() {}
 }
 ```
+
 {% endcode-tabs-item %}
 {% endcode-tabs %}
 
@@ -81,6 +85,7 @@ Now we need to pass an item where we use the component. Go back to `app-root` co
 
 {% code-tabs %}
 {% code-tabs-item title="src/app/app.component.ts" %}
+
 ```markup
 <ul>
   <li *ngFor="let todoItem of todoList">
@@ -88,10 +93,10 @@ Now we need to pass an item where we use the component. Go back to `app-root` co
   </li>
 </ul>
 ```
+
 {% endcode-tabs-item %}
 {% endcode-tabs %}
 
 The `item` here in square brackets is the same as declared as the component's `@Input`.
 
 We used property binding on an element we created ourselves! And now we can actually see and understand that property binding binds to an actual property of the component. Soon we'll see how this list can be dynamic.
-
