@@ -10,6 +10,7 @@ Each time you use a component in a template, a new instance of it is created. Fo
 
 {% code-tabs %}
 {% code-tabs-item title="src/app/app.component.ts" %}
+
 ```markup
 // example only
 
@@ -19,6 +20,7 @@ template: `
   <app-input-button-unit></app-input-button-unit>
 `,
 ```
+
 {% endcode-tabs-item %}
 {% endcode-tabs %}
 
@@ -30,11 +32,13 @@ First, you see something was added to the class declaration:
 
 {% code-tabs %}
 {% code-tabs-item title="src/app/input-button-unit/input-button-unit.component.ts" %}
+
 ```typescript
 export class InputButtonUnitComponent implements OnInit {
   ...
 }
 ```
+
 {% endcode-tabs-item %}
 {% endcode-tabs %}
 
@@ -44,10 +48,12 @@ The Angular CLI adds this statement to remind us that it's best to initialize th
 
 {% code-tabs %}
 {% code-tabs-item title="src/app/input-button-unit/input-button-unit.component.ts" %}
+
 ```typescript
 ngOnInit() {
 }
 ```
+
 {% endcode-tabs-item %}
 {% endcode-tabs %}
 
@@ -79,13 +85,15 @@ Try setting a different value for `title` from inside the constructor. See the r
 
 {% code-tabs %}
 {% code-tabs-item title="src/app/input-button-unit/input-button-unit.component.ts" %}
+
 ```typescript
 title = 'Hello World';
 
-constructor() { 
+constructor() {
   this.title = 'I Love Angular';
 }
 ```
+
 {% endcode-tabs-item %}
 {% endcode-tabs %}
 
@@ -93,17 +101,19 @@ Try changing the value of `title` inside the method `ngOnInit`. Which value will
 
 {% code-tabs %}
 {% code-tabs-item title="src/app/input-button-unit/input-button-unit.component.ts" %}
+
 ```typescript
 title: string = 'Hello World';
 
-constructor() { 
+constructor() {
   this.title = 'I Love Angular';
 }
 
-ngOnInit() { 
+ngOnInit() {
   this.title = 'Angular CLI Rules!';
 }
 ```
+
 {% endcode-tabs-item %}
 {% endcode-tabs %}
 
@@ -113,11 +123,13 @@ Let's add a method that changes the value of `title` according to the argument w
 
 {% code-tabs %}
 {% code-tabs-item title="src/app/input-button-unit/input-button-unit.component.ts" %}
+
 ```typescript
 changeTitle(newTitle: string) {
   this.title = newTitle;
 }
 ```
+
 {% endcode-tabs-item %}
 {% endcode-tabs %}
 
@@ -125,14 +137,16 @@ changeTitle(newTitle: string) {
 
 {% code-tabs %}
 {% code-tabs-item title="code for example" %}
+
 ```typescript
-function multiply (x: number, y: number) {
+function multiply(x: number, y: number): number {
   return x * y;
 }
 
 let z = multiply(4, 5);
 console.log(z);
 ```
+
 {% endcode-tabs-item %}
 {% endcode-tabs %}
 
@@ -140,11 +154,13 @@ The method `changeTitle` is not used anywhere yet. We can call it from another m
 
 {% code-tabs %}
 {% code-tabs-item title="src/app/input-button-unit/input-button-unit.component.ts" %}
+
 ```typescript
-constructor() { 
+constructor() {
   this.changeTitle('My First Angular App');
 }
 ```
+
 {% endcode-tabs-item %}
 {% endcode-tabs %}
 
@@ -156,8 +172,9 @@ You can always use `console.log(someValue)` inside class methods. Then the value
 
 {% code-tabs %}
 {% code-tabs-item title="src/app/input-button-unit/input-button-unit.component.ts" %}
+
 ```typescript
-constructor() { 
+constructor() {
   console.log('in constructor');
   this.changeTitle('My First Angular App');
   console.log(this.title);
@@ -168,11 +185,11 @@ changeTitle(newTitle: string) {
   this.title = newTitle;
 }
 ```
+
 {% endcode-tabs-item %}
 {% endcode-tabs %}
 
 The browser's console is a part of its Dev Tools. You can see how to open the console in different browsers here: [https://webmasters.stackexchange.com/questions/8525/how-do-i-open-the-javascript-console-in-different-browsers](https://webmasters.stackexchange.com/questions/8525/how-do-i-open-the-javascript-console-in-different-browsers)
-
 
 {% hint style="success" %}
 [See the results on StackBlitz](https://stackblitz.com/github/ng-girls/todo-list-tutorial/tree/master/examples/05-class)
