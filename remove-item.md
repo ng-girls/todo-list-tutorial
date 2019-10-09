@@ -10,6 +10,7 @@ Add a "remove" button to the item template, with a `click` event handler that ca
 
 {% code-tabs %}
 {% code-tabs-item title="src/app/todo-item/todo-item.component.ts" %}
+
 ```markup
 template: `
   <div class="todo-item">
@@ -21,6 +22,7 @@ template: `
   </div>
 `,
 ```
+
 {% endcode-tabs-item %}
 {% endcode-tabs %}
 
@@ -28,9 +30,11 @@ Add a new output to the `TodoItemComponent` class, which will emit the removed i
 
 {% code-tabs %}
 {% code-tabs-item title="src/app/todo-item/todo-item.component.ts" %}
+
 ```typescript
 @Output() remove: EventEmitter<TodoItem> = new EventEmitter();
 ```
+
 {% endcode-tabs-item %}
 {% endcode-tabs %}
 
@@ -38,16 +42,18 @@ Make sure to import both `EventEmitter` and `Output`:
 
 {% code-tabs %}
 {% code-tabs-item title="src/app/todo-item/todo-item.component.ts" %}
+
 ```typescript
 import { Component, OnInit, Input, EventEmitter, Output } from '@angular/core';
 ```
+
 {% endcode-tabs-item %}
 {% endcode-tabs %}
 
 Add a method to the `ItemComponent` class to actually emit the event. This method will be called when the user clicks the "remove" button:
 
 ```typescript
-removeItem() {
+removeItem(): void {
   this.remove.emit(this.item);
 }
 ```
@@ -60,10 +66,12 @@ We need to respond to the `remove` event. Let's add it to the template, inside t
 
 {% code-tabs %}
 {% code-tabs-item title="src/app/list-manager/list-manager.component.ts" %}
+
 ```markup
 <app-todo-item [item]="todoItem"
                (remove)="removeItem($event)"></app-todo-item>
 ```
+
 {% endcode-tabs-item %}
 {% endcode-tabs %}
 
@@ -71,14 +79,15 @@ Now we just need to add the method `removeItem()` to the `ListManagerComponent` 
 
 {% code-tabs %}
 {% code-tabs-item title="src/app/list-manager/list-manager.component.ts" %}
+
 ```typescript
-removeItem(item) {
+removeItem(item): void {
   this.todoListService.deleteItem(item);
 }
 ```
+
 {% endcode-tabs-item %}
 {% endcode-tabs %}
-
 
 {% hint style="success" %}
 [See the results on StackBlitz](https://stackblitz.com/github/ng-girls/todo-list-tutorial/tree/master/examples/18-remove-item)
