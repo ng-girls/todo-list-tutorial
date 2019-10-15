@@ -30,11 +30,18 @@ The server has required packages, or dependent pieces of code, it needs to run. 
 npm install
 ```
 
-We can now pass in the connection string to access the database to the server and start up the server. You will need the connection string with your password replaced for the `<password>` part. Start the server by running this in your command line / terminal:
-If you are working on Windows please use GitBash for running this command.
+The server requires connection to database (created in prevoius step). To confugure connection string rename `.env_default` to `.env` and provide connection string with your password replaced for the `<password>` part, inside the `.env` file. Start the server by running this in your command line / terminal:
 
 ```
-env CONNECTION_STRING="<connection_string_from_MongoDBAtlas_with_your_password>" node server.ts
+npm start
 ```
 
-Verify the server started by navigating to [http://localhost:3000/](http://localhost:3000/) in your browser. If you see "Hello from Express" then the server is running and ready to use by the ToDo List app. 
+Verify the server started by navigating to [http://localhost:3000/](http://localhost:3000/) in your browser. If you see "Hello from Express" then the server is running and ready to use by the ToDo List app.
+
+
+### Troubleshooting
+If you have any problems running the server make sure your `.env` file contains looks similar to following example:
+
+```
+CONNECTION_STRING="mongodb://myDBReader:D1fficultP%40ssw0rd@mongodb0.example.com:27017/admin"
+```
