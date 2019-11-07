@@ -65,6 +65,10 @@
   * [\#3: Implementing actions in app](ngrx/ACTIONS_IN_APP.md) 
   * [\#4: Selectors](ngrx/SELECTORS.md) 
   
+* [RxJS](rxjs/RXJS_INTRO.md)
+    * [Operators](rxjs/OPERATORS.md)
+    * [Play time!](rxjs/PLAYGROUND.md)
+  
 * [Blog Editor ](workshops/blog-editor/index.md)
   * [\#1 ⚙️Configuring firebase](workshops/blog-editor/01_firebase.md)
   * [\#2 💅Add Angular Material](workshops/blog-editor/02_add_material.md)
