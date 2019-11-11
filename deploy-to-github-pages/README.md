@@ -54,6 +54,9 @@ ng build --prod --base-href="/[your-repo-name]/"
 angular-cli-ghpages --dir=dist/todo-list
 ```
 
+💡 ```/[your-repo-name]/``` is a placeholder for your github repository name. so if you project has the name ```https://github.com/myname/ng-girls``` the value has to be: ```--base-href="/ng-girls/"```
+
+
 Your app will be available at [https://[your-GH-username].github.io/[repo-name]/](https://[your-GH-username].github.io/[repo-name])
 
 For more information see [https://github.com/angular-schule/angular-cli-ghpages](https://github.com/angular-schule/angular-cli-ghpages).
