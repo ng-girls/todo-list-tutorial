@@ -50,11 +50,11 @@ npm i -g angular-cli-ghpages
 Then simply run:
 
 ```text
-ng build --prod --base-href="/[your-repo-name]/"
+ng build --prod --base-href="./[your-repo-name]"
 angular-cli-ghpages --dir=dist/todo-list
 ```
 
-💡 ```/[your-repo-name]/``` is a placeholder for your github repository name. so if you project has the name ```https://github.com/myname/ng-girls``` the value has to be: ```--base-href="/ng-girls/"```
+💡 ```./[your-repo-name]``` is a placeholder for your github repository name. So if you project has the name ```https://github.com/myname/ng-girls``` the value has to be: ```--base-href="./ng-girls"``` ... on other Operating Systems it might be also "/ng-girls/"
 
 
 Your app will be available at [https://[your-GH-username].github.io/[repo-name]/](https://[your-GH-username].github.io/[repo-name])
