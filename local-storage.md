@@ -225,7 +225,7 @@ saveList() {
 {% endcode-tabs-item %}
 {% endcode-tabs %}
 
-Now make sure you call `saveList` from within addItem and `updateItem`.
+Now make sure you call `saveList` from within `addItem` and `updateItem`.
 
 ### deleteItem
 
