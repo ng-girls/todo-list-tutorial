@@ -41,7 +41,7 @@
 
 ## More Workshops
 
-* [Second workshops - CRUD and http](more-workshops/crud_http/README.md)
+* [Second workshops - CRUD and HTTP](more-workshops/crud_http/README.md)
   * [\#1 MongoDB](more-workshops/crud_http/mongo_db.md)
   * [\#2 Local server](more-workshops/crud_http/local_server.md)
   * [\#3 http in diagrams](more-workshops/crud_http/crudalize_diagrams.md)
