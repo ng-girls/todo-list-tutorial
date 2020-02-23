@@ -21,12 +21,14 @@ Local storage stores data as keys and values, and the interface is quite simple.
 
 {% code-tabs %}
 {% code-tabs-item title="code for example" %}
+
 ```typescript
 localStorage.setItem('name', 'Angular');
 
-let name = localStorage.getItem('name'); 
-alert(`Hello ${ name }!`);
+let name = localStorage.getItem('name');
+alert(`Hello ${name}!`);
 ```
+
 {% endcode-tabs-item %}
 {% endcode-tabs %}
 
@@ -34,9 +36,11 @@ Another useful method is `clear`. It's used to clear all the data from local sto
 
 {% code-tabs %}
 {% code-tabs-item title="code for example" %}
+
 ```typescript
 localStorage.clear();
 ```
+
 {% endcode-tabs-item %}
 {% endcode-tabs %}
 
@@ -58,11 +62,11 @@ ng g s services/storage
 Right click on the `services` folder and use the Angular Generator to create a service named `storage`.
 {% endhint %}
 
-
 The new file, `storage.service.ts`, will be created with the following code:
 
 {% code-tabs %}
 {% code-tabs-item title="src/app/services/storage.service.ts" %}
+
 ```typescript
 import { Injectable } from '@angular/core';
 
@@ -70,11 +74,10 @@ import { Injectable } from '@angular/core';
   providedIn: 'root'
 })
 export class StorageService {
-
-  constructor() { }
-
+  constructor() {}
 }
 ```
+
 {% endcode-tabs-item %}
 {% endcode-tabs %}
 
@@ -88,11 +91,13 @@ This method will get and return the data \(object, list, etc.\) stored in the se
 
 {% code-tabs %}
 {% code-tabs-item title="src/app/services/storage.service.ts" %}
+
 ```typescript
   getData(key: string): any {
     return JSON.parse(localStorage.getItem(key));
   }
 ```
+
 {% endcode-tabs-item %}
 {% endcode-tabs %}
 
@@ -104,11 +109,13 @@ This method will save the given data \(object, list, etc.\) under the given key.
 
 {% code-tabs %}
 {% code-tabs-item title="src/app/services/storage.service.ts" %}
+
 ```typescript
   setData(key: string, data: any) {
     localStorage.setItem(key, JSON.stringify(data));
   }
 ```
+
 {% endcode-tabs-item %}
 {% endcode-tabs %}
 
@@ -124,6 +131,7 @@ We'd like to use the newly created service from within `TodoListService`. First 
 
 {% code-tabs %}
 {% code-tabs-item title="src/app/services/todo-list.service.ts" %}
+
 ```typescript
 import { Injectable } from '@angular/core';
 import { TodoItem } from '../interfaces/todo-item';
@@ -132,12 +140,12 @@ import { StorageService } from './storage.service';
 const todoListStorageKey = 'Todo_List';
 
 const defaultTodoList = [
-  {title: 'install NodeJS'},
-  {title: 'install Angular CLI'},
-  {title: 'create new app'},
-  {title: 'serve app'},
-  {title: 'develop app'},
-  {title: 'deploy app'},
+  { title: 'install NodeJS' },
+  { title: 'install Angular CLI' },
+  { title: 'create new app' },
+  { title: 'serve app' },
+  { title: 'develop app' },
+  { title: 'deploy app' }
 ];
 
 @Injectable({
@@ -146,9 +154,10 @@ const defaultTodoList = [
 export class TodoListService {
   todoList: TodoItem[];
 
-  constructor(private storageService: StorageService) { }
+  constructor(private storageService: StorageService) {}
 }
 ```
+
 {% endcode-tabs-item %}
 {% endcode-tabs %}
 
@@ -156,12 +165,14 @@ We'll keep a runtime version of the todo list in the service to help us manage i
 
 {% code-tabs %}
 {% code-tabs-item title="src/app/services/todo-list.service.ts" %}
+
 ```typescript
 constructor(private storageService: StorageService) {
-  this.todoList = 
+  this.todoList =
     storageService.getData(todoListStorageKey) || defaultTodoList;
 }
 ```
+
 {% endcode-tabs-item %}
 {% endcode-tabs %}
 
@@ -173,12 +184,14 @@ We'll push an item to the todoList \(same as before\) and then update the storag
 
 {% code-tabs %}
 {% code-tabs-item title="src/app/services/todo-list.service.ts" %}
+
 ```typescript
 addItem(item: TodoItem) {
   this.todoList.push(item);
   this.storageService.setData(todoListStorageKey, this.todoList);
 }
 ```
+
 {% endcode-tabs-item %}
 {% endcode-tabs %}
 
@@ -188,6 +201,7 @@ Here we want to update an existing item. We'll assume that we hold the original 
 
 {% code-tabs %}
 {% code-tabs-item title="src/app/services/todo-list.service.ts" %}
+
 ```typescript
 updateItem(item: TodoItem, changes) {
   const index = this.todoList.indexOf(item);
@@ -195,6 +209,7 @@ updateItem(item: TodoItem, changes) {
   this.storageService.setData(todoListStorageKey, this.todoList);
 }
 ```
+
 {% endcode-tabs-item %}
 {% endcode-tabs %}
 
@@ -207,9 +222,11 @@ You may have noticed that we have the same line of code both in `addItem` and in
 
 {% code-tabs %}
 {% code-tabs-item title="src/app/services/todo-list.service.ts" %}
+
 ```typescript
 this.storageService.setData(todoListStorageKey, this.todoList);
 ```
+
 {% endcode-tabs-item %}
 {% endcode-tabs %}
 
@@ -217,11 +234,13 @@ We'd like to reduce code repetition, and extract the repeated code into a method
 
 {% code-tabs %}
 {% code-tabs-item title="src/app/services/todo-list.service.ts" %}
+
 ```typescript
 saveList() {
     this.storageService.setData(todoListStorageKey, this.todoList);
 }
 ```
+
 {% endcode-tabs-item %}
 {% endcode-tabs %}
 
@@ -233,6 +252,7 @@ This method will remove an item from the list. We look for the item in the list,
 
 {% code-tabs %}
 {% code-tabs-item title="src/app/services/todo-list.service.ts" %}
+
 ```typescript
 deleteItem(item: TodoItem) {
   const index = this.todoList.indexOf(item);
@@ -240,6 +260,7 @@ deleteItem(item: TodoItem) {
   this.saveList();
 }
 ```
+
 {% endcode-tabs-item %}
 {% endcode-tabs %}
 
@@ -251,6 +272,7 @@ Our TodoListService is ready with methods to get and modify the todo list. We ca
 
 {% code-tabs %}
 {% code-tabs-item title="src/app/services/todo-list.service.ts" %}
+
 ```typescript
 import { Injectable } from '@angular/core';
 import { TodoItem } from '../interfaces/todo-item';
@@ -259,12 +281,12 @@ import { StorageService } from './storage.service';
 const todoListStorageKey = 'Todo_List';
 
 const defaultTodoList = [
-  {title: 'install NodeJS'},
-  {title: 'install Angular CLI'},
-  {title: 'create new app'},
-  {title: 'serve app'},
-  {title: 'develop app'},
-  {title: 'deploy app'},
+  { title: 'install NodeJS' },
+  { title: 'install Angular CLI' },
+  { title: 'create new app' },
+  { title: 'serve app' },
+  { title: 'develop app' },
+  { title: 'deploy app' }
 ];
 
 @Injectable()
@@ -272,13 +294,12 @@ export class TodoListService {
   todoList: TodoItem[];
 
   constructor(private storageService: StorageService) {
-    this.todoList = 
-      storageService.getData(todoListStorageKey) || defaultTodoList;
+    this.todoList = storageService.getData(todoListStorageKey) || defaultTodoList;
   }
 
   saveList() {
     this.storageService.setData(todoListStorageKey, this.todoList);
-}
+  }
 
   addItem(item: TodoItem) {
     this.todoList.push(item);
@@ -296,19 +317,18 @@ export class TodoListService {
     this.todoList.splice(index, 1);
     this.saveList();
   }
-  getTodoList() {
+  getTodoList(): TodoItem[] {
     return this.todoList;
   }
-
 }
 ```
+
 {% endcode-tabs-item %}
 {% endcode-tabs %}
 
 ## Summary
 
 In this chapter we learned what local storage is and how to use it. We saw that `localStorage` is a great and a pretty straight-forward tool for developers to store data locally on the users' computers/devices. We then implemented a new service that uses `localStorage` to store data, which our `TodoListService` uses to save the todo-list items.
-
 
 {% hint style="success" %}
 [See the results on StackBlitz](https://stackblitz.com/github/ng-girls/todo-list-tutorial/tree/master/examples/17-local-storage)
