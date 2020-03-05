@@ -1,4 +1,4 @@
-# Introduction
+# 👀 About
 
 ## Angular Tutorial for Beginners -
 
@@ -10,9 +10,9 @@ This tutorial is open source and is written by the community. Please feel free t
 
 The tutorial is used in the [ngGirls](http://ng-girls.org) workshops. You are welcome to use it in your own workshop and we'd love to hear about it! Write to us: [info@ng-girls.org](mailto:info@ng-girls.org).
 
-![](.gitbook/assets/nggirls-banner-transparent%20%284%29.png)
+![](../.gitbook/assets/nggirls-banner-transparent%20%284%29.png)
 
-![](.gitbook/assets/slogen%20%281%29.png)
+![](../.gitbook/assets/slogen%20%281%29.png)
 
 **About the lead author:** Shmuela Jacobs is a senior front-end developer and consultant mastering Angular. During her academic studies \(M.Sc. in Information Management Engineering and B.Sc. in Physics\) she has combined her passions of coding and teaching as a software developer, teaching assistant, science museum guide, and researcher. Today she continues to enjoy these activities as a full-time front-end developer, sharing her knowledge and experience in meetups and conferences. Shmuela is the founder of ngGirls and the organizer of the [Angular AfterHours meetup group](https://www.meetup.com/Angular-AfterHours/).
 
