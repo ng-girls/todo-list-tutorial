@@ -73,7 +73,7 @@ We pass an object of definitions to the decorator, just like we saw in the previ
 The third property, `styleUrls`, tells Angular where to look for the CSS files that define the style of this component. It can have multiple CSS files. That's why the value of `styleUrls` is an array. You can take a look at the CSS file `app.component.css` - you'll see that it's empty. You can add some CSS style here, for example:
 
 {% tabs %}
-{% tab title="src/app/app.component.css" %}
+{% tab title="src/app/app.component.scss" %}
 ```css
 h1 {
   color: red;
