@@ -111,10 +111,10 @@ In `input-button-unit` add the `btn` class to the `button` element:
 
 Now we'll add some component-specific styles.
 
-Add the following style to `input-button-unit.component.css`:
+Add the following style to `input-button-unit.component.scss`:
 
-{% code title="src/app/input-button-unit/input-button-unit.component.css" %}
-```css
+{% code title="src/app/input-button-unit/input-button-unit.component.scss" %}
+```scss
 .todo-input {
   padding: 4px 10px 4px;
   font-size: 16px;
@@ -148,10 +148,10 @@ We need to add the `todo-input` class to the `input` element:
 ```
 {% endcode %}
 
-Now let's add style specifically to the `list-manager` component. Open the file `list-manager.component.css` and paste the following style inside:
+Now let's add style specifically to the `list-manager` component. Open the file `list-manager.component.scss` and paste the following style inside:
 
-{% code title="src/app/list-manager/list-manager.component.css" %}
-```css
+{% code title="src/app/list-manager/list-manager.component.scss" %}
+```scss
 .todo-app {
   position: relative;
   width: 400px;
