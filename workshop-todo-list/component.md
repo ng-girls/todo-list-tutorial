@@ -62,7 +62,7 @@ Let's go back to the file `app.component.ts` and look at the component's metadat
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
-  styleUrls: ['./app.component.css']
+  styleUrls: ['./app.component.scss']
 })
 ```
 {% endtab %}
