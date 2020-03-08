@@ -39,11 +39,7 @@ Open the file `input-button-unit.component.ts`. You can see that the Angular CLI
 ```typescript
 @Component({
   selector: 'app-input-button-unit',
-  template: `
-    <p>
-      input-button-unit works!
-    </p>
-  `,
+  templateUrl: './input-button-unit.component.html',
   styleUrls: ['./input-button-unit.component.css']
 })
 ```
