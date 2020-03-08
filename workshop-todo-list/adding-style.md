@@ -6,10 +6,10 @@ We can also state general style rules to be used across the application. This is
 
 Angular gives us different style encapsulation methods, but we'll stick to the default.
 
-The Angular CLI has generated a general stylesheet for us at `src/style.css`. Paste the following code into this file:
+The Angular CLI has generated a general stylesheet for us at `src/style.scss`. Paste the following code into this file:
 
-{% code title="src/style.css" %}
-```css
+{% code title="src/style.scss" %}
+```scss
 html, body, div, span,
 h1, p, ul, li {
   padding: 0;
@@ -212,10 +212,10 @@ template: `
 ```
 {% endcode %}
 
-Finally, add the following style to `todo-item.component.css`:
+Finally, add the following style to `todo-item.component.scss`:
 
-{% code title="src/app/todo-item/todo-item.component.css" %}
-```css
+{% code title="src/app/todo-item/todo-item.component.scss" %}
+```scss
 .todo-item {
   padding: 10px 0;
   border-top: solid 1px #ddd;
