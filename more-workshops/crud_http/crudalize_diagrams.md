@@ -1,20 +1,20 @@
-# \#3 http in diagrams
+# \#3 HTTP in diagrams
 
-Now that you have a server connected to your database, we have the necessary pieces to power up the Todo List app. We can access todo list items from anywhere by having a centralized storage, the database. But, how do we use the database we created to get the data?
+Now that you have a server connected to your database, we have the necessary pieces to power up the Todo List app. We can access the todo list items from anywhere by having a centralized storage, the database. But, how do we use the database we created to get the data?
 
 ## The first two puzzle pieces
 
-Our current situation looks like the diagram below. We want to access the database, but the interaction line between the user \(that's us\) and the database has a question mark.
+Our current status looks like the diagram below. We want to access the database, but the interaction line between the user \(that's us\) and the database has a question mark.
 
 ![](../../.gitbook/assets/http_diagram_1.png)
 
-Well, you may kindly ask to retrieve it:
+Well, you may kindly ask the database to retrieve the data:
 
 ![](../../.gitbook/assets/http_diagram_2.png)
 
 ## Adding the Todo List app into the puzzle
 
-Is it that straightforward? It depends on many factors, but by building the Todo List app you've added extra point in this communication chain. We can represent the Todo List app in the interaction sequence.
+Is it that straightforward? It depends on many factors, but most applications have a user interface to display and interact with data, like the Todo List app we created. The Todo List app creates an extra point in this communication chain. We can represent the Todo List app in the following interaction sequence:
 
 ![](../../.gitbook/assets/http_diagram_3.png)
 
@@ -48,7 +48,7 @@ Now let's see the same diagram, but add in the **REST** and **CRUD** calls along
 
 ![](../../.gitbook/assets/http_diagram_6.png)
 
-You can see that server is also communicating to the database via HTTP requests. That's because we are using **MongoDB** which has HTTP access to the data. There are other ways for a server to communicate with a database, but to get you understanding of what is happening we decided to show it this way.
+You can see that server is also communicating to the database via HTTP requests. That's because we are using **MongoDB** which has HTTP access to the data. There are other ways for a server to communicate with a database, but for our purposes and to help illustrate what happens under the covers we decided to take this approach.
 
-So now we will add in the code to communicate to the server into our app! So exciting!
+Now we will add the code that allows communication from the server into our app! How exciting!
 
