@@ -40,7 +40,7 @@ How can we add the data to the application view?
 
 We will need to use libraries that allow us to work with data when that data isn't immediately available to the application. The response from the server is asynchronous, meaning some time might pass between the request and response, but the application code isn't waiting for it. Imagine our application is multi-tasking just like we do every day! We can't always wait for something to complete before starting the next task. For example, we'll start making coffee and while the coffee is brewing, we'll get our favorite coffee cup out and maybe even start preparing breakfast before the coffee is ready to drink. 
 
-In this same way, we can write code that allows us to react to data as it comes back from the server. We'll use specialized libraries called `Subject` and `Observable`.
+In this same way, we can write code that allows us to react to data as it comes back from the server. We'll use a specialized library called **RxJS** that is already included with Angular projects. We'll use types called `Subject` and `Observable`.
 
 **Observables** provide us with a stream of information and the library allows us to define how to react to the data when it's received. This is great for refreshing our list each time we make any changes. 
 
