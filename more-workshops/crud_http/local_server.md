@@ -30,7 +30,13 @@ The server has required packages, or dependent pieces of code, it needs to run. 
 npm install
 ```
 
-We can now pass in the connection string to access the database to the server and start up the server. You will need the connection string with your password replaced for the `<password>` part. Start the server by running this in your command line / terminal: If you are working on Windows please use GitBash for running this command.
+We can now pass in the connection string to access the database to the server and start up the server. You will need the connection string with your password replaced for the `<password>` part. 
+
+{% hint style="warning" %}
+Windows users - please use GitBash for running the command to start the server.
+{% endhint %}
+
+Start the server by running this in your command line / terminal:
 
 ```text
 env CONNECTION_STRING="<connection_string_from_MongoDBAtlas_with_your_password>" node server.ts
