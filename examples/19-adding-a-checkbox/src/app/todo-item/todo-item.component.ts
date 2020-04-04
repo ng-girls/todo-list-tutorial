@@ -7,6 +7,7 @@ import { TodoItem } from './../interfaces/todo-item';
     <div class="todo-item">
       <input type="checkbox"
              class="todo-checkbox"
+             [checked]="item.completed"
              (click)="completeItem()"/>
       <span class="todo-title" [ngClass]="{'todo-complete': item.completed}">
         {{ item.title }}
@@ -32,7 +33,7 @@ export class TodoItemComponent implements OnInit {
   completeItem() {
     this.update.emit({
       item: this.item,
-      changes: {completed: !this.item.completed}
+      changes: { completed: !this.item.completed }
     });
   }
 
