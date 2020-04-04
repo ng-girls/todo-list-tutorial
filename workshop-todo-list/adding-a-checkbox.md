@@ -24,7 +24,6 @@ Now, in order for the checkbox to do anything, we need to add a `click` event ha
 <div>
   <input type="checkbox"
          class="todo-checkbox"
-         [checked]="item.completed"
          (click)="completeItem()"/>
   {{ item.title }}
 </div>
@@ -44,7 +43,7 @@ export class TodoItemComponent implements OnInit {
   completeItem() {
     this.update.emit({
       item: this.item,
-      changes: {completed: !this.item.completed}
+      changes: { completed: !this.item.completed }
     });
   }
 ```

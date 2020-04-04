@@ -7,7 +7,6 @@ import { TodoItem } from './../interfaces/todo-item';
     <div class="todo-item">
       <input type="checkbox"
              class="todo-checkbox"
-             [checked]="item.completed"
              (click)="completeItem()"/>
       <span class="todo-title" [ngClass]="{'todo-complete': item.completed}">
         {{ item.title }}
