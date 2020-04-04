@@ -259,13 +259,13 @@ export class TodoListService {
     this.saveList();
   }
 
-  updateItem(item, changes) {
+  updateItem(item: TodoItem, changes: object) {
     const index = this.todoList.indexOf(item);
     this.todoList[index] = { ...item, ...changes };
     this.saveList();
   }
 
-  deleteItem(item) {
+  deleteItem(item: TodoItem) {
     const index = this.todoList.indexOf(item);
     this.todoList.splice(index, 1);
     this.saveList();
