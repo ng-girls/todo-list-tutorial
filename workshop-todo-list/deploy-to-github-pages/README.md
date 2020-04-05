@@ -6,47 +6,34 @@
 Follow the instructions on the [StackBlitz instructions](stackblitz.md) page in this chapter to rename your StackBlitz project and share the link to your app.
 {% endhint %}
 
-To deploy our changes to GitHub pages we will use the angular-cli-ghpages package [https://github.com/angular-schule/angular-cli-ghpages](https://github.com/angular-schule/angular-cli-ghpages)
+To deploy our changes to GitHub pages we will use the `angular-cli-ghpages` package [https://github.com/angular-schule/angular-cli-ghpages](https://github.com/angular-schule/angular-cli-ghpages)
 
-* You need to have a GitHub user
-* You need to create a repository for your project.
-* You need to commit all the changes you made in the project
-* You need to install angular-cli-ghpages
+* You need to save the changes you made in the project
+* You need to install `angular-cli-ghpages`
 
-## Creating a GitHub user
+## Commit all the changes you made in the project
 
-If you already have a GitHub user you can skip this step. To Create a GitHub user go to GitHub: [https://github.com/](https://github.com/) Fill the registration form and make sure to validate your email address.
-
-## Create your App repository
-
-After logging in to GitHub. Click on the `Start a project` button, and name the repository `ng-girls-todo` or any other name you like.
-
-_**Tip**_ GitHub Pages are case sensitive - it's the best to use lowercase letters in repository name.
-
-## Connecting your repository
-
-Commit all your changes by runing this command in your project directory.
+Commit your changes by running this command in your project directory.
 
 ```text
 git add -A && git commit -m "Your Message"
 ```
 
-Run the following command to connect your code to your repository. make sure to replace the {YOUR\_USERNAME} and {YOUR\_REPO} with your github username and repository name.
+Then run the following command to push the changes 
 
 ```text
-git remote add origin https://github.com/{YOUR_USERNAME}/{YOUR_REPO}.git
 git push -u origin master
 ```
 
 ## Deploying to GitHub Pages
 
-First install angular-cli-ghpages.
+First install `angular-cli-ghpages`.
 
 ```text
 npm i -g angular-cli-ghpages
 ```
 
-Then simply run:
+Then run:
 
 ```text
 ng build --prod --base-href="./[your-repo-name]"
@@ -104,9 +91,9 @@ fatal: could not read Username for \'https://github.com\': No error\n',
 you can do the following
 
 1. Create a Personal Access Token here: [https://github.com/settings/tokens](https://github.com/settings/tokens)
-2. Run the following command and replace your token, organisation \(your user\), repository, username and email:
+2. Run the following command and replace your token, organization \(your user\), repository, username and email:
 
    ```text
-   angular-cli-ghpages --repo=https://<personal-access-token>@github.com/organisation/your-repo.git --name="Displayed Username" --email=mail@example.org
+   angular-cli-ghpages --repo=https://<personal-access-token>@github.com/organization/your-repo.git --name="Displayed Username" --email=mail@example.org
    ```
 

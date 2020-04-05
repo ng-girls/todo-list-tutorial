@@ -99,3 +99,50 @@ This component doesn't do much at this point. In the following chapters, we will
 [See the results on StackBlitz](https://stackblitz.com/github/ng-girls/todo-list-tutorial/tree/master/examples/04-a-new-component%20)
 {% endhint %}
 
+
+## Save your code to GitHub
+
+Great job adding your first component! Let's save your work to GitHub, an online code repository, so your code is accessible outside of your local machine. 
+
+You might wonder why we're saving to GitHub now. Saving coding work in progress to an accessible code repository is a software development good practice and also allows mentors to better assist you with this process and as we work through the tutorial. We want for you to be able to continue working on the tutorial if you run out of time during the workshop.
+
+{% hint style="info" %}
+**StackBlitz Instructions** ![](https://github.com/ng-girls/todo-list-tutorial/tree/2e565be398494ef864f39582b7dac2c0f55a8fd1/a-new-component/.gitbook/assets/stackblitz-hint.svg)
+
+We will save code within StackBlitz so you can skip the GitHub sections below. Save your work in progress by pressing **Save** in the toolbar.
+{% endhint %}
+
+
+### Creating a GitHub user
+
+If you already have a GitHub user you can skip this step. 
+To create a GitHub user go to GitHub: [https://github.com/](https://github.com/). Fill the registration form and make sure to validate your email address.
+
+
+### Create your App repository
+
+Log in to GitHub, press the `+` button and select **New repository**. 
+
+Name the repository `ng-girls-todo` or any other name you like. Leave the **Initialize this repository with a README** unchecked, and press **Create repository**.
+
+{% hint style="warning" %}
+We recommend using lowercase letters in the repository name.
+
+Later on in the tutorial we'll deploy our application to GitHub Pages. GitHub Pages are case sensitive - so it's the best to use lowercase letters in repository name.
+{% endhint %}
+
+
+### Connecting your repository
+
+Commit all your changes by running this command in your project directory.
+
+```text
+git add -A && git commit -m "Your Message"
+```
+
+Run the following command to connect your code to your repository. Make sure to replace the {YOUR\_USERNAME} and {YOUR\_REPO} with your GitHub username and repository name.
+
+```text
+git remote add origin https://github.com/{YOUR_USERNAME}/{YOUR_REPO}.git
+git push -u origin master
+```
