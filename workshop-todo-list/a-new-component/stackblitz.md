@@ -18,5 +18,7 @@ Copy all the code from the `input-button-unit.html`. In the `input-button-unit.c
 
 You may delete the `input-button-unit.html` file.
 
+Press the **Save** button on the toolbar to save your work.
+
 Return to the previous page to [continue the tutorial](https://ng-girls.gitbook.io/todo-list-tutorial/a-new-component/README.md).
 
