@@ -100,7 +100,7 @@ This component doesn't do much at this point. In the following chapters, we will
 {% endhint %}
 
 
-## Save your code to GitHub
+## 💾 Save your code to GitHub
 
 Great job adding your first component! Let's save your work to GitHub, an online code repository, so your code is accessible outside of your local machine. 
 
