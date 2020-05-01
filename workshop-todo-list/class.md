@@ -155,6 +155,22 @@ changeTitle(newTitle: string) {
 
 The browser's console is a part of its Dev Tools. You can see how to open the console in different browsers here: [https://webmasters.stackexchange.com/questions/8525/how-do-i-open-the-javascript-console-in-different-browsers](https://webmasters.stackexchange.com/questions/8525/how-do-i-open-the-javascript-console-in-different-browsers)
 
+{% hint style="info" %}
+💾 **Save your code to GitHub**
+
+StackBlitz users - press **Save** in the toolbar and continue to the next section of the tutorial.
+
+Commit all your changes by running this command in your project directory.
+```text
+git add -A && git commit -m "Your Message"
+```
+
+Push your changes to GitHub by running this command in your project directory.
+```text
+git push master
+```
+{% endhint %}
+
 {% hint style="success" %}
 [See the results on StackBlitz](https://stackblitz.com/github/ng-girls/todo-list-tutorial/tree/master/examples/05-class)
 {% endhint %}
