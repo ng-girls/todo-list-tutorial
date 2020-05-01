@@ -11,7 +11,7 @@ ng g c input-button-unit
 ```
 
 {% hint style="info" %}
-**StackBlitz Instructions** ![](https://github.com/ng-girls/todo-list-tutorial/tree/2e565be398494ef864f39582b7dac2c0f55a8fd1/a-new-component/.gitbook/assets/stackblitz-hint.svg)
+**StackBlitz Instructions** ![](/.gitbook/assets/stackblitz-hint.svg)
 
 We'll use the Angular Generator to create a component. Follow the instructions on the [StackBlitz instructions](stackblitz.md) page and return here to continue the worksheet.
 {% endhint %}
@@ -104,10 +104,10 @@ This component doesn't do much at this point. In the following chapters, we will
 
 Great job adding your first component! Let's save your work to GitHub, an online code repository, so your code is accessible outside of your local machine. 
 
-You might wonder why we're saving to GitHub now. Saving coding work in progress to an accessible code repository is a software development good practice and also allows mentors to better assist you with this process and as we work through the tutorial. We want for you to be able to continue working on the tutorial if you run out of time during the workshop.
+You might wonder why we're saving to GitHub now. Saving coding work in progress to an accessible code repository is a software development good practice. Doing so also allows mentors to better assist you with this step and as we work through the tutorial. We want for you to be able to continue working on the tutorial if you run out of time during the workshop.
 
 {% hint style="info" %}
-**StackBlitz Instructions** ![](https://github.com/ng-girls/todo-list-tutorial/tree/2e565be398494ef864f39582b7dac2c0f55a8fd1/a-new-component/.gitbook/assets/stackblitz-hint.svg)
+**StackBlitz Instructions** ![](/.gitbook/assets/stackblitz-hint.svg)
 
 We will save code within StackBlitz so you can skip the GitHub sections below. Save your work in progress by pressing **Save** in the toolbar.
 {% endhint %}
