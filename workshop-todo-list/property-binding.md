@@ -144,6 +144,22 @@ This will work in the browser.
 
 However, **this is highly discouraged in Angular. You should never access the DOM directly!** That's because you can assign different renderers to Angular and run the application on different platforms. They may be renderers for mobile, desktop, or even a robot. These platforms will not have a `document` object from which you can manipulate the result!
 
+{% hint style="info" %}
+💾 **Save your code to GitHub**
+
+StackBlitz users - press **Save** in the toolbar and continue to the next section of the tutorial.
+
+Commit all your changes by running this command in your project directory.
+```text
+git add -A && git commit -m "Your Message"
+```
+
+Push your changes to GitHub by running this command in your project directory.
+```text
+git push master
+```
+{% endhint %}
+
 {% hint style="success" %}
 [See the results on StackBlitz](https://stackblitz.com/github/ng-girls/todo-list-tutorial/tree/master/examples/06-property-binding)
 {% endhint %}
