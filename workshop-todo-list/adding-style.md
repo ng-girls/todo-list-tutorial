@@ -251,6 +251,22 @@ You can change the style as you wish - the size of elements, the colors - howeve
 
 Note: You can use [SCSS](https://www.freecodecamp.org/news/the-complete-guide-to-scss-sass-30053c266b23/) files in the project, which is a nicer way to write style. It has great features that help the developer. SCSS files are compiled to CSS when the project is built.
 
+{% hint style="info" %}
+💾 **Save your code to GitHub**
+
+StackBlitz users - press **Save** in the toolbar and continue to the next section of the tutorial.
+
+Commit all your changes by running this command in your project directory.
+```text
+git add -A && git commit -m "Your Message"
+```
+
+Push your changes to GitHub by running this command in your project directory.
+```text
+git push master
+```
+{% endhint %}
+
 {% hint style="success" %}
 [See the results on StackBlitz](https://stackblitz.com/github/ng-girls/todo-list-tutorial/tree/master/examples/14-adding-style)
 {% endhint %}
