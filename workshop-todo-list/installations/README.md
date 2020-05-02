@@ -74,6 +74,11 @@ Git is a tool that helps you manage versions of your code and work in collaborat
 You can download it and follow the installation instructions [here](https://git-scm.com/) .  
 When asked if you'd like to install **git bash**, say yes.
 
+{% hint style="info" %}
+We recommend installing or updating to the latest version of Git to take advantage of their security updates. 
+{% endhint %}
+
+
 ## GitHub
 
 [GitHub](https://github.com/) is a code repository website, which integrates with Git. It allows you to publish your project on the Web, copy \(fork and clone\) other open source projects and collaborate. To be able to publish your project, make sure you create a user on GitHub \(for free, of course\).
