@@ -20,5 +20,5 @@ You may delete the `input-button-unit.html` file.
 
 Press the **Save** button on the toolbar to save your work.
 
-Return to the previous page to [continue the tutorial](https://ng-girls.gitbook.io/todo-list-tutorial/workshop-todo-list/a-new-component/README.md).
+Return to the previous page to [continue the tutorial](https://ng-girls.gitbook.io/todo-list-tutorial/workshop-todo-list/a-new-component/).
 
