@@ -1,4 +1,4 @@
-Feel free to fill out.
+Feel free to fill out:
 
 * my name: 
 * workshop:
