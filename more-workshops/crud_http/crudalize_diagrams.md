@@ -6,21 +6,21 @@ Now that you have a server connected to your database, we have the necessary pie
 
 Our current status looks like the diagram below. We want to access the database, but the interaction line between the user \(that's us\) and the database has a question mark.
 
-![](../../.gitbook/assets/http_diagram_1.png)
+![](./../../.gitbook/assets/http_diagram_1.png)
 
 Well, you may kindly ask the database to retrieve the data:
 
-![](../../.gitbook/assets/http_diagram_2.png)
+![](./../../.gitbook/assets/http_diagram_2.png)
 
 ## Adding the Todo List app into the puzzle
 
 Is it that straightforward? It depends on many factors, but most applications have a user interface to display and interact with data, like the Todo List app we created. The Todo List app creates an extra point in this communication chain. We can represent the Todo List app in the following interaction sequence:
 
-![](../../.gitbook/assets/http_diagram_3.png)
+![](./../../.gitbook/assets/http_diagram_3.png)
 
 There are multiple steps needed to communicate to a database, so if we use the app the communicate directly to the database the interaction sequence might look something like this:
 
-![](../../.gitbook/assets/http_diagram_4.png)
+![](./../../.gitbook/assets/http_diagram_4.png)
 
 ## The final piece of the puzzle
 
@@ -40,13 +40,13 @@ To display all the budget and expense information for the month, you will have t
 
 Instead of asking for the data 3 times from the app, the service can gather all the information your app needs into 1 call. This is the power of using a server.
 
-![](../../.gitbook/assets/http_diagram_5.png)
+![](./../../.gitbook/assets/http_diagram_5.png)
 
 ## Putting it all together using REST and CRUD calls
 
 Now let's see the same diagram, but add in the **REST** and **CRUD** calls alongside the interactions between user, app, server, and database.
 
-![](../../.gitbook/assets/http_diagram_6.png)
+![](./../../.gitbook/assets/http_diagram_6.png)
 
 You can see that server is also communicating to the database via HTTP requests. That's because we are using **MongoDB** which has HTTP access to the data. There are other ways for a server to communicate with a database, but for our purposes and to help illustrate what happens under the covers we decided to take this approach.
 
