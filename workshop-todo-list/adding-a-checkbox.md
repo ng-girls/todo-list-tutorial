@@ -49,6 +49,20 @@ export class TodoItemComponent implements OnInit {
 ```
 {% endcode %}
 
+In order for the checkbox-input to reflect the completed-status, we need to add property-binding for it's checked-status like this:
+
+{% code title="src/app/todo-item/todo-item.component.ts" %}
+```markup
+<div>
+  <input type="checkbox"
+         class="todo-checkbox"
+         (click)="completeItem()"
+         [checked]="item.completed"/>
+  {{ item.title }}
+</div>
+```
+{% endcode %}
+
 But wait! How is any of this going to affect the todo title when we're only touching the checkbox? Well, Angular has this wonderful directive called NgClass. This directive applies or removes a CSS class based on a boolean \(true or false\) expression. There are many ways to use this directive \(see the [NgClass directive documentation](https://angular.io/api/common/NgClass)\) but we will focus on using it like so:
 
 ```markup
