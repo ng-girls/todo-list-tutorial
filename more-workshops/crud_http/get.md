@@ -82,7 +82,7 @@ In `list-manager.component.ts` you need to change `todoList` type into `Observab
 
 ```html
     <div class="todo-app">
-      <app-input-button-unit (submitItem)="addItem($event)"></app-input-button-unit>
+      <app-input-button-unit (submit)="addItem($event)"></app-input-button-unit>
 
       <ul *ngIf="todoList | async as todoItems">
         <li *ngFor="let todoItem of todoItems">

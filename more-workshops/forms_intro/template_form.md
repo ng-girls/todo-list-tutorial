@@ -93,7 +93,7 @@ The refactored function looks similar to:
 ```typescript
   submitValue(newTitleForm: NgForm) {
     if (newTitleForm.valid) {
-      this.submitItem.emit(newTitleForm.value.title);
+      this.submit.emit(newTitleForm.value.title);
     } else {
       alert('Form is invalid');
     }

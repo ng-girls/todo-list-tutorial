@@ -8,13 +8,13 @@ import { NgForm } from '@angular/forms';
 })
 export class InputButtonUnitComponent {
 
-  @Output() submitItem: EventEmitter<string> = new EventEmitter();
+  @Output() submit: EventEmitter<string> = new EventEmitter();
 
   title = 'Hello World';
 
   submitValue(newTitleForm: NgForm) {
     if (newTitleForm.valid) {
-      this.submitItem.emit(newTitleForm.value.title);
+      this.submit.emit(newTitleForm.value.title);
       newTitleForm.resetForm();
     } else {
       alert('Form is invalid');
