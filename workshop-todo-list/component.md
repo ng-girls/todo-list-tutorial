@@ -30,7 +30,7 @@ export class AppComponent {
 
 It has one member called "title". It is a property to which you can assign a value. The value assigned to it here is the name of your application, the string "todo-list".
 
-Angular takes care of synchronizing the members of the component with the component template. So we can easily use the member `title` in the template. Take a look at the template attached to the component in the file `app.component.html`. Near the middle of the file \(around line 330\), you'll see code like this:
+Angular takes care of synchronizing the members of the component with the component template. So we can easily use the member `title` in the template. Take a look at the template attached to the component in the file `app.component.html`. Near the middle of the file \(around line 345\), you'll see code like this:
 
 {% tabs %}
 {% tab title="src/app/app.component.html" %}
@@ -171,6 +171,6 @@ StackBlitz doesn't support the inline template configuration setting. We will ne
 We have explored the root component that was generated for us by the Angular CLI, and even refactored it. In the next chapter, we will create a new component. We will start building the tree of components, which defines the structure of the application.
 
 {% hint style="success" %}
-[See the results on StackBlitz](https://stackblitz.com/github/ng-girls/todo-list-tutorial/tree/master/examples/03-component%20)
+[See the results on StackBlitz](https://stackblitz.com/github/ng-girls/todo-list-tutorial/tree/master/examples/0_03-component)
 {% endhint %}
 
