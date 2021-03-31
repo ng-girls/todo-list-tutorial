@@ -96,7 +96,7 @@ Check out the result!
 This component doesn't do much at this point. In the following chapters, we will learn about the component class, and then implement the component's logic.
 
 {% hint style="success" %}
-[See the results on StackBlitz](https://stackblitz.com/github/ng-girls/todo-list-tutorial/tree/master/examples/04-a-new-component%20)
+[See the results on StackBlitz](https://stackblitz.com/github/ng-girls/todo-list-tutorial/tree/master/examples/0_04-a-new-component)
 {% endhint %}
 
 
