@@ -14,7 +14,7 @@ You should see a page similar this:
 
 StackBlitz is an online editor that provides all the functionality of an online **IDE** by bundling **Visual Studio Code**, the **Angular CLI**, and a preview mode of your application together.
 
-We want to use the starter application for ngGirls. Open the [ngGirls tutorial starter application](https://stackblitz.com/github/ng-girls/todo-list-tutorial/tree/master/examples/01-installations) and click the **Fork** button on the toolbar. This is your own copy of the starter application to use for the tutorial. You can now close any other StackBlitz tabs in your browser.
+We want to use the starter application for ngGirls. Open the [ngGirls tutorial starter application](https://stackblitz.com/github/ng-girls/todo-list-tutorial/tree/master/examples/0_01-installations) and click the **Fork** button on the toolbar. This is your own copy of the starter application to use for the tutorial. You can now close any other StackBlitz tabs in your browser.
 
 ## Using StackBlitz for the tutorial
 
