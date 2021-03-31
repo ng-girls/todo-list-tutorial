@@ -37,7 +37,7 @@ Plugins help the IDE understand the code. Webstorm ships with the necessary plug
 
 ## NodeJS and NPM
 
-**Please check the** [**Angular CLI docs**](https://github.com/angular/angular-cli#prerequisites) **for the up-to-date prerequisites \(NodeJS and NPM versions\)!**
+**Please check the** [**Angular CLI docs**](https://angular.io/guide/setup-local#prerequisites) **for the up-to-date prerequisites \(NodeJS and NPM versions\)!**
 
 Another tool which most web developers are using is **NodeJS**. Once installed, it comes with another tool called **NPM** \(Node Package Manager\).
 
@@ -150,7 +150,7 @@ Follow the instructions on the [StackBlitz instructions](stackblitz.md) page in 
 
 ## Congratulations!
 
-You have a running Angular application! **As long as you're working on the application you should keep the terminal where you run it open.** Any change you make in the project code will be reflected immediately in the web browser.  
+You have a running Angular application! **Keep the terminal where you ran the `ng serve` command open as you're working on the application.** Changes you make to the project code is immediately reflected in the web browser.  
 You can open another terminal to perform tasks in parallel.
 
 To stop the app from running, press `Ctrl+C` in the terminal, or close the terminal.
@@ -158,7 +158,7 @@ To stop the app from running, press `Ctrl+C` in the terminal, or close the termi
 Now we're ready to start developing!
 
 {% hint style="success" %}
-[See the results on StackBlitz](https://stackblitz.com/github/ng-girls/todo-list-tutorial/tree/master/examples/01-installations%20)
+[See the results on StackBlitz](https://stackblitz.com/github/ng-girls/todo-list-tutorial/tree/master/examples/01-installations)
 {% endhint %}
 
 ## _Run the following commands only if npx doesn't work..._
@@ -171,7 +171,7 @@ npm i -g @angular/cli
 ```
 {% endcode %}
 
-This command runs the NPM we recently installed here. It knows where to find the package Angular-CLI package by its name `@angular/cli`. The `i` parameter, is a short form of `install`. The `-g` parameter, stands for the word `global` - we'd like to have the Angular-CLI globally installed on the computer, so that we could use it from any folder to create any future projects.
+This command runs the recently installed NPM program. It knows where to find the package Angular-CLI package by its name `@angular/cli`. The `i` parameter, is a short form of `install`. The `-g` parameter, stands for the word `global` - we'd like to have the Angular-CLI globally installed on the computer, so that we could use it from any folder to create any future projects.
 
 After the installation succeeds, assuming you're still in the folder you created for holding your projects \(`myProjects`\), run the Angular-CLI command `new` to create a new Angular project:
 
@@ -189,4 +189,3 @@ Angular-CLI will ask a couple of questions to help create a new application. Ans
 This can take a while, since many packages are being downloaded from the web and installed.
 
 Now, go back to [running your project](./#running-your-project).
-
