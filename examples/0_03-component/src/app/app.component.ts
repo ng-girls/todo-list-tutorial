@@ -7,7 +7,7 @@ import { Component } from '@angular/core';
       Welcome to {{ title }}!
     </h1>
   `,
-  styleUrls: ['./app.component.css']
+  styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
   title = 'todo-list';
