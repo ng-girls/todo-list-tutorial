@@ -8,13 +8,14 @@ import { Component, OnInit } from '@angular/core';
       The title is: {{ title }}
     </p>
   `,
-  styleUrls: ['./input-button-unit.component.css']
+  styleUrls: ['./input-button-unit.component.scss']
 })
 export class InputButtonUnitComponent implements OnInit {
-  title = 'Hello World';
+  title = 'Hello World!';
+
   constructor() { }
 
-  ngOnInit() {
+  ngOnInit(): void {
   }
 
 }
