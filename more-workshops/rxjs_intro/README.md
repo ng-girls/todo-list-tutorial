@@ -26,7 +26,7 @@ To "start" the Observable you need only one subscription, but it doesn't mean yo
 
 ### Observer
 
-According to RxJS Docs \(link\)
+According to [RxJS Docs](https://rxjs-dev.firebaseapp.com/guide/overview)
 
 > Observer is a collection of callbacks that knows how to listen to values delivered by the Observable
 
