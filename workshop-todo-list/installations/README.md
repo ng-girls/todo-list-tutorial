@@ -158,7 +158,7 @@ To stop the app from running, press `Ctrl+C` in the terminal, or close the termi
 Now we're ready to start developing!
 
 {% hint style="success" %}
-[See the results on StackBlitz](https://stackblitz.com/github/ng-girls/todo-list-tutorial/tree/master/examples/01-installations)
+[See the results on StackBlitz](https://stackblitz.com/github/ng-girls/todo-list-tutorial/tree/master/examples/0_01-installations)
 {% endhint %}
 
 ## _Run the following commands only if npx doesn't work..._
