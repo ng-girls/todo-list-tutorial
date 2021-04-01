@@ -8,18 +8,19 @@ import { Component, OnInit } from '@angular/core';
       The title is: {{ title }}
     </p>
   `,
-  styleUrls: ['./input-button-unit.component.css']
+  styleUrls: ['./input-button-unit.component.scss']
 })
 export class InputButtonUnitComponent implements OnInit {
-  title: string = 'Hello World';
+  title: string = 'Hello World!';
+
   constructor() {
     console.log('in constructor');
     this.changeTitle('My First Angular App');
     console.log(this.title);
   }
 
-  ngOnInit() {
-    this.title = 'Angular CLI Rules!'
+  ngOnInit(): void {
+    this.title = 'Angular CLI Rules!';
   }
 
   changeTitle(newTitle: string) {
