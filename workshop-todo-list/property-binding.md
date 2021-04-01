@@ -21,7 +21,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./input-button-unit.component.css']  
 })    
 export class InputButtonUnitComponent implements OnInit {
-  title = 'Hello World';           
+  title: string = 'Hello World';           
 
   constructor() { }                     
 
@@ -85,7 +85,7 @@ generateTitle(): string {
 ```
 {% endcode %}
 
-Replace one or both of the bindings of the title in the template with the method call \(don't forget the parenthesis!\):
+Replace one or both of the bindings of the title in the template with the method call \(don't forget the parentheses!\):
 
 {% code title="src/app/input-button-unit/input-button-unit.component.ts" %}
 ```markup
@@ -156,11 +156,11 @@ git add -A && git commit -m "Your Message"
 
 Push your changes to GitHub by running this command in your project directory.
 ```text
-git push master
+git push
 ```
 {% endhint %}
 
 {% hint style="success" %}
-[See the results on StackBlitz](https://stackblitz.com/github/ng-girls/todo-list-tutorial/tree/master/examples/06-property-binding)
+[See the results on StackBlitz](https://stackblitz.com/github/ng-girls/todo-list-tutorial/tree/master/examples/0_06-property-binding)
 {% endhint %}
 
