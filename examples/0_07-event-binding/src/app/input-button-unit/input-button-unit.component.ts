@@ -9,20 +9,20 @@ import { Component, OnInit } from '@angular/core';
     </p>
 
     <input [value]="title"
-           (keyup.enter)="changeTitle($event.target.value)">
-
+           (keyup.enter)="changeTitle($event.target.value)"
+    >
     <button (click)="changeTitle('Button Clicked!')">
       Save
     </button>
   `,
-  styleUrls: ['./input-button-unit.component.css']
+  styleUrls: ['./input-button-unit.component.scss']
 })
 export class InputButtonUnitComponent implements OnInit {
-  title = 'Hello World';
+  title: string = 'Hello World!';
 
   constructor() { }
 
-  ngOnInit() {
+  ngOnInit(): void {
   }
 
   changeTitle(newTitle: string) {
