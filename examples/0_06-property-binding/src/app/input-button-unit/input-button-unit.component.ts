@@ -5,20 +5,20 @@ import { Component, OnInit } from '@angular/core';
   template: `
     <p>
       input-button-unit works!
-      The title is: {{ generateTitle() }}
+      The title is: {{ title }}
     </p>
 
     <input [value]="generateTitle()">
     <button>Save</button>
   `,
-  styleUrls: ['./input-button-unit.component.css']
+  styleUrls: ['./input-button-unit.component.scss']
 })
 export class InputButtonUnitComponent implements OnInit {
-  title = 'Hello World';
+  title: string = 'Hello World!';
 
   constructor() { }
 
-  ngOnInit() {
+  ngOnInit(): void {
     setTimeout(() => {
       this.title = 'This is not the title you are looking for';
     }, 3000);
