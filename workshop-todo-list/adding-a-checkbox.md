@@ -43,7 +43,7 @@ export class TodoItemComponent implements OnInit {
   completeItem() {
     this.update.emit({
       item: this.item,
-      changes: {completed: !this.item.completed}
+      changes: { completed: !this.item.completed }
     });
   }
 ```
@@ -112,7 +112,7 @@ And create additional method to handle this update item event. Very similar to `
 
 {% code title="src/app/list-manager/list-manager.component.ts" %}
 ```markup
-updateItem(item, changes) {
+updateItem(item: TodoItem, changes: object) {
   this.todoListService.updateItem(item, changes);
 }
 ```
