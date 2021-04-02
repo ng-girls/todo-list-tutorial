@@ -144,5 +144,5 @@ Run the following command to connect your code to your repository. Make sure to 
 
 ```text
 git remote add origin https://github.com/{YOUR_USERNAME}/{YOUR_REPO}.git
-git push -u origin master
+git push -u origin main
 ```
