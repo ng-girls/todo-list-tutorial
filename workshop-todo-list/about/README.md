@@ -24,14 +24,14 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./input-button-unit.component.css']  
 })    
 export class InputButtonUnitComponent implements OnInit {
-  title: string = 'Hello World';
+  title = 'Hello World';
 
   constructor() { }                     
 
   ngOnInit() {
   }
 
-  changeTitle(newTitle: string) {
+  changeTitle(newTitle: string): void {
     this.title = newTitle;
   }
 }
