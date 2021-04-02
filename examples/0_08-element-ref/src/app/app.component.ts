@@ -9,7 +9,7 @@ import { Component } from '@angular/core';
 
     <app-input-button-unit></app-input-button-unit>
   `,
-  styleUrls: ['./app.component.css']
+  styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
   title = 'todo-list';
