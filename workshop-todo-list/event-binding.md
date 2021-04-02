@@ -24,7 +24,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./input-button-unit.component.css']
 })
 export class InputButtonUnitComponent implements OnInit {
-  title: string = 'Hello World';
+  title = 'Hello World';
 
   constructor() { }
 
@@ -40,7 +40,7 @@ First, let's implement `changeTitle`. It will receive the new title as its argum
 
 {% code title="src/app/input-button-unit/input-button-unit.component.ts" %}
 ```typescript
-changeTitle(newTitle: string) {
+changeTitle(newTitle: string): void {
   this.title = newTitle;
 }
 ```
@@ -177,14 +177,14 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./input-button-unit.component.css']
 })
 export class InputButtonUnitComponent implements OnInit {
-  title: string = 'Hello World';
+  title = 'Hello World';
 
   constructor() { }
 
   ngOnInit() {
   }
 
-  changeTitle(newTitle: string) {
+  changeTitle(newTitle: string): void {
     this.title = newTitle;
   }
 }

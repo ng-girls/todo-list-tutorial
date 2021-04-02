@@ -102,13 +102,14 @@ cd the-path-to-your-folder/myProjects
 Now, create an Angular project by running:
 
 ```text
-npx @angular/cli@next new todo-list
+npx @angular/cli@latest new todo-list
 ```
 
 Angular CLI will ask a couple of questions to help create a new application. Answer the questions as shown below:
 
-1. Would you like to add Angular routing? \(y/N\): **N** 
-2. Which stylesheet format would you like to use? \(Use arrow keys\): Select **SCSS**
+1. Do you want to enforce stricter type checking and stricter bundle budgets in the workspace? \(y/N\): **N**
+2. Would you like to add Angular routing? \(y/N\): **N** 
+3. Which stylesheet format would you like to use? \(Use arrow keys\): Select **SCSS**
 
 This can take a while, since many packages are being downloaded from the web and installed.
 
