@@ -14,7 +14,7 @@ Add the following line inside the `InputButtonUnitComponent` Class, which define
 
 {% code title="src/app/input-button-unit/input-button-unit.component.ts" %}
 ```typescript
-@Output() submit: EventEmitter<string> = new EventEmitter();
+@Output() submit: EventEmitter<string> = new EventEmitter<string>();
 ```
 {% endcode %}
 
@@ -32,7 +32,7 @@ Now, whenever we call `this.submit.emit()`, an event will be emitted to the pare
 
 {% code title="src/app/input-button-unit/input-button-unit.component.ts" %}
 ```typescript
-changeTitle(newTitle: string) {
+changeTitle(newTitle: string): void {
   this.submit.emit(newTitle);
 }
 ```
@@ -110,11 +110,11 @@ git add -A && git commit -m "Your Message"
 
 Push your changes to GitHub by running this command in your project directory.
 ```text
-git push master
+git push
 ```
 {% endhint %}
 
 {% hint style="success" %}
-[See the results on StackBlitz](https://stackblitz.com/github/ng-girls/todo-list-tutorial/tree/master/examples/12-add-items)
+[See the results on StackBlitz](https://stackblitz.com/github/ng-girls/todo-list-tutorial/tree/master/examples/0_12-add-items)
 {% endhint %}
 
