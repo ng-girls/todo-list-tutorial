@@ -6,22 +6,20 @@ import { Component, OnInit } from '@angular/core';
     <input #inputElementRef
            [value]="title"
            (keyup.enter)="changeTitle($event.target.value)">
-
-    <button (click)="changeTitle(inputElementRef.value)">
+    <button (click)="changeTitle('Button Clicked!')">
       Save
     </button>
   `,
-  styleUrls: ['./input-button-unit.component.css']
+  styleUrls: ['./input-button-unit.component.scss']
 })
 export class InputButtonUnitComponent implements OnInit {
   title = 'Hello World';
-
   constructor() { }
 
-  ngOnInit() {
+  ngOnInit(): void {
   }
 
-  changeTitle(newTitle: string) {
+  changeTitle(newTitle: string): void {
     this.title = newTitle;
   }
 }
