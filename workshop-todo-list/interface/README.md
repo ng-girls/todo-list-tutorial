@@ -43,7 +43,7 @@ export interface TodoItem {
 ```
 {% endcode %}
 
-Let's define the item @Input to be of the type we've created. This will allow the IDE to suggest us available members when we use item in the component class and template.
+Let's define the item `@Input` to be of the type we've created. This will allow the IDE to suggest us available members when we use item in the component class and template.
 
 {% code title="src/app/todo-item/todo-item.component.ts" %}
 ```typescript
@@ -65,7 +65,7 @@ Now, let's define the list of todo items to contain objects of the `TodoItem` ty
 {% code title="src/app/app.component.ts" %}
 ```typescript
 export class AppComponent {
-  title = 'app';
+  title = 'todo-list';
   todoList: TodoItem[] = [
     {title: 'install NodeJS'},
     {title: 'install Angular CLI'},
@@ -100,11 +100,11 @@ git add -A && git commit -m "Your Message"
 
 Push your changes to GitHub by running this command in your project directory.
 ```text
-git push master
+git push
 ```
 {% endhint %}
 
 {% hint style="success" %}
-[See the results on StackBlitz](https://stackblitz.com/github/ng-girls/todo-list-tutorial/tree/master/examples/11-interface)
+[See the results on StackBlitz](https://stackblitz.com/github/ng-girls/todo-list-tutorial/tree/master/examples/0_11-interface)
 {% endhint %}
 
