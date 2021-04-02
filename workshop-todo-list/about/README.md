@@ -21,14 +21,14 @@ import { Component, OnInit } from '@angular/core';
       Save
     </button>
   `,  
-  styleUrls: ['./input-button-unit.component.css']  
+  styleUrls: ['./input-button-unit.component.scss']  
 })    
 export class InputButtonUnitComponent implements OnInit {
   title = 'Hello World';
 
   constructor() { }                     
 
-  ngOnInit() {
+  ngOnInit(): void {
   }
 
   changeTitle(newTitle: string): void {

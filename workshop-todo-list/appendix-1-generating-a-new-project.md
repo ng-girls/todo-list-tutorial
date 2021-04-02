@@ -37,7 +37,7 @@ after we created the project we will get file in this format
 ├── README.md // your readme
 ├── src // your code in here
 │   ├── app
-│   │   ├── app.component.css
+│   │   ├── app.component.scss
 │   │   ├── app.component.html
 │   │   ├── app.component.spec.ts
 │   │   ├── app.component.ts
@@ -51,7 +51,7 @@ after we created the project we will get file in this format
 │   ├── index.html
 │   ├── main.ts
 │   ├── polyfills.ts
-│   ├── styles.css
+│   ├── styles.scss
 │   ├── test.ts
 │   ├── tsconfig.json // typescript configuration
 │   └── typings.d.ts
