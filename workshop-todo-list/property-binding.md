@@ -18,14 +18,14 @@ import { Component, OnInit } from '@angular/core';
       The title is: {{ title }}
     </p>
   `,  
-  styleUrls: ['./input-button-unit.component.css']  
+  styleUrls: ['./input-button-unit.component.scss']  
 })    
 export class InputButtonUnitComponent implements OnInit {
   title = 'Hello World';           
 
   constructor() { }                     
 
-  ngOnInit() {
+  ngOnInit(): void {
   }
 }
 ```
@@ -103,7 +103,7 @@ Angular has a very efficient change detection mechanism. It looks for bindings i
 
 {% code title="src/app/input-button-unit/input-button-unit.component.ts" %}
 ```typescript
-ngOnInit() {
+ngOnInit(): void {
   setTimeout(() => {
     this.title = 'This is not the title you are looking for';
   }, 3000);

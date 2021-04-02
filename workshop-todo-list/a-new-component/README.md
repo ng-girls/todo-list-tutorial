@@ -28,7 +28,7 @@ Let's take a look of what the Angular CLI created for us.
 
 It created a new folder called `src/app/input-button-unit`. There are three files there \(or four if you're not using inline-template\):
 
-* `input-button-unit.component.css` - this is where the style that's specific to the component will be placed.
+* `input-button-unit.component.scss` - this is where the style that's specific to the component will be placed.
 * `input-button-unit.component.spec.ts` - this is a file for testing the component. We will not deal with it in this tutorial.
 * `input-button-unit.component.ts` - this is the component file where we will define its logic.
 * `input-button-unit.component.html` - this is the HTML template file, if you're not using inline-template.
@@ -40,7 +40,7 @@ Open the file `input-button-unit.component.ts`. You can see that the Angular CLI
 @Component({
   selector: 'app-input-button-unit',
   templateUrl: './input-button-unit.component.html',
-  styleUrls: ['./input-button-unit.component.css']
+  styleUrls: ['./input-button-unit.component.scss']
 })
 ```
 {% endcode %}

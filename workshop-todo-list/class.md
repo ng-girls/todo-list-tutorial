@@ -40,7 +40,7 @@ The Angular CLI adds this statement to remind us that it's best to initialize th
 
 {% code title="src/app/input-button-unit/input-button-unit.component.ts" %}
 ```typescript
-ngOnInit() {
+ngOnInit(): void {
 }
 ```
 {% endcode %}
@@ -91,7 +91,7 @@ constructor() {
   this.title = 'I Love Angular';
 }
 
-ngOnInit() { 
+ngOnInit(): void { 
   this.title = 'Angular CLI Rules!';
 }
 ```

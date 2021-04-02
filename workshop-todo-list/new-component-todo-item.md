@@ -57,14 +57,14 @@ import { Component, Input, OnInit } from '@angular/core';
   template: `
     {{ item.title }}
   `,
-  styleUrls: ['./todo-item.component.css']
+  styleUrls: ['./todo-item.component.scss']
 })
 export class TodoItemComponent implements OnInit {
   @Input() item;
 
   constructor() { }
 
-  ngOnInit() {
+  ngOnInit(): void {
   }
 
 }
