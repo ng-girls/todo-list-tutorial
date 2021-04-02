@@ -6,7 +6,7 @@ import { Component, OnInit } from '@angular/core';
     <input #inputElementRef
            [value]="title"
            (keyup.enter)="changeTitle($event.target.value)">
-    <button (click)="changeTitle('Button Clicked!')">
+    <button (click)="changeTitle(inputElementRef.value)">
       Save
     </button>
   `,
