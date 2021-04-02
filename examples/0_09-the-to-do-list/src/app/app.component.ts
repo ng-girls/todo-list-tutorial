@@ -15,7 +15,7 @@ import { Component } from '@angular/core';
       </li>
     </ul>
   `,
-  styleUrls: ['./app.component.css']
+  styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
   title = 'todo-list';
