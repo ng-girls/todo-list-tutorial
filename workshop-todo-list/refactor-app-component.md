@@ -27,7 +27,7 @@ Use the Angular Generator to create the component, then make the component [use 
       Welcome to {{ title }}!
     </h1>
   `,
-  styleUrls: ['./app.component.css']
+  styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
   title = 'My To Do List APP';
@@ -51,7 +51,7 @@ import { TodoItem } from '../interfaces/todo-item';
       </li>
     </ul>
   `,
-  styleUrls: ['./list-manager.component.css']
+  styleUrls: ['./list-manager.component.scss']
 })
 export class ListManagerComponent implements OnInit {
   todoList: TodoItem[] = [
@@ -65,10 +65,10 @@ export class ListManagerComponent implements OnInit {
 
   constructor() { }
 
-  ngOnInit() {
+  ngOnInit(): void {
   }
 
-  addItem(title: string) {    
+  addItem(title: string): void {    
     this.todoList.push({ title });
   }
 }
@@ -103,11 +103,11 @@ git add -A && git commit -m "Your Message"
 
 Push your changes to GitHub by running this command in your project directory.
 ```text
-git push master
+git push
 ```
 {% endhint %}
 
 {% hint style="success" %}
-[See the results on StackBlitz](https://stackblitz.com/github/ng-girls/todo-list-tutorial/tree/master/examples/13-refactor-app-component)
+[See the results on StackBlitz](https://stackblitz.com/github/ng-girls/todo-list-tutorial/tree/master/examples/0_13-refactor-app-component)
 {% endhint %}
 
