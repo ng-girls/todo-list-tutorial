@@ -116,7 +116,7 @@ export class TodoListService {
 
   constructor() { }
 
-  getTodoList() {
+  getTodoList(): TodoItem[] {
     return this.todoList;
   }
 }
@@ -141,7 +141,7 @@ Typescript helps us furthermore by giving a shortcut for assigning the parameter
 export class ListManagerComponent implements OnInit {
   todoListService: TodoListService;
 
-  constructor(todoListService:TodoListService) { 
+  constructor(todoListService: TodoListService) { 
     this.todoListService = todoListService;
   }
 }
@@ -152,7 +152,7 @@ export class ListManagerComponent implements OnInit {
 ```typescript
 export class ListManagerComponent implements OnInit {
 
-  constructor(private todoListService:TodoListService) { }
+  constructor(private todoListService: TodoListService) { }
 }
 ```
 
@@ -165,7 +165,7 @@ So let's go on and use the service in the `list-manager` component.
 export class ListManagerComponent implements OnInit {
   todoList: TodoItem[];
 
-  constructor(private todoListService:TodoListService) { }
+  constructor(private todoListService: TodoListService) { }
 ```
 
 * Make sure the `TodoListService` is imported.
@@ -200,11 +200,11 @@ git add -A && git commit -m "Your Message"
 
 Push your changes to GitHub by running this command in your project directory.
 ```text
-git push master
+git push
 ```
 {% endhint %}
 
 {% hint style="success" %}
-[See the results on StackBlitz](https://stackblitz.com/github/ng-girls/todo-list-tutorial/tree/master/examples/15-creating-a-service)
+[See the results on StackBlitz](https://stackblitz.com/github/ng-girls/todo-list-tutorial/tree/master/examples/0_15-creating-a-service)
 {% endhint %}
 
