@@ -8,7 +8,7 @@ We'll add a new method to the service, called `addItem`, like so:
 
 {% code title="src/app/services/todo-list.service.ts" %}
 ```typescript
-addItem(item: TodoItem) { 
+addItem(item: TodoItem): void { 
   this.todoList.push(item);
 }
 ```
@@ -18,7 +18,7 @@ Now we can change our `list-manager` component to call the `addItem` method dire
 
 {% code title="src/app/list-manager/list-manager.component.ts" %}
 ```typescript
-addItem(title: string) {
+addItem(title: string): void {
     this.todoListService.addItem({ title });
 }
 ```
@@ -28,7 +28,23 @@ addItem(title: string) {
 * There may be additional logic when calling these methods, i.e. saving the changes in a database \(which we'll implement later\).
 * A better way to handle data is using _immutable objects_, but that's a bigger topic than we can cover in this tutorial at the moment.
 
+{% hint style="info" %}
+💾 **Save your code to GitHub**
+
+StackBlitz users - press **Save** in the toolbar and continue to the next section of the tutorial.
+
+Commit all your changes by running this command in your project directory.
+```text
+git add -A && git commit -m "Your Message"
+```
+
+Push your changes to GitHub by running this command in your project directory.
+```text
+git push
+```
+{% endhint %}
+
 {% hint style="success" %}
-[See the results on StackBlitz](https://stackblitz.com/github/ng-girls/todo-list-tutorial/tree/master/examples/16-add-items-using-the-service)
+[See the results on StackBlitz](https://stackblitz.com/github/ng-girls/todo-list-tutorial/tree/master/examples/0_16-add-items-using-the-service)
 {% endhint %}
 
