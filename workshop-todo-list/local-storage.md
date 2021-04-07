@@ -95,7 +95,7 @@ This method will save the given data \(object, list, etc.\) under the given key.
 
 {% code title="src/app/services/storage.service.ts" %}
 ```typescript
-  setData(key: string, data: any) {
+  setData(key: string, data: any): void {
     localStorage.setItem(key, JSON.stringify(data));
   }
 ```
@@ -105,7 +105,7 @@ That's it! Let's use this service in our `ToDoListService`.
 
 > As mentioned above, this service could have a wider API with more robust methods. When you write a service for accessing a database you will have other methods for adding, modifying and deleting specific items.
 
-## Use the ListStorageService
+## Use the StorageService
 
 We'd like to use the newly created service from within `TodoListService`. First we'll inject the `StorageService` into the `TodoListService`, just like we injected the latter into `ListManagerComponent`. We'll ask for an instance of the service in the constructor, and make sure its class is imported. We'll move the default todo list outside the class. We'll also add a constant with the key of our storage.
 
@@ -119,7 +119,7 @@ import { StorageService } from './storage.service';
 
 const todoListStorageKey = 'Todo_List';
 
-const defaultTodoList = [
+const defaultTodoList: TodoItem[] = [
   {title: 'install NodeJS'},
   {title: 'install Angular CLI'},
   {title: 'create new app'},
@@ -158,7 +158,7 @@ We'll push an item to the todoList \(same as before\) and then update the storag
 
 {% code title="src/app/services/todo-list.service.ts" %}
 ```typescript
-addItem(item: TodoItem) {
+addItem(item: TodoItem): void {
   this.todoList.push(item);
   this.storageService.setData(todoListStorageKey, this.todoList);
 }
@@ -171,7 +171,7 @@ Here we want to update an existing item. We'll assume that we hold the original 
 
 {% code title="src/app/services/todo-list.service.ts" %}
 ```typescript
-updateItem(item: TodoItem, changes) {
+updateItem(item: TodoItem, changes): void {
   const index = this.todoList.indexOf(item);
   this.todoList[index] = { ...item, ...changes };
   this.storageService.setData(todoListStorageKey, this.todoList);
@@ -196,13 +196,13 @@ We'd like to reduce code repetition, and extract the repeated code into a method
 
 {% code title="src/app/services/todo-list.service.ts" %}
 ```typescript
-saveList() {
+saveList(): void {
     this.storageService.setData(todoListStorageKey, this.todoList);
 }
 ```
 {% endcode %}
 
-Now make sure you call `saveList` from within addItem and `updateItem`.
+Now make sure you call `saveList` from within `addItem` and `updateItem`.
 
 ### deleteItem
 
@@ -210,7 +210,7 @@ This method will remove an item from the list. We look for the item in the list,
 
 {% code title="src/app/services/todo-list.service.ts" %}
 ```typescript
-deleteItem(item: TodoItem) {
+deleteItem(item: TodoItem): void {
   const index = this.todoList.indexOf(item);
   this.todoList.splice(index, 1);
   this.saveList();
@@ -250,27 +250,28 @@ export class TodoListService {
       storageService.getData(todoListStorageKey) || defaultTodoList;
   }
 
-  saveList() {
+  saveList(): void {
     this.storageService.setData(todoListStorageKey, this.todoList);
 }
 
-  addItem(item: TodoItem) {
+  addItem(item: TodoItem): void {
     this.todoList.push(item);
     this.saveList();
   }
 
-  updateItem(item, changes) {
+  updateItem(item, changes): void {
     const index = this.todoList.indexOf(item);
     this.todoList[index] = { ...item, ...changes };
     this.saveList();
   }
 
-  deleteItem(item) {
+  deleteItem(item): void {
     const index = this.todoList.indexOf(item);
     this.todoList.splice(index, 1);
     this.saveList();
   }
-  getTodoList() {
+
+  getTodoList(): TodoItem[] {
     return this.todoList;
   }
 
@@ -294,11 +295,11 @@ git add -A && git commit -m "Your Message"
 
 Push your changes to GitHub by running this command in your project directory.
 ```text
-git push master
+git push
 ```
 {% endhint %}
 
 {% hint style="success" %}
-[See the results on StackBlitz](https://stackblitz.com/github/ng-girls/todo-list-tutorial/tree/master/examples/17-local-storage)
+[See the results on StackBlitz](https://stackblitz.com/github/ng-girls/todo-list-tutorial/tree/master/examples/0_17-local-storage)
 {% endhint %}
 
