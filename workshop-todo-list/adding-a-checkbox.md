@@ -36,11 +36,11 @@ When we click on the checkbox, it will run the `completeItem` method. Let's talk
 ```javascript
 export class TodoItemComponent implements OnInit {
   @Input() item: TodoItem;
-  @Output() remove: EventEmitter<TodoItem> = new EventEmitter();
-  @Output() update: EventEmitter<any> = new EventEmitter();
+  @Output() remove: EventEmitter<TodoItem> = new EventEmitter<TodoItem>();
+  @Output() update: EventEmitter<any> = new EventEmitter<any>();
 
   // put this method below ngOnInit
-  completeItem() {
+  completeItem(): void {
     this.update.emit({
       item: this.item,
       changes: {completed: !this.item.completed}
@@ -49,7 +49,7 @@ export class TodoItemComponent implements OnInit {
 ```
 {% endcode %}
 
-In order for the checkbox-input to reflect the completed-status, we need to add property-binding for it's checked-status like this:
+In order for the checkbox-input to reflect the completed-status, we need to add property-binding for its checked-status like this:
 
 {% code title="src/app/todo-item/todo-item.component.ts" %}
 ```markup
@@ -87,7 +87,7 @@ And finally, add the CSS to our `todo-item.component.scss` file:
   }
 ```
 
-Next step is to tell the parent element list-manager what to do, when update event is emitted. In order to do so we have to bind update action and update method that will trigger a proper function in TodoListService. So we apply here:
+Next step is to tell the parent element list-manager what to do, when update event is emitted. In order to do so we have to bind update action and update method that will trigger a proper function in TodoListService. Find the todo-item selector in the template (it looks like this):
 
 {% code title="src/app/list-manager/list-manager.component.ts" %}
 ```markup
@@ -97,7 +97,7 @@ Next step is to tell the parent element list-manager what to do, when update eve
 ```
 {% endcode %}
 
-Next modifications:
+And add the modifications:
 
 {% code title="src/app/list-manager/list-manager.component.ts" %}
 ```markup
@@ -108,11 +108,11 @@ Next modifications:
 ```
 {% endcode %}
 
-And create additional method to handle this update item event. Very similar to `removeItem` function:
+Then create additional method to handle this update item event. It will look very similar to `removeItem` function:
 
 {% code title="src/app/list-manager/list-manager.component.ts" %}
 ```markup
-updateItem(item, changes) {
+updateItem(item, changes): void {
   this.todoListService.updateItem(item, changes);
 }
 ```
@@ -132,11 +132,11 @@ git add -A && git commit -m "Your Message"
 
 Push your changes to GitHub by running this command in your project directory.
 ```text
-git push master
+git push
 ```
 {% endhint %}
 
 {% hint style="success" %}
-[See the results on StackBlitz](https://stackblitz.com/github/ng-girls/todo-list-tutorial/tree/master/examples/19-adding-a-checkbox)
+[See the results on StackBlitz](https://stackblitz.com/github/ng-girls/todo-list-tutorial/tree/master/examples/0_19-adding-a-checkbox)
 {% endhint %}
 
