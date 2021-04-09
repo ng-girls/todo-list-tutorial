@@ -26,7 +26,7 @@ Add a new output to the `TodoItemComponent` class, which will emit the removed i
 
 {% code title="src/app/todo-item/todo-item.component.ts" %}
 ```typescript
-@Output() remove: EventEmitter<TodoItem> = new EventEmitter();
+@Output() remove: EventEmitter<TodoItem> = new EventEmitter<TodoItem>();
 ```
 {% endcode %}
 
@@ -41,7 +41,7 @@ import { Component, OnInit, Input, EventEmitter, Output } from '@angular/core';
 Add a method to the `ItemComponent` class to actually emit the event. This method will be called when the user clicks the "remove" button:
 
 ```typescript
-removeItem() {
+removeItem(): void {
   this.remove.emit(this.item);
 }
 ```
@@ -63,7 +63,7 @@ Now we just need to add the method `removeItem()` to the `ListManagerComponent` 
 
 {% code title="src/app/list-manager/list-manager.component.ts" %}
 ```typescript
-removeItem(item) {
+removeItem(item): void {
   this.todoListService.deleteItem(item);
 }
 ```
@@ -81,11 +81,10 @@ git add -A && git commit -m "Your Message"
 
 Push your changes to GitHub by running this command in your project directory.
 ```text
-git push master
+git push
 ```
 {% endhint %}
 
 {% hint style="success" %}
-[See the results on StackBlitz](https://stackblitz.com/github/ng-girls/todo-list-tutorial/tree/master/examples/18-remove-item)
+[See the results on StackBlitz](https://stackblitz.com/github/ng-girls/todo-list-tutorial/tree/master/examples/0_18-remove-item)
 {% endhint %}
-
