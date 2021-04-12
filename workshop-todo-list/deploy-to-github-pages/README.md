@@ -8,12 +8,21 @@ Follow the instructions on the [StackBlitz instructions](stackblitz.md) page in 
 
 To deploy our changes to GitHub pages we will use the `angular-cli-ghpages` package [https://github.com/angular-schule/angular-cli-ghpages](https://github.com/angular-schule/angular-cli-ghpages)
 
-* You need to save the changes you made in the project
 * You need to install `angular-cli-ghpages`
+* You need to save the changes you made in the project
+* Run the deploy command
 
-## Commit all the changes you made in the project
+## Install `angular-cli-ghpages`
 
-Commit your changes by running this command in your project directory.
+We'll use an Angular CLI command to add this library to our app and automatically configure the deploy action. Run the following command:
+
+```text
+ng add angular-cli-ghpages
+```
+
+## Commit the changes
+
+Commit your changes made by adding `angular-cli-ghpages` by running this command in your project directory.
 
 ```text
 git add -A && git commit -m "Your Message"
@@ -22,25 +31,18 @@ git add -A && git commit -m "Your Message"
 Then run the following command to push the changes 
 
 ```text
-git push -u origin master
+git push
 ```
 
 ## Deploying to GitHub Pages
 
-First install `angular-cli-ghpages`.
+Run:
 
 ```text
-npm i -g angular-cli-ghpages
+ng deploy --base-href="/[your-repo-name]/"
 ```
 
-Then run:
-
-```text
-ng build --prod --base-href="./[your-repo-name]"
-angular-cli-ghpages --dir=dist/todo-list
-```
-
-💡 `./[your-repo-name]` is a placeholder for your github repository name. So if you project has the name `https://github.com/myname/ng-girls` the value has to be: `--base-href="./ng-girls"` ... on other Operating Systems it might be also "/ng-girls/"
+💡 `/[your-repo-name]/` is a placeholder for your github repository name. So if you project has the name `https://github.com/myname/ng-girls` the value has to be: `--base-href="/ng-girls/"`.
 
 Your app will be available at [https://\[your-GH-username\].github.io/\[repo-name\]/](https://[your-GH-username].github.io/[repo-name])
 
@@ -60,14 +62,13 @@ in terminal. Add connection to new repository
 
 ```text
 git remote add origin https://github.com/{YOUR_USERNAME}/{YOUR_REPO}.git
-git push -u origin master
+git push -u origin main
 ```
 
 And build website again:
 
 ```text
-ng build --prod --base-href="/[your-repo-name]/"
-angular-cli-ghpages --dir=dist/todo-list
+ng deploy --base-href="/[your-repo-name]/"
 ```
 
 ### Problem on Windows
