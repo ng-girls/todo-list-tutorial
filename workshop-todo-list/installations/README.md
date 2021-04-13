@@ -163,7 +163,7 @@ Now we're ready to start developing!
 
 ## Deploy your app
 
-At this point you can already deploy your app. Meaning it will be available to everyone online! There are several companies and methods that can host your web app. Choose a method and get the instructions in[  ](../appendix-1-deploying-your-app.md)[Appendix 1: Deploying your app.](../appendix-1-deploying-your-app.md)
+At this point you can already deploy your app. Meaning it will be available to everyone online! There are several companies and methods that can host your web app. Choose a method and get the instructions in[  ](../appendix-1-deploying-your-app/)[Appendix 1: Deploying your app.](../appendix-1-deploying-your-app/)
 
 ## _Run the following commands only if npx doesn't work..._
 
