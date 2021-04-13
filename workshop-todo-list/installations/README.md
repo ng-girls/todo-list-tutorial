@@ -75,9 +75,8 @@ You can download it and follow the installation instructions [here](https://git-
 When asked if you'd like to install **git bash**, say yes.
 
 {% hint style="info" %}
-We recommend installing or updating to the latest version of Git to take advantage of their security updates. 
+We recommend installing or updating to the latest version of Git to take advantage of their security updates.
 {% endhint %}
-
 
 ## GitHub
 
@@ -85,9 +84,9 @@ We recommend installing or updating to the latest version of Git to take advanta
 
 ## Creating a project with Angular CLI
 
-The [Angular CLI](https://cli.angular.io) is a powerful tool that simplifies a lot of the development process. It also installs libraries you'll use in your current and future projects. 
+The [Angular CLI](https://cli.angular.io) is a powerful tool that simplifies a lot of the development process. It also installs libraries you'll use in your current and future projects.
 
-With a relatively new feature of NPM, you don't need to install the Angular CLI on your computer to create a project. The command `npx`  knows where to find the Angular-CLI package by its name `@angular/cli` . It will download the package \(if you don't already have it installed\) and run its command `new` .
+With a relatively new feature of NPM, you don't need to install the Angular CLI on your computer to create a project. The command `npx` knows where to find the Angular-CLI package by its name `@angular/cli` . It will download the package \(if you don't already have it installed\) and run its command `new` .
 
 > Even if you have Angular-CLI installed from a previous project you were working on, we'll tell npx to use the latest version. So if your installed version is an old one, you'll still get a project created with the newest version.
 
@@ -162,6 +161,10 @@ Now we're ready to start developing!
 [See the results on StackBlitz](https://stackblitz.com/github/ng-girls/todo-list-tutorial/tree/master/examples/0_01-installations)
 {% endhint %}
 
+## Deploy your app
+
+At this point you can already deploy your app. Meaning it will be available to everyone online! There are several companies and methods that can host your web app. Choose a method and get the instructions in[  ](../appendix-1-deploying-your-app.md)[Appendix 1: Deploying your app.](../appendix-1-deploying-your-app.md)
+
 ## _Run the following commands only if npx doesn't work..._
 
 Install the Angular-CLI globally by running:
@@ -190,3 +193,4 @@ Angular-CLI will ask a couple of questions to help create a new application. Ans
 This can take a while, since many packages are being downloaded from the web and installed.
 
 Now, go back to [running your project](./#running-your-project).
+

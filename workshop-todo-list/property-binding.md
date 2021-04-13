@@ -75,7 +75,7 @@ Try this out and see the result in the browser!
 
 The expressions that we can bind to in the template are not limited to class properties. They can be a method call or almost any other valid JavaScript expression.
 
-![lab-icon](../.gitbook/assets/lab%20%281%29.jpg) **Playground**: For example, let's bind the input value to a method call that returns a value. First, let's add the method `generateTitle` anywhere inside the class, but not inside any of its methods.
+![lab-icon](../.gitbook/assets/lab%20%284%29%20%284%29.jpg) **Playground**: For example, let's bind the input value to a method call that returns a value. First, let's add the method `generateTitle` anywhere inside the class, but not inside any of its methods.
 
 {% code title="src/app/input-button-unit/input-button-unit.component.ts" %}
 ```typescript
@@ -99,7 +99,7 @@ Replace one or both of the bindings of the title in the template with the method
 
 Angular has a very efficient change detection mechanism. It looks for bindings in the components' templates, and then updates the value each time the bound expression is changed.
 
-![lab-icon](../.gitbook/assets/lab%20%281%29.jpg) **Playground**: To show this, let's change the value of the title after a few seconds and see what happens. Call the `setTimeout` function inside `ngOnInit`:
+![lab-icon](../.gitbook/assets/lab%20%284%29%20%2810%29.jpg) **Playground**: To show this, let's change the value of the title after a few seconds and see what happens. Call the `setTimeout` function inside `ngOnInit`:
 
 {% code title="src/app/input-button-unit/input-button-unit.component.ts" %}
 ```typescript
@@ -150,11 +150,13 @@ However, **this is highly discouraged in Angular. You should never access the DO
 StackBlitz users - press **Save** in the toolbar and continue to the next section of the tutorial.
 
 Commit all your changes by running this command in your project directory.
+
 ```text
 git add -A && git commit -m "Your Message"
 ```
 
 Push your changes to GitHub by running this command in your project directory.
+
 ```text
 git push
 ```

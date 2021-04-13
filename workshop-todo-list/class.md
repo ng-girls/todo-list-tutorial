@@ -132,7 +132,7 @@ constructor() {
 ```
 {% endcode %}
 
-![lab-icon](../.gitbook/assets/lab%20%281%29.jpg) **Playground**: You can try calling the method with different arguments \(the string passed inside the brackets\) from `ngOnInit`. Try calling it before or after assigning a value directly to title. Try calling it a few times from the same method. See the result in the browser.
+![lab-icon](../.gitbook/assets/lab%20%284%29%20%284%29.jpg) **Playground**: You can try calling the method with different arguments \(the string passed inside the brackets\) from `ngOnInit`. Try calling it before or after assigning a value directly to title. Try calling it a few times from the same method. See the result in the browser.
 
 ## Debugging Tip
 
@@ -161,11 +161,13 @@ The browser's console is a part of its Dev Tools. You can see how to open the co
 StackBlitz users - press **Save** in the toolbar and continue to the next section of the tutorial.
 
 Commit all your changes by running this command in your project directory.
+
 ```text
 git add -A && git commit -m "Your Message"
 ```
 
 Push your changes to GitHub by running this command in your project directory.
+
 ```text
 git push
 ```

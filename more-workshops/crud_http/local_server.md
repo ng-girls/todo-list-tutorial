@@ -30,7 +30,7 @@ The server has required packages, or dependent pieces of code, it needs to run. 
 npm install
 ```
 
-We can now pass in the connection string to access the database to the server and start up the server. You will need the connection string with your password replaced for the `<password>` part. 
+We can now pass in the connection string to access the database to the server and start up the server. You will need the connection string with your password replaced for the `<password>` part.
 
 {% hint style="warning" %}
 Windows users - please use GitBash for running the command to start the server.

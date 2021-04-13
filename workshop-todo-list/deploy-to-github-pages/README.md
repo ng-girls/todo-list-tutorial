@@ -28,7 +28,7 @@ Commit your changes made by adding `angular-cli-ghpages` by running this command
 git add -A && git commit -m "Your Message"
 ```
 
-Then run the following command to push the changes 
+Then run the following command to push the changes
 
 ```text
 git push

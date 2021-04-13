@@ -9,7 +9,7 @@ Angular gives us different style encapsulation methods, but we'll stick to the d
 The Angular CLI has generated a general stylesheet for us at `src/style.scss`. Paste the following code into this file:
 
 {% code title="src/style.scss" %}
-```scss
+```css
 html, body, div, span,
 h1, p, ul, li {
   padding: 0;
@@ -114,7 +114,7 @@ Now we'll add some component-specific styles.
 Add the following style to `input-button-unit.component.scss`:
 
 {% code title="src/app/input-button-unit/input-button-unit.component.scss" %}
-```scss
+```css
 .todo-input {
   padding: 4px 10px 4px;
   font-size: 16px;
@@ -151,7 +151,7 @@ We need to add the `todo-input` class to the `input` element:
 Now let's add style specifically to the `list-manager` component. Open the file `list-manager.component.scss` and paste the following style inside:
 
 {% code title="src/app/list-manager/list-manager.component.scss" %}
-```scss
+```css
 .todo-app {
   position: relative;
   width: 400px;
@@ -215,7 +215,7 @@ template: `
 Finally, add the following style to `todo-item.component.scss`:
 
 {% code title="src/app/todo-item/todo-item.component.scss" %}
-```scss
+```css
 .todo-item {
   padding: 10px 0;
   border-top: solid 1px #ddd;
@@ -257,11 +257,13 @@ Note: You can use [SCSS](https://www.freecodecamp.org/news/the-complete-guide-to
 StackBlitz users - press **Save** in the toolbar and continue to the next section of the tutorial.
 
 Commit all your changes by running this command in your project directory.
+
 ```text
 git add -A && git commit -m "Your Message"
 ```
 
 Push your changes to GitHub by running this command in your project directory.
+
 ```text
 git push
 ```

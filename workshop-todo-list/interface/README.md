@@ -94,11 +94,13 @@ Now try to delete the title of one of the objects in the list. What happens?
 StackBlitz users - press **Save** in the toolbar and continue to the next section of the tutorial.
 
 Commit all your changes by running this command in your project directory.
+
 ```text
 git add -A && git commit -m "Your Message"
 ```
 
 Push your changes to GitHub by running this command in your project directory.
+
 ```text
 git push
 ```

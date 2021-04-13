@@ -87,7 +87,7 @@ And finally, add the CSS to our `todo-item.component.scss` file:
   }
 ```
 
-Next step is to tell the parent element list-manager what to do, when update event is emitted. In order to do so we have to bind update action and update method that will trigger a proper function in TodoListService. Find the todo-item selector in the template (it looks like this):
+Next step is to tell the parent element list-manager what to do, when update event is emitted. In order to do so we have to bind update action and update method that will trigger a proper function in TodoListService. Find the todo-item selector in the template \(it looks like this\):
 
 {% code title="src/app/list-manager/list-manager.component.ts" %}
 ```markup
@@ -126,11 +126,13 @@ Voila! Checking the checkbox should apply a line through the todo title, and unc
 StackBlitz users - press **Save** in the toolbar and continue to the next section of the tutorial.
 
 Commit all your changes by running this command in your project directory.
+
 ```text
 git add -A && git commit -m "Your Message"
 ```
 
 Push your changes to GitHub by running this command in your project directory.
+
 ```text
 git push
 ```

@@ -1,4 +1,4 @@
-# Appendix 1: Generating a new project
+# Appendix 3: Generating a new project
 
 In every project there are different ways to start, most of them concern scaffolding tools like Yeoman or Slush. These tools generate a starter project, help you generate needed files, and take care of building and running the project.  
 Other ways to start are using starter kits, are also called seed projects, which contain all you need to start the project.  

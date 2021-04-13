@@ -11,7 +11,7 @@ ng g c input-button-unit
 ```
 
 {% hint style="info" %}
-**StackBlitz Instructions** ![](/.gitbook/assets/stackblitz-hint.svg)
+**StackBlitz Instructions** ![](../../.gitbook/assets/stackblitz-hint.svg)
 
 We'll use the Angular Generator to create a component. Follow the instructions on the [StackBlitz instructions](stackblitz.md) page and return here to continue the worksheet.
 {% endhint %}
@@ -99,29 +99,25 @@ This component doesn't do much at this point. In the following chapters, we will
 [See the results on StackBlitz](https://stackblitz.com/github/ng-girls/todo-list-tutorial/tree/master/examples/0_04-a-new-component)
 {% endhint %}
 
-
 ## 💾 Save your code to GitHub
 
-Great job adding your first component! Let's save your work to GitHub, an online code repository, so your code is accessible outside of your local machine. 
+Great job adding your first component! Let's save your work to GitHub, an online code repository, so your code is accessible outside of your local machine.
 
 You might wonder why we're saving to GitHub now. Saving coding work in progress to an accessible code repository is a software development good practice. Doing so also allows mentors to better assist you with this step and as we work through the tutorial. We want for you to be able to continue working on the tutorial if you run out of time during the workshop.
 
 {% hint style="info" %}
-**StackBlitz Instructions** ![](/.gitbook/assets/stackblitz-hint.svg)
+**StackBlitz Instructions** ![](../../.gitbook/assets/stackblitz-hint.svg)
 
 We will save code within StackBlitz so you can skip the GitHub sections below. Save your work in progress by pressing **Save** in the toolbar.
 {% endhint %}
 
-
 ### Creating a GitHub user
 
-If you already have a GitHub user you can skip this step. 
-To create a GitHub user go to GitHub: [https://github.com/](https://github.com/). Fill the registration form and make sure to validate your email address.
-
+If you already have a GitHub user you can skip this step. To create a GitHub user go to GitHub: [https://github.com/](https://github.com/). Fill the registration form and make sure to validate your email address.
 
 ### Create your App repository
 
-Log in to GitHub, press the `+` button and select **New repository**. 
+Log in to GitHub, press the `+` button and select **New repository**.
 
 Name the repository `ng-girls-todo` or any other name you like. Leave the **Initialize this repository with a README** unchecked, and press **Create repository**.
 
@@ -130,7 +126,6 @@ We recommend using lowercase letters in the repository name.
 
 Later on in the tutorial we'll deploy our application to GitHub Pages. GitHub Pages are case sensitive - so it's the best to use lowercase letters in repository name.
 {% endhint %}
-
 
 ### Connecting your repository
 
@@ -146,3 +141,4 @@ Run the following command to connect your code to your repository. Make sure to 
 git remote add origin https://github.com/{YOUR_USERNAME}/{YOUR_REPO}.git
 git push -u origin main
 ```
+

@@ -93,11 +93,13 @@ We used property binding on an element we created ourselves! And now we can actu
 StackBlitz users - press **Save** in the toolbar and continue to the next section of the tutorial.
 
 Commit all your changes by running this command in your project directory.
+
 ```text
 git add -A && git commit -m "Your Message"
 ```
 
 Push your changes to GitHub by running this command in your project directory.
+
 ```text
 git push
 ```
@@ -106,3 +108,4 @@ git push
 {% hint style="success" %}
 [See the results on StackBlitz](https://stackblitz.com/github/ng-girls/todo-list-tutorial/tree/master/examples/0_10-new-component-todo-item)
 {% endhint %}
+

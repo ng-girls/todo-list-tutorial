@@ -4,7 +4,7 @@
 
 ## Workshop: Todo List
 
-* [👀 About](workshop-todo-list/readme.md)
+* [👀 About](workshop-todo-list/workshop-todo-list.md)
 * [\#0: 💃 Introduction](workshop-todo-list/introduction.md)
 * [\#1: ⌛ Installations](workshop-todo-list/installations/README.md)
   * [a. StackBlitz instructions](workshop-todo-list/installations/stackblitz.md)
@@ -34,8 +34,9 @@
 * [\#20: 🛰 Deploy to GitHub Pages](workshop-todo-list/deploy-to-github-pages/README.md)
   * [a. StackBlitz instructions](workshop-todo-list/deploy-to-github-pages/stackblitz.md)
 * [\#21: 💪 Enrich the todo-item component](workshop-todo-list/enrich-the-todo-item-component.md)
-* [Appendix 1: Generating a new project](workshop-todo-list/appendix-1-generating-a-new-project.md)
+* [Appendix 1: Deploying your app](workshop-todo-list/appendix-1-deploying-your-app.md)
 * [Appendix 2: Tutorial Extensions](workshop-todo-list/appendix-2-tutorial-extensions.md)
+* [Appendix 3: Generating a new project](workshop-todo-list/appendix-1-generating-a-new-project.md)
 * [Troubleshooting](workshop-todo-list/troubleshooting/README.md)
   * [Installation](workshop-todo-list/troubleshooting/installation.md)
 

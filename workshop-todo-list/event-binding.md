@@ -129,7 +129,7 @@ Now the title will change only when the user hits the Enter key while typing in 
 
 ### Explore the $event
 
-![lab-icon](../.gitbook/assets/lab%20%281%29.jpg)**Playground:** You can change the changeTitle method to log the `$event` object in the console. This way you can explore it and see what properties it has.
+![lab-icon](../.gitbook/assets/lab%20%284%29%20%287%29.jpg)**Playground:** You can change the changeTitle method to log the `$event` object in the console. This way you can explore it and see what properties it has.
 
 Change the method `changeTitle`:
 
@@ -197,11 +197,13 @@ export class InputButtonUnitComponent implements OnInit {
 StackBlitz users - press **Save** in the toolbar and continue to the next section of the tutorial.
 
 Commit all your changes by running this command in your project directory.
+
 ```text
 git add -A && git commit -m "Your Message"
 ```
 
 Push your changes to GitHub by running this command in your project directory.
+
 ```text
 git push
 ```

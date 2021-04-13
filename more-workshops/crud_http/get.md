@@ -36,13 +36,13 @@ Let's start with seeing the data we receive in DevTools console. To do so, add `
 
 How can we add the data to the application view?
 
-## Interacting with server data 
+## Interacting with server data
 
-We will need to use libraries that allow us to work with data when that data isn't immediately available to the application. The response from the server is asynchronous, meaning some time might pass between the request and response, but the application code isn't waiting for it. Imagine our application is multi-tasking just like we do every day! We can't always wait for something to complete before starting the next task. For example, we'll start making coffee and while the coffee is brewing, we'll get our favorite coffee cup out and maybe even start preparing breakfast before the coffee is ready to drink. 
+We will need to use libraries that allow us to work with data when that data isn't immediately available to the application. The response from the server is asynchronous, meaning some time might pass between the request and response, but the application code isn't waiting for it. Imagine our application is multi-tasking just like we do every day! We can't always wait for something to complete before starting the next task. For example, we'll start making coffee and while the coffee is brewing, we'll get our favorite coffee cup out and maybe even start preparing breakfast before the coffee is ready to drink.
 
 In this same way, we can write code that allows us to react to data as it comes back from the server. We'll use a specialized library called **RxJS** that is already included with Angular projects. We'll use types called `Subject` and `Observable`.
 
-**Observables** provide us with a stream of information and the library allows us to define how to react to the data when it's received. This is great for refreshing our list each time we make any changes. 
+**Observables** provide us with a stream of information and the library allows us to define how to react to the data when it's received. This is great for refreshing our list each time we make any changes.
 
 **Subject** will give us a mechanism to emit new values into `Observable`. We will use this soon and explain in more detail as we go along, so for now we can focus on understanding and interacting with HTTP calls. If you're interested, you may [watch a video about this topic](https://www.youtube.com/watch?v=QHCjT3jRzB0) to get a sneak peek.
 
@@ -80,7 +80,7 @@ But the component will not understand it now. We also need to change the way of 
 
 In `list-manager.component.ts` you need to change `todoList` type into `Observable<TodoItem[]>` because the server now returns an `Observable` of type `TodoItem[]`. Since Observables are also described as streams of data, and streams are asynchronous data, we need to also change our template that displays our items. To display values from `Observable`, we use the `async` pipe.
 
-```html
+```markup
     <div class="todo-app">
       <app-input-button-unit (submitItem)="addItem($event)"></app-input-button-unit>
 
