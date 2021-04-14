@@ -2,7 +2,7 @@
 description: 'Here you''ll find several options to deploy your app, including instructions.'
 ---
 
-# Appendix 1: Deploying your app
+# Appendix 1: 🛰 Deploying your app
 
 ## What is deploying?
 
@@ -26,5 +26,16 @@ For your web app we'll focus on making it available online. You may find additio
 
 ## Available deployment services
 
-* Azure Static Web Apps by Microsoft
+The services listed below allow a simple process for deployment. All of them offer hosting of the web app with global distribution, scalable access, security, and the option to use a custom domain. Additional services that come out of the box are listed.
+
+Please note that this is not a complete list. _Contribution of instructions to additional services to this tutorial is welcome! \(Please submit a pull request.\)_
+
+* [Azure Static Web Apps by Microsoft](deploying-with-azure-static-web-apps.md)
+  * Simple authentication with five major providers
+  * Authorization
+  * Serverless functions \(API\)
+* [GitHub Pages](deploy-to-github-pages/)
+  * Only GitHub account needed
+* Netlify
+* Firebase by Google
 

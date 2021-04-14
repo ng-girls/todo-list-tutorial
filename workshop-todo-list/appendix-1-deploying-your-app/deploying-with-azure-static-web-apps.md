@@ -1,2 +1,2 @@
-# Deploying with Azure Static Web Apps
+# Deploy to Azure Static Web Apps
 
