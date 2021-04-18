@@ -6,27 +6,23 @@ Let's improve our service by adding more abilities that will be used by our comp
 
 We'll add a new method to the service, called `addItem`, like so:
 
-{% code-tabs %}
-{% code-tabs-item title="src/app/todo-list.service.ts" %}
+{% code title="src/app/todo-list.service.ts" %}
 ```typescript
 addItem(item): void {
   this.todoList.push(item);
 }
 ```
-{% endcode-tabs-item %}
-{% endcode-tabs %}
+{% endcode %}
 
 Now we can change our code in ![](.gitbook/assets/component.svg) **list-manager.component.ts** to call the `addItem` method directly from the service like so:
 
-{% code-tabs %}
-{% code-tabs-item title="src/app/list-manager/list-manager.component.ts" %}
+{% code title="src/app/list-manager/list-manager.component.ts" %}
 ```typescript
 addItem(title): void {
   this.todoListService.addItem({ title });
 }
 ```
-{% endcode-tabs-item %}
-{% endcode-tabs %}
+{% endcode %}
 
 * Note that the service's method expects the whole item, while the component's method expects only the title and constructs the item. \(You may decide to let the service construct the item from the title.\)
 * There may be additional logic when calling these methods, i.e. saving the changes in a database \(which we'll implement later\).

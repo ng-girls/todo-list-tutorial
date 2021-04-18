@@ -14,7 +14,7 @@ This tutorial is open source and is written by the community. Please feel free t
 
 The tutorial is used in the [ngGirls](http://ng-girls.org) workshops. You are welcome to use it in your own workshop and we'd love to hear about it! Write to us: [info@ng-girls.org](mailto:info@ng-girls.org).
 
-![](.gitbook/assets/nggirls-banner-transparent%20%282%29.png)
+![](.gitbook/assets/nggirls-banner-transparent%20%284%29%20%282%29.png)
 
 ![](.gitbook/assets/slogen.png)
 

@@ -6,8 +6,7 @@ Let's make the input control text reflect the value of the `title` property.
 
 This is how our input component looks now:
 
-{% code-tabs %}
-{% code-tabs-item title="input.component.ts" %}
+{% code title="input.component.ts" %}
 ```typescript
 import { Component, OnInit } from '@angular/core';
 
@@ -36,8 +35,7 @@ export class InputComponent implements OnInit {
 
 }
 ```
-{% endcode-tabs-item %}
-{% endcode-tabs %}
+{% endcode %}
 
 We use interpolation to present the value of the `title` property: `{{ title }}`
 
@@ -59,8 +57,6 @@ Angular lets us bind properties to the template easily and conveniently; we saw 
 <input [value]="title">
 ```
 
-
-
 {% hint style="warning" %}
 You can go on to the next chapter, but if you'd like to learn more about change detection, keep reading.
 {% endhint %}
@@ -69,7 +65,7 @@ You can go on to the next chapter, but if you'd like to learn more about change 
 
 Angular has a very efficient change detection mechanism. It looks for bindings in the components' templates, and then updates the value each time the bound expression is changed.
 
-![lab-icon](.gitbook/assets/lab%20%281%29.jpg) **Playground**: To show this, let's change the value of the title after a few seconds and see what happens. Call the `setTimeout` function inside `ngOnInit`:
+![lab-icon](.gitbook/assets/lab%20%284%29%20%281%29.jpg) **Playground**: To show this, let's change the value of the title after a few seconds and see what happens. Call the `setTimeout` function inside `ngOnInit`:
 
 ```typescript
 ngOnInit() {
@@ -111,24 +107,20 @@ So for now, we have our input control show the title of our todo in it. We now w
 
 Using regular JavaScript, we can insert the value to the input via its properties. We'll fetch the element from the DOM and assign the value of the member `title` to the element's `value` property.
 
-{% code-tabs %}
-{% code-tabs-item title="code for example" %}
+{% code title="code for example" %}
 ```typescript
 let inputElement = document.getElementById('my-input');
 inputElement.value = this.title;
 ```
-{% endcode-tabs-item %}
-{% endcode-tabs %}
+{% endcode %}
 
 In JavaScript, we find the `input` element in the DOM by its id, and then set its `value` property to the value of the title property. We need to add the id to the `input` element then:
 
-{% code-tabs %}
-{% code-tabs-item title="code for example" %}
+{% code title="code for example" %}
 ```markup
 <input id="my-input">
 ```
-{% endcode-tabs-item %}
-{% endcode-tabs %}
+{% endcode %}
 
 This will work in the browser.
 
@@ -137,6 +129,4 @@ However, **this is highly discouraged in Angular. You should never access the DO
 {% hint style="success" %}
 [See the results on StackBlitz](https://stackblitz.com/github/angularbootcamp/todo-list-tutorial-steps/tree/step-06_Property_binding)
 {% endhint %}
-
-
 

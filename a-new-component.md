@@ -4,7 +4,7 @@ In this chapter, we will write a whole new component. It will allow us to add an
 
 We'll use the Angular CLI to generate all the needed files and boilerplate for us. StackBlitz makes it easier. Go to the app folder and then select by right clicking the component option:
 
-![right click at app folder](.gitbook/assets/image%20%281%29.png)
+![right click at app folder](.gitbook/assets/stackblitz-generator%20%281%29.png)
 
 Name the component `input` and also make sure it has an inline-template.
 
@@ -25,8 +25,7 @@ It created a new folder called 📁 **src/app/input**. There are three files the
 
 Open the file ![](.gitbook/assets/component.svg) **input.component.ts**. You can see that the Angular CLI has generated a default template for us:
 
-{% code-tabs %}
-{% code-tabs-item title="input.component.ts" %}
+{% code title="input.component.ts" %}
 ```typescript
   template: `
     <p>
@@ -34,25 +33,21 @@ Open the file ![](.gitbook/assets/component.svg) **input.component.ts**. You can
     </p>
   `,
 ```
-{% endcode-tabs-item %}
-{% endcode-tabs %}
+{% endcode %}
 
 It has also added the selector according to the name we gave to the component, with the prefix we configured:
 
-{% code-tabs %}
-{% code-tabs-item title="input.component.ts" %}
+{% code title="input.component.ts" %}
 ```typescript
 selector: 'todo-input',
 ```
-{% endcode-tabs-item %}
-{% endcode-tabs %}
+{% endcode %}
 
 We can use this component as-is and see the result!
 
 Open the root component file ![](.gitbook/assets/component.svg) **app.component.ts** and add the `todo-input` tag inside the template:
 
-{% code-tabs %}
-{% code-tabs-item title="app.component.ts" %}
+{% code title="app.component.ts" %}
 ```typescript
 template: `
   <h1>
@@ -62,22 +57,19 @@ template: `
   <todo-input></todo-input>
 `,
 ```
-{% endcode-tabs-item %}
-{% endcode-tabs %}
+{% endcode %}
 
 Check what's new in the browser!
 
 Get back to our ![](.gitbook/assets/component.svg) **input.component.ts** and add some content. First, add a `title` member which we will use as the todo item title:
 
-{% code-tabs %}
-{% code-tabs-item title="input.component.ts" %}
+{% code title="input.component.ts" %}
 ```typescript
 export class InputComponent implements OnInit {
   title: string = '';
   ...
 ```
-{% endcode-tabs-item %}
-{% endcode-tabs %}
+{% endcode %}
 
 It will not interfere with the `todo-root` component's `title`, since each component's content is encapsulated within it.
 
@@ -85,8 +77,7 @@ You can give an initial string to the title, like we did in the `todo-root` comp
 
 Next, replace the default template with an input element, a button, and a binding to the title:
 
-{% code-tabs %}
-{% code-tabs-item title="input.component.ts" %}
+{% code title="input.component.ts" %}
 ```typescript
 template: `
   <input>
@@ -94,8 +85,7 @@ template: `
   <p>The title is: {{ title }}</p>
 `,
 ```
-{% endcode-tabs-item %}
-{% endcode-tabs %}
+{% endcode %}
 
 Check out the result!
 

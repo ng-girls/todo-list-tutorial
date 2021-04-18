@@ -8,15 +8,13 @@ We still don't have a whole list to show, but at the moment we will use another 
 
 First, let's implement `changeTitle`. It will receive the new title as its argument. The best practice is to have our custom methods written after the lifecycle methods \(`ngOnInit` in this case\):
 
-{% code-tabs %}
-{% code-tabs-item title="input.component.ts" %}
+{% code title="input.component.ts" %}
 ```typescript
 changeTitle(newTitle: string): void {
   this.title = newTitle;
 }
 ```
-{% endcode-tabs-item %}
-{% endcode-tabs %}
+{% endcode %}
 
 \(You can also delete the `generateTitle` method, if you created it during the previous chapter.\)
 
@@ -26,8 +24,7 @@ Just like binding to element properties, we can bind to events that are emitted 
 
 Let's try a simple example, where the title is changed when the user clicks on the button. Notice the parentheses around `click`. \(We also change the binding of the input's value back to `title`.\)
 
-{% code-tabs %}
-{% code-tabs-item title="input.component.ts" %}
+{% code title="input.component.ts" %}
 ```markup
 template: `
   <input [value]="title">
@@ -37,8 +34,7 @@ template: `
   <p>The title is: {{ title }}</p>
 `,
 ```
-{% endcode-tabs-item %}
-{% endcode-tabs %}
+{% endcode %}
 
 > The event is called `click` and not `onClick` - in Angular, you remove the `on` prefix from the events in the elements.
 
@@ -54,26 +50,22 @@ In the next chapter, we will learn how to use properties of one element in anoth
 
 When the user types, keyboard events are emitted, like `keydown` and `keyup`. We will catch the `keyup` event \(when the pressed key is released\) and change the title:
 
-{% code-tabs %}
-{% code-tabs-item title="input.component.ts" %}
+{% code title="input.component.ts" %}
 ```markup
 <input [value]="title" (keyup)="changeTitle('Button Clicked!')">
 ```
-{% endcode-tabs-item %}
-{% endcode-tabs %}
+{% endcode %}
 
 Now when the user types in the input box, the title is changed to "Button Clicked!". But it's still a static string.
 
 **Tip:** When an element becomes long due to its attributes, you should make it easier on the eye by splitting it into several lines:
 
-{% code-tabs %}
-{% code-tabs-item title="input.component.ts" %}
+{% code title="input.component.ts" %}
 ```markup
 <input [value]="title"
        (keyup)="changeTitle('Button Clicked!')">
 ```
-{% endcode-tabs-item %}
-{% endcode-tabs %}
+{% endcode %}
 
 ### The $event object
 
@@ -81,14 +73,12 @@ Now we just react when the `keyup` event occurs. Angular allows us to get the ev
 
 The event object emitted on `keyup` events has a reference to the element that emitted the event - the input element. The reference is kept in the event `target` property. As we've seen before, the input element has a `value` property which holds the current string that's in the input box. We can pass `$event.target.value` to the method:
 
-{% code-tabs %}
-{% code-tabs-item title="input.component.ts" %}
+{% code title="input.component.ts" %}
 ```markup
 <input [value]="title"
        (keyup)="changeTitle($event.target.value)">
 ```
-{% endcode-tabs-item %}
-{% endcode-tabs %}
+{% endcode %}
 
 Check it out in the browser. Now with every keystroke, you can see the title changes and reflects the input value.
 
@@ -96,44 +86,38 @@ Check it out in the browser. Now with every keystroke, you can see the title cha
 
 You can limit the change to only a special keystroke, in our case it's the Enter key. Angular makes it really easy for us. The `keyup` event has properties which are more specific events. Just add the name of the key you'd like to listen to - `keyup.enter`:
 
-{% code-tabs %}
-{% code-tabs-item title="input.component.ts" %}
+{% code title="input.component.ts" %}
 ```markup
 <input [value]="title"
        (keyup.enter)="changeTitle($event.target.value)">
 ```
-{% endcode-tabs-item %}
-{% endcode-tabs %}
+{% endcode %}
 
 Now the title will change only when the user hits the Enter key while typing in the input.
 
 ### Explore the $event
 
-![lab-icon](.gitbook/assets/lab%20%281%29.jpg)**Playground:** You can change the changeTitle method to log the `$event` object in the console. This way you can explore it and see what properties it has.
+![lab-icon](.gitbook/assets/lab%20%284%29%20%281%29.jpg)**Playground:** You can change the changeTitle method to log the `$event` object in the console. This way you can explore it and see what properties it has.
 
 Change the method `changeTitle`:
 
-{% code-tabs %}
-{% code-tabs-item title="input.component.ts" %}
+{% code title="input.component.ts" %}
 ```typescript
 changeTitle(event): void {
   console.log(event);
   this.title = event.target.value; // the original functionality still works
 }
 ```
-{% endcode-tabs-item %}
-{% endcode-tabs %}
+{% endcode %}
 
- **Playground:** Now change the argument you're passing in the template:
+**Playground:** Now change the argument you're passing in the template:
 
-{% code-tabs %}
-{% code-tabs-item title="input.component.ts" %}
+{% code title="input.component.ts" %}
 ```markup
 <input [value]="title"
        (keyup.enter)="changeTitle($event)">
 ```
-{% endcode-tabs-item %}
-{% endcode-tabs %}
+{% endcode %}
 
 Try it out!
 
@@ -144,6 +128,4 @@ Don't forget to change the code back before we go on \(!\).
 {% hint style="success" %}
 [See the results on StackBlitz](https://stackblitz.com/github/angularbootcamp/todo-list-tutorial-steps/tree/step-07_Event_binding)
 {% endhint %}
-
-
 

@@ -2,8 +2,7 @@
 
 In the last chapter, we ended with our input component able to display and change the title of our todo item. ![](.gitbook/assets/component.svg) **input.component.ts** should look like this:
 
-{% code-tabs %}
-{% code-tabs-item title="input.component.ts" %}
+{% code title="input.component.ts" %}
 ```typescript
 import { Component, OnInit } from '@angular/core';
 
@@ -32,8 +31,7 @@ export class InputComponent implements OnInit {
   }
 }
 ```
-{% endcode-tabs-item %}
-{% endcode-tabs %}
+{% endcode %}
 
 Now we want to take the value of the input \(that the user typed\) and change the title when we press the Save button.
 
@@ -41,8 +39,7 @@ We already know how to create a button and react to clicking on it. We now need 
 
 Angular helps us do exactly that. **We can store a reference to the element we want in a variable with the name we choose,** for example `inputElement`, **using a simple syntax - a hash.** Add `#inputElement` to the `input` element, and use it in the `click` event of the button:
 
-{% code-tabs %}
-{% code-tabs-item title="input.component.ts" %}
+{% code title="input.component.ts" %}
 ```markup
 <input [value]="title"
        (keyup.enter)="changeTitle($event.target.value)"
@@ -52,8 +49,7 @@ Angular helps us do exactly that. **We can store a reference to the element we w
   Save
 </button>
 ```
-{% endcode-tabs-item %}
-{% endcode-tabs %}
+{% endcode %}
 
 Now we can use the value that the user entered in the `input` element in the method called when clicking the Save button!
 
@@ -67,12 +63,11 @@ Next, we'll build the list of todo items.
 
 ## 🧪 Tip - explore the element reference
 
-Just like we did in the previous chapter, when we logged `$event`, you can do the same with `#inputElement`. 
+Just like we did in the previous chapter, when we logged `$event`, you can do the same with `#inputElement`.
 
 **Playground:** Change the method `changeTitle` so it will receive the whole element reference and log it to the console:
 
-{% code-tabs %}
-{% code-tabs-item title="input.component.ts" %}
+{% code title="input.component.ts" %}
 ```markup
 <input [value]="title"
        (keyup.enter)="changeTitle(inputElement)"
@@ -82,19 +77,16 @@ Just like we did in the previous chapter, when we logged `$event`, you can do th
   Save
 </button>
 ```
-{% endcode-tabs-item %}
-{% endcode-tabs %}
+{% endcode %}
 
-{% code-tabs %}
-{% code-tabs-item title="input.component.ts" %}
+{% code title="input.component.ts" %}
 ```typescript
 changeTitle(inputElementReference): void {
   console.log(inputElementReference);
   this.title = inputElementReference.value;
 }
 ```
-{% endcode-tabs-item %}
-{% endcode-tabs %}
+{% endcode %}
 
 Don't forget to put the code back the way it was after you're finished experimenting! It's best to pass to a method exactly the value it needs, instead of the whole object.
 
@@ -105,6 +97,4 @@ Don't forget to put the code back the way it was after you're finished experimen
 {% hint style="success" %}
 [See the results on StackBlitz](https://stackblitz.com/github/angularbootcamp/todo-list-tutorial-steps/tree/step-08_Element_ref)
 {% endhint %}
-
-
 

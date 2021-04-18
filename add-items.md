@@ -12,37 +12,31 @@ So what we actually want to do is to **emit an event** from the `todo-input` com
 
 Add the following line inside the `InputComponent` class, which defines an output for the component:
 
-{% code-tabs %}
-{% code-tabs-item title="src/app/input/input.component.ts" %}
+{% code title="src/app/input/input.component.ts" %}
 ```typescript
 @Output() submit: EventEmitter<string> = new EventEmitter();
 ```
-{% endcode-tabs-item %}
-{% endcode-tabs %}
+{% endcode %}
 
 The output property is called `submit`. It's of type `EventEmitter` which has the method `emit`. `EventEmitter` is a Generic Type - we pass to it another type which will be used internally, in this case it's `string`. It's the type of the object that will be emitted by the `emit` method.
 
 Make sure that `Output` and `EventEmitter` are added to the import declaration in the first line of the file:
 
-{% code-tabs %}
-{% code-tabs-item title="src/app/input/input.component.ts" %}
+{% code title="src/app/input/input.component.ts" %}
 ```typescript
 import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 ```
-{% endcode-tabs-item %}
-{% endcode-tabs %}
+{% endcode %}
 
 Now, whenever we call `this.submit.emit()`, an event will be emitted to the parent component. Let's call it in the `changeTitle` method:
 
-{% code-tabs %}
-{% code-tabs-item title="src/app/input/input.component.ts" %}
+{% code title="src/app/input/input.component.ts" %}
 ```typescript
 changeTitle(newTitle: string): void {
   this.submit.emit(newTitle);
 }
 ```
-{% endcode-tabs-item %}
-{% endcode-tabs %}
+{% endcode %}
 
 We delegate everything to the parent component - even actually changing the title of the item if needed. \(The method name may seem irrelevant right now. If you'd like, you can change it to something more appropriate, such as `submitValue`. Remember to change it in the template as well.\)
 
@@ -52,29 +46,25 @@ Nothing else is changed in the `todo-input` component. The events emitted from `
 
 Now all we need to do is catch the event in the parent component and attach logic to it. Go to the `todo-root` component and bind to the `submit` event in the `<todo-input>` component:
 
-{% code-tabs %}
-{% code-tabs-item title="src/app/app.component.ts" %}
+{% code title="src/app/app.component.ts" %}
 ```typescript
 <todo-input (submit)="addItem($event)"></todo-input>
 ```
-{% endcode-tabs-item %}
-{% endcode-tabs %}
+{% endcode %}
 
 Now all that's left is to implement the `addItem` method, which receives a string and adds it to the list:
 
-{% code-tabs %}
-{% code-tabs-item title="app.component.ts" %}
+{% code title="app.component.ts" %}
 ```typescript
 addItem(title: string): void {
   this.todoList.push({ title });
 }
 ```
-{% endcode-tabs-item %}
-{% endcode-tabs %}
+{% endcode %}
 
 Try it out!
 
 {% hint style="success" %}
-[See the results on StackBlitz](https://stackblitz.com/github/angularbootcamp/todo-list-tutorial-steps/tree/step-11_Add_items) 
+[See the results on StackBlitz](https://stackblitz.com/github/angularbootcamp/todo-list-tutorial-steps/tree/step-11_Add_items)
 {% endhint %}
 

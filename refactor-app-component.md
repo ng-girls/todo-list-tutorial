@@ -6,8 +6,7 @@ We're going to perform a small refactoring. The `todo-root` shouldn't have such 
 * Move the code from `AppComponent` to `ListManagerComponent`.
 * Be careful not to change the list manager component's class name!
 
-{% code-tabs %}
-{% code-tabs-item title="src/app/list-manager/list-manager.component.ts" %}
+{% code title="src/app/list-manager/list-manager.component.ts" %}
 ```typescript
 import { Component, OnInit } from '@angular/core';
 
@@ -51,27 +50,21 @@ export class ListManagerComponent implements OnInit {
   }
 }
 ```
-{% endcode-tabs-item %}
-{% endcode-tabs %}
-
+{% endcode %}
 
 * Call the new component from the `AppComponent` template:
 
-{% code-tabs %}
-{% code-tabs-item title="src/app/app.component.ts" %}
+{% code title="src/app/app.component.ts" %}
 ```typescript
   template: `
     <todo-list-manager></todo-list-manager>
   `,
 ```
-{% endcode-tabs-item %}
-{% endcode-tabs %}
+{% endcode %}
 
 That's it! Now we can go on.
 
 {% hint style="success" %}
 [See the results on StackBlitz](https://stackblitz.com/github/angularbootcamp/todo-list-tutorial-steps/tree/step-12_Refactor_App_Component)
 {% endhint %}
-
-
 

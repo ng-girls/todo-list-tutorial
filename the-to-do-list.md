@@ -2,8 +2,7 @@
 
 Now you are going to add the todo-list itself to the component `todo-root`. Open the file ![](.gitbook/assets/component.svg) **src/app/app.component.ts**. Add the list of items inside the `AppComponent` class as an array of objects for each item. At this stage, each item only contains a title:
 
-{% code-tabs %}
-{% code-tabs-item title="src/app/app.component.ts" %}
+{% code title="src/app/app.component.ts" %}
 ```typescript
 todoList = [
   {title: 'install NodeJS'},
@@ -14,8 +13,7 @@ todoList = [
   {title: 'deploy app'},
 ];
 ```
-{% endcode-tabs-item %}
-{% endcode-tabs %}
+{% endcode %}
 
 > Putting info \(resources\) right inside your code is called hardcoding and is considered an especially bad practice. Eventually we'll get the list from an external source, but even if not, it's best to place mock data in their own files. But let's advance step-by-step, so defining items this way is okay for now.
 
@@ -23,8 +21,7 @@ Now you have to tell the browser to display those items. For this, you will use 
 
 Insert the loop right after `<todo-input></todo-input>` like this:
 
-{% code-tabs %}
-{% code-tabs-item title="src/app/app.component.ts" %}
+{% code title="src/app/app.component.ts" %}
 ```markup
 <todo-input></todo-input>
 <ul>
@@ -33,10 +30,9 @@ Insert the loop right after `<todo-input></todo-input>` like this:
   </li>
 </ul>
 ```
-{% endcode-tabs-item %}
-{% endcode-tabs %}
+{% endcode %}
 
-This means "go over all items of the todoList array, and print a list which contains the items' titles". While looping over the `todoList`, each item is assigned to the variable `item`, and we can use this variable inside the element in which we define it (in this case the `li` element) and its children.
+This means "go over all items of the todoList array, and print a list which contains the items' titles". While looping over the `todoList`, each item is assigned to the variable `item`, and we can use this variable inside the element in which we define it \(in this case the `li` element\) and its children.
 
 ## Angular directives
 
@@ -44,14 +40,11 @@ Directives are pieces of logic \(written as classes\) that can be attached to el
 
 As we saw, the `ngFor` directive modifies the template at runtime by repeating the element it's called on and its content. Another directive, for example, is `ngIf`, which receives a Boolean expression. Angular will only render the element and its content if the expression is true. It also needs the `*` prefix because it uses the target element as a template, similar to the `*ngFor` directive. For example:
 
-{% code-tabs %}
-{% code-tabs-item title="code for example" %}
+{% code title="code for example" %}
 ```markup
 <h1 *ngIf="userLoggedIn">Welcome!</h1>
 ```
-{% endcode-tabs-item %}
-{% endcode-tabs %}
-
+{% endcode %}
 
 In this example, `userLoggedIn` should be a member of the component, and have a true or false value. If it's true, the `h1` element will be displayed. If false, the element will not exist in the DOM.
 
@@ -60,6 +53,4 @@ There are other directives in Angular which are not structural \(and are used wi
 {% hint style="success" %}
 [See the results on StackBlitz](https://stackblitz.com/github/angularbootcamp/todo-list-tutorial-steps/tree/step-09_The_list)
 {% endhint %}
-
-
 

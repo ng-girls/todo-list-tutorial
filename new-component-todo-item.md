@@ -2,12 +2,11 @@
 
 We will create a new component to display each todo item presented in the list. It will be a simple component at first, but it will grow later on. What's important is that **it will get the todo item as an input from its parent component**. This way it can be a reusable component, and not rely directly on the application's data and state.
 
-Create a new component called `item`. You can see a new folder 📁 **src/app/item** was created with the component files inside. 
+Create a new component called `item`. You can see a new folder 📁 **src/app/item** was created with the component files inside.
 
 Use the new component in the template of `AppComponent`, inside the `<li>` element:
 
-{% code-tabs %}
-{% code-tabs-item title="src/app/app.component.ts" %}
+{% code title="src/app/app.component.ts" %}
 ```typescript
 <ul>
   <li *ngFor="let item of todoList">
@@ -15,8 +14,7 @@ Use the new component in the template of `AppComponent`, inside the `<li>` eleme
   </li>
 </ul>
 ```
-{% endcode-tabs-item %}
-{% endcode-tabs %}
+{% endcode %}
 
 Check out the result in the browser. What do you see? Why?
 
@@ -28,20 +26,17 @@ Again, Angular makes it really easy for us, by providing the `Input` decorator.
 
 Inside the newly generated `ItemComponent` class add the line:
 
-{% code-tabs %}
-{% code-tabs-item title="src/app/item/item.component.ts" %}
+{% code title="src/app/item/item.component.ts" %}
 ```typescript
 @Input() todoItem: any;
 ```
-{% endcode-tabs-item %}
-{% endcode-tabs %}
+{% endcode %}
 
-It tells the component to expect an input of type string and to assign it to the class member called `todoItem`. Make sure that `Input` is added to the import statement in the first line in the file. Now we can use it inside the `ItemComponent` template and extract the item's title with interpolation: `{{ todoItem.title }}
+It tells the component to expect an input of type string and to assign it to the class member called `todoItem`. Make sure that `Input` is added to the import statement in the first line in the file. Now we can use it inside the `ItemComponent` template and extract the item's title with interpolation: \`
 
 The component should look like this now:
 
-{% code-tabs %}
-{% code-tabs-item title="src/app/item/item.component.ts" %}
+{% code title="src/app/item/item.component.ts" %}
 ```typescript
 import { Component, Input, OnInit } from '@angular/core';
 
@@ -62,13 +57,11 @@ export class ItemComponent implements OnInit {
 
 }
 ```
-{% endcode-tabs-item %}
-{% endcode-tabs %}
+{% endcode %}
 
 Now we need to pass an todoItem where we use the component. Go back to ![](.gitbook/assets/component.svg) **src/app/app.component.ts** and pass the item title to the `todo-item`:
 
-{% code-tabs %}
-{% code-tabs-item title="src/app/app.component.ts" %}
+{% code title="src/app/app.component.ts" %}
 ```markup
 <ul>
   <li *ngFor="let item of todoList">
@@ -76,8 +69,7 @@ Now we need to pass an todoItem where we use the component. Go back to ![](.gitb
   </li>
 </ul>
 ```
-{% endcode-tabs-item %}
-{% endcode-tabs %}
+{% endcode %}
 
 The `todoItem` here in square brackets is the same as declared as the component's `@Input`.
 
