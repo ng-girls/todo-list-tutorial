@@ -1,4 +1,4 @@
-# Appendix 2: Tutorial Extensions
+# Appendix 3: Tutorial Extensions
 
 Here you will find links and ideas for extending the todo-list app:
 

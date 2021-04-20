@@ -2,7 +2,7 @@
 description: 'Here you''ll find several options to deploy your app, including instructions.'
 ---
 
-# Appendix 1: 🛰 Deploying your app
+# Appendix 2: 🛰 Deploying your app
 
 ## What is deploying?
 
