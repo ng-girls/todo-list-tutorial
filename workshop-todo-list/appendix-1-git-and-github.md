@@ -8,7 +8,7 @@
 
 If you already have a GitHub user you can skip this step. To create a GitHub user go to GitHub: [https://github.com/](https://github.com/). Fill the registration form and make sure to validate your email address.
 
-### Creating a new repository
+### Creating a new repository for your project
 
 Once you've signed in to GitHub, [create a new repository](https://github.com/new) to host your Angular app. \(Click on the link here, or on GitHub click on the + sign next to your avatar and select "New repository".\) **Give your repository a name.** It can be the same name as your Angular project, i.e. `todo-list` or `ng-girls-todo-list` .
 
@@ -18,17 +18,21 @@ We recommend using lowercase letters in the repository name. Some services that 
 
 ### Connecting your repository
 
-![Give your repository a name](../.gitbook/assets/image%20%281%29.png)
+![Give your repository a name](../.gitbook/assets/image%20%283%29.png)
 
 **Select whether the repository is private or public.** If it's private, you'll be able to add collaborators who can see your code. You can change your decision later. However, a public repository may be forked \(duplicated by someone else\) and you'll have no control over the forks that were made. _This shouldn't stop you from making the repository public, as many projects are. Just make sure not to put any secret keys and codes in the project._
 
-![Select whether the repository is private or public](../.gitbook/assets/image%20%282%29.png)
+![Select whether the repository is private or public](../.gitbook/assets/image%20%285%29.png)
 
 Don't add any templates or files. **Click on the button "Create repository".**
+
+![Don&apos;t check any box, just hit the green button](../.gitbook/assets/image%20%286%29.png)
 
 ### Upload the todo-list project to the repository
 
 You have several options to set up the repository. You have already created the project on your computer, so the relevant option is to **push an existing repository from the command line**. Copy the commands starting with `git` \(you can click the "copy" button on the right side to copy all the commands\) and paste into the terminal that's open in your project folder. \(You don't have to paste line by line. You can copy all three lines and paste them. The commands will run one after the other, except the last one where you'll have to hit Enter.\)
+
+![The commands to connect and push your project to the repository](../.gitbook/assets/image%20%284%29.png)
 
 #### What do these commands do?
 
@@ -44,13 +48,23 @@ Now you can go back to the browser where you have created your repository and re
 
 Whenever you have finished a feature and the application seems to be working well, it's a good time to commit your changes locally and push them to GitHub to sync the repository. It is usually recommended to work on the code on different branches, then sync them with the main branch. However, for the simplicity of this tutorial you may work directly on the main branch.
 
-**Add new files to git** - when you create new files, git doesn't include them automatically. You can notice that new files appear in red in the file list in the IDE. Run the command `git add .` to add all the files that were created in the project folder and subfolders. \(The dot `.` represents the current location. Alternatively, you can specify a file.\) Or, use the IDE to add the files when committing.
+**Add new files to git** - when you create new files, git doesn't include them automatically. You can notice that new files appear in red in the file list in the IDE. Run the following command to add all the files that were created in the project folder and subfolders. \(The dot `.` represents the current location. Alternatively, you can specify a file.\)
+
+```text
+git add .
+```
+
+This is equivalent to `git add --all` or `git add -A`. 
+
+Alternatively, use the IDE to add the files when committing.
 
 **Commit the changes** - this is like hitting "save" on your project, with the ability to go backward and forward between the commits. \(Yes, time traveling!!\) This is useful in many ways, one of which is when you discover a new bug and want to go back or compare to a previous version.
 
 You can either run a commit command in the terminal and supply a commit message:
 
-`git commit -m "your commit message where you describe what has changed"`
+```text
+git commit -m "your commit message where you describe what has changed"
+```
 
 Or use your IDE to which supports the commit process. With the IDE you can see which files have changed, select the ones you want to commit or ignore, compare the changes with the last commit, edit the commit message, and more.
 
@@ -61,9 +75,23 @@ Find out how to commit \(and generally use git\) from your IDE:
 
 You can find instructions and conventions for writing good commit messages on the web. For example, [https://www.freecodecamp.org/news/a-beginners-guide-to-git-how-to-write-a-good-commit-message/](https://www.freecodecamp.org/news/a-beginners-guide-to-git-how-to-write-a-good-commit-message/)
 
-**Push the changes to GitHub** - run the command `git push`. \(If you're on a new branch, the command will fail with instructions to open a branch of the same name on the remote repository. Just copy-paste the command.\) You can also use the IDE to push.
+**Push the changes to GitHub** - run the command
 
-**Pull the changes** - if changes were made from a different computer \(another collaborator, service, or your other computer\) and synced to GitHub, you must pull the changes to your local repository before being able to push additional changes to the same branch \(main or any branch you're working on\). Simply run the command `git pull`. \(And hope that there aren't any conflicts to resolve and merge!\)
+```text
+git push
+```
+
+\(If you're on a new branch, the command will fail with instructions to open a branch of the same name on the remote repository. Just copy-paste the command.\) You can also use the IDE to push.
+
+Check out your repository to see the changes!
+
+### Pulling changes from GitHub
+
+If changes were made from a different computer \(another collaborator, service, or your other computer\) and synced to GitHub, you must pull the changes to your local repository before being able to push additional changes to the same branch \(main or any branch you're working on\). You can also pull changes that were made on different branches and check them out on your computer. Simply run the following command \(and hope that there aren't any conflicts to resolve and merge!\)
+
+```text
+git pull
+```
 
 {% hint style="info" %}
 To work on a separate branch, use the following commands:   
@@ -74,34 +102,7 @@ After committing your changes in the branch, you can push them to GitHub and cre
 If you're working in collaboration with other contributors, you may need to merge their work and rebase the commits.
 {% endhint %}
 
-### Create your App repository
+### More on Git and GitHub
 
-Log in to GitHub, press the `+` button and select **New repository**.
-
-Name the repository `ng-girls-todo` or any other name you like. Leave the **Initialize this repository with a README** unchecked, and press **Create repository**.
-
-{% hint style="warning" %}
-We recommend using lowercase letters in the repository name.
-
-Later on in the tutorial we'll deploy our application to GitHub Pages. GitHub Pages are case sensitive - so it's the best to use lowercase letters in repository name.
-{% endhint %}
-
-### Connecting your repository
-
-Commit all your changes by running this command in your project directory.
-
-```text
-git add -A && git commit -m "Your Message"
-```
-
-Run the following command to connect your code to your repository. Make sure to replace the {YOUR\_USERNAME} and {YOUR\_REPO} with your GitHub username and repository name.
-
-```text
-git remote add origin https://github.com/{YOUR_USERNAME}/{YOUR_REPO}.git
-git push -u origin main
-```
-
-
-
-## 
+There are many more features on Git and GitHub. \(One of my favorites is git rebase!\) As you go forward with your project, and especially collaborate with teammates, you will get to learn more commands and useful workflows.
 
