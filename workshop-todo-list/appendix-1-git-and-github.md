@@ -1,3 +1,7 @@
+---
+description: Create a GitHub repository for your project. Manage and sync it using Git.
+---
+
 # Appendix 1: Git and GitHub
 
 ## GitHub
@@ -18,21 +22,21 @@ We recommend using lowercase letters in the repository name. Some services that 
 
 ### Connecting your repository
 
-![Give your repository a name](../.gitbook/assets/image%20%283%29.png)
+![Give your repository a name](../.gitbook/assets/image%20%285%29.png)
 
 **Select whether the repository is private or public.** If it's private, you'll be able to add collaborators who can see your code. You can change your decision later. However, a public repository may be forked \(duplicated by someone else\) and you'll have no control over the forks that were made. _This shouldn't stop you from making the repository public, as many projects are. Just make sure not to put any secret keys and codes in the project._
 
-![Select whether the repository is private or public](../.gitbook/assets/image%20%285%29.png)
+![Select whether the repository is private or public](../.gitbook/assets/image%20%288%29.png)
 
 Don't add any templates or files. **Click on the button "Create repository".**
 
-![Don&apos;t check any box, just hit the green button](../.gitbook/assets/image%20%286%29.png)
+![Don&apos;t check any box, just hit the green button](../.gitbook/assets/image%20%289%29.png)
 
 ### Upload the todo-list project to the repository
 
 You have several options to set up the repository. You have already created the project on your computer, so the relevant option is to **push an existing repository from the command line**. Copy the commands starting with `git` \(you can click the "copy" button on the right side to copy all the commands\) and paste into the terminal that's open in your project folder. \(You don't have to paste line by line. You can copy all three lines and paste them. The commands will run one after the other, except the last one where you'll have to hit Enter.\)
 
-![The commands to connect and push your project to the repository](../.gitbook/assets/image%20%284%29.png)
+![The commands to connect and push your project to the repository](../.gitbook/assets/image%20%287%29.png)
 
 #### What do these commands do?
 

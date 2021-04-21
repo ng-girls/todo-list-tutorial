@@ -62,7 +62,41 @@ Azure Functions consumption plan is billed based on per-second resource consumpt
 
 ## Deploying the Todo List App with Azure Static Web Apps
 
-First, your application project has to be hosted on GitHub. If you haven't done this yet, follow the instructions on the chapter Hosting on GitHub.
+First, your application project has to be hosted on GitHub. If you haven't done this yet, follow the instructions on the chapter [Appendix 1: Git and GitHub](../appendix-1-git-and-github.md).
+
+Watch the video for instructions for setting up your Static Web App, or follow the instructions below.
+
+{% embed url="https://youtu.be/COq-Q4QeW90" %}
+
+Go to the Azure portal. Click on **Create a resource**.
+
+![](../../.gitbook/assets/image%20%282%29.png)
+
+Search for **Static Web Apps** and select it. Hit **Create**.
+
+![](../../.gitbook/assets/image%20%286%29.png)
+
+Fill out the details.
+
+* Subscription - your Azure account.
+* Resource Group - create a new one - it can be with the name of your application. 
+* Name - of the Static Web App resource, it can be the name of your application.
+* Region - select the one closest to you. It won't affect the global distribution, only your work with the resource.
+* Source - GitHub
+
+Sign in with GitHub and authorize Azure to access to your GitHub account. Select your repository from the list. 
+
+Select your organization \(your user on GitHub\), the repository and the main branch. 
+
+Select Build Presets - Angular.
+
+* App location - keep it as is \("**/**"\)
+* Api location - enter **api**
+* Output location - add to **dist** the name of your project as you created with Angular-CLI. That's also the name of the folder of your project. You can make sure what it is using angular.json.
+
+Hit Review + create and then create the resource. It will take a few seconds for the resource to be created. Then you'll get the link where your application will be deployed. But it will take about 5-10 more minutes for your application to appear there, since the project is being built and deployed. 
+
+
 
 
 
