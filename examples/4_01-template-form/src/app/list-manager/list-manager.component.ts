@@ -7,7 +7,7 @@ import {interval, Observable} from 'rxjs';
   selector: 'app-list-manager',
   template: `
     <div class="todo-app">
-      <app-input-button-unit (submitItem)="addItem($event)"></app-input-button-unit>
+      <app-input-button-unit (submit)="addItem($event)"></app-input-button-unit>
 
       <ul *ngIf="todoList | async as todoItems">
         <li *ngFor="let todoItem of todoItems">
