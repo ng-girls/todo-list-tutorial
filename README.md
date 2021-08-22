@@ -1,12 +1,16 @@
-# Introduction
+---
+description: >-
+  You can follow this tutorial by yourself at anytime. We'd love to receive your
+  feedback!
+---
 
-## Angular Tutorial for Beginners -
+# Welcome to the ngGirls tutorial!
 
 ## Creating a Todo-List App
 
-This tutorial will take you step by step on how to create your own todo list application using Angular \(version 6 and above\). Through the tutorial, we'll be using the **Angular CLI**, save data in the local storage and deploy the code to GitHub Pages.
+This tutorial will take you step by step on how to create your own todo list application using Angular. Through the tutorial, we'll be using the **Angular CLI**, create an to-do-list application, save data in the local storage and deploy the application either to Azure Static Web Apps or GitHub Pages.
 
-This tutorial is open source and is written by the community. Please feel free to send any suggestions and pull requests. Special thanks to the members of **Angular AfterHours meetup group** for kickstarting this tutorial during a [special meetup event](http://www.meetup.com/Angular-AfterHours/events/235151422/)!
+This tutorial is open source and is written by the community. Please feel free to send any suggestions and pull requests: [https://github.com/ng-girls/todo-list-tutorial](https://github.com/ng-girls/todo-list-tutorial). Special thanks to the members of **Angular AfterHours meetup group** for kickstarting this tutorial during a [special meetup event](http://www.meetup.com/Angular-AfterHours/events/235151422/)!
 
 The tutorial is used in the [ngGirls](http://ng-girls.org) workshops. You are welcome to use it in your own workshop and we'd love to hear about it! Write to us: [hello@ng-girls.org](mailto:hello@ng-girls.org).
 

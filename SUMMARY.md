@@ -1,6 +1,6 @@
 # Table of contents
 
-* [Introduction](README.md)
+* [Welcome to the ngGirls tutorial!](README.md)
 
 ## Workshop: Todo List
 
