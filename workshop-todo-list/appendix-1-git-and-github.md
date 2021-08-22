@@ -10,7 +10,7 @@ description: Create a GitHub repository for your project. Manage and sync it usi
 
 ### Creating a GitHub user
 
-If you already have a GitHub user you can skip this step. To create a GitHub user go to GitHub: [https://github.com/](https://github.com/). Fill the registration form and make sure to validate your email address.
+If you already have a GitHub user you can skip this step. To create a GitHub user go to [GitHub's super-cool sign up page](https://github.com/signup). Fill in the details and make sure to validate your email address.
 
 ### Creating a new repository for your project
 

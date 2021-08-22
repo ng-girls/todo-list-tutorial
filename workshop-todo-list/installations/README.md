@@ -14,7 +14,7 @@ Read about development tools on this page until you see the StackBlitz instructi
 
 ## Browser
 
-Our first tool is the **browser**. We'll use it to see the result of our work and debug it. We recommend [Google Chrome](https://www.google.com/chrome/browser/desktop/) - it has great developer tools. [Firefox](https://www.mozilla.org/en-US/firefox/new/) is also awesome. If you don't already have one of those, just click the relevant link and follow the instructions to download and install the browser of your choice.
+Our first tool is the **browser**. We'll use it to see the result of our work and debug it. We recommend [Google Chrome](https://www.google.com/chrome/browser/desktop/) - it has great developer tools. [Microsoft Edge](https://www.microsoft.com/edge?WT.mc_id=javascript-38439-shjacobs) is built on top of Chromium \(the open-source engine behind Chrome\) and has all the great features and developer tools. [Firefox](https://www.mozilla.org/en-US/firefox/new/) is also awesome. If you don't already have one of those, just click the relevant link and follow the instructions to download and install the browser of your choice.
 
 ## IDE
 
@@ -25,15 +25,15 @@ Our next tool is the **IDE** , or integrated development environment. It's softw
 * help you navigate easily through the files in your project
 * and a lot more...
 
-JetBrains [Webstorm](https://www.jetbrains.com/webstorm/download/) is one of the strongest IDE's in the market. You get the first month for free, and a totally free license if you're a student.
+Microsoft [Visual Studio Code](https://code.visualstudio.com/?WT.mc_id=javascript-38439-shjacobs) is a highly popular IDE. It's lightweight, extendable, open-source, and **free**. You can find many plugins to boost your productivity or just for fun, or even write your own.
 
-Microsoft [Visual Studio Code](https://code.visualstudio.com/) is also a great choice that's gained a lot of popularity lately. It is completely free for individuals.
+JetBrains [Webstorm](https://www.jetbrains.com/webstorm/download/) is one of the strongest IDE's in the market. You get the first month for free, and a totally free license if you're a student.
 
 Choose the IDE you'd like to work with and follow the installation instructions in its website.
 
 ### **Plugins**
 
-Plugins help the IDE understand the code. Webstorm ships with the necessary plugins. If you choose to use VS Code, we recommend to install the [Angular Essentials extension pack](https://marketplace.visualstudio.com/items?itemName=johnpapa.angular-essentials)
+Plugins help the IDE understand the code. Webstorm ships with the necessary plugins. If you choose to use VS Code, we recommend to install the [Angular Essentials extension pack](https://marketplace.visualstudio.com/items?itemName=johnpapa.angular-essentials&WT.mc_id=javascript-38439-shjacobs)
 
 ## NodeJS and NPM
 
@@ -45,7 +45,7 @@ NodeJS lets you run JavaScript code on your computer. It is used to run a local 
 
 NPM allows you to easily download and install different libraries from the internet and manage their versions.
 
-**Download NodeJS** [**here**](https://nodejs.org/en/)**.**
+**Download NodeJS** [**here**](https://nodejs.org/)**.**
 
 If you already have NodeJS installed, make sure you check that the version matches the prerequisites by running this in your command line / terminal:
 
