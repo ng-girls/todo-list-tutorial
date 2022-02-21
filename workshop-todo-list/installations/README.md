@@ -105,14 +105,17 @@ cd the-path-to-your-folder/myProjects
 Now, create an Angular project by running:
 
 ```text
-npx @angular/cli@latest new todo-list
+npx @angular/cli@latest new todo-list --strict false
 ```
+
+{% hint style="info" %}
+Starting in Angular version 12, strict type checking is on by default. Enabling strict type checking is a best practice for Angular applications and helps developers catch errors earlier, but we are disabling this feature by adding the flag `--strict false` so we can learn Angular step-by-step.
+{% endhint %}
 
 Angular CLI will ask a couple of questions to help create a new application. Answer the questions as shown below:
 
-1. Do you want to enforce stricter type checking and stricter bundle budgets in the workspace? \(y/N\): **N**
-2. Would you like to add Angular routing? \(y/N\): **N** 
-3. Which stylesheet format would you like to use? \(Use arrow keys\): Select **SCSS**
+1. Would you like to add Angular routing? \(y/N\): **N** 
+2. Which stylesheet format would you like to use? \(Use arrow keys\): Select **SCSS**
 
 This can take a while, since many packages are being downloaded from the web and installed.
 
