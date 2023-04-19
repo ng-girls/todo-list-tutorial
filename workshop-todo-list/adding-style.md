@@ -1,4 +1,4 @@
-# \#14: 💅 Adding Style
+# #14: 💅 Adding Style
 
 With Angular, we can give style to components in a way that will not affect the rest of the application. It's a good practice to encapsulate the component-related style this way.
 
@@ -82,7 +82,7 @@ ol, ul {
 > </html>
 > ```
 
-We added style directly to elements \(`html, body, div, span, h1, p, ul, li`\) which will affect our app immediately. We also added styles using css-class selectors. We need to add these class names to the relevant elements.
+We added style directly to elements (`html, body, div, span, h1, p, ul, li`) which will affect our app immediately. We also added styles using css-class selectors. We need to add these class names to the relevant elements.
 
 In `app-root` add the class `app-title` to the `h1` element:
 
@@ -144,7 +144,7 @@ We need to add the `todo-input` class to the `input` element:
 <input class="todo-input"
        #inputElementRef
        [value]="title"
-       (keyup.enter)="submitValue($event.target.value)">
+       (keyup.enter)="submitValue(getInputValue($event))">
 ```
 {% endcode %}
 
@@ -258,18 +258,17 @@ StackBlitz users - press **Save** in the toolbar and continue to the next sectio
 
 Commit all your changes by running this command in your project directory.
 
-```text
+```
 git add -A && git commit -m "Your Message"
 ```
 
 Push your changes to GitHub by running this command in your project directory.
 
-```text
+```
 git push
 ```
 {% endhint %}
 
 {% hint style="success" %}
-[See the results on StackBlitz](https://stackblitz.com/github/ng-girls/todo-list-tutorial/tree/master/examples/0_14-adding-style)
+[See the results on StackBlitz](https://stackblitz.com/github/ng-girls/todo-list-tutorial/tree/master/examples/0\_14-adding-style)
 {% endhint %}
-

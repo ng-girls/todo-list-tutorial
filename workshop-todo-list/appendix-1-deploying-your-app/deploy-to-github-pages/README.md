@@ -1,7 +1,7 @@
 # Deploy to GitHub Pages
 
 {% hint style="info" %}
-**StackBlitz Instructions** ![](<../../../.gitbook/assets/stackblitz-hint (1) (1).svg>)
+**StackBlitz Instructions** ![](<../../../.gitbook/assets/stackblitz-hint (1) (2).svg>)
 
 Follow the instructions on the [StackBlitz instructions](stackblitz.md) page in this chapter to rename your StackBlitz project and share the link to your app.
 {% endhint %}

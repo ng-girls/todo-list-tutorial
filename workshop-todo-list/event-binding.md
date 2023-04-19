@@ -165,7 +165,7 @@ Now the title will change only when the user hits the Enter key while typing in 
 
 ### Explore the $event
 
-![lab-icon](<../assets/lab (1).jpg>)**Playground:** You can change the `getInputValue` method to log the `$event` object in the console. This way you can explore it and see what properties it has.
+![lab-icon](<../assets/lab (2).jpg>)**Playground:** You can change the `getInputValue` method to log the `$event` object in the console. This way you can explore it and see what properties it has.
 
 Change the method `getInputValue`:
 

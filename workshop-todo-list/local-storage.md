@@ -49,7 +49,7 @@ ng g s services/storage
 ```
 
 {% hint style="info" %}
-**StackBlitz Instructions** ![](<../.gitbook/assets/stackblitz-hint (1) (1).svg>)
+**StackBlitz Instructions** ![](<../.gitbook/assets/stackblitz-hint (1) (2).svg>)
 
 Right click on the `services` folder and use the Angular Generator to create a service named `storage`.
 {% endhint %}

@@ -9,7 +9,7 @@ ng g c list-manager
 ```
 
 {% hint style="info" %}
-**StackBlitz Instructions** ![](<../.gitbook/assets/stackblitz-hint (1) (1).svg>)
+**StackBlitz Instructions** ![](<../.gitbook/assets/stackblitz-hint (1) (2).svg>)
 
 Use the Angular Generator to create the component, then make the component [use an inline template](https://ng-girls.gitbook.io/todo-list-tutorial/component#inline-template). Continue with the remaining instructions on this page.
 {% endhint %}

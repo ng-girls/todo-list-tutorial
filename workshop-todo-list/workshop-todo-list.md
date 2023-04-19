@@ -10,7 +10,7 @@ This tutorial is open source and is written by the community. Please feel free t
 
 The tutorial is used in the [ngGirls](http://ng-girls.org) workshops. You are welcome to use it in your own workshop and we'd love to hear about it! Write to us: [info@ng-girls.org](mailto:info@ng-girls.org).
 
-![](<../assets/ngGirls banner transparent (3).png>)
+![](<../assets/ngGirls banner transparent.png>)
 
 ![](<../.gitbook/assets/slogen (2).png>)
 

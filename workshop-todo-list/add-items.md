@@ -1,4 +1,4 @@
-# \#12: 📌Add items
+# #12: 📌Add items
 
 We want to add items to our list. With Angular, we can do this easily and see the item added immediately. We will do this from within the `input-button-unit` component we created earlier. We'll change it so when hitting the Enter key or clicking the submit button, the value of the input box will become the title of the new item, and the new item will be added to the list.
 
@@ -8,7 +8,7 @@ For example, in our case, we'll be able to use the `input-button-unit` inside th
 
 So what we actually want to do is to **emit an event** from the `input-button-unit` component whenever the title is changed. With Angular, we can easily define and emit events from our components!
 
-## @Output\(\)
+## @Output()
 
 Add the following line inside the `InputButtonUnitComponent` Class, which defines an output for the component:
 
@@ -57,7 +57,7 @@ submitValue(newTitle: string) {
 template: `
   <input #inputElementRef
          [value]="title"
-         (keyup.enter)="submitValue($event.target.value)">
+         (keyup.enter)="submitValue(getInputValue($event))">
 
   <button (click)="submitValue(inputElementRef.value)">
     Save
@@ -105,18 +105,17 @@ StackBlitz users - press **Save** in the toolbar and continue to the next sectio
 
 Commit all your changes by running this command in your project directory.
 
-```text
+```
 git add -A && git commit -m "Your Message"
 ```
 
 Push your changes to GitHub by running this command in your project directory.
 
-```text
+```
 git push
 ```
 {% endhint %}
 
 {% hint style="success" %}
-[See the results on StackBlitz](https://stackblitz.com/github/ng-girls/todo-list-tutorial/tree/master/examples/0_12-add-items)
+[See the results on StackBlitz](https://stackblitz.com/github/ng-girls/todo-list-tutorial/tree/master/examples/0\_12-add-items)
 {% endhint %}
-

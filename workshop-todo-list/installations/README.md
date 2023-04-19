@@ -150,7 +150,7 @@ You should see the page like this:
 ![start screen. welcome message depends on project name](../../.gitbook/assets/initial-app.png)
 
 {% hint style="info" %}
-**StackBlitz Instructions** ![](<../../.gitbook/assets/stackblitz-hint (1) (1).svg>)
+**StackBlitz Instructions** ![](<../../.gitbook/assets/stackblitz-hint (1) (2).svg>)
 
 Follow the instructions on the [StackBlitz instructions](stackblitz.md) page in this chapter to set up your online development environment.
 {% endhint %}

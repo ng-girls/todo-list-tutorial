@@ -161,7 +161,7 @@ If you wish to continue this tutorial with templates in separate HTML files, do 
 The same way we use inline template, we can use also inline styles. But for now we will keep the styles in a separate file.
 
 {% hint style="info" %}
-**StackBlitz Instructions** ![](<../.gitbook/assets/stackblitz-hint (1) (1).svg>)
+**StackBlitz Instructions** ![](<../.gitbook/assets/stackblitz-hint (1) (2).svg>)
 
 StackBlitz doesn't support the inline template configuration setting. We will need to manually move the template code from the `.html` file to the `.component.ts` file each time we create a new component. Don't worry! Just watch for the StackBlitz instructions info panel and we'll walk you through it.
 {% endhint %}

@@ -9,7 +9,7 @@ ng g s services/todo-list
 ```
 
 {% hint style="info" %}
-**StackBlitz Instructions** ![](<../.gitbook/assets/stackblitz-hint (1) (1).svg>)
+**StackBlitz Instructions** ![](<../.gitbook/assets/stackblitz-hint (1) (2).svg>)
 
 Create the `services` folder inside the `app` folder. Then use the Angular Generator to create the service named `todo-list`.
 {% endhint %}
