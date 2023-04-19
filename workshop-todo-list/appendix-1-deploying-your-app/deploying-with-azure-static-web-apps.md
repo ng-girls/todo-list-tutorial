@@ -1,35 +1,40 @@
 # Deploy to Azure Static Web Apps
 
-Azure Static Web Apps \(preview\) is a new service offered on Azure, Microsoft's Cloud. As described in [Appendix 1: Deploying your app](./), it enables you to deploy your web application. This means that your application will be available to everyone on the internet, with its own URL. 
+Azure Static Web Apps (preview) is a new service offered on Azure, Microsoft's Cloud. As described in [Appendix 1: Deploying your app](./), it enables you to deploy your web application. This means that your application will be available to everyone on the internet, with its own URL.&#x20;
 
 Below you'll find more information about Azure Static Web Apps, as well as [instructions](deploying-with-azure-static-web-apps.md#deploying-the-todo-list-app-with-azure-static-web-apps) to use it with the todo-list app. Here are some additional resources to help you get started.
 
-{% embed url="https://docs.microsoft.com/en-au/azure/static-web-apps/?WT.mc\_id=javascript-19997-shjacobs" caption="Azure Static Web Apps Documentation" %}
+{% embed url="https://docs.microsoft.com/en-au/azure/static-web-apps/?WT.mc_id=javascript-19997-shjacobs" %}
+Azure Static Web Apps Documentation
+{% endembed %}
 
-{% embed url="https://docs.microsoft.com/en-au/learn/modules/publish-app-service-static-web-app-api/?WT.mc\_id=javascript-19997-shjacobs" caption="Learn Module - Publish a Front-end App with Azure Static Web Apps" %}
+{% embed url="https://docs.microsoft.com/en-au/learn/modules/publish-app-service-static-web-app-api/?WT.mc_id=javascript-19997-shjacobs" %}
+Learn Module - Publish a Front-end App with Azure Static Web Apps
+{% endembed %}
 
-{% embed url="https://docs.microsoft.com/en-au/learn/modules/publish-static-web-app-api-preview-url/?WT.mc\_id=javascript-19997-shjacobs" caption="Learn Module - Publish an API to Azure Static Web Apps" %}
+{% embed url="https://docs.microsoft.com/en-au/learn/modules/publish-static-web-app-api-preview-url/?WT.mc_id=javascript-19997-shjacobs" %}
+Learn Module - Publish an API to Azure Static Web Apps
+{% endembed %}
 
 ## What can we get with Static Web Apps?
 
 With Static Web Apps you get more than just having your application on the web. The following features are available with no additional configuration:
 
-* **Global distribution:** The application is deployed in several physical locations \(data centers\) around the world and served to users from the nearest location. This way it takes less time to get to the users. \(Though information travels very quickly, it still makes a difference whether it travels from the other side of the globe or from the same continent.\)
+* **Global distribution:** The application is deployed in several physical locations (data centers) around the world and served to users from the nearest location. This way it takes less time to get to the users. (Though information travels very quickly, it still makes a difference whether it travels from the other side of the globe or from the same continent.)
 * **Dynamic scale:** When many users request your application, it is replicated to more servers so that it doesn't get overloaded. If the rate of requests drops, some deployed instances are turned off to save space and resources. It is a seamless operation done automatically by Azure.
-* **SSL certificate:** The protocols for communication between computers and servers on the World Wide Web have been revised due to security threats. The currently most common and secure method is called SSL - _Secure Sockets Layer_. It's a standard security technology for establishing an encrypted link between a server and a client \(in our case, the browser\). You can tell that a website uses SSL if the URL starts with **https** \(as opposed to **http**\). When a website you're trying to access does not use SSL, you may get a warning from your browser. SSL requires a certificate, which is automatically available to the apps deployed on Azure Static Web Apps.
+* **SSL certificate:** The protocols for communication between computers and servers on the World Wide Web have been revised due to security threats. The currently most common and secure method is called SSL - _Secure Sockets Layer_. It's a standard security technology for establishing an encrypted link between a server and a client (in our case, the browser). You can tell that a website uses SSL if the URL starts with **https** (as opposed to **http**). When a website you're trying to access does not use SSL, you may get a warning from your browser. SSL requires a certificate, which is automatically available to the apps deployed on Azure Static Web Apps.
 * **Authentication:** Once your app is deployed it gets additional routes with which your users can authenticate. You can use this feature to recognize the users and bring them their own data and options.
-* **Pre-production \(Staging\) environment:** When you make changes to your application and open a pull request, the new version is deployed as a parallel instance to the main one and you get a new link for it. This way you can test the new version in an environment which is the closest to production.
+* **Pre-production (Staging) environment:** When you make changes to your application and open a pull request, the new version is deployed as a parallel instance to the main one and you get a new link for it. This way you can test the new version in an environment which is the closest to production.
 
 The following features are available if you choose to use them:
 
-* **Custom domain:** The default URL that your application is deployed at is generated by Azure. You can purchase a domain from a domain registrar, and then set up your application to load on this domain either at the main entry point \(www\) or a subdomain. For example, the ngGirls website loads on the domain ng-girls.com on its subdomain workshops.ng-girls.org.
-* **Serverless functions API:** It's good practice to have some functions run on the server side instead of on the application. Such functions can, for example, access the database, perform heavy-duty actions, and run commands that don't belong to the front-end \(the part of the application that runs on the browser\). In these functions you can securely identify the user who called it and perform relevant actions.
+* **Custom domain:** The default URL that your application is deployed at is generated by Azure. You can purchase a domain from a domain registrar, and then set up your application to load on this domain either at the main entry point (www) or a subdomain. For example, the ngGirls website loads on the domain ng-girls.com on its subdomain workshops.ng-girls.org.
+*   **Serverless functions API:** It's good practice to have some functions run on the server side instead of on the application. Such functions can, for example, access the database, perform heavy-duty actions, and run commands that don't belong to the front-end (the part of the application that runs on the browser). In these functions you can securely identify the user who called it and perform relevant actions.
 
-  You can write these functions in the same project as your web application, in a separate folder. Azure will deploy them to its servers in a seamless operation, and manage their global distribution, scale and security the same way it does with the application itself. Then these functions will be available with their own URL \(configured in the code\) and the application \(and its users\) will be able to call them. That's the API - _application programming interface_. It's the instructions to calling the function - where to call it \(URL\), in which method \(GET, POST, etc.\) and what to send to it \(data or files to save, query to request information, etc.\) 
-
-* **Authorization and user management:** You can manage different roles for the users \(admin, authenticated, guests, etc.\) and identify the role in the serverless functions. You can then assign these roles to specific people and invite then to use the application.
-* **Environment variables and secrets:** You can configure secret values and/or variables that are dependent on the environment \(development, staging, production\) on Azure instead of in your code. This way, not only can you reveal the values on a need-to-know basis and conceal them from developers who just work on the code. You can also manage these values \(change them whenever you need, and specifically when there's a security threat\) in one place and without touching the application code. These variables are used in the API.
-* **Routes configuration:** Within a single file in the project you can configure rules for routing in the application. This applies to different parts of the front-end application and the API. Routes are accessed using the URL according to the part that's after the domain. For example, [https://workshops.ng-girls.org/](https://workshops.ng-girls.org/) is the main \(or root\) route of the ngGirls workshops website. The route to the page of ng-girls @ ng-conf 2021 workhsop is [https://workshops.ng-girls.org/ngconf-2021/](https://workshops.ng-girls.org/ngconf-2021/). With the configuration file you can define routes and configure the roles that are allowed to access it, fallback routes, redirects and error pages.
+    You can write these functions in the same project as your web application, in a separate folder. Azure will deploy them to its servers in a seamless operation, and manage their global distribution, scale and security the same way it does with the application itself. Then these functions will be available with their own URL (configured in the code) and the application (and its users) will be able to call them. That's the API - _application programming interface_. It's the instructions to calling the function - where to call it (URL), in which method (GET, POST, etc.) and what to send to it (data or files to save, query to request information, etc.)&#x20;
+* **Authorization and user management:** You can manage different roles for the users (admin, authenticated, guests, etc.) and identify the role in the serverless functions. You can then assign these roles to specific people and invite then to use the application.
+* **Environment variables and secrets:** You can configure secret values and/or variables that are dependent on the environment (development, staging, production) on Azure instead of in your code. This way, not only can you reveal the values on a need-to-know basis and conceal them from developers who just work on the code. You can also manage these values (change them whenever you need, and specifically when there's a security threat) in one place and without touching the application code. These variables are used in the API.
+* **Routes configuration:** Within a single file in the project you can configure rules for routing in the application. This applies to different parts of the front-end application and the API. Routes are accessed using the URL according to the part that's after the domain. For example, [https://workshops.ng-girls.org/](https://workshops.ng-girls.org/) is the main (or root) route of the ngGirls workshops website. The route to the page of ng-girls @ ng-conf 2021 workhsop is [https://workshops.ng-girls.org/ngconf-2021/](https://workshops.ng-girls.org/ngconf-2021/). With the configuration file you can define routes and configure the roles that are allowed to access it, fallback routes, redirects and error pages.
 
 Once you have Azure Static Web Apps set up for your application, you can add additional services either by Azure or other providers, using the serverless functions. For example, a database, storage account, Machine Learning services, and analytics.
 
@@ -37,28 +42,30 @@ Once you have Azure Static Web Apps set up for your application, you can add add
 
 You need two things:
 
-* An Azure account. You can set up an Azure account with many services to try out for free for a year plus $200 credit for the paid ones, in addition to services that are always free. [Click here for more information and to open a new Azure Account with these benefits](https://azure.microsoft.com/en-us/free/open-source/?WT.mc_id=javascript-19997-shjacobs).  At some workshops you may get an Azure Pass to help you set up an Azure account quickly. However, this pass has a limited time and value. If you'd like to keep working with Azure, it's recommended to open a regular Azure account.
-* A [GitHub](https://github.com/) account and a [repository](https://github.com/new) for your application code. Azure Static Web Apps use GitHub actions - a service that automatically runs workflows whenever the code is changed. This way, whenever the main branch of the repository is changed and whenever a pull request is created, a process of building and deploying your app starts automatically. GitHub is free to use. You can choose to make the repository public \(for anyone to see\) or private \(where you can invite collaborators\).
+* An Azure account. You can set up an Azure account with many services to try out for free for a year plus $200 credit for the paid ones, in addition to services that are always free. [Click here for more information and to open a new Azure Account with these benefits](https://azure.microsoft.com/en-us/free/open-source/?WT.mc\_id=javascript-19997-shjacobs). \
+  At some workshops you may get an Azure Pass to help you set up an Azure account quickly. However, this pass has a limited time and value. If you'd like to keep working with Azure, it's recommended to open a regular Azure account.
+* A [GitHub](https://github.com/) account and a [repository](https://github.com/new) for your application code. Azure Static Web Apps use GitHub actions - a service that automatically runs workflows whenever the code is changed. This way, whenever the main branch of the repository is changed and whenever a pull request is created, a process of building and deploying your app starts automatically.\
+  GitHub is free to use. You can choose to make the repository public (for anyone to see) or private (where you can invite collaborators).
 
-{% embed url="https://azure.microsoft.com/en-us/free/open-source/?WT.mc\_id=javascript-19997-shjacobs" %}
+{% embed url="https://azure.microsoft.com/en-us/free/open-source/?WT.mc_id=javascript-19997-shjacobs" %}
 
 ## What does "preview" mean?
 
-Azure Static Web Apps was launched in May 2020 in preview mode. This is equivalent to "beta". It means that it's available for the public to use, but it is not yet stable. Changes may be made in the service that may require to refactor the apps that use it. Features that are relevant to big-scale apps may not be available yet, and the pricing may change. 
+Azure Static Web Apps was launched in May 2020 in preview mode. This is equivalent to "beta". It means that it's available for the public to use, but it is not yet stable. Changes may be made in the service that may require to refactor the apps that use it. Features that are relevant to big-scale apps may not be available yet, and the pricing may change.&#x20;
 
-The next stage it GA - General Availability. This is when the service becomes stable. There still may be changes. However, they will not affect deployed applications. GA will come soon... We can't tell the exact date, but time flies anyway ;\)
+The next stage it GA - General Availability. This is when the service becomes stable. There still may be changes. However, they will not affect deployed applications. GA will come soon... We can't tell the exact date, but time flies anyway ;)
 
 ## How much does Azure Static Web Apps cost?
 
-Static Web Apps is free during preview. At the moment you can use it for free to deploy multiple applications. However, the service may be limited to small apps in terms of code size, memory, run time and traffic. By the time it becomes generally available \(GA\) the pricing \(including, perhaps, a free tier\) will be announced. Users will be notified 30 days before billing begins.
+Static Web Apps is free during preview. At the moment you can use it for free to deploy multiple applications. However, the service may be limited to small apps in terms of code size, memory, run time and traffic. By the time it becomes generally available (GA) the pricing (including, perhaps, a free tier) will be announced. Users will be notified 30 days before billing begins.
 
-[More information about Azure Static Web Apps pricing](https://azure.microsoft.com/en-us/pricing/details/app-service/static/?WT.mc_id=javascript-19997-shjacobs)
+[More information about Azure Static Web Apps pricing](https://azure.microsoft.com/en-us/pricing/details/app-service/static/?WT.mc\_id=javascript-19997-shjacobs)
 
-Azure Functions consumption plan is billed based on per-second resource consumption and executions. It includes a monthly free grant which should be more than sufficient for a small app in production \(1 million requests and 400,000 GB-s of resource consumption per month per subscription in pay-as-you-go pricing across all function apps in that subscription.\) A storage account is set up for each Functions app. The storage account has 5GB quota for free for the first year. 
+Azure Functions consumption plan is billed based on per-second resource consumption and executions. It includes a monthly free grant which should be more than sufficient for a small app in production (1 million requests and 400,000 GB-s of resource consumption per month per subscription in pay-as-you-go pricing across all function apps in that subscription.) A storage account is set up for each Functions app. The storage account has 5GB quota for free for the first year.&#x20;
 
-[More information about Azure Functions pricing](https://azure.microsoft.com/en-us/pricing/details/functions/?WT.mc_id=javascript-19997-shjacobs)
+[More information about Azure Functions pricing](https://azure.microsoft.com/en-us/pricing/details/functions/?WT.mc\_id=javascript-19997-shjacobs)
 
-{% embed url="https://azure.microsoft.com/en-us/free/?WT.mc\_id=javascript-19997-shjacobs" %}
+{% embed url="https://azure.microsoft.com/en-us/free/?WT.mc_id=javascript-19997-shjacobs" %}
 
 ## Deploying the Todo List App with Azure Static Web Apps
 
@@ -66,11 +73,11 @@ First, your application project has to be hosted on GitHub. If you haven't done 
 
 ### Building for Production
 
-The build command is defined in the file `package.json`. Building the project means compiling it to JavaScript and combining to only few files so it's ready to be deployed. However, Angular-CLI configures this command without the needed `--prod` flag which makes the build artifacts ready for production. For instance, without this flag the environment file \(which includes variables specific to the environment\) that is used is the development version and not the production version. 
+The build command is defined in the file `package.json`. Building the project means compiling it to JavaScript and combining to only few files so it's ready to be deployed. However, Angular-CLI configures this command without the needed `--prod` flag which makes the build artifacts ready for production. For instance, without this flag the environment file (which includes variables specific to the environment) that is used is the development version and not the production version.&#x20;
 
 Go to `package.json` . Under `"scripts"` you'll find the build command `"build": ...`. **Add the `--prod` flag to the command.** The line should look like this:
 
-```text
+```
 "build": "ng build --prod",
 ```
 
@@ -82,39 +89,38 @@ Watch the video for instructions for setting up your Static Web App, or follow t
 
 {% embed url="https://youtu.be/COq-Q4QeW90" %}
 
-Go to the [Azure portal](http://portal.azure.com/?WT.mc_id=javascript-19997-shjacobs). Click on **Create a resource**.
+Go to the [Azure portal](http://portal.azure.com/?WT.mc\_id=javascript-19997-shjacobs). Click on **Create a resource**.
 
-![](../../.gitbook/assets/image%20%282%29.png)
+![](<../../.gitbook/assets/image (2).png>)
 
 Search for **Static Web Apps** and select it. Hit **Create**.
 
-![](../../.gitbook/assets/image%20%286%29.png)
+![](<../../.gitbook/assets/image (6).png>)
 
 Fill out the details.
 
 * **Subscription** - your Azure account.
-* **Resource Group** - create a new one - it can be with the name of your application. 
+* **Resource Group** - create a new one - it can be with the name of your application.&#x20;
 * **Name** - of the Static Web App resource, it can be the name of your application.
 * **Region** - select the one closest to you. It won't affect the global distribution, only your work with the resource.
 * **Source** - GitHub
 
-Sign in with GitHub and authorize Azure to access to your GitHub account. Select your repository from the list. 
+Sign in with GitHub and authorize Azure to access to your GitHub account. Select your repository from the list.&#x20;
 
-Select your **organization** \(your user on GitHub\), the **repository** and the **main branch**. 
+Select your **organization** (your user on GitHub), the **repository** and the **main branch**.&#x20;
 
 Select **Build Presets** - **Angular**.
 
-* **App location** - keep it as is \("**/**"\)
+* **App location** - keep it as is ("**/**")
 * **Api location** - enter **api**
-* **Output location** - that's the folder where the build artifacts are created. The default location configured by Angular-CLI is **dist/{your-app-name}** so it's important to change the default value in this field \("dist"\). You can double check the output location in the file `angular.json`. - look for `"outputPath"`.
+* **Output location** - that's the folder where the build artifacts are created. The default location configured by Angular-CLI is **dist/{your-app-name}** so it's important to change the default value in this field ("dist"). You can double check the output location in the file `angular.json`. - look for `"outputPath"`.
 
 Hit **Review + create** and then **create the resource**. It will take a few seconds for the resource to be created. Then, go to the resource. You'll see the link where your application will be deployed. But it will take about 5-10 more minutes for your application to appear there, since the project is being built and deployed.
 
-You can check the build and deploy action that's running on your repository. In your repository on GitHub go to the **Actions** tab and drill down to see the currently \(and previously\) running actions and logs.
+You can check the build and deploy action that's running on your repository. In your repository on GitHub go to the **Actions** tab and drill down to see the currently (and previously) running actions and logs.
 
 Get a cup of your favorite drink, look at the action logs, and when it gives a green mark - go back to the deployed app and refresh it.
 
 ## Displaying your app in the ngGirls gallery
 
-We'd love to showcase the wonderful work done by the ngGirls participants. Even if you haven't done anything special with the todo-list app and just followed the tutorial. Please send us an email with the link to your app! hello@ng-girls.org. Thanks! 
-
+We'd love to showcase the wonderful work done by the ngGirls participants. Even if you haven't done anything special with the todo-list app and just followed the tutorial. Please send us an email with the link to your app! hello@ng-girls.org. Thanks!&#x20;

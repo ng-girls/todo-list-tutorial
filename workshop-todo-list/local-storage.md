@@ -1,4 +1,4 @@
-# \#17: 💾Local storage
+# #17: 💾Local storage
 
 We would like to persist the todo list on our computer, so that when accessing or reloading the app we'll see the list with the changes we've made. Ideally the list would be saved in a database, but we will implement a simple version using the browser's own storage.
 
@@ -10,7 +10,7 @@ Local storage, as its name implies, is a tool for storing data locally. Similar 
 
 ## Browser support
 
-As local storage was first introduced to us along with HTML5, all browsers that support HTML5 standard will also support local storage.  
+As local storage was first introduced to us along with HTML5, all browsers that support HTML5 standard will also support local storage.\
 Basically, it's supported by most modern web browsers, including IE 8.
 
 ## We want to see some code!
@@ -38,9 +38,9 @@ localStorage.clear();
 
 There are a few more wonderful methods you can use, as described in the [MDN Web Docs](https://developer.mozilla.org/en-US/docs/Web/API/Storage).
 
-## Angular time \(back to our app\)
+## Angular time (back to our app)
 
-In the following section, we will build a local storage service that will be used to store our todo list items. It will be a generic service for lists of objects. We'll need to tell it the name of data we're looking for \(a key\), so we can use it to store other lists as well.
+In the following section, we will build a local storage service that will be used to store our todo list items. It will be a generic service for lists of objects. We'll need to tell it the name of data we're looking for (a key), so we can use it to store other lists as well.
 
 As in earlier chapters, we will generate the service using the Angular CLI. We will name the new service `storage`
 
@@ -49,7 +49,7 @@ ng g s services/storage
 ```
 
 {% hint style="info" %}
-**StackBlitz Instructions** ![](../.gitbook/assets/stackblitz-hint.svg)
+**StackBlitz Instructions** ![](<../.gitbook/assets/stackblitz-hint (1) (1).svg>)
 
 Right click on the `services` folder and use the Angular Generator to create a service named `storage`.
 {% endhint %}
@@ -73,11 +73,11 @@ export class StorageService {
 
 If something looks unfamiliar or confusing to you, please refer to the [Creating a Service chapter](creating-a-service.md) for more detailed information about services.
 
-Since we cannot access an item on the list directly in the local storage, we'll implement only two methods: getting the data and setting the data. Changing the list will be done by the TodoListService. To each method we'll pass the key \(name\) of the data we want.
+Since we cannot access an item on the list directly in the local storage, we'll implement only two methods: getting the data and setting the data. Changing the list will be done by the TodoListService. To each method we'll pass the key (name) of the data we want.
 
 ### getData
 
-This method will get and return the data \(object, list, etc.\) stored in the service under the given key:
+This method will get and return the data (object, list, etc.) stored in the service under the given key:
 
 {% code title="src/app/services/storage.service.ts" %}
 ```typescript
@@ -87,11 +87,11 @@ This method will get and return the data \(object, list, etc.\) stored in the se
 ```
 {% endcode %}
 
-Wait! Wait! why `JSON.parse`? The answer is simple: As described above, local storage stores data as key-value pairs, and the values are stored as **strings**. So, if we want to have a real object \(or list\) to work with, we must parse the string into a valid JavaScript object.
+Wait! Wait! why `JSON.parse`? The answer is simple: As described above, local storage stores data as key-value pairs, and the values are stored as **strings**. So, if we want to have a real object (or list) to work with, we must parse the string into a valid JavaScript object.
 
 ### setData
 
-This method will save the given data \(object, list, etc.\) under the given key.
+This method will save the given data (object, list, etc.) under the given key.
 
 {% code title="src/app/services/storage.service.ts" %}
 ```typescript
@@ -154,7 +154,7 @@ Now we'll implement the methods for managing our list.
 
 ### addItem
 
-We'll push an item to the todoList \(same as before\) and then update the storage.
+We'll push an item to the todoList (same as before) and then update the storage.
 
 {% code title="src/app/services/todo-list.service.ts" %}
 ```typescript
@@ -167,7 +167,7 @@ addItem(item: TodoItem): void {
 
 ### updateItem
 
-Here we want to update an existing item. We'll assume that we hold the original item by reference, and can find it in the list. \(Other implementations may use an item ID to search the list.\) Then we'll replace it with a new version. Finally we'll update the storage.
+Here we want to update an existing item. We'll assume that we hold the original item by reference, and can find it in the list. (Other implementations may use an item ID to search the list.) Then we'll replace it with a new version. Finally we'll update the storage.
 
 {% code title="src/app/services/todo-list.service.ts" %}
 ```typescript
@@ -179,8 +179,8 @@ updateItem(item: TodoItem, changes): void {
 ```
 {% endcode %}
 
-So what is going on here?  
-We locate the item in the list. Then in the same place we assign a new object, which is constructed from the original item and the changes made to it. We're using the spread operator for this: a new object is constructed, composed of the original set of keys and values \(`...item`\) which are overridden by the keys and values of `changes`. \(If a key in `changes` doesn't exist in `item`, it is added to the new object.\)
+So what is going on here?\
+We locate the item in the list. Then in the same place we assign a new object, which is constructed from the original item and the changes made to it. We're using the spread operator for this: a new object is constructed, composed of the original set of keys and values (`...item`) which are overridden by the keys and values of `changes`. (If a key in `changes` doesn't exist in `item`, it is added to the new object.)
 
 ### DRY - Don't Repeat Yourself
 
@@ -218,7 +218,7 @@ deleteItem(item: TodoItem): void {
 ```
 {% endcode %}
 
-`splice(i, n)` removes `n` items starting from index `i`. In our code, we remove only one item \(that's why we use 1 as the second parameter\).
+`splice(i, n)` removes `n` items starting from index `i`. In our code, we remove only one item (that's why we use 1 as the second parameter).
 
 ### Final result
 
@@ -290,18 +290,17 @@ StackBlitz users - press **Save** in the toolbar and continue to the next sectio
 
 Commit all your changes by running this command in your project directory.
 
-```text
+```
 git add -A && git commit -m "Your Message"
 ```
 
 Push your changes to GitHub by running this command in your project directory.
 
-```text
+```
 git push
 ```
 {% endhint %}
 
 {% hint style="success" %}
-[See the results on StackBlitz](https://stackblitz.com/github/ng-girls/todo-list-tutorial/tree/master/examples/0_17-local-storage)
+[See the results on StackBlitz](https://stackblitz.com/github/ng-girls/todo-list-tutorial/tree/master/examples/0\_17-local-storage)
 {% endhint %}
-

@@ -1,20 +1,20 @@
-# \#13: 🚧 Refactor App Component
+# #13: 🚧 Refactor App Component
 
 We're going to perform a small refactoring. The `app-root` shouldn't have such a large template and all this logic. It should just call another component that will deal with that.
 
-* Create a new component called `list-manager`: 
+* Create a new component called `list-manager`:&#x20;
 
 ```bash
 ng g c list-manager
 ```
 
 {% hint style="info" %}
-**StackBlitz Instructions** ![](../.gitbook/assets/stackblitz-hint.svg)
+**StackBlitz Instructions** ![](<../.gitbook/assets/stackblitz-hint (1) (1).svg>)
 
 Use the Angular Generator to create the component, then make the component [use an inline template](https://ng-girls.gitbook.io/todo-list-tutorial/component#inline-template). Continue with the remaining instructions on this page.
 {% endhint %}
 
-* Move all the code from `app-root` to `list-manager`.  
+* Move all the code from `app-root` to `list-manager`. &#x20;
 * You can keep the title in app-root, and give it a nice value.
 * Be careful not to change the list manager component's class name!
 
@@ -98,18 +98,17 @@ StackBlitz users - press **Save** in the toolbar and continue to the next sectio
 
 Commit all your changes by running this command in your project directory.
 
-```text
+```
 git add -A && git commit -m "Your Message"
 ```
 
 Push your changes to GitHub by running this command in your project directory.
 
-```text
+```
 git push
 ```
 {% endhint %}
 
 {% hint style="success" %}
-[See the results on StackBlitz](https://stackblitz.com/github/ng-girls/todo-list-tutorial/tree/master/examples/0_13-refactor-app-component)
+[See the results on StackBlitz](https://stackblitz.com/github/ng-girls/todo-list-tutorial/tree/master/examples/0\_13-refactor-app-component)
 {% endhint %}
-

@@ -14,9 +14,8 @@ This tutorial is open source and is written by the community. Please feel free t
 
 The tutorial is used in the [ngGirls](http://ng-girls.org) workshops. You are welcome to use it in your own workshop and we'd love to hear about it! Write to us: [hello@ng-girls.org](mailto:hello@ng-girls.org).
 
-![](.gitbook/assets/nggirls-banner-transparent%20%284%29%20%284%29.png)
+![](<assets/ngGirls banner transparent (3).png>)
 
-![](.gitbook/assets/slogen%20%281%29.png)
+![](<.gitbook/assets/slogen (2).png>)
 
-**About ngGirls founder and the lead author of this tutorial:** Shmuela Jacobs is a senior front-end developer and consultant mastering Angular. During her academic studies \(M.Sc. in Information Management Engineering and B.Sc. in Physics\) she has combined her passions of coding and teaching as a software developer, teaching assistant, science museum guide, and researcher. Today she continues to enjoy these activities as a Cloud Advocate at Microsoft, developing Angular apps with Azure and sharing her knowledge and experience in online media, meetups and conferences. Shmuela is the founder of ngGirls and the organizer of the [Angular AfterHours meetup group](https://www.meetup.com/Angular-AfterHours/).
-
+**About ngGirls founder and the lead author of this tutorial:** Shmuela Jacobs is a senior front-end developer and consultant mastering Angular. During her academic studies (M.Sc. in Information Management Engineering and B.Sc. in Physics) she has combined her passions of coding and teaching as a software developer, teaching assistant, science museum guide, and researcher. Today she continues to enjoy these activities as a Cloud Advocate at Microsoft, developing Angular apps with Azure and sharing her knowledge and experience in online media, meetups and conferences. Shmuela is the founder of ngGirls and the organizer of the [Angular AfterHours meetup group](https://www.meetup.com/Angular-AfterHours/).

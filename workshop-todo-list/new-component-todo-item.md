@@ -1,15 +1,15 @@
-# \#10: ➕ New component: todo-item
+# #10: ➕ New component: todo-item
 
 We will create a new component to display each todo item presented in the list. It will be a simple component at first, but it will grow later on. What's important is that **it will get the todo item as an input from its parent component**. This way it can be a reusable component, and not rely directly on the application's data and state.
 
 In the terminal, create a new component called `todo-item`:
 
-```text
+```
 ng g c todo-item
 ```
 
 {% hint style="info" %}
-**StackBlitz Instructions** ![](../.gitbook/assets/stackblitz-hint.svg)
+**StackBlitz Instructions** ![](<../.gitbook/assets/stackblitz-hint (1) (1).svg>)
 
 Use the Angular Generator to create the component, then make the component [use an inline template](https://ng-girls.gitbook.io/todo-list-tutorial/component#inline-template). Continue with the remaining instructions on this page.
 {% endhint %}
@@ -30,7 +30,7 @@ Use the new component in the template of `app-root` component - inside the `<li>
 
 Check out the result in the browser. What do you see? Why?
 
-## @Input\(\)
+## @Input()
 
 We want to display the title of each item within the `todo-item` component. We need to pass the current item in the loop to the `todo-item` component.
 
@@ -94,18 +94,17 @@ StackBlitz users - press **Save** in the toolbar and continue to the next sectio
 
 Commit all your changes by running this command in your project directory.
 
-```text
+```
 git add -A && git commit -m "Your Message"
 ```
 
 Push your changes to GitHub by running this command in your project directory.
 
-```text
+```
 git push
 ```
 {% endhint %}
 
 {% hint style="success" %}
-[See the results on StackBlitz](https://stackblitz.com/github/ng-girls/todo-list-tutorial/tree/master/examples/0_10-new-component-todo-item)
+[See the results on StackBlitz](https://stackblitz.com/github/ng-girls/todo-list-tutorial/tree/master/examples/0\_10-new-component-todo-item)
 {% endhint %}
-

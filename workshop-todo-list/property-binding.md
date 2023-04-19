@@ -1,4 +1,4 @@
-# \#6: 📥 Property binding
+# #6: 📥 Property binding
 
 We now have our input-button-unit component, but it does not do much. We want to bring it to life.
 
@@ -61,7 +61,7 @@ Every `input` element has an attribute called `value`, which holds the string th
 
 But we lose the dynamic binding between the properties in the controller and the template.
 
-Angular lets us bind properties to the template easily and conveniently; we saw that with interpolation. Now we'll see how to bind to an **element's property** \(not to be confused with class properties\). **We surround the wanted property with square brackets and pass it the class member**:
+Angular lets us bind properties to the template easily and conveniently; we saw that with interpolation. Now we'll see how to bind to an **element's property** (not to be confused with class properties). **We surround the wanted property with square brackets and pass it the class member**:
 
 {% code title="src/app/input-button-unit/input-button-unit.component.ts" %}
 ```markup
@@ -71,11 +71,11 @@ Angular lets us bind properties to the template easily and conveniently; we saw 
 
 Try this out and see the result in the browser!
 
-## a\# Binding to Methods
+## a# Binding to Methods
 
 The expressions that we can bind to in the template are not limited to class properties. They can be a method call or almost any other valid JavaScript expression.
 
-![lab-icon](../.gitbook/assets/lab%20%284%29%20%284%29.jpg) **Playground**: For example, let's bind the input value to a method call that returns a value. First, let's add the method `generateTitle` anywhere inside the class, but not inside any of its methods.
+![lab-icon](../assets/lab.jpg) **Playground**: For example, let's bind the input value to a method call that returns a value. First, let's add the method `generateTitle` anywhere inside the class, but not inside any of its methods.
 
 {% code title="src/app/input-button-unit/input-button-unit.component.ts" %}
 ```typescript
@@ -85,7 +85,7 @@ generateTitle(): string {
 ```
 {% endcode %}
 
-Replace one or both of the bindings of the title in the template with the method call \(don't forget the parentheses!\):
+Replace one or both of the bindings of the title in the template with the method call (don't forget the parentheses!):
 
 {% code title="src/app/input-button-unit/input-button-unit.component.ts" %}
 ```markup
@@ -95,11 +95,11 @@ Replace one or both of the bindings of the title in the template with the method
 ```
 {% endcode %}
 
-## b\# Change Detection
+## b# Change Detection
 
 Angular has a very efficient change detection mechanism. It looks for bindings in the components' templates, and then updates the value each time the bound expression is changed.
 
-![lab-icon](../.gitbook/assets/lab%20%284%29%20%2810%29.jpg) **Playground**: To show this, let's change the value of the title after a few seconds and see what happens. Call the `setTimeout` function inside `ngOnInit`:
+![lab-icon](<../assets/lab (9).jpg>) **Playground**: To show this, let's change the value of the title after a few seconds and see what happens. Call the `setTimeout` function inside `ngOnInit`:
 
 {% code title="src/app/input-button-unit/input-button-unit.component.ts" %}
 ```typescript
@@ -113,15 +113,15 @@ ngOnInit(): void {
 
 `setTimeout` is a JavaScript function. Its first parameter is what we want to happen - a function of our choice. The second parameter is how much we want to delay it, in milliseconds. In this example, we pass an **inline anonymous function** which sets the value of `this.title`. For this we use one of the new features in JavaScript ES6: an **arrow function**.
 
-## c\# Binding to Methods
+## c# Binding to Methods
 
 The expressions that we can bind to in the template are not limited to class properties. They can be a method call or almost any other valid Angular template expression.
 
-## d\# Resources
+## d# Resources
 
 [Angular Guide - Template Property Binding](https://angular.io/guide/template-syntax#property-binding--property-)
 
-## e\# A note about accessing the DOM
+## e# A note about accessing the DOM
 
 Using regular JavaScript, we can insert the value to the input via its properties. We'll fetch the element from the DOM and assign the value of the member `title` to the element's `value` property.
 
@@ -151,18 +151,17 @@ StackBlitz users - press **Save** in the toolbar and continue to the next sectio
 
 Commit all your changes by running this command in your project directory.
 
-```text
+```
 git add -A && git commit -m "Your Message"
 ```
 
 Push your changes to GitHub by running this command in your project directory.
 
-```text
+```
 git push
 ```
 {% endhint %}
 
 {% hint style="success" %}
-[See the results on StackBlitz](https://stackblitz.com/github/ng-girls/todo-list-tutorial/tree/master/examples/0_06-property-binding)
+[See the results on StackBlitz](https://stackblitz.com/github/ng-girls/todo-list-tutorial/tree/master/examples/0\_06-property-binding)
 {% endhint %}
-

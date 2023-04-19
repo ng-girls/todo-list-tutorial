@@ -1,15 +1,15 @@
-# \#15:  🔋 Creating a Service
+# #15: 🔋 Creating a Service
 
-In Angular, a service is \(typically\) a JavaScript class that's responsible for performing a specific task needed by your application. In our todo-list application, we'll create a service that will be responsible for saving and managing all the tasks, and we'll use it by injecting it into the components.
+In Angular, a service is (typically) a JavaScript class that's responsible for performing a specific task needed by your application. In our todo-list application, we'll create a service that will be responsible for saving and managing all the tasks, and we'll use it by injecting it into the components.
 
 ## Create a service with the Angular CLI:
 
-```text
+```
 ng g s services/todo-list
 ```
 
 {% hint style="info" %}
-**StackBlitz Instructions** ![](../.gitbook/assets/stackblitz-hint.svg)
+**StackBlitz Instructions** ![](<../.gitbook/assets/stackblitz-hint (1) (1).svg>)
 
 Create the `services` folder inside the `app` folder. Then use the Angular Generator to create the service named `todo-list`.
 {% endhint %}
@@ -17,7 +17,7 @@ Create the `services` folder inside the `app` folder. Then use the Angular Gener
 This command will generate the service in the file `src/app/services/todo-list.service.ts`. The service is a simple Class called `TodoListService`. It has the decorator `@Injectable` which allows it to use Dependency Injection.
 
 {% code title="src/app/services/todo-list.service.ts" %}
-```text
+```
 import { Injectable } from '@angular/core';
 
 @Injectable({
@@ -56,7 +56,7 @@ export class AppModule { }
 ```
 {% endcode %}
 
-The `providers` array tells Angular how to provide a service we're looking for \(usually in a component or another service\). This time the recipe is simple: When we ask for the `TodoListService` class we expect to get an instance of this class. Angular will create only one instance that we can access from anywhere in our application \(a Singleton\), so we can use it to share data between different parts of the application.
+The `providers` array tells Angular how to provide a service we're looking for (usually in a component or another service). This time the recipe is simple: When we ask for the `TodoListService` class we expect to get an instance of this class. Angular will create only one instance that we can access from anywhere in our application (a Singleton), so we can use it to share data between different parts of the application.
 
 Make sure that the service is imported:
 
@@ -159,7 +159,7 @@ export class ListManagerComponent implements OnInit {
 So let's go on and use the service in the `list-manager` component.
 
 * Remove the hard-coded list from the component, keep only the `todoList` property declaration.
-* Inject the `TodoListService` using the constructor. 
+* Inject the `TodoListService` using the constructor.&#x20;
 
 ```typescript
 export class ListManagerComponent implements OnInit {
@@ -186,7 +186,7 @@ ngOnInit() {
 ```
 {% endcode %}
 
-You don't need to change anything in the template since we're assigning the list to the same property we used before. Seems like nothing has changed, but you can check that the list comes from the service by changing it from there \(adding an item, changing a title, etc.\).
+You don't need to change anything in the template since we're assigning the list to the same property we used before. Seems like nothing has changed, but you can check that the list comes from the service by changing it from there (adding an item, changing a title, etc.).
 
 {% hint style="info" %}
 💾 **Save your code to GitHub**
@@ -195,18 +195,17 @@ StackBlitz users - press **Save** in the toolbar and continue to the next sectio
 
 Commit all your changes by running this command in your project directory.
 
-```text
+```
 git add -A && git commit -m "Your Message"
 ```
 
 Push your changes to GitHub by running this command in your project directory.
 
-```text
+```
 git push
 ```
 {% endhint %}
 
 {% hint style="success" %}
-[See the results on StackBlitz](https://stackblitz.com/github/ng-girls/todo-list-tutorial/tree/master/examples/0_15-creating-a-service)
+[See the results on StackBlitz](https://stackblitz.com/github/ng-girls/todo-list-tutorial/tree/master/examples/0\_15-creating-a-service)
 {% endhint %}
-

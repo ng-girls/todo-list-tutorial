@@ -1,4 +1,4 @@
-# \#11: ⛓ Interface
+# #11: ⛓ Interface
 
 We want to use TypeScript's abilities to know what kind of object we pass as an `item` to the `todo-item` component. We'll make sure that the item is of the right type. But its type is not a simple string, number or boolean. We'll define the item's type using an **interface**.
 
@@ -15,7 +15,7 @@ ng g i interfaces/todo-item
 `i` is short for... you guessed it - interface. Adding a path in the command to the Angular CLI generates the folders you specified if they do not already exist.
 
 {% hint style="info" %}
-**StackBlitz Instructions** ![](../../.gitbook/assets/stackblitz-hint.svg)
+**StackBlitz Instructions** ![](<../../.gitbook/assets/stackblitz-hint (1) (1).svg>)
 
 We'll use the Angular Generator to create the interface. Follow the instructions on the [StackBlitz instructions](stackblitz.md) page and return here to continue the worksheet.
 {% endhint %}
@@ -32,7 +32,7 @@ export interface TodoItem {
 Now we can define what properties and/or methods every object of type TodoItem should have. At this point we'll add two members:
 
 * `title` which must be of type `string`
-* `completed` which is of type `boolean` and is an optional member 
+* `completed` which is of type `boolean` and is an optional member&#x20;
 
 {% code title="src/app/interfaces/todo-item.ts" %}
 ```typescript
@@ -95,18 +95,17 @@ StackBlitz users - press **Save** in the toolbar and continue to the next sectio
 
 Commit all your changes by running this command in your project directory.
 
-```text
+```
 git add -A && git commit -m "Your Message"
 ```
 
 Push your changes to GitHub by running this command in your project directory.
 
-```text
+```
 git push
 ```
 {% endhint %}
 
 {% hint style="success" %}
-[See the results on StackBlitz](https://stackblitz.com/github/ng-girls/todo-list-tutorial/tree/master/examples/0_11-interface)
+[See the results on StackBlitz](https://stackblitz.com/github/ng-girls/todo-list-tutorial/tree/master/examples/0\_11-interface)
 {% endhint %}
-

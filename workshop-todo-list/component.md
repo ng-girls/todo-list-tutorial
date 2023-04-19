@@ -1,8 +1,8 @@
-# \#3: 📐 Component
+# #3: 📐 Component
 
-One approach in Web development \(and software development in general\) is component-based architecture. In the past years it has gained a lot of popularity. What is a component?
+One approach in Web development (and software development in general) is component-based architecture. In the past years it has gained a lot of popularity. What is a component?
 
-In [Service-Oriented Architecture \(SOA\) vs. Component Based Architecture](http://petritsch.co.at/download/SOA_vs_component_based.pdf), Helmut Petritsch defines a component as follows:
+In [Service-Oriented Architecture (SOA) vs. Component Based Architecture](http://petritsch.co.at/download/SOA\_vs\_component\_based.pdf), Helmut Petritsch defines a component as follows:
 
 > A component is a software object, meant to interact with other components, encapsulating certain functionality or a set of functionalities. A component has a clearly defined interface and conforms to a prescribed behaviour common to all components within an architecture.
 
@@ -10,9 +10,9 @@ In Web applications, **a component controls a patch of screen called a view**. I
 
 Here's a diagram of a component in Angular, with the result below.
 
-![](../.gitbook/assets/image.png)
+![](../assets/component-diagram.png)
 
-Directives, pipes and services are other building blocks in Angular, which can be used in a component \(in the diagram we see only the usage of a pipe\). We will discuss them later in the tutorial.
+Directives, pipes and services are other building blocks in Angular, which can be used in a component (in the diagram we see only the usage of a pipe). We will discuss them later in the tutorial.
 
 Let's take a look at the component that was created by the Angular CLI. All the relevant files exist in the folder `src/app`. Open the file `app.component.ts`.
 
@@ -30,7 +30,7 @@ export class AppComponent {
 
 It has one member called "title". It is a property to which you can assign a value. The value assigned to it here is the name of your application, the string "todo-list".
 
-Angular takes care of synchronizing the members of the component with the component template. So we can easily use the member `title` in the template. Take a look at the template attached to the component in the file `app.component.html`. Near the middle of the file \(around line 345\), you'll see code like this:
+Angular takes care of synchronizing the members of the component with the component template. So we can easily use the member `title` in the template. Take a look at the template attached to the component in the file `app.component.html`. Near the middle of the file (around line 345), you'll see code like this:
 
 {% tabs %}
 {% tab title="src/app/app.component.html" %}
@@ -40,17 +40,17 @@ Angular takes care of synchronizing the members of the component with the compon
 {% endtab %}
 {% endtabs %}
 
-The double curly braces and their content are called [**Interpolation**](https://angular.io/guide/glossary#interpolation). This is one form of **data binding** in Angular. As we mentioned before, the code in this file is not used as-is when the browser renders the component. Angular compiles it to JavaScript code. In one of the compilation steps, it looks for Interpolations inside the template. The content of the Interpolation is an "Angular template expression" \(which is a lot like JavaScript\). The expression is evaluated at runtime, and then you see the result.
+The double curly braces and their content are called [**Interpolation**](https://angular.io/guide/glossary#interpolation). This is one form of **data binding** in Angular. As we mentioned before, the code in this file is not used as-is when the browser renders the component. Angular compiles it to JavaScript code. In one of the compilation steps, it looks for Interpolations inside the template. The content of the Interpolation is an "Angular template expression" (which is a lot like JavaScript). The expression is evaluated at runtime, and then you see the result.
 
-Interpolation is one of the strongest, most basic features in Angular. It has existed from the very beginning of Angular - in the first version \(AngularJS\). It makes it really simple to insert dynamic data into the view.
+Interpolation is one of the strongest, most basic features in Angular. It has existed from the very beginning of Angular - in the first version (AngularJS). It makes it really simple to insert dynamic data into the view.
 
-In this component, the expression is simply the member of the component class, `title`. **Let's try to change it.** Try out the following and see the result in the browser. \(With every change you save in the file, the browser will refresh automatically!\)
+In this component, the expression is simply the member of the component class, `title`. **Let's try to change it.** Try out the following and see the result in the browser. (With every change you save in the file, the browser will refresh automatically!)
 
 * Remove the curly braces and keep just the content `title`.
-* Put the curly braces back and replace the content with some mathematical expression, for example: `{{ 2 + 2 }}`. \(The spaces are not mandatory, they just make the code more readable.\)
+* Put the curly braces back and replace the content with some mathematical expression, for example: `{{ 2 + 2 }}`. (The spaces are not mandatory, they just make the code more readable.)
 * Write a mathematical expression combined with the `title` member: `{{ title + 10 }}`
 * Pass an undefined variable to the expression - a variable which was not declared in the component class. For example: `{{ x }}`
-* Try out anything you'd like. Don't worry - you can't do any harm to the browser or the computer! In the worst case, the browser will run out of memory and will get stuck. \(But you'll have to write something really complicated to make that happen!\)
+* Try out anything you'd like. Don't worry - you can't do any harm to the browser or the computer! In the worst case, the browser will run out of memory and will get stuck. (But you'll have to write something really complicated to make that happen!)
 
 This is one way that you can bind members of the component's controller to its template. How does Angular know that this is the template of the App component?
 
@@ -100,7 +100,7 @@ The first property, `selector`, tells Angular what will be the name of the tag t
 
 The element `app-root` is not an HTML element. It is the component that was created with the selector `app-root`. Try changing the selector. You'll see that if you change it in only one of the files, nothing will be displayed, since the element is no longer replaced with an Angular component. You can see an error message in the browser's console.
 
-One last thing: the first line in the component file imports the code that defines the decorator `@Component`. It is needed to use the decorator, which is defined in the imported file \(or actually, in one of its own imports\). Try removing this line, and see the error.
+One last thing: the first line in the component file imports the code that defines the decorator `@Component`. It is needed to use the decorator, which is defined in the imported file (or actually, in one of its own imports). Try removing this line, and see the error.
 
 ## Inline Template
 
@@ -124,7 +124,7 @@ template: ``,
 {% endtab %}
 {% endtabs %}
 
-Notice the **backticks** - **\`\`** - they are used to define Template Literals, which are new in JavaScript \(ES6\). This way you can define multi-line strings. They have another cool ability: to easily use JavaScript variables and expressions within the string \(with no relation to Angular binding expressions in the template\). Read about it in the [MDN documentation](https://developer.mozilla.org/en/docs/Web/JavaScript/Reference/Template_literals).
+Notice the **backticks** - **\`\`** - they are used to define Template Literals, which are new in JavaScript (ES6). This way you can define multi-line strings. They have another cool ability: to easily use JavaScript variables and expressions within the string (with no relation to Angular binding expressions in the template). Read about it in the [MDN documentation](https://developer.mozilla.org/en/docs/Web/JavaScript/Reference/Template\_literals).
 
 Make sure you replace `templateUrl` with `template`, and don't forget the comma at the end of the line.
 
@@ -161,7 +161,7 @@ If you wish to continue this tutorial with templates in separate HTML files, do 
 The same way we use inline template, we can use also inline styles. But for now we will keep the styles in a separate file.
 
 {% hint style="info" %}
-**StackBlitz Instructions** ![](../.gitbook/assets/stackblitz-hint.svg)
+**StackBlitz Instructions** ![](<../.gitbook/assets/stackblitz-hint (1) (1).svg>)
 
 StackBlitz doesn't support the inline template configuration setting. We will need to manually move the template code from the `.html` file to the `.component.ts` file each time we create a new component. Don't worry! Just watch for the StackBlitz instructions info panel and we'll walk you through it.
 {% endhint %}
@@ -171,6 +171,5 @@ StackBlitz doesn't support the inline template configuration setting. We will ne
 We have explored the root component that was generated for us by the Angular CLI, and even refactored it. In the next chapter, we will create a new component. We will start building the tree of components, which defines the structure of the application.
 
 {% hint style="success" %}
-[See the results on StackBlitz](https://stackblitz.com/github/ng-girls/todo-list-tutorial/tree/master/examples/0_03-component)
+[See the results on StackBlitz](https://stackblitz.com/github/ng-girls/todo-list-tutorial/tree/master/examples/0\_03-component)
 {% endhint %}
-
