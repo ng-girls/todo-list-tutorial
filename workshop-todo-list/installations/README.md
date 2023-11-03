@@ -4,6 +4,10 @@ Although it is possible to develop web applications with a simple text editor al
 
 In addition, we recommend Git to manage versions of your code, and GitHub to publish and share it.
 
+Take a look at the [video tutorial](https://www.facebook.com/719166003/videos/1048549972848310/) in the ngGirls Facebook group where Shmuela shows how to check and update the development environment. (You may need to join the group to have access.)
+
+{% embed url="https://www.facebook.com/719166003/videos/1048549972848310/" %}
+
 {% hint style="info" %}
 **Using an online editor**
 
