@@ -36,10 +36,14 @@ Don't add any templates or files. **Click on the button "Create repository".**
 
 You have several options to set up the repository. You have already created the project on your computer, so the relevant option is to **push an existing repository from the command line**. Copy the commands starting with `git` \(you can click the "copy" button on the right side to copy all the commands\) and paste into the terminal that's open in your project folder. \(You don't have to paste line by line. You can copy all three lines and paste them. The commands will run one after the other, except the last one where you'll have to hit Enter.\)
 
+![The commands to connect and push your project to the repository](../.gitbook/assets/image%20%287%29.png)
+
+Alternatively, you can copy the following commands: remember to replace [USERNAME] with your git account and [YOUR-REPOSITORY] with the repository name.
+
 ```text
-git remote add origin git@github.com:[USERNAME]/ng-girls-todo-list.git
+git remote add origin git@github.com:[USERNAME]/[YOUR-REPOSITORY].git
 git branch -M main
-git push -u oridin main
+git push -u origin main
 ```
 
 #### What do these commands do?
