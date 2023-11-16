@@ -58,6 +58,14 @@ You have several options to set up the repository. You have already created the 
 
 ![The commands to connect and push your project to the repository](../.gitbook/assets/image%20%287%29.png)
 
+Alternatively, you can copy the following commands: remember to replace [USERNAME] with your git account and [YOUR-REPOSITORY] with the repository name.
+
+```text
+git remote add origin git@github.com:[USERNAME]/[YOUR-REPOSITORY].git
+git branch -M main
+git push -u origin main
+```
+
 #### What do these commands do?
 
 The first command, `git remote add origin...` connects the project to the GitHub repository you have created. It configures the **remote** location of the project, so that each time you sync the code \(push changes to the remote or pull from it\) you don't need to specify the remote explicitly.
