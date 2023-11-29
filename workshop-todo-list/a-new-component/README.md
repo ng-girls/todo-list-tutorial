@@ -1,4 +1,4 @@
-# \#4: ✏ A new component
+# #4: ✏ A new component
 
 In this chapter we will write a whole new component. It will allow us to add an item to the todo list. It will be composed of the HTML elements `input` and `button`. We will call it Input-Button-Unit.
 
@@ -6,7 +6,7 @@ We'll use the Angular CLI to generate all the needed files and boilerplate for u
 
 Open another terminal tab and run:
 
-```text
+```
 ng g c input-button-unit
 ```
 
@@ -18,15 +18,15 @@ We'll use the Angular Generator to create a component. Follow the instructions o
 
 As we've seen before, `ng` is the command for using the Angular CLI. `g` is a shorthand for `generate`. `c` is a shorthand for `component`. `input-button-unit` is the name we give to the component.
 
-So the long version of the command is \(don't run it\):
+So the long version of the command is (don't run it):
 
-```text
+```
 ng generate component input-button-unit
 ```
 
 Let's take a look of what the Angular CLI created for us.
 
-It created a new folder called `src/app/input-button-unit`. There are three files there \(or four if you're not using inline-template\):
+It created a new folder called `src/app/input-button-unit`. There are three files there (or four if you're not using inline-template):
 
 * `input-button-unit.component.scss` - this is where the style that's specific to the component will be placed.
 * `input-button-unit.component.spec.ts` - this is a file for testing the component. We will not deal with it in this tutorial.
@@ -39,8 +39,10 @@ Open the file `input-button-unit.component.ts`. You can see that the Angular CLI
 ```typescript
 @Component({
   selector: 'app-input-button-unit',
+  standalone: true,
+  imports: [CommonModule],
   templateUrl: './input-button-unit.component.html',
-  styleUrls: ['./input-button-unit.component.scss']
+  styleUrl: './input-button-unit.component.scss'
 })
 ```
 {% endcode %}
@@ -51,7 +53,7 @@ Open the file `input-button-unit.component.ts`. You can see that the Angular CLI
 
 We can use this component as-is and see the result!
 
-Open the root component file, `app.component.ts` and add the app-input-button-unit tag inside the template \(remember we refactored the root component to have an inline template\):
+Open the root component file, `app.component.ts` and add the app-input-button-unit tag inside the template (remember we refactored the root component to have an inline template):
 
 {% code title="src/app/app.component.ts" %}
 ```markup
@@ -72,7 +74,7 @@ Let's add some content in our new component. First, add a `title` member which w
 {% code title="src/app/input-button-unit/input-button-unit.component.ts" %}
 ```typescript
 export class InputButtonUnitComponent {
-  title = 'Hello World';
+  title = 'Learn about components';
 ```
 {% endcode %}
 
@@ -85,7 +87,7 @@ Next, add an interpolation of the title member in the template:
 template: `
   <p>
     input-button-unit works!
-    The title is: {{ title }}
+    The item title is: {{ title }}
   </p>
 `,
 ```
@@ -96,7 +98,7 @@ Check out the result!
 This component doesn't do much at this point. In the following chapters, we will learn about the component class, and then implement the component's logic.
 
 {% hint style="success" %}
-[See the results on StackBlitz](https://stackblitz.com/github/ng-girls/todo-list-tutorial/tree/master/examples/0_04-a-new-component)
+[See the results on StackBlitz](https://stackblitz.com/github/ng-girls/todo-list-tutorial/tree/master/examples/0\_04-a-new-component)
 {% endhint %}
 
 ## 💾 Save your code to GitHub
@@ -108,4 +110,3 @@ Great job adding your first component! Let's save your work to GitHub so your co
 
 We will save code within StackBlitz so you can skip the GitHub sections below. Save your work in progress by pressing **Save** in the toolbar.
 {% endhint %}
-

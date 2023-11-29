@@ -10,7 +10,7 @@ In Web applications, **a component controls a patch of screen called a view**. I
 
 Here's a diagram of a component in Angular, with the result below.
 
-![](../assets/component-diagram.png)
+<figure><img src="../.gitbook/assets/image.png" alt=""><figcaption></figcaption></figure>
 
 Directives, pipes and services are other building blocks in Angular, which can be used in a component (in the diagram we see only the usage of a pipe). We will discuss them later in the tutorial.
 
@@ -61,8 +61,10 @@ Let's go back to the file `app.component.ts` and look at the component's metadat
 ```typescript
 @Component({
   selector: 'app-root',
+  standalone: true,
+  imports: [CommonModule, RouterOutlet],
   templateUrl: './app.component.html',
-  styleUrls: ['./app.component.scss']
+  styleUrl: './app.component.scss'
 })
 ```
 {% endtab %}

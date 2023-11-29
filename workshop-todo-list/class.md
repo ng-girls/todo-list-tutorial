@@ -20,38 +20,40 @@ template: `
 ```
 {% endcode %}
 
-Let's take a look at the class `InputButtonUnitComponent`.
-
-## implements OnInit
-
-First, you see something was added to the class declaration:
-
-{% code title="src/app/input-button-unit/input-button-unit.component.ts" %}
-```typescript
-export class InputButtonUnitComponent implements OnInit {
-  ...
-}
-```
-{% endcode %}
-
-`OnInit` is an **interface** - a structure defined but not implemented as a class. It defines which properties and/or methods should exist on the class that implements it. In this case, `OnInit` is an interface for Angular Components which implement the method `ngOnInit`. This method is a **component life-cycle method**. Angular will call this method after the component instance has been created.
-
-The Angular CLI adds this statement to remind us that it's best to initialize things on the component through the `ngOnInit` method. You can see it also added the method in the body of the class:
-
-{% code title="src/app/input-button-unit/input-button-unit.component.ts" %}
-```typescript
-ngOnInit(): void {
-}
-```
-{% endcode %}
-
-You can use this method without explicitly indicating that the class implements the `OnInit` interface, but it's useful to use the implementation statement. To see why, delete the `ngOnInit` method. The IDE will tell you there's an error - you must implement `ngOnInit`. How does it know that? Because of `implements OnInit`.
+The class `InputButtonUnitComponent` is empty. Before adding members (properties and methods) we'll present the constructor, which is not written in the component class by default.&#x20;
 
 ## constructor
 
-Another method we didn't see in the `app-root` component is the constructor. It is a method that is called by JavaScript when an instance of the class is created. Whatever is inside this method is used to create the instance. So it is called before `ngOnInit`.
+The construcor is a method that is called by JavaScript when an instance of the class is created. Whatever is inside this method is used to create the instance. It can receive parameters and run some logic to define the values of the properties of the created instance.
 
 > A strong feature in Angular that uses the constructor is dependency injection. We'll get to that later on, when we start using services.
+
+A class may have methods with various names, but the `constructor` is the reserved word for this special method. To use the constructor of a class, simply implement it:
+
+```typescript
+class MyClass {
+// members can be defined and initiated here
+
+  constructor(/* parameters can be defined here */) {
+    // initialization code here
+  }
+}
+
+```
+
+Several constructors can be written with different sets of arguments (parameters). When creating an instance of a class, the required parameters should be passed.&#x20;
+
+For example, the `Date` class has several constructors. To create a `Date` object you can call it without parameters to create an object of the current date and time:&#x20;
+
+```typescript
+const now = new Date();
+```
+
+or with a parameter, for instance a string representing a date to create an object with this value:
+
+```typescript
+const ninetyFive = new Date('1995-12-17T03:24:00');
+```
 
 ## Properties
 
@@ -65,7 +67,7 @@ You can declare a property without initializing it:
 title: string;
 ```
 
-Then you can assign a value at a later stage, for example in the constructor or in the ngOnInit method. Here we explicitly noted that `title` is of the type `string`. (The type is inferred by TypeScript when we immediately assign a value, so there's no need to add the type in this case.)
+Then you can assign a value at a later stage, for example in the constructor.  Here we explicitly noted that `title` is of the type `string`. (The type is inferred by TypeScript when we immediately assign a value, so there's no need to add the type in this case.)
 
 When referencing a member of the class from within a class method you must prefix it with `this`. It's a special property that points at the current instance.
 
@@ -77,22 +79,6 @@ title = 'Hello World';
 
 constructor() { 
   this.title = 'I Love Angular';
-}
-```
-{% endcode %}
-
-Try changing the value of `title` inside the method `ngOnInit`. Which value will be displayed on the screen?
-
-{% code title="src/app/input-button-unit/input-button-unit.component.ts" %}
-```typescript
-title: string = 'Hello World';
-
-constructor() { 
-  this.title = 'I Love Angular';
-}
-
-ngOnInit(): void { 
-  this.title = 'Angular CLI Rules!';
 }
 ```
 {% endcode %}
@@ -131,8 +117,6 @@ constructor() {
 }
 ```
 {% endcode %}
-
-![lab-icon](<../assets/lab (14).jpg>) **Playground**: You can try calling the method with different arguments (the string passed inside the brackets) from `ngOnInit`. Try calling it before or after assigning a value directly to title. Try calling it a few times from the same method. See the result in the browser.
 
 ## Debugging Tip
 
