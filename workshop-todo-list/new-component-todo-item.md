@@ -21,9 +21,11 @@ Use the new component in the template of `app-root` component - inside the `<li>
 {% code title="src/app/app.component.ts" %}
 ```markup
 <ul>
-  <li *ngFor="let todoItem of todoList">
-    <app-todo-item></app-todo-item>
-  </li>
+  @for(let todoItem of todoList; track todoItem.title) {
+    <li>
+      <app-todo-item></app-todo-item>
+    </li>
+  }
 </ul>
 ```
 {% endcode %}
@@ -54,19 +56,15 @@ import { Component, Input, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-todo-item',
+  standalone: true,
+  imports: [CommonModule],
   template: `
     {{ item.title }}
   `,
-  styleUrls: ['./todo-item.component.scss']
+  styleUrl: './todo-item.component.scss'
 })
-export class TodoItemComponent implements OnInit {
+export class TodoItemComponent {
   @Input() item;
-
-  constructor() { }
-
-  ngOnInit(): void {
-  }
-
 }
 ```
 {% endcode %}
@@ -76,9 +74,11 @@ Now we need to pass an item where we use the component. Go back to `app-root` co
 {% code title="src/app/app.component.ts" %}
 ```markup
 <ul>
-  <li *ngFor="let todoItem of todoList">
-    <app-todo-item [item]="todoItem"></app-todo-item>
-  </li>
+  @for(let todoItem of todoList; track todoItem.title) {
+    <li>
+      <app-todo-item [item]="todoItem"></app-todo-item>
+    </li>
+  }
 </ul>
 ```
 {% endcode %}

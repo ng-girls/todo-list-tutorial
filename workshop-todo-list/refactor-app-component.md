@@ -22,15 +22,17 @@ Use the Angular Generator to create the component, then make the component [use 
 ```typescript
 @Component({
   selector: 'app-root',
+    standalone: true,
+  imports: [CommonModule],
   template: `
     <h1>
       Welcome to {{ title }}!
     </h1>
   `,
-  styleUrls: ['./app.component.scss']
+  styleUrl: './app.component.scss'
 })
 export class AppComponent {
-  title = 'My To Do List APP';
+  title = 'My To-Do List App';
 }
 ```
 {% endcode %}
