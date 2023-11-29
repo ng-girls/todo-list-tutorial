@@ -4,7 +4,7 @@ Although it is possible to develop web applications with a simple text editor al
 
 In addition, we recommend Git to manage versions of your code, and GitHub to publish and share it.
 
-Take a look at the [video tutorial](https://www.facebook.com/719166003/videos/1048549972848310/) in the ngGirls Facebook group where Shmuela shows how to check and update the development environment. (You may need to join the group to have access.) Note that this video was recorded with version 16 of Angular, and later versions have differences in the content of the created files and the initial boilerplate application.&#x20;
+Take a look at the [video tutorial](https://www.facebook.com/719166003/videos/1048549972848310/) in the ngGirls Facebook group where Shmuela shows how to check and update the development environment. (You may need to join the group to have access.) Note that this video was recorded with version 16 of Angular, and later versions have differences in the content of the created files and the initial boilerplate application. Also, Shmuela instructs installing the Angular-CLI globally on the computer. However, we will use `npx` to create the project.&#x20;
 
 {% embed url="https://www.facebook.com/719166003/videos/1048549972848310/" %}
 
@@ -109,12 +109,8 @@ cd the-path-to-your-folder/myProjects
 Now, create an Angular project by running:
 
 ```
-npx @angular/cli@latest new todo-list --strict false
+npx @angular/cli@latest new todo-list
 ```
-
-{% hint style="info" %}
-Starting in Angular version 12, strict type checking is on by default. Enabling strict type checking is a best practice for Angular applications and helps developers catch errors earlier, but we are disabling this feature by adding the flag `--strict false` so we can learn Angular step-by-step.
-{% endhint %}
 
 Angular CLI will ask a couple of questions to help create a new application. Answer the questions as shown below:
 

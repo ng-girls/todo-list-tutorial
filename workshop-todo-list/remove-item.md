@@ -1,4 +1,4 @@
-# \#18: 🗑 Remove item
+# #18: 🗑 Remove item
 
 The user should be able to remove any item, whether it's still active or completed. Removing an item will be done by clicking a button, aptly named "remove". In this chapter, we'll learn how to add this functionality to our project.
 
@@ -6,7 +6,7 @@ The user should be able to remove any item, whether it's still active or complet
 
 First, we need to add the button to the item, so we'll work on the file `todo-item.component.ts`.
 
-Add a "remove" button to the item template, with a `click` event handler that calls a `removeItem` method \(which we'll create in a moment\):
+Add a "remove" button to the item template, with a `click` event handler that calls a `removeItem` method (which we'll create in a moment):
 
 {% code title="src/app/todo-item/todo-item.component.ts" %}
 ```markup
@@ -34,14 +34,14 @@ Make sure to import both `EventEmitter` and `Output`:
 
 {% code title="src/app/todo-item/todo-item.component.ts" %}
 ```typescript
-import { Component, OnInit, Input, EventEmitter, Output } from '@angular/core';
+import { Component, Input, EventEmitter, Output } from '@angular/core';
 ```
 {% endcode %}
 
 Add a method to the `ItemComponent` class to actually emit the event. This method will be called when the user clicks the "remove" button:
 
 ```typescript
-removeItem(): void {
+removeItem() {
   this.remove.emit(this.item);
 }
 ```
@@ -63,7 +63,7 @@ Now we just need to add the method `removeItem()` to the `ListManagerComponent` 
 
 {% code title="src/app/list-manager/list-manager.component.ts" %}
 ```typescript
-removeItem(item): void {
+removeItem(item) {
   this.todoListService.deleteItem(item);
 }
 ```
@@ -76,18 +76,17 @@ StackBlitz users - press **Save** in the toolbar and continue to the next sectio
 
 Commit all your changes by running this command in your project directory.
 
-```text
+```
 git add -A && git commit -m "Your Message"
 ```
 
 Push your changes to GitHub by running this command in your project directory.
 
-```text
+```
 git push
 ```
 {% endhint %}
 
 {% hint style="success" %}
-[See the results on StackBlitz](https://stackblitz.com/github/ng-girls/todo-list-tutorial/tree/master/examples/0_18-remove-item)
+[See the results on StackBlitz](https://stackblitz.com/github/ng-girls/todo-list-tutorial/tree/master/examples/0\_18-remove-item)
 {% endhint %}
-

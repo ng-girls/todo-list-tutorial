@@ -89,7 +89,7 @@ export class TodoListService {
 
 ## Inject and use the service
 
-After creating the service, we can inject it into our `list-manager` component. In Angular Dependency Injection is very simple. We pass it as a parameter in the constructor - the parameter's type is the class name of the service. Angular assigns the instance it created to the parameter name, and we can use it from within the constructor. Before implementing it ourselves, let's see how it works:
+After creating the service, we can inject it into our `list-manager` component. In Angular Dependency Injection is very simple. We pass it as a parameter in the constructor - the parameter's type is the class name of the service. Angular assigns the instance it created to the parameter name, and we can use it from within the constructor. Before implementing it ourselves, let's see how it works. This is the constructor within the `ListManagerComponent` class:
 
 {% code title="src/app/list-manager/list-manager.component.ts" %}
 ```typescript
@@ -102,7 +102,7 @@ constructor(todoListService: TodoListService) {
 Typescript helps us furthermore by giving a shortcut for assigning the parameter to a class member. By adding `private` or `public` before the parameter name it is automatically assigned to `this`. So instead of declaring and assigning the property by ourselves:
 
 ```typescript
-export class ListManagerComponent implements OnInit {
+export class ListManagerComponent {
   todoListService: TodoListService;
 
   constructor(todoListService: TodoListService) { 
@@ -114,7 +114,7 @@ export class ListManagerComponent implements OnInit {
 ...we can reduce a lot of code like this:
 
 ```typescript
-export class ListManagerComponent implements OnInit {
+export class ListManagerComponent {
 
   constructor(private todoListService: TodoListService) { }
 }
@@ -126,7 +126,7 @@ So let's go on and use the service in the `list-manager` component.
 * Inject the `TodoListService` using the constructor.&#x20;
 
 ```typescript
-export class ListManagerComponent implements OnInit {
+export class ListManagerComponent {
   todoList: TodoItem[];
 
   constructor(private todoListService: TodoListService) { }
@@ -140,11 +140,11 @@ import { TodoListService } from '../services/todo-list.service';
 ```
 {% endcode %}
 
-* Get the list from the service in the `ngOnInit` method.
+* Get the list from the service in the `constructor`.
 
 {% code title="src/app/list-manager/list-manager.component.ts" %}
 ```typescript
-ngOnInit() {
+constructor(private todoListService: TodoListService) {
   this.todoList = this.todoListService.getTodoList();
 }
 ```

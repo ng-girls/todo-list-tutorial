@@ -87,7 +87,7 @@ This method will get and return the data (object, list, etc.) stored in the serv
 ```
 {% endcode %}
 
-Wait! Wait! why `JSON.parse`? The answer is simple: As described above, local storage stores data as key-value pairs, and the values are stored as **strings**. So, if we want to have a real object (or list) to work with, we must parse the string into a valid JavaScript object.
+Wait! Wait! Why `JSON.parse`? The answer is simple: As described above, local storage stores data as key-value pairs, and the values are stored as **strings**. So, if we want to have a real object (or list) to work with, we must parse the string into a valid JavaScript object.
 
 ### setData
 
@@ -95,7 +95,7 @@ This method will save the given data (object, list, etc.) under the given key.
 
 {% code title="src/app/services/storage.service.ts" %}
 ```typescript
-  setData(key: string, data: any): void {
+  setData(key: string, data: any) {
     localStorage.setItem(key, JSON.stringify(data));
   }
 ```
@@ -196,7 +196,7 @@ We'd like to reduce code repetition, and extract the repeated code into a method
 
 {% code title="src/app/services/todo-list.service.ts" %}
 ```typescript
-saveList(): void {
+saveList() {
     this.storageService.setData(todoListStorageKey, this.todoList);
 }
 ```
@@ -210,7 +210,7 @@ This method will remove an item from the list. We look for the item in the list,
 
 {% code title="src/app/services/todo-list.service.ts" %}
 ```typescript
-deleteItem(item: TodoItem): void {
+deleteItem(item: TodoItem) {
   const index = this.todoList.indexOf(item);
   this.todoList.splice(index, 1);
   this.saveList();
@@ -250,22 +250,22 @@ export class TodoListService {
       storageService.getData(todoListStorageKey) || defaultTodoList;
   }
 
-  saveList(): void {
+  saveList() {
     this.storageService.setData(todoListStorageKey, this.todoList);
 }
 
-  addItem(item: TodoItem): void {
+  addItem(item: TodoItem) {
     this.todoList.push(item);
     this.saveList();
   }
 
-  updateItem(item, changes): void {
+  updateItem(item, changes) {
     const index = this.todoList.indexOf(item);
     this.todoList[index] = { ...item, ...changes };
     this.saveList();
   }
 
-  deleteItem(item): void {
+  deleteItem(item) {
     const index = this.todoList.indexOf(item);
     this.todoList.splice(index, 1);
     this.saveList();

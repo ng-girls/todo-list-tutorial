@@ -26,13 +26,8 @@ import { CommonModule } from '@angular/common';
   `,
   styleUrls: ['./input-button-unit.component.scss']
 })
-export class InputButtonUnitComponent implements OnInit {
+export class InputButtonUnitComponent {
   title = 'Hello World';
-
-  constructor() { }
-
-  ngOnInit(): void {
-  }
 }
 ```
 {% endcode %}
@@ -189,10 +184,13 @@ The file should look like this:
 
 {% code title="src/app/input-button-unit/input-button-unit.component.ts" %}
 ```typescript
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
+import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-input-button-unit',
+  standalone: true,
+  imports: [CommonModule],
   template: `
     <p>
       input-button-unit works!
@@ -206,15 +204,10 @@ import { Component, OnInit } from '@angular/core';
       Save
     </button>
   `,
-  styleUrls: ['./input-button-unit.component.scss']
+  styleUrl: './input-button-unit.component.scss'
 })
 export class InputButtonUnitComponent implements OnInit {
   title = 'Hello World';
-
-  constructor() { }
-
-  ngOnInit(): void {
-  }
 
   changeTitle(newTitle: string): void {
     this.title = newTitle;

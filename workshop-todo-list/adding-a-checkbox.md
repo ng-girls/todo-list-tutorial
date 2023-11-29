@@ -1,4 +1,4 @@
-# \#19: 🔘 Adding a checkbox
+# #19: 🔘 Adding a checkbox
 
 We are now able to interact with our todo list by removing items. But what if we want to complete items and still be able to see them in our list, with a line through the item's title? Enter the checkbox!
 
@@ -34,7 +34,7 @@ When we click on the checkbox, it will run the `completeItem` method. Let's talk
 
 {% code title="src/app/todo-item/todo-item.component.ts" %}
 ```javascript
-export class TodoItemComponent implements OnInit {
+export class TodoItemComponent {
   @Input() item: TodoItem;
   @Output() remove: EventEmitter<TodoItem> = new EventEmitter<TodoItem>();
   @Output() update: EventEmitter<any> = new EventEmitter<any>();
@@ -43,7 +43,7 @@ export class TodoItemComponent implements OnInit {
   completeItem(): void {
     this.update.emit({
       item: this.item,
-      changes: {completed: !this.item.completed}
+      changes: { completed: !this.item.completed }
     });
   }
 ```
@@ -63,7 +63,7 @@ In order for the checkbox-input to reflect the completed-status, we need to add 
 ```
 {% endcode %}
 
-But wait! How is any of this going to affect the todo title when we're only touching the checkbox? Well, Angular has this wonderful directive called NgClass. This directive applies or removes a CSS class based on a boolean \(true or false\) expression. There are many ways to use this directive \(see the [NgClass directive documentation](https://angular.io/api/common/NgClass)\) but we will focus on using it like so:
+But wait! How is any of this going to affect the todo title when we're only touching the checkbox? Well, Angular has this wonderful directive called NgClass. This directive applies or removes a CSS class based on a boolean (true or false) expression. There are many ways to use this directive (see the [NgClass directive documentation](https://angular.io/api/common/NgClass)) but we will focus on using it like so:
 
 ```markup
 <some-element [ngClass]="{'first': true, 'second': true, 'third': false}">...</some-element>
@@ -87,12 +87,13 @@ And finally, add the CSS to our `todo-item.component.scss` file:
   }
 ```
 
-Next step is to tell the parent element list-manager what to do, when update event is emitted. In order to do so we have to bind update action and update method that will trigger a proper function in TodoListService. Find the todo-item selector in the template \(it looks like this\):
+Next step is to tell the parent element list-manager what to do, when update event is emitted. In order to do so we have to bind update action and update method that will trigger a proper function in TodoListService. Find the todo-item selector in the template (it looks like this):
 
 {% code title="src/app/list-manager/list-manager.component.ts" %}
 ```markup
-<app-todo-item [item]="todoItem"
-               (remove)="removeItem($event)"></app-todo-item>
+<li>
+  <app-todo-item [item]="todoItem"
+     (remove)="removeItem($event)"></app-todo-item>
 </li>
 ```
 {% endcode %}
@@ -101,9 +102,10 @@ And add the modifications:
 
 {% code title="src/app/list-manager/list-manager.component.ts" %}
 ```markup
-<app-todo-item [item]="todoItem"
-             (remove)="removeItem($event)"
-             (update)="updateItem($event.item, $event.changes)"></app-todo-item>
+<li>
+  <app-todo-item [item]="todoItem"
+     (remove)="removeItem($event)"
+     (update)="updateItem($event.item, $event.changes)"></app-todo-item>
 </li>
 ```
 {% endcode %}
@@ -111,8 +113,8 @@ And add the modifications:
 Then create additional method to handle this update item event. It will look very similar to `removeItem` function:
 
 {% code title="src/app/list-manager/list-manager.component.ts" %}
-```markup
-updateItem(item, changes): void {
+```typescript
+updateItem(item, changes) {
   this.todoListService.updateItem(item, changes);
 }
 ```
@@ -127,18 +129,17 @@ StackBlitz users - press **Save** in the toolbar and continue to the next sectio
 
 Commit all your changes by running this command in your project directory.
 
-```text
+```
 git add -A && git commit -m "Your Message"
 ```
 
 Push your changes to GitHub by running this command in your project directory.
 
-```text
+```
 git push
 ```
 {% endhint %}
 
 {% hint style="success" %}
-[See the results on StackBlitz](https://stackblitz.com/github/ng-girls/todo-list-tutorial/tree/master/examples/0_19-adding-a-checkbox)
+[See the results on StackBlitz](https://stackblitz.com/github/ng-girls/todo-list-tutorial/tree/master/examples/0\_19-adding-a-checkbox)
 {% endhint %}
-
