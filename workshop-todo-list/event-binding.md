@@ -38,7 +38,7 @@ First, let's implement `changeTitle`. It will receive the new title as its argum
 
 {% code title="src/app/input-button-unit/input-button-unit.component.ts" %}
 ```typescript
-changeTitle(newTitle: string): void {
+changeTitle(newTitle: string) {
   this.title = newTitle;
 }
 ```
@@ -169,7 +169,7 @@ Change the method `getInputValue`:
 
 {% code title="src/app/input-button-unit/input-button-unit.component.ts" %}
 ```typescript
-getInputValue(event): void {
+getInputValue(event) {
   console.log(event);
   return (event.target as HTMLInputElement).value; // the original functionality still works
 }
@@ -206,10 +206,10 @@ import { CommonModule } from '@angular/common';
   `,
   styleUrl: './input-button-unit.component.scss'
 })
-export class InputButtonUnitComponent implements OnInit {
+export class InputButtonUnitComponent {
   title = 'Hello World';
 
-  changeTitle(newTitle: string): void {
+  changeTitle(newTitle: string) {
     this.title = newTitle;
   }
   
