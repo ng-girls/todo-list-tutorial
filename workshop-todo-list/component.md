@@ -70,9 +70,9 @@ Let's go back to the file `app.component.ts` and look at the component's metadat
 {% endtab %}
 {% endtabs %}
 
-We pass an object of definitions to the decorator, just like we saw in the previous chapter with ngModule. The second property, `templateUrl`, tells Angular where to look for the template attached to the component. There is another option to point to the template, which we'll discuss later: to write the whole template inline here, in the component definition.
+We pass an object of definitions to the decorator. The property `templateUrl` tells Angular where to look for the template attached to the component. There is another option to point to the template, which we'll discuss later: to write the whole template inline here, in the component definition.
 
-The third property, `styleUrls`, tells Angular where to look for the CSS files that define the style of this component. It can have multiple CSS files. That's why the value of `styleUrls` is an array. You can take a look at the CSS file `app.component.scss` - you'll see that it's empty. You can add some CSS style here, for example:
+The property `styleUrl`, tells Angular where to look for the style file that defines the style of this component.  SCSS is a pre-processor for CSS. It provides conveniant syntax for writing CSS rules, and is compiled to CSS. In SCSS you can write regular CSS with or without using the special capabilities of the pre-processotr. You can take a look at the SCSS file `app.component.scss` - you'll see that it's empty. You can add some CSS style here, for example:
 
 {% tabs %}
 {% tab title="src/app/app.component.scss" %}
@@ -86,7 +86,7 @@ h1 {
 
 We'll add more styles later on.
 
-**Note:** the Angular CLI supports css-extension languages out-of-the-box: sass, less, and stylus.
+**Note:** the Angular CLI supports css-extension languages out-of-the-box: scss, sass, and less.
 
 The first property, `selector`, tells Angular what will be the name of the tag that we'll use to call the component. As we saw in the file `src/index.html`, we use the app component inside the body:
 
@@ -102,7 +102,11 @@ The first property, `selector`, tells Angular what will be the name of the tag t
 
 The element `app-root` is not an HTML element. It is the component that was created with the selector `app-root`. Try changing the selector. You'll see that if you change it in only one of the files, nothing will be displayed, since the element is no longer replaced with an Angular component. You can see an error message in the browser's console.
 
-One last thing: the first line in the component file imports the code that defines the decorator `@Component`. It is needed to use the decorator, which is defined in the imported file (or actually, in one of its own imports). Try removing this line, and see the error.
+The `standalone` property tells Angular and us that the component is not part of anyAngular Module - `NgModule`.  Angular Modules were mandatory in previous versions of Angular. In later versions they have become optional, and components can be defined without them, hence standalone.
+
+The `imports` array is used to state Angulae capabilities that are needed in this component. `CommonModule` enables built-in control flow, directives, and more. `RouterModule` is needed to define routing capabilities - router outlet (which is used in the boilerplate template) and links. When using Angular Modules, the imports can be defined there.&#x20;
+
+One last thing: the first two lines in the component file import code from other files. For instance,  `Component`  defines the decorator `@Component`. (A decorator is a function, which one of its parameters is what's written right after calling it.) It is needed to use the decorator, which is defined in the imported file (or actually, in one of its own imports). Try removing this line, and see the error.
 
 ## Inline Template
 

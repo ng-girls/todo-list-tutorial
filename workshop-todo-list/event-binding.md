@@ -8,10 +8,13 @@ The `input-button-unit` component should look like this:
 
 {% code title="src/app/input-button-unit/input-button-unit.component.ts" %}
 ```typescript
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
+import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-input-button-unit',
+  standalone: true,
+  imports: [CommonModule],
   template: `
     <p>
       input-button-unit works!
