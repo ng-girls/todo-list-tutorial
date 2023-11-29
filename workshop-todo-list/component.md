@@ -10,7 +10,7 @@ In Web applications, **a component controls a patch of screen called a view**. I
 
 Here's a diagram of a component in Angular, with the result below.
 
-<figure><img src="../.gitbook/assets/image.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (10).png" alt=""><figcaption></figcaption></figure>
 
 Directives, pipes and services are other building blocks in Angular, which can be used in a component (in the diagram we see only the usage of a pipe). We will discuss them later in the tutorial.
 

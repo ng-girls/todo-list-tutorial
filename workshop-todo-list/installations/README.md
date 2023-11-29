@@ -4,7 +4,7 @@ Although it is possible to develop web applications with a simple text editor al
 
 In addition, we recommend Git to manage versions of your code, and GitHub to publish and share it.
 
-Take a look at the [video tutorial](https://www.facebook.com/719166003/videos/1048549972848310/) in the ngGirls Facebook group where Shmuela shows how to check and update the development environment. (You may need to join the group to have access.)
+Take a look at the [video tutorial](https://www.facebook.com/719166003/videos/1048549972848310/) in the ngGirls Facebook group where Shmuela shows how to check and update the development environment. (You may need to join the group to have access.) Note that this video was recorded with version 16 of Angular, and later versions have differences in the content of the created files and the initial boilerplate application.&#x20;
 
 {% embed url="https://www.facebook.com/719166003/videos/1048549972848310/" %}
 
@@ -151,7 +151,7 @@ The flag `-o` is a short for `--open`, which will open your browser in the right
 
 You should see the page like this:
 
-![start screen. welcome message depends on project name](../../.gitbook/assets/initial-app.png)
+<figure><img src="../../.gitbook/assets/image (1).png" alt=""><figcaption><p>start screen. welcome message depends on project name</p></figcaption></figure>
 
 {% hint style="info" %}
 **StackBlitz Instructions** ![](<../../.gitbook/assets/stackblitz-hint (1) (2).svg>)
