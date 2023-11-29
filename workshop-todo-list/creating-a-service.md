@@ -26,43 +26,7 @@ import { Injectable } from '@angular/core';
 export class TodoListService {
 
   constructor() { }
-
 }
-```
-{% endcode %}
-
-## Provide the service
-
-In version 6+ of the Angular CLI you don't need to provide the service by yourself - the CLI adds it to the root `NgModule`. But you can keep on reading to understand what happens and what it means.
-
-To start using the service, we first need to _provide_ it in an `NgModule`. We have only one `NgModule` in our app - the `AppModule` located in `/src/app/app.module.ts`. It's an empty class preceded by the `@NgModule` decorator to which we pass a configuration object. One of the properties of this object is a `providers` list which is currently empty. We'll add our new service to the list.
-
-{% code title="src/app/app.module.ts" %}
-```typescript
-@NgModule({
-  declarations: [
-    AppComponent,
-    InputButtonUnitComponent,
-    TodoItemComponent,
-    ListManagerComponent
-  ],
-  imports: [
-    BrowserModule
-  ],
-  providers: [TodoListService],
-  bootstrap: [AppComponent]
-})
-export class AppModule { }
-```
-{% endcode %}
-
-The `providers` array tells Angular how to provide a service we're looking for (usually in a component or another service). This time the recipe is simple: When we ask for the `TodoListService` class we expect to get an instance of this class. Angular will create only one instance that we can access from anywhere in our application (a Singleton), so we can use it to share data between different parts of the application.
-
-Make sure that the service is imported:
-
-{% code title="src/app/app.module.ts" %}
-```typescript
-import { TodoListService } from './services/todo-list.service';
 ```
 {% endcode %}
 
@@ -187,6 +151,8 @@ ngOnInit() {
 {% endcode %}
 
 You don't need to change anything in the template since we're assigning the list to the same property we used before. Seems like nothing has changed, but you can check that the list comes from the service by changing it from there (adding an item, changing a title, etc.).
+
+If the list is not shown and no error occures in the compilation, the project might not be synced with the addition of the service file. Stop the running of `ng serve` in the terminal by clickin `Ctrl+C` and run it again.&#x20;
 
 {% hint style="info" %}
 💾 **Save your code to GitHub**

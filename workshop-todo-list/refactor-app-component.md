@@ -22,7 +22,7 @@ Use the Angular Generator to create the component, then make the component [use 
 ```typescript
 @Component({
   selector: 'app-root',
-    standalone: true,
+  standalone: true,
   imports: [CommonModule],
   template: `
     <h1>
@@ -39,23 +39,28 @@ export class AppComponent {
 
 {% code title="src/app/list-manager/list-manager.component.ts" %}
 ```typescript
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
+import { CommonModule } from '@angular/common';
 import { TodoItem } from '../interfaces/todo-item';
 
 @Component({
   selector: 'app-list-manager',
+  standalone: true,
+  imports: [CommonModule],
   template: `
     <app-input-button-unit (submit)="addItem($event)"></app-input-button-unit>
 
     <ul>
-      <li *ngFor="let todoItem of todoList">
-        <app-todo-item [item]="todoItem"></app-todo-item>
-      </li>
+      @for(let todoItem of todoList; track todoItem.title) {
+        <li>
+          <app-todo-item [item]="todoItem"></app-todo-item>
+        </li>
+      }       
     </ul>
   `,
-  styleUrls: ['./list-manager.component.scss']
+  styleUrl: './list-manager.component.scss'
 })
-export class ListManagerComponent implements OnInit {
+export class ListManagerComponent {
   todoList: TodoItem[] = [
     {title: 'install NodeJS'},
     {title: 'install Angular CLI'},
@@ -65,12 +70,7 @@ export class ListManagerComponent implements OnInit {
     {title: 'deploy app'},
   ];
 
-  constructor() { }
-
-  ngOnInit(): void {
-  }
-
-  addItem(title: string): void {    
+  addItem(title: string) {    
     this.todoList.push({ title });
   }
 }
