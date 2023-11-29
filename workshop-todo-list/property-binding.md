@@ -8,7 +8,8 @@ We'll revert the component to its state before our experiments with its methods:
 
 {% code title="src/app/input-button-unit/input-button-unit.component.ts" %}
 ```typescript
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
+import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-input-button-unit',
@@ -22,13 +23,10 @@ import { Component, OnInit } from '@angular/core';
   `,  
   styleUrl: './input-button-unit.component.scss'
 })    
-export class InputButtonUnitComponent implements OnInit {
+export class InputButtonUnitComponent {
   title = 'Hello World';           
 
   constructor() { }                     
-
-  ngOnInit(): void {
-  }
 }
 ```
 {% endcode %}
@@ -101,11 +99,11 @@ Replace one or both of the bindings of the title in the template with the method
 
 Angular has a very efficient change detection mechanism. It looks for bindings in the components' templates, and then updates the value each time the bound expression is changed.
 
-![lab-icon](../assets/lab.jpg) **Playground**: To show this, let's change the value of the title after a few seconds and see what happens. Call the `setTimeout` function inside `ngOnInit`:
+![lab-icon](../assets/lab.jpg) **Playground**: To show this, let's change the value of the title after a few seconds and see what happens. Call the `setTimeout` function inside  the constructor:
 
 {% code title="src/app/input-button-unit/input-button-unit.component.ts" %}
 ```typescript
-ngOnInit(): void {
+constructor() {
   setTimeout(() => {
     this.title = 'This is not the title you are looking for';
   }, 3000);
