@@ -116,6 +116,7 @@ Angular CLI will ask a couple of questions to help create a new application. Ans
 
 1. Would you like to add Angular routing? (y/N): **N**
 2. Which stylesheet format would you like to use? (Use arrow keys): Select **SCSS**
+3. Do you want to enable Server-Side Rendering (SSR) and Static Site Generation (SSG/Prerendering)?  (y/N): **N**
 
 This can take a while, since many packages are being downloaded from the web and installed.
 
