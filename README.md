@@ -4,7 +4,7 @@ description: >-
   feedback!
 ---
 
-# Welcome to the ngGirls tutorial!
+# Bienvenu à ce tutorial ngGirls!
 
 ## Creating a Todo-List App
 
