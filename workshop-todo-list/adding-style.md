@@ -1,12 +1,12 @@
-# #14: 💅 Adding Style
+# #14: 💅Ajout de style
 
-With Angular, we can give style to components in a way that will not affect the rest of the application. It's a good practice to encapsulate the component-related style this way.
+Avec Angular, nous pouvons donner du style aux composants d'une manière qui n'affectera pas le reste de l'application. C'est une bonne pratique d'encapsuler le style lié au composant de cette façon.
 
-We can also state general style rules to be used across the application. This is good for creating the same look-and-feel for all our components. For example, we can decide what color palette will be used as the theme of our app. Then, if we'd like to change the colors or offer different themes, we can change it in just one place, instead of in each component.
+Nous pouvons également définir des règles de style générales à utiliser dans toute l'application. C'est une bonne pratique pour créer le même look-and-feel pour tous nos composants. Par exemple, nous pouvons décider de la palette de couleurs qui sera utilisée comme thème de notre application. Ensuite, si nous voulons changer les couleurs ou offrir différents thèmes, nous pouvons le changer en un seul endroit, au lieu de chaque composant.
 
-Angular gives us different style encapsulation methods, but we'll stick to the default.
+Angular nous donne différentes méthodes d'encapsulation du style, mais nous nous en tiendrons à la valeur par défaut.
 
-The Angular CLI has generated a general stylesheet for us at `src/style.scss`. Paste the following code into this file:
+Angular CLI a généré une feuille de style générale pour nous à `src/style.scss`. Collez le code suivant dans ce fichier:
 
 {% code title="src/style.scss" %}
 ```css
@@ -66,7 +66,7 @@ ol, ul {
 ```
 {% endcode %}
 
-> How does the project know to look at this file? In the Angular CLI configuration file `angular.json` under `projects.todo-list.architect.build.options.styles`, you can state the files for the build tool to take and add to the project. You can open the browser's dev tools and see the style inside the element:
+> Comment le projet sait-il qu'il doit regarder ce fichier? Dans le fichier de configuration Angular CLI `angular.json` sous `projects.todo-list.architect.build.options.styles`, vous pouvez indiquer les fichiers que l'outil de construction doit prendre et ajouter au projet. Vous pouvez ouvrir les outils de développement du navigateur et voir le style à l'intérieur de l'élément:
 >
 > ```markup
 > <html>
@@ -82,9 +82,9 @@ ol, ul {
 > </html>
 > ```
 
-We added style directly to elements (`html, body, div, span, h1, p, ul, li`) which will affect our app immediately. We also added styles using css-class selectors. We need to add these class names to the relevant elements.
+Nous avons ajouté du style directement aux éléments (`html, body, div, span, h1, p, ul, li`) qui affecteront notre application immédiatement. Nous avons également ajouté des styles en utilisant des sélecteurs de classe css. Nous devons ajouter ces noms de classe aux éléments pertinents.
 
-In `app-root` add the class `app-title` to the `h1` element:
+Dans `app-root` ajoutez la classe `app-title` à l'élément `h1`:
 
 {% code title="src/app/app.component.ts" %}
 ```markup
@@ -98,7 +98,7 @@ template: `
 ```
 {% endcode %}
 
-In `input-button-unit` add the `btn` class to the `button` element:
+Dans `input-button-unit` ajoutez la classe `btn` à l'élément `button`:
 
 {% code title="src/app/input-button-unit/input-button-unit.component.ts" %}
 ```markup
@@ -109,9 +109,9 @@ In `input-button-unit` add the `btn` class to the `button` element:
 ```
 {% endcode %}
 
-Now we'll add some component-specific styles.
+Maintenant nous allons ajouter des styles spécifiques au composant.
 
-Add the following style to `input-button-unit.component.scss`:
+Ajoutez le style suivant à `input-button-unit.component.scss`:
 
 {% code title="src/app/input-button-unit/input-button-unit.component.scss" %}
 ```css
@@ -133,11 +133,11 @@ Add the following style to `input-button-unit.component.scss`:
 ```
 {% endcode %}
 
-How does this stylesheet get attached to the `input-button-unit` component? Look at the file `input-button-unit.component.ts`. One of the properties in the object passed to the `@Component` decorator is `styleUrls`. It's a list of stylesheets to be used by Angular, which encapsulates the style within the component.
+Comment cette feuille de style est-elle attachée au composant `input-button-unit`? Regardez le fichier `input-button-unit.component.ts`. L'une des propriétés de l'objet passé au décorateur `@Component` est `styleUrls`. C'est une liste de feuilles de style à utiliser par Angular, qui encapsule le style dans le composant.
 
-The selector :host is applied to the element that holds this component - `<app-input-button-unit>`. This element is not a part of this component's template. It appears in its parent's template. This is how we can control its style from within the component.
+Le sélecteur `:host` est appliqué à l'élément qui contient ce composant - `<app-input-button-unit>`. Cet élément ne fait pas partie du modèle de ce composant. Il apparaît dans le modèle de son parent. C'est ainsi que nous pouvons contrôler son style à partir du composant.
 
-We need to add the `todo-input` class to the `input` element:
+Nous devons ajouter la classe `todo-input` à l'élément `input`:
 
 {% code title="src/app/input-button-unit/input-button-unit.component.ts" %}
 ```markup
@@ -148,7 +148,7 @@ We need to add the `todo-input` class to the `input` element:
 ```
 {% endcode %}
 
-Now let's add style specifically to the `list-manager` component. Open the file `list-manager.component.scss` and paste the following style inside:
+Maintenant nous allons ajouter du style spécifique au composant `list-manager`. Ouvrez le fichier `list-manager.component.scss` et collez le style suivant à l'intérieur:
 
 {% code title="src/app/list-manager/list-manager.component.scss" %}
 ```css
@@ -194,7 +194,7 @@ Now let's add style specifically to the `list-manager` component. Open the file 
 ```
 {% endcode %}
 
-We'll wrap the content of this component with a `<div>` element with the `todo-app` class.
+Nous allons envelopper le contenu de ce composant avec un élément `<div>` avec la classe `todo-app`.
 
 {% code title="src/app/list-manager/list-manager.component.ts" %}
 ```markup
@@ -214,7 +214,7 @@ template: `
 ```
 {% endcode %}
 
-Finally, add the following style to `todo-item.component.scss`:
+Enfin ajoutez le style suivant à `todo-item.component.scss`:
 
 {% code title="src/app/todo-item/todo-item.component.scss" %}
 ```css
@@ -239,7 +239,7 @@ Finally, add the following style to `todo-item.component.scss`:
 ```
 {% endcode %}
 
-Wrap the content of the `todo-item` component with a `div` element with the `todo-item` class:
+Placez le contenu du composant `todo-item` dans un élément `<div>` avec la classe `todo-item`:
 
 ```markup
 <div class="todo-item">
@@ -247,11 +247,11 @@ Wrap the content of the `todo-item` component with a `div` element with the `tod
 </div>
 ```
 
-We'll use the `todo-checkbox` and `todo-title` classes later on.
+Nous utiliserons les classes `todo-checkbox` et `todo-title` plus tard.
 
-You can change the style as you wish - the size of elements, the colors - however you'd like!
+Vous pouvez changer le style comme vous le souhaitez - la taille des éléments, les couleurs - comme vous le souhaitez !
 
-Note: You can use [SCSS](https://www.freecodecamp.org/news/the-complete-guide-to-scss-sass-30053c266b23/) files in the project, which is a nicer way to write style. It has great features that help the developer. SCSS files are compiled to CSS when the project is built.
+Note: Vous pouvez utiliser des fichiers [SCSS](https://www.freecodecamp.org/news/the-complete-guide-to-scss-sass-30053c266b23/) dans le projet, ce qui est une façon plus agréable d'écrire du style. Il a de grandes fonctionnalités qui aident le développeur. Les fichiers SCSS sont compilés en CSS lorsque le projet est construit.
 
 {% hint style="info" %}
 💾 **Save your code to GitHub**

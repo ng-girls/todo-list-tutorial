@@ -1,12 +1,12 @@
 # #5: 💼 Class
 
-A class is a special programmatic structure. It is defined with **members** which can be **properties** (variables) and **methods** (functions). Then instances of the class are created, usually by calling the `new` operator on the class: `let myInstance = new myClass();`. The instance created is an object on which you can call the class methods and get and set the values of its properties. Multiple instances can be created from one class.
+Une class est une structure programmatique spéciale. Elle est définie avec des membres qui peuvent être des propriétés \(variables\) et des méthodes \(fonctions\). Ensuite, des instances de la classe sont créées, généralement en appelant l'opérateur `new` sur la classe: `let myInstance = new myClass();`. L'instance créée est un objet sur lequel vous pouvez appeler les méthodes de la classe et obtenir et définir les valeurs de ses propriétés. Plusieurs instances peuvent être créées à partir d'une classe.
 
-## In Angular...
+## Dans Angular...
 
-Angular takes care of creating instances of the classes you define - if they are recognized as Angular building blocks. The decorators make that connection with Angular.
+Angular se charge de créer des instances des classes que vous définissez - si elles sont reconnues comme des blocs de construction Angular. Les décorateurs font cette connexion avec Angular.
 
-Each time you use a component in a template, a new instance of it is created. For example, here three instances of the InputButtonUnitComponent class will be created:
+A chaque fois que vous utilisez un composant dans un modèle, une nouvelle instance de celui-ci est créée. Par exemple, ici trois instances de la classe InputButtonUnitComponent seront créées:
 
 {% code title="src/app/app.component.ts" %}
 ```markup
@@ -20,15 +20,15 @@ template: `
 ```
 {% endcode %}
 
-The class `InputButtonUnitComponent` is empty. Before adding members (properties and methods) we'll present the constructor, which is not written in the component class by default.&#x20;
+La class `InputButtonUnitComponent` est vide. Avant d'ajouter des membres \(propriétés et méthodes\), nous allons présenter le constructeur, qui n'est pas écrit dans la classe du composant par défaut.
 
 ## constructor
 
-The construcor is a method that is called by JavaScript when an instance of the class is created. Whatever is inside this method is used to create the instance. It can receive parameters and run some logic to define the values of the properties of the created instance.
+Le constructeur est une méthode qui est appelée par JavaScript lorsqu'une instance de la classe est créée. Tout ce qui se trouve à l'intérieur de cette méthode est utilisé pour créer l'instance. Il peut recevoir des paramètres et exécuter une certaine logique pour définir les valeurs des propriétés de l'instance créée.
 
-> A strong feature in Angular that uses the constructor is dependency injection. We'll get to that later on, when we start using services.
+> Une fonctionnalité forte dans Angular qui utilise le constructeur est l'injection de dépendance. Nous y reviendrons plus tard, lorsque nous commencerons à utiliser des services.
 
-A class may have methods with various names, but the `constructor` is the reserved word for this special method. To use the constructor of a class, simply implement it:
+Une classe peut avoir des méthodes avec différents noms, mais le mot réservé pour cette méthode spéciale est `constructor`. Pour utiliser le constructeur d'une classe, implémentez-le simplement:
 
 ```typescript
 class MyClass {
@@ -41,37 +41,37 @@ class MyClass {
 
 ```
 
-Several constructors can be written with different sets of arguments (parameters). When creating an instance of a class, the required parameters should be passed.&#x20;
+Plusieurs constructeurs peuvent être écrits avec différents ensembles d'arguments \(paramètres\). Lors de la création d'une instance d'une classe, les paramètres requis doivent être passés.
 
-For example, the `Date` class has several constructors. To create a `Date` object you can call it without parameters to create an object of the current date and time:&#x20;
+Par exemple, la classe `Date` a plusieurs constructeurs. Pour créer un objet `Date`, vous pouvez l'appeler sans paramètres pour créer un objet de la date et de l'heure actuelles:
 
 ```typescript
 const now = new Date();
 ```
 
-or with a parameter, for instance a string representing a date to create an object with this value:
+ou avec un paramètre, par exemple une chaîne représentant une date pour créer un objet avec cette valeur:
 
 ```typescript
 const ninetyFive = new Date('1995-12-17T03:24:00');
 ```
 
-## Properties
+## Propriétés
 
-The property `title` we added is used to store a value, in our case of type string. Each instance of the class will have its own `title` property, meaning you can change the value of `title` in one instance, but it will remain the same in the other instances.
+La propriété `title` que nous avons ajoutée est utilisée pour stocker une valeur, dans notre cas de type chaîne de caractères. Chaque instance de la classe aura sa propre propriété `title`, ce qui signifie que vous pouvez changer la valeur de `title` dans une instance, mais elle restera la même dans les autres instances.
 
-In TypeScript, we must declare members of the class either in the class body outside any method, or pass them to the constructor - as we will see when we use services.
+Avec TypeScript, nous devons déclarer les membres de la classe soit dans le corps de la classe en dehors de toute méthode, soit les passer au constructeur - comme nous le verrons lorsque nous utiliserons des services.
 
-You can declare a property without initializing it:
+Nous pouvons déclarer une propriété sans l'initialiser:
 
 ```typescript
 title: string;
 ```
 
-Then you can assign a value at a later stage, for example in the constructor.  Here we explicitly noted that `title` is of the type `string`. (The type is inferred by TypeScript when we immediately assign a value, so there's no need to add the type in this case.)
+Alors vous pouvez attribuer une valeur à une étape ultérieure, par exemple dans le constructeur. Ici, nous avons explicitement noté que `title` est du type `string`. \(Le type est inféré par TypeScript lorsque nous attribuons immédiatement une valeur, donc il n'est pas nécessaire d'ajouter le type dans ce cas.\)
 
-When referencing a member of the class from within a class method you must prefix it with `this`. It's a special property that points at the current instance.
+Quand on fait référence à un membre de la classe à partir d'une méthode de la classe, on doit le préfixer avec `this`. C'est une propriété spéciale qui pointe vers l'instance actuelle.
 
-Try setting a different value for `title` from inside the constructor. See the result in the browser:
+Essayez de définir une valeur différente pour `title` à partir du constructeur. Voir le résultat dans le navigateur:
 
 {% code title="src/app/input-button-unit/input-button-unit.component.ts" %}
 ```typescript
@@ -83,9 +83,9 @@ constructor() {
 ```
 {% endcode %}
 
-### Methods
+### Méthodes
 
-Let's add a method that changes the value of `title` according to the argument we will pass. We'll call it `changeTitle`. The method will have one parameter of type `string`. Add it **inside the class body** (but not inside another method):
+Ajoutons une méthode qui change la valeur de `title` en fonction de l'argument que nous allons passer. Nous l'appellerons `changeTitle`. La méthode aura un paramètre de type `string`. Ajoutez-le **à l'intérieur du corps de la classe** \(mais pas à l'intérieur d'une autre méthode\):
 
 {% code title="src/app/input-button-unit/input-button-unit.component.ts" %}
 ```typescript
@@ -95,7 +95,7 @@ changeTitle(newTitle: string) {
 ```
 {% endcode %}
 
-**Note:** Functions and Methods can return a value that can be used when the method is called. For example:
+**Note:** Les fonctions et les méthodes peuvent renvoyer une valeur qui peut être utilisée lorsque la méthode est appelée. Par exemple:
 
 {% code title="code for example" %}
 ```typescript
@@ -108,7 +108,7 @@ console.log(z);
 ```
 {% endcode %}
 
-The method `changeTitle` is not used anywhere yet. We can call it from another method or from the template (which we will see in the following chapters). Let's call it from the constructor.
+La méthode `changeTitle` n'est pas encore utilisée. Nous pouvons l'appeler à partir d'une autre méthode ou du modèle \(que nous verrons dans les chapitres suivants\). Appelons-le à partir du constructeur.
 
 {% code title="src/app/input-button-unit/input-button-unit.component.ts" %}
 ```typescript
@@ -118,9 +118,9 @@ constructor() {
 ```
 {% endcode %}
 
-## Debugging Tip
+## Astuce de debugging
 
-You can always use `console.log(someValue)` inside class methods. Then the value you passed as an argument will be printed in the browser's console. This way you can see the order of the execution of the methods and the value of the argument you pass (if it's a variable). For example:
+Vous pouvez toujours utiliser `console.log(someValue)` à l'intérieur des méthodes de classe. Alors la valeur que vous avez passée comme argument sera imprimée dans la console du navigateur. De cette façon, vous pouvez voir l'ordre d'exécution des méthodes et la valeur de l'argument que vous passez \(s'il s'agit d'une variable\). Par exemple:
 
 {% code title="src/app/input-button-unit/input-button-unit.component.ts" %}
 ```typescript
@@ -137,7 +137,7 @@ changeTitle(newTitle: string) {
 ```
 {% endcode %}
 
-The browser's console is a part of its Dev Tools. You can see how to open the console in different browsers here: [https://webmasters.stackexchange.com/questions/8525/how-do-i-open-the-javascript-console-in-different-browsers](https://webmasters.stackexchange.com/questions/8525/how-do-i-open-the-javascript-console-in-different-browsers)
+La console du navigateur fait partie de ses outils de développement. Vous pouvez voir comment ouvrir la console dans différents navigateurs ici : [https://webmasters.stackexchange.com/questions/8525/how-do-i-open-the-javascript-console-in-different-browsers](https://webmasters.stackexchange.com/questions/8525/how-do-i-open-the-javascript-console-in-different-browsers)
 
 {% hint style="info" %}
 💾 **Save your code to GitHub**

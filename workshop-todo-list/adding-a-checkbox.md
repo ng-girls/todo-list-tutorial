@@ -1,15 +1,15 @@
-# #19: 🔘 Adding a checkbox
+# #19: 🔘Ajout d'une checkbox
 
-We are now able to interact with our todo list by removing items. But what if we want to complete items and still be able to see them in our list, with a line through the item's title? Enter the checkbox!
+Nous sommes maintenant capables d'interagir avec notre liste de choses à faire en supprimant des éléments. Mais que se passe-t-il si nous voulons compléter des éléments et être toujours capable de les voir dans notre liste, avec une ligne à travers le titre de l'élément ? Une checkbox !
 
-We will look at:
+Dans cette section, nous allons:
 
-* Adding a checkbox
-* Adding functionality when you click the checkbox so that a CSS class, which adds a ~~strikethrough~~ style, is added to our todo items
-* Editing the todo title so that it responds to the checkbox
-* Adding a new CSS Class
+* Ajouter une chebkbox
+* Ajouter une fonctionnalité lorsque vous cliquez sur la case à cocher afin qu'une classe CSS, qui ajoute un style ~~strikethrough~~, soit ajoutée à nos éléments à faire
+* Ajouter une fonctionnalité pour enregistrer l'état de l'élément dans le local storage
+* Ajouter une nouvelle classe CSS
 
-Let's go ahead and add a checkbox into our `todo-item.component.ts` file. Place the following code right before `{{ item.title }}`:
+Ajoutons une checkbox dans notre fichier `todo-item.component.ts`. Placez le code suivant juste avant `{{ item.title }}` :
 
 {% code title="src/app/todo-item/todo-item.component.ts" %}
 ```markup
@@ -17,7 +17,7 @@ Let's go ahead and add a checkbox into our `todo-item.component.ts` file. Place 
 ```
 {% endcode %}
 
-Now, in order for the checkbox to do anything, we need to add a `click` event handler which we will call `completeItem`. We'll also add a css-class and wrap the element and the interpolation together for styling. Let's do that now:
+Maintenant pour que la checkbox fasse quelque chose, nous devons ajouter un gestionnaire d'événements `click` que nous appellerons `completeItem`. Nous allons également ajouter une classe css et envelopper l'élément et l'interpolation ensemble pour le style. Faisons-le maintenant :
 
 {% code title="src/app/todo-item/todo-item.component.ts" %}
 ```markup
@@ -30,7 +30,7 @@ Now, in order for the checkbox to do anything, we need to add a `click` event ha
 ```
 {% endcode %}
 
-When we click on the checkbox, it will run the `completeItem` method. Let's talk about what this method needs to accomplish. We want to be able to toggle some CSS styling on the item's title so that when the checkbox is checked it will have a strikethrough. We also want to save the status of the item in the local storage. In order to achieve this, we will emit an update event with the new status of the item and catch it in the parent component.
+Quand nous cliquons sur la case à cocher, elle exécute la méthode `completeItem`. Parlons de ce que cette méthode doit accomplir. Nous voulons être capable de basculer un style CSS sur le titre de l'élément de sorte que lorsque la case à cocher est cochée, il aura un ~~strikethrough~~. Nous voulons également enregistrer l'état de l'élément dans le stockage local. Pour ce faire, nous émettrons un événement de mise à jour avec le nouveau statut de l'élément et le capturerons dans le composant parent.
 
 {% code title="src/app/todo-item/todo-item.component.ts" %}
 ```javascript
@@ -49,7 +49,7 @@ export class TodoItemComponent {
 ```
 {% endcode %}
 
-In order for the checkbox-input to reflect the completed-status, we need to add property-binding for its checked-status like this:
+Afin que la case à cocher reflète le statut terminé, nous devons ajouter une liaison de propriété pour son statut vérifié comme ceci:
 
 {% code title="src/app/todo-item/todo-item.component.ts" %}
 ```markup
@@ -63,15 +63,15 @@ In order for the checkbox-input to reflect the completed-status, we need to add 
 ```
 {% endcode %}
 
-But wait! How is any of this going to affect the todo title when we're only touching the checkbox? Well, Angular has this wonderful directive called NgClass. This directive applies or removes a CSS class based on a boolean (true or false) expression. There are many ways to use this directive (see the [NgClass directive documentation](https://angular.io/api/common/NgClass)) but we will focus on using it like so:
+Attendez! Comment est-ce que tout cela va affecter le titre de la todo quand nous ne touchons qu'à la case à cocher? Eh bien, Angular a cette merveilleuse directive appelée NgClass. Cette directive applique ou supprime une classe CSS en fonction d'une expression booléenne (vrai ou faux). Il existe de nombreuses façons d'utiliser cette directive (voir la documentation de la directive [NgClass](https://angular.io/api/common/NgClass)) mais nous nous concentrerons sur son utilisation comme ceci:
 
 ```markup
 <some-element [ngClass]="{'first': true, 'second': true, 'third': false}">...</some-element>
 ```
 
-The 'first' and 'second' class will be applied to the element because they are given a true value, whereas the 'third' class will not be applied because it is given a false value. So this is where our earlier code comes into play. Our `completeItem` method will toggle between true and false values, thus dictating whether a class should be applied or removed.
+les classes 'first' et 'second' seront appliquées à l'élément parce qu'elles sont données une valeur vraie, tandis que la classe 'third' ne sera pas appliquée parce qu'elle est donnée une valeur fausse. C'est donc là que notre code précédent entre en jeu. Notre méthode `completeItem` basculera entre les valeurs vraies et fausses, dictant ainsi si une classe doit être appliquée ou supprimée.
 
-Let's wrap the item title in a `<span>`, then use NgClass to apply the styling. Depending on current item completed field we show line-through decoration or not:
+Plaçons le titre de l'élément dans un `<span>`, puis utilisons NgClass pour appliquer le style. En fonction du champ terminé de l'élément actuel, nous affichons la décoration de la ligne ou non :
 
 ```markup
 <span class="todo-title" [ngClass]="{'todo-complete': item.completed}">
@@ -79,7 +79,7 @@ Let's wrap the item title in a `<span>`, then use NgClass to apply the styling. 
 </span>
 ```
 
-And finally, add the CSS to our `todo-item.component.scss` file:
+Et enfin, ajoutez le CSS à notre fichier `todo-item.component.scss` :
 
 ```css
   .todo-complete {
@@ -87,7 +87,7 @@ And finally, add the CSS to our `todo-item.component.scss` file:
   }
 ```
 
-Next step is to tell the parent element list-manager what to do, when update event is emitted. In order to do so we have to bind update action and update method that will trigger a proper function in TodoListService. Find the todo-item selector in the template (it looks like this):
+La prochaine étape consiste à dire à l'élément parent list-manager quoi faire, lorsque l'événement de mise à jour est émis. Pour ce faire, nous devons lier l'action de mise à jour et la méthode de mise à jour qui déclenchera une fonction appropriée dans TodoListService. Trouvez le sélecteur todo-item dans le modèle (il ressemble à ceci):
 
 {% code title="src/app/list-manager/list-manager.component.ts" %}
 ```markup
@@ -98,7 +98,7 @@ Next step is to tell the parent element list-manager what to do, when update eve
 ```
 {% endcode %}
 
-And add the modifications:
+Et ajoutez les modifications :
 
 {% code title="src/app/list-manager/list-manager.component.ts" %}
 ```markup
@@ -110,7 +110,7 @@ And add the modifications:
 ```
 {% endcode %}
 
-Then create additional method to handle this update item event. It will look very similar to `removeItem` function:
+Enfin créer une méthode supplémentaire pour gérer cet événement de mise à jour de l'élément. Il ressemblera beaucoup à la fonction `removeItem` :
 
 {% code title="src/app/list-manager/list-manager.component.ts" %}
 ```typescript
@@ -120,7 +120,7 @@ updateItem(item, changes) {
 ```
 {% endcode %}
 
-Voila! Checking the checkbox should apply a line through the todo title, and unchecking the checkbox should remove the line.
+Voilà! Cocher la case à cocher doit appliquer une ligne à travers le titre de la todo, et décocher la case à cocher doit supprimer la ligne.
 
 {% hint style="info" %}
 💾 **Save your code to GitHub**

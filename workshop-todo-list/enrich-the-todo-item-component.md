@@ -1,4 +1,4 @@
-# \#21: 💪 Enrich the todo-item component
+# \#21: 💪 Améliorer le composant todo-item
 
-So... We're still working on this one, but the purpose here is to be able to edit your todo item and use the input-button-unit component for this. You can either add an edit button or just let the user click or double click on the item's title. Then the simple item can be replaced \(with \*ngIf\) with the reusable component. You should pass the title as an input and catch the submit event to update the title.
+Alors... Nous travaillons toujours sur cette étape, mais le but ici est de pouvoir éditer votre élément todo et d'utiliser le composant input-button-unit pour cela. Vous pouvez soit ajouter un bouton d'édition, soit laisser l'utilisateur cliquer ou double-cliquer sur le titre de l'élément. Ensuite, l'élément simple peut être remplacé \(avec \*ngIf\) par le composant réutilisable. Vous devez passer le titre en tant qu'entrée et capturer l'événement de soumission pour mettre à jour le titre.
 

@@ -1,10 +1,10 @@
-# #16: 🎁 Add Items Using the Service
+# #16: 🎁 Ajouter des éléments en utilisant le service
 
-Let's improve our service by adding more abilities that will be used by our components. First - we'll implement adding an item to the list.
+Améliorons notre service en ajoutant plus de fonctionnalités qui seront utilisées par nos composants. Tout d'abord - nous allons implémenter l'ajout d'un élément à la liste.
 
-## Adding an item
+## Ajouter un élément
 
-We'll add a new method to the service, called `addItem`, like so:
+Ajoutons une nouvelle méthode au service, appelée `addItem`, comme ceci:
 
 {% code title="src/app/services/todo-list.service.ts" %}
 ```typescript
@@ -14,7 +14,7 @@ addItem(item: TodoItem) {
 ```
 {% endcode %}
 
-Now we can change our `list-manager` component to call the `addItem` method directly from the service:
+Maintenant nous pouvons changer notre composant `list-manager` pour appeler la méthode `addItem` directement depuis le service:
 
 {% code title="src/app/list-manager/list-manager.component.ts" %}
 ```typescript
@@ -24,9 +24,9 @@ addItem(title: string) {
 ```
 {% endcode %}
 
-* Note that the service's method expects the whole item, while the component's method expects only the title and constructs the item. (You may decide to let the service construct the item from the title.)
-* There may be additional logic when calling these methods, i.e. saving the changes in a database (which we'll implement later).
-* A better way to handle data is using _immutable objects_, but that's a bigger topic than we can cover in this tutorial at the moment.
+* Notez que la méthode du service attend l'élément entier, tandis que la méthode du composant n'attend que le titre et construit l'élément. (Vous pouvez décider de laisser le service construire l'élément à partir du titre.)
+* Il peut y avoir une logique supplémentaire lors de l'appel de ces méthodes, par exemple enregistrer les modifications dans une base de données (que nous implémenterons plus tard).
+* Une meilleure façon de gérer les données est d'utiliser des _objets immuables_, mais c'est un sujet plus vaste que nous ne pouvons le couvrir dans ce tutoriel pour le moment.
 
 {% hint style="info" %}
 💾 **Save your code to GitHub**
