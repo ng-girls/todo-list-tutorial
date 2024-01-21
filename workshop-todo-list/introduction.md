@@ -1,27 +1,26 @@
 # #0: 💃 Introduction
 
-Angular is much more than a framework. It's a whole platform for creating applications that can run anywhere, not only on a browser. It gives you tools to advanced capabilities, such as easily creating dynamic components, routes definitions and much more.
+Angular est bien plus qu'un framework. C'est une plateforme complète pour créer des applications qui peuvent s'exécuter n'importe où, pas seulement sur un navigateur. Il vous donne des outils pour des fonctionnalités avancées, telles que la création facile de composants dynamiques, les définitions de routes et bien plus encore.
 
 ![](../.gitbook/assets/angular.png)
 
-In this tutorial you'll learn how to develop a basic application using Angular. You will get to know the building blocks to have a working application: modules, components and services. The Angular CLI will help you in the process in many ways and will simplify the development process.
+Dans ce tutoriel, vous apprendrez à développer une application simple en utilisant Angular. Vous apprendrez les bases pour avoir une application fonctionnelle : modules, composants et services. L'Angular CLI vous aidera dans le processus de développement et simplifiera le processus de développement.
 
-## Our goal
+## Notre objectif
 
-By the end of this tutorial, you'll have a ready todo-list application, that shows a list of items and lets you add or delete items. You will even be able to change the title of an existing item.
+A la fin de ce tutoriel, vous aurez une application todo-list fonctionnelle, qui affiche une liste d'éléments et vous permet d'ajouter ou de supprimer ces éléments. Vous pourrez même modifier le titre d'un élément existant.
 
-The list is saved in the browser's local storage. All the changes will remain even when you refresh the browser or even turn off your computer (as long as you use the same browser on the same computer and not in private mode).
+La liste est enregistrée dans le stockage local du navigateur. Toutes les modifications resteront même si vous actualisez le navigateur ou même si vous éteignez votre ordinateur (tant que vous utilisez le même navigateur sur le même ordinateur, et pas en mode privé).
 
 ![](../.gitbook/assets/todo-app-final.gif)
 
-You will even publish the application on the Web, so that others can use it!
+Vous publierez même l'application sur le Web, afin que d'autres puissent l'utiliser !
 
-## And afterwards?
+## Et après ?
 
-After completing this tutorial, we encourage you to continue developing the application and adding your personal touch.
+Après avoir terminé ce tutoriel, nous vous encourageons à continuer à développer l'application et à y ajouter votre touche personnelle.
 
-This tutorial is meant for beginners. As such it tries to address good practices, but due to its simplicity, it's not always possible.
+Ce tutoriel s'adresse aux débutants. Il essaie donc d'aborder les bonnes pratiques, mais en raison de sa simplicité, ce n'est pas toujours possible.
 
-We really hope this tutorial will help you in your first stages of Web development using Angular!
+Nous espérons vraiment que ce tutoriel vous aidera dans vos premiers pas dans le développement Web avec Angular !
 
-Enjoy!

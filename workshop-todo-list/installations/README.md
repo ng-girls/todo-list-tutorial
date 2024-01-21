@@ -1,28 +1,23 @@
 # #1: ⌛ Installations
 
-Although it is possible to develop web applications with a simple text editor alone, the available tools make developing easier and enjoyable. We'll need a browser to see the result, NodeJS to run scripts on our computer, and NPM to easily fetch libraries from the web. With NPM we'll install the Angular CLI, which will run a script with NodeJS to create a starter project for us, and use NPM to fetch the libraries we'll need for the project (such as Angular). An IDE will help us write the code and manage the project.
+Bien qu'il soit possible de développer des applications Web avec un simple éditeur de texte, les outils disponibles rendent le développement plus facile et plus agréable. Nous aurons besoin d'un navigateur pour voir le résultat, de NodeJS pour exécuter des scripts sur notre ordinateur, et de NPM pour récupérer facilement des bibliothèques sur le Web. Avec NPM, nous installerons Angular CLI, qui exécutera un script avec NodeJS pour créer un projet de base pour nous, et utiliser NPM pour récupérer les bibliothèques dont nous aurons besoin pour le projet (comme Angular). Un IDE nous aidera à écrire le code et à gérer le projet.
 
-In addition, we recommend Git to manage versions of your code, and GitHub to publish and share it.
+En complément, nous recommandons Git pour gérer les versions de votre code, et GitHub pour le publier et le partager.
 
-Take a look at the [video tutorial](https://www.facebook.com/719166003/videos/1048549972848310/) in the ngGirls Facebook group where Shmuela shows how to check and update the development environment. (You may need to join the group to have access.) Note that this video was recorded with version 16 of Angular, and later versions have differences in the content of the created files and the initial boilerplate application. Also, Shmuela instructs installing the Angular-CLI globally on the computer. However, we will use `npx` to create the project.&#x20;
+Jetez un coup d'œil au [tutoriel vidéo](https://www.facebook.com/719166003/videos/1048549972848310/) dans le groupe Facebook ngGirls où Shmuela montre comment vérifier et mettre à jour l'environnement de développement. (Vous devrez peut-être rejoindre le groupe pour y accéder.) Notez que cette vidéo a été enregistrée avec la version 16 d'Angular, et que les versions ultérieures ont des différences dans le contenu des fichiers créés et de l'application de base. De plus, Shmuela indique d'installer Angular CLI globalement sur l'ordinateur. Cependant, nous utiliserons `npx` pour créer le projet.
 
 {% embed url="https://www.facebook.com/719166003/videos/1048549972848310/" %}
 
 {% hint style="info" %}
 **Using an online editor**
 
-If you don't have access to install tools on your computer or require the need to use an online editor, you'll use an online editor called [**StackBlitz**](https://stackblitz.com/). If you're using your computer for local development, you can skip this info panel and any future StackBlitz info panels.
+## Navigateur
 
-Read about development tools on this page until you see the StackBlitz instruction panel so you understand the tools we are using but don't follow the instructions for installation.
-{% endhint %}
-
-## Browser
-
-Our first tool is the **browser**. We'll use it to see the result of our work and debug it. We recommend [Google Chrome](https://www.google.com/chrome/browser/desktop/) - it has great developer tools. [Microsoft Edge](https://www.microsoft.com/edge?WT.mc\_id=javascript-38439-shjacobs) is built on top of Chromium (the open-source engine behind Chrome) and has all the great features and developer tools. [Firefox](https://www.mozilla.org/en-US/firefox/new/) is also awesome. If you don't already have one of those, just click the relevant link and follow the instructions to download and install the browser of your choice.
+Notre premier outil est le **navigateur**. Nous l'utiliserons pour voir le résultat de notre travail et le déboguer. Nous recommandons [Google Chrome](https://www.google.com/chrome/browser/desktop/) - il a de superbes outils de développement. [Microsoft Edge](https://www.microsoft.com/edge?WT.mc\_id=javascript-38439-shjacobs) est construit sur Chromium (le moteur open-source derrière Chrome) et a toutes les grandes fonctionnalités et les outils de développement. [Firefox](https://www.mozilla.org/en-US/firefox/new/) est également génial. Si vous n'en avez pas déjà un, cliquez simplement sur le lien correspondant et suivez les instructions pour télécharger et installer le navigateur de votre choix.
 
 ## IDE
 
-Our next tool is the **IDE** , or integrated development environment. It's software that helps you write the code. IDEs can do a lot of amazing things, such as:
+Notre prochain outil est l'**IDE** , ou environnement de développement intégré. C'est un logiciel qui vous aide à écrire le code. Les IDE peuvent faire beaucoup de choses étonnantes, comme :
 
 * highlight the code so it's easier to identify expressions
 * suggest completions to what you type

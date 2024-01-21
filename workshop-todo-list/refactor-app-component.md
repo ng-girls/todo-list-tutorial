@@ -1,22 +1,17 @@
 # #13: 🚧 Refactor App Component
 
-We're going to perform a small refactoring. The `app-root` shouldn't have such a large template and all this logic. It should just call another component that will deal with that.
+Nous allons effectuer un petit refactoring. L'`app-root` ne devrait pas avoir un template aussi grand et toute cette logique. Il devrait simplement appeler un autre composant qui s'en occupera.
 
-* Create a new component called `list-manager`:&#x20;
+
+* Créer un composant nommé `list-manager` avec la commande suivante:
 
 ```bash
 ng g c list-manager
 ```
 
-{% hint style="info" %}
-**StackBlitz Instructions** ![](<../.gitbook/assets/stackblitz-hint (1) (2).svg>)
-
-Use the Angular Generator to create the component, then make the component [use an inline template](https://ng-girls.gitbook.io/todo-list-tutorial/component#inline-template). Continue with the remaining instructions on this page.
-{% endhint %}
-
-* Move all the code from `app-root` to `list-manager`. &#x20;
-* You can keep the title in app-root, and give it a nice value.
-* Be careful not to change the list manager component's class name!
+* Déplacer le code du composant `app-root` vers `list-manager`. &#x20;
+* Vous pouvez garder le titre dans `app-root`, et lui donner une belle valeur.
+* Attention à ne pas changer le nom de la classe du composant `list-manager`!
 
 {% code title="src/app/app.component.ts" %}
 ```typescript
@@ -77,7 +72,7 @@ export class ListManagerComponent {
 ```
 {% endcode %}
 
-* Call the new component from the `app-root` template:
+* utilisez le nouveau composant à partir du template `app-root`:
 
 {% code title="src/app/app.component.ts" %}
 ```markup
@@ -91,26 +86,19 @@ export class ListManagerComponent {
 ```
 {% endcode %}
 
-That's it! Now we can go on.
+Voilà! Nous pouvons continuer.
 
 {% hint style="info" %}
-💾 **Save your code to GitHub**
-
-StackBlitz users - press **Save** in the toolbar and continue to the next section of the tutorial.
+💾 **Pusher votre code sur GitHub**
 
 Commit all your changes by running this command in your project directory.
 
 ```
-git add -A && git commit -m "Your Message"
+git add -A && git commit -m "votre message de commit"
 ```
 
-Push your changes to GitHub by running this command in your project directory.
+Pusher vos changements sur GitHub en exécutant cette commande dans votre répertoire de projet.
 
 ```
 git push
 ```
-{% endhint %}
-
-{% hint style="success" %}
-[See the results on StackBlitz](https://stackblitz.com/github/ng-girls/todo-list-tutorial/tree/master/examples/0\_13-refactor-app-component)
-{% endhint %}

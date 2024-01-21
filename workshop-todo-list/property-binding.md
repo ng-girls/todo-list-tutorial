@@ -1,10 +1,10 @@
 # #6: 📥 Property binding
 
-We now have our input-button-unit component, but it does not do much. We want to bring it to life.
+Nous avons maintenant notre composant input-button-unit, mais il ne fait pas grand-chose. Nous voulons lui donner vie.
 
-Let's add an HTML input element and make its control text reflect the value of the `title` property.
+Ajoutons un élément HTML input et faisons en sorte que son texte de contrôle reflète la valeur de la propriété `title`.
 
-We'll revert the component to its state before our experiments with its methods:
+Nous allons revenir à l'état du composant avant nos expériences avec ses méthodes:
 
 {% code title="src/app/input-button-unit/input-button-unit.component.ts" %}
 ```typescript
@@ -31,7 +31,7 @@ export class InputButtonUnitComponent {
 ```
 {% endcode %}
 
-Let's add an input element and a button to the template:
+Ajoutons un élément HTML input et un bouton au modèle:
 
 {% code title="src/app/input-button-unit/input-button-unit.component.ts" %}
 ```markup
@@ -47,11 +47,11 @@ template: `
 ```
 {% endcode %}
 
-Reminder: We use interpolation to present the value of the `title` property: `{{ title }}`. Angular then presents the value of `title` each time that our `app-input-button-unit` component is shown.
+Rappel: Nous utilisons l'interpolation pour présenter la valeur de la propriété `title`: `{{ title }}`. Angular présente ensuite la valeur de `title` chaque fois que notre composant `app-input-button-unit` est affiché.
 
-What if we want to show the title value inside the HTML input control itself?
+Comment pouvons-nous afficher la valeur de la propriété `title` dans l'élément HTML input lui-même?
 
-Every `input` element has an attribute called `value`, which holds the string that is displayed inside the `input` box. In HTML, we can pass a string directly to the element's `value` attribute:
+Chaque élément `input` a un attribut appelé `value`, qui contient la chaîne qui est affichée à l'intérieur de la zone `input`. En HTML, nous pouvons passer une chaîne directement à l'attribut `value` de l'élément:
 
 {% code title="src/app/input-button-unit/input-button-unit.component.ts" %}
 ```markup
@@ -59,9 +59,9 @@ Every `input` element has an attribute called `value`, which holds the string th
 ```
 {% endcode %}
 
-But we lose the dynamic binding between the properties in the controller and the template.
+Mais nous perdons la liaison dynamique entre les propriétés dans le contrôleur et le modèle.
 
-Angular lets us bind properties to the template easily and conveniently; we saw that with interpolation. Now we'll see how to bind to an **element's property** (not to be confused with class properties). **We surround the wanted property with square brackets and pass it the class member**:
+Angular nous permet de lier les propriétés au modèle facilement et commodément; nous l'avons vu avec l'interpolation. Maintenant, nous allons voir comment lier à une **propriété d'élément** (à ne pas confondre avec les propriétés de classe). **Nous entourons la propriété voulue avec des crochets et lui passons le membre de la classe**:
 
 {% code title="src/app/input-button-unit/input-button-unit.component.ts" %}
 ```markup
@@ -69,13 +69,13 @@ Angular lets us bind properties to the template easily and conveniently; we saw 
 ```
 {% endcode %}
 
-Try this out and see the result in the browser!
+Essayons et voyons le résultat dans le navigateur !
 
 ## a# Binding to Methods
 
-The expressions that we can bind to in the template are not limited to class properties. They can be a method call or almost any other valid JavaScript expression.
+Les expressions auxquelles nous pouvons nous lier dans le modèle ne se limitent pas aux propriétés de classe. Elles peuvent être un appel de méthode ou presque toute autre expression JavaScript valide.
 
-![lab-icon](<../assets/lab (14).jpg>) **Playground**: For example, let's bind the input value to a method call that returns a value. First, let's add the method `generateTitle` anywhere inside the class, but not inside any of its methods.
+![lab-icon](<../assets/lab (14).jpg>) **Playground**: Par exemple, lier la valeur d'entrée à un appel de méthode qui renvoie une valeur. Tout d'abord, ajoutons la méthode `generateTitle` n'importe où à l'intérieur de la classe, mais pas à l'intérieur de l'une de ses méthodes.
 
 {% code title="src/app/input-button-unit/input-button-unit.component.ts" %}
 ```typescript
@@ -85,7 +85,7 @@ generateTitle(): string {
 ```
 {% endcode %}
 
-Replace one or both of the bindings of the title in the template with the method call (don't forget the parentheses!):
+Remplacez une ou les deux liaisons du titre dans le modèle par l'appel de méthode (n'oubliez pas les parenthèses !):
 
 {% code title="src/app/input-button-unit/input-button-unit.component.ts" %}
 ```markup
@@ -95,11 +95,11 @@ Replace one or both of the bindings of the title in the template with the method
 ```
 {% endcode %}
 
-## b# Change Detection
+## b# Changement de Detection
 
-Angular has a very efficient change detection mechanism. It looks for bindings in the components' templates, and then updates the value each time the bound expression is changed.
+Angular possède un mécanisme de détection des changements très efficace. Il recherche les liaisons dans les modèles des composants, puis met à jour la valeur chaque fois que l'expression liée est modifiée.
 
-![lab-icon](../assets/lab.jpg) **Playground**: To show this, let's change the value of the title after a few seconds and see what happens. Call the `setTimeout` function inside  the constructor:
+![lab-icon](../assets/lab.jpg) **Playground**: Pour le voir, changeons la valeur du titre après quelques secondes et voyons ce qui se passe. Appelez la fonction `setTimeout` à l'intérieur du constructeur:
 
 {% code title="src/app/input-button-unit/input-button-unit.component.ts" %}
 ```typescript
@@ -111,19 +111,20 @@ constructor() {
 ```
 {% endcode %}
 
-`setTimeout` is a JavaScript function. Its first parameter is what we want to happen - a function of our choice. The second parameter is how much we want to delay it, in milliseconds. In this example, we pass an **inline anonymous function** which sets the value of `this.title`. For this we use one of the new features in JavaScript ES6: an **arrow function**.
+`setTimeout` est une fonction JavaScript. Son premier paramètre est ce que nous voulons qu'il se passe - une fonction de notre choix. Le deuxième paramètre est le délai que nous voulons, en millisecondes. Dans cet exemple, nous passons une **fonction anonyme en ligne** qui définit la valeur de `this.title`. Pour cela, nous utilisons l'une des nouvelles fonctionnalités de JavaScript ES6 : une **fonction fléchée**.
 
 ## c# Binding to Methods
 
-The expressions that we can bind to in the template are not limited to class properties. They can be a method call or almost any other valid Angular template expression.
+Les expressions auxquelles nous pouvons nous lier dans le modèle ne se limitent pas aux propriétés de classe. Elles peuvent être un appel de méthode ou presque toute autre expression JavaScript valide.
 
 ## d# Resources
 
 [Angular Guide - Template Property Binding](https://angular.io/guide/template-syntax#property-binding--property-)
 
 ## e# A note about accessing the DOM
+## e# Note sur l'accès au DOM
 
-Using regular JavaScript, we can insert the value to the input via its properties. We'll fetch the element from the DOM and assign the value of the member `title` to the element's `value` property.
+En utilisant le JavaScript classique, nous pouvons insérer la valeur dans l'entrée via ses propriétés. Nous allons récupérer l'élément du DOM et assigner la valeur du membre `title` à la propriété `value` de l'élément.
 
 {% code title="code for example" %}
 ```typescript
@@ -132,7 +133,7 @@ inputElement.value = this.title;
 ```
 {% endcode %}
 
-In JavaScript, we find the `input` element in the DOM by its id, and then set its `value` property to the value of the title property. We need to add the id to the `input` element then:
+En JavaScript, nous trouvons l'élément `input` dans le DOM par son id, puis nous définissons sa propriété `value` sur la valeur de la propriété title. Nous devons ensuite ajouter l'id à l'élément `input` :
 
 {% code title="code for example" %}
 ```markup
@@ -140,28 +141,21 @@ In JavaScript, we find the `input` element in the DOM by its id, and then set it
 ```
 {% endcode %}
 
-This will work in the browser.
+Cela fonctionnera dans le navigateur.
 
-However, **this is highly discouraged in Angular. You should never access the DOM directly!** That's because you can assign different renderers to Angular and run the application on different platforms. They may be renderers for mobile, desktop, or even a robot. These platforms will not have a `document` object from which you can manipulate the result!
+Cependant, **c'est fortement déconseillé dans Angular. Vous ne devriez jamais accéder au DOM directement !** C'est parce que vous pouvez attribuer différents rendus à Angular et exécuter l'application sur différentes plates-formes. Ils peuvent être des rendus pour mobile, bureau, ou même un robot. Ces plateformes n'auront pas d'objet `document` à partir duquel vous pouvez manipuler le résultat !
 
 {% hint style="info" %}
-💾 **Save your code to GitHub**
-
-StackBlitz users - press **Save** in the toolbar and continue to the next section of the tutorial.
+💾 **Pusher votre code sur GitHub**
 
 Commit all your changes by running this command in your project directory.
 
 ```
-git add -A && git commit -m "Your Message"
+git add -A && git commit -m "votre message de commit"
 ```
 
-Push your changes to GitHub by running this command in your project directory.
+Pusher vos changements sur GitHub en exécutant cette commande dans votre répertoire de projet.
 
 ```
 git push
 ```
-{% endhint %}
-
-{% hint style="success" %}
-[See the results on StackBlitz](https://stackblitz.com/github/ng-girls/todo-list-tutorial/tree/master/examples/0\_06-property-binding)
-{% endhint %}

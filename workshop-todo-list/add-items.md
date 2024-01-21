@@ -1,16 +1,17 @@
 # #12: 📌Add items
+# #12: 📌Ajouter des éléments
 
-We want to add items to our list. With Angular, we can do this easily and see the item added immediately. We will do this from within the `input-button-unit` component we created earlier. We'll change it so when hitting the Enter key or clicking the submit button, the value of the input box will become the title of the new item, and the new item will be added to the list.
+Nous voulons ajouter des éléments à notre liste. Avec Angular, nous pouvons le faire facilement et voir l'élément ajouté immédiatement. Nous le ferons à partir du composant `input-button-unit` que nous avons créé précédemment. Nous allons le modifier pour que lorsque vous appuyez sur la touche Entrée ou cliquez sur le bouton de soumission, la valeur de la zone de saisie devienne le titre du nouvel élément, et le nouvel élément sera ajouté à la liste.
 
-But we don't want the `input-button-unit` component to be responsible for adding a new item to the list. We want it to have minimal responsibility, and **delegate the action to its parent component**. One of the advantages of this approach is that this component will be reusable, and can be attached to a different action in different situations.
+Mais nous ne voulons pas que le composant `input-button-unit` soit responsable de l'ajout d'un nouvel élément à la liste. Nous voulons qu'il ait une responsabilité minimale, et **déléguer l'action à son composant parent**. L'un des avantages de cette approche est que ce composant sera réutilisable, et peut être attaché à une action différente dans différentes situations.
 
-For example, in our case, we'll be able to use the `input-button-unit` inside the `todo-item` component. Then we'll have an input box for each item and we'll be able to edit the item's title. In this case, pressing the Enter key or the Save button will have a different effect.
+Par exemple, dans notre cas, nous pourrons utiliser le composant `input-button-unit` à l'intérieur du composant `todo-item`. Nous aurons alors une zone de saisie pour chaque élément et nous pourrons modifier le titre de l'élément. Dans ce cas, appuyer sur la touche Entrée ou sur le bouton Enregistrer aura un effet différent.
 
-So what we actually want to do is to **emit an event** from the `input-button-unit` component whenever the title is changed. With Angular, we can easily define and emit events from our components!
+Alors ce que nous voulons vraiment faire, c'est **émettre un événement** à partir du composant `input-button-unit` chaque fois que le titre est modifié. Avec Angular, nous pouvons facilement définir et émettre des événements à partir de nos composants !
 
 ## @Output()
 
-Add the following line inside the `InputButtonUnitComponent` Class, which defines an output for the component:
+Ajoutez la ligne suivante à l'intérieur de la classe `InputButtonUnitComponent`, qui définit une sortie pour le composant :
 
 {% code title="src/app/input-button-unit/input-button-unit.component.ts" %}
 ```typescript
@@ -18,9 +19,9 @@ Add the following line inside the `InputButtonUnitComponent` Class, which define
 ```
 {% endcode %}
 
-The output property is called `submit`. It's of type `EventEmitter` which has the method `emit`. `EventEmitter` is a Generic Type - we pass to it another type which will be used internally, in this case it's `string`. It's the type of the object that will be emitted by the `emit` method.
+La propriété `@Output` s'appelle `submit`. C'est de type `EventEmitter` qui a la méthode `emit`. `EventEmitter` est un type générique - nous lui passons un autre type qui sera utilisé en interne, dans ce cas c'est `string`. C'est le type de l'objet qui sera émis par la méthode `emit`.
 
-Make sure that `Output` and `EventEmitter` are added to the import declaration in the first line of the file:
+Assurez-vous que `Output` et `EventEmitter` sont ajoutés à la déclaration d'importation dans la première ligne du fichier :
 
 {% code title="src/app/input-button-unit.component.ts" %}
 ```typescript
@@ -28,7 +29,7 @@ import { Component, OnInit, Output, EventEmitter} from '@angular/core';
 ```
 {% endcode %}
 
-Now, whenever we call `this.submit.emit()`, an event will be emitted to the parent component. Let's call it in the `changeTitle` method:
+Maintenant, chaque fois que nous appelons `this.submit.emit()`, un événement sera émis vers le composant parent. Appelons-le dans la méthode `changeTitle` :
 
 {% code title="src/app/input-button-unit/input-button-unit.component.ts" %}
 ```typescript
@@ -38,11 +39,11 @@ changeTitle(newTitle: string): void {
 ```
 {% endcode %}
 
-We delegate everything to the parent component - even actually changing the title of the item if needed.
+Nous déléguons tout au composant parent - même le changement du titre de l'élément si nécessaire.
 
-We pass `newTitle` when we emit the event. Whatever we pass in `emit()` will be available for the parent as `$event`. The events emitted from `keyup.enter` and `click` still call the same method, but the method itself has changed.
+Nous passons `newTitle` lorsque nous émettons l'événement. Tout ce que nous passons dans `emit()` sera disponible pour le parent en tant que `$event`. Les événements émis par `keyup.enter` et `click` appellent toujours la même méthode, mais la méthode elle-même a changé.
 
-The method name no longer matches the action it provides. Let's change it to something more appropriate: `submitValue`. You can use the IDE tools to refactor the method name - make sure that it is changed in the template as well.
+Le nom de la méthode ne correspond plus à l'action qu'elle fournit. Changeons-le pour quelque chose de plus approprié : `submitValue`. Vous pouvez utiliser les outils de l'IDE pour renommer la méthode - assurez-vous qu'elle est également modifiée dans le modèle.
 
 {% code title="src/app/input-button-unit/input-button-unit.component.ts" %}
 ```typescript
@@ -66,9 +67,9 @@ template: `
 ```
 {% endcode %}
 
-### Listening to the event
+### Ecoutons l'événement
 
-Now all we need to do is catch the event in the parent component and attach logic to it. Go to the `app-root` component and bind to the `submit` event in the `<app-input-button-unit>` component:
+Maintenant nous devons simplement attraper l'événement dans le composant parent et y attacher la logique. Allez dans le composant `app-root` et liez l'événement `submit` dans le composant `<app-input-button-unit>` :
 
 {% code title="src/app/app.component.ts" %}
 ```markup
@@ -76,7 +77,7 @@ Now all we need to do is catch the event in the parent component and attach logi
 ```
 {% endcode %}
 
-Now all that's left is to implement the `addItem` method, which receives a string, creates an object with the string as the `title` property, and adds it to the list:
+Maintenant, il ne reste plus qu'à implémenter la méthode `addItem`, qui reçoit une chaîne de caractères, crée un objet avec la chaîne comme propriété `title`, et l'ajoute à la liste :
 
 {% code title="src/app/app.component.ts" %}
 ```typescript
@@ -86,9 +87,9 @@ addItem(title: string) {
 ```
 {% endcode %}
 
-Try it out - enter a new todo item title in the input field and submit it!
+Essayez - entrez un nouveau titre d'élément à faire dans le champ de saisie et soumettez-le !
 
-**Note:** We're using **ES6 Object Property Value Shorthand** to construct the todo item object. If we use a variable with the same name of the object's property to which we want to assign the variable's value to, we can use this shorthand notation. In our case, `{ title }` is equivalent to `{ title: title }`. If the string was stored in a variable with a different name, we couldn't have used the shorthand. For example:
+**Note:** Nous utilisons **ES6 Object Property Value Shorthand** pour construire l'objet élément à faire. Si nous utilisons une variable avec le même nom que la propriété de l'objet à laquelle nous voulons assigner la valeur de la variable, nous pouvons utiliser cette notation abrégée. Dans notre cas, `{ title }` est équivalent à `{ title: title }`. Si la chaîne était stockée dans une variable avec un nom différent, nous n'aurions pas pu utiliser la notation abrégée. Par exemple:
 
 {% code title="code for example" %}
 ```typescript

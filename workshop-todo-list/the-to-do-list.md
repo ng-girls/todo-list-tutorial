@@ -1,6 +1,6 @@
 # #9: 📋 The To Do list
 
-Now you are going to add the to do list itself to the component `app-root`. Open the file `src/app/app.component.ts`. Add the list of items inside the `AppComponent` class as an array of objects for each item. At this stage, each item only contains a title:
+Maintenant vous allez ajouter la liste des tâches à faire elle-même au composant `app-root`. Ouvrez le fichier `src/app/app.component.ts`. Ajoutez la liste des éléments à l'intérieur de la classe `AppComponent` comme un tableau d'objets pour chaque élément. À ce stade, chaque élément ne contient qu'un titre :
 
 {% code title="src/app/app.component.ts" %}
 ```typescript
@@ -18,13 +18,13 @@ export class AppComponent {
 ```
 {% endcode %}
 
-> Putting info (resources) right inside your code is called hardcoding and is considered an especially bad practice. Eventually we'll get the list from an external source, but even if not, it's best to place mock data in their own files. But let's advance step-by-step, so defining items this way is okay for now.
+> Placer des informations (des ressources) directement dans votre code s'appelle du hardcoding et est considéré comme une mauvaise pratique. À terme, nous obtiendrons la liste à partir d'une source externe, mais même si ce n'est pas le cas, il est préférable de placer les données fictives dans leurs propres fichiers. Mais avançons étape par étape, donc définir les éléments de cette façon est correct pour le moment.
 
 ## @for loop
 
-Now you have to tell the browser to display those items. For this, you will use the **Angular built-in control flow block,** `@for`. It works like a loop in any programming language, iterating over an array and rendering the given template, with the current item's data.&#x20;
+Maintenant vous devez dire au navigateur d'afficher ces éléments. Pour cela, vous utiliserez le **bloc de contrôle intégré d'Angular,** `@for`. Il fonctionne comme une boucle dans n'importe quel langage de programmation, itérant sur un tableau et rendant le modèle donné, avec les données de l'élément actuel.
 
-To display a list in HTML we can use an ordered list with `<ol>` or an unordered list with `<ul>`. Within this element, every item will be inserted within a `<li>` element. The `@for` loop notation will surrpond the list item. Insert the `<ul>` and the loop right after `<app-input-button-unit></app-input-button-unit>` like this:
+Pour afficher une liste en HTML, nous pouvons utiliser une liste ordonnée avec `<ol>` ou une liste non ordonnée avec `<ul>`. Dans cet élément, chaque élément sera inséré dans un élément `<li>`. La notation `@for` entourera l'élément de la liste. Insérez la balise `<ul>` et la boucle juste après `<app-input-button-unit></app-input-button-unit>` comme ceci:
 
 {% code title="src/app/app.component.ts" %}
 ```markup
@@ -46,15 +46,15 @@ template: `
 ```
 {% endcode %}
 
-This means "go over all items of todoList array defined in the class, and print out a list which contains the items' titles". While looping over the `todoList`, each item is assigned to the template variable `todoItem`, and we can use this variable inside the element in which we define it (in this case the `li` element) and its children.&#x20;
+Cela signifie "parcourir tous les éléments du tableau `todoList` défini dans la classe, et imprimer une liste qui contient les titres des éléments". Pendant la boucle sur la `todoList`, chaque élément est assigné à la variable de modèle `todoItem`, et nous pouvons utiliser cette variable à l'intérieur de l'élément dans lequel nous la définissons (dans ce cas l'élément `li`) et ses enfants.&#x20;
 
-The `track` notation tells Angular by which property of the item it should track changes in the list. This should be a unique value for each item (usually an ID). When the list changes (items are added, removed, moved or changed), Angular will check the items by this property and re-render only those which have a different value that before.&#x20;
+La fonction `track` indique à Angular par quelle propriété de l'élément il doit suivre les changements dans la liste. Il s'agit généralement d'une valeur unique pour chaque élément (généralement un ID). Lorsque la liste change (des éléments sont ajoutés, supprimés, déplacés ou modifiés), Angular vérifie les éléments par cette propriété et ne rend que ceux qui ont une valeur différente de celle d'avant.
 
-In our case at the moment, we assume that the title is unique for each item. A better way to manage the items is to add an `id` property to each, assigning a unique value to each `todoItem.id` and assigning a new `id` value if the `title` changes (otherwise the change of `title` will not be revealed on the screen).
+Dans notre cas pour le moment, nous supposons que le titre est unique pour chaque élément. Une meilleure façon de gérer les éléments est d'ajouter une propriété `id` à chacun, en attribuant une valeur unique à chaque `todoItem.id` et en attribuant une nouvelle valeur `id` si le `title` change (sinon le changement de `title` ne sera pas révélé à l'écran).
 
 ## @if statement
 
-Another control flow block in Angular is `@if`. It receives a Boolean expression. Angular will only render the template within the block if the expression is true. Optional `@else if` and `else` blocks extend the flow.
+Un autre bloc de contrôle de flux dans Angular est `@if`. Il reçoit une expression booléenne. Angular ne rendra le modèle dans le bloc que si l'expression est vraie. Les blocs facultatifs `@else if` et `else` étendent le flux.
 
 {% code title="code for example" %}
 ```markup
@@ -67,26 +67,19 @@ Another control flow block in Angular is `@if`. It receives a Boolean expression
 ```
 {% endcode %}
 
-In this example, `userLoggedIn` should be a member of the component, and have a true or false value. If it's true, the `h1` and  `h2` elements will be displayed. If false, the elements will not exist in the DOM. (They're not hidden using style - they do not exist at all.) Instead, the `h3` element will be displayed.&#x20;
+Dans cet exemple, `userLoggedIn` doit être un membre du composant, et avoir une valeur vraie ou fausse. S'il est vrai, les éléments `h1` et `h2` seront affichés. Si c'est faux, les éléments n'existeront pas dans le DOM. (Ils ne sont pas masqués en utilisant le style - ils n'existent pas du tout.) Au lieu de cela, l'élément `h3` sera affiché.&#x20;
 
 {% hint style="info" %}
-💾 **Save your code to GitHub**
-
-StackBlitz users - press **Save** in the toolbar and continue to the next section of the tutorial.
+💾 **Pusher votre code sur GitHub**
 
 Commit all your changes by running this command in your project directory.
 
 ```
-git add -A && git commit -m "Your Message"
+git add -A && git commit -m "votre message de commit"
 ```
 
-Push your changes to GitHub by running this command in your project directory.
+Pusher vos changements sur GitHub en exécutant cette commande dans votre répertoire de projet.
 
 ```
 git push
 ```
-{% endhint %}
-
-{% hint style="success" %}
-[See the results on StackBlitz](https://stackblitz.com/github/ng-girls/todo-list-tutorial/tree/master/examples/0\_09-the-to-do-list)
-{% endhint %}

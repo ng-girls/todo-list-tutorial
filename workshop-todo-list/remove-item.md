@@ -1,12 +1,12 @@
 # #18: 🗑 Remove item
 
-The user should be able to remove any item, whether it's still active or completed. Removing an item will be done by clicking a button, aptly named "remove". In this chapter, we'll learn how to add this functionality to our project.
+L'utilisateur doit pouvoir supprimer n'importe quel élément, qu'il soit actif ou terminé. La suppression d'un élément se fera en cliquant sur un bouton, nommé à juste titre "supprimer". Dans ce chapitre, nous allons apprendre à ajouter cette fonctionnalité à notre projet.
 
-## Add the "remove" button
+## Ajouter un bouton 'remove'
 
-First, we need to add the button to the item, so we'll work on the file `todo-item.component.ts`.
+Tout d'abord, nous devons ajouter le bouton à l'élément, nous allons donc travailler sur le fichier `todo-item.component.ts`.
 
-Add a "remove" button to the item template, with a `click` event handler that calls a `removeItem` method (which we'll create in a moment):
+Ajoutez un bouton "remove" au modèle de l'élément, avec un gestionnaire d'événements `click` qui appelle une méthode `removeItem` (que nous allons créer dans un instant):
 
 {% code title="src/app/todo-item/todo-item.component.ts" %}
 ```markup
@@ -22,7 +22,7 @@ template: `
 ```
 {% endcode %}
 
-Add a new output to the `TodoItemComponent` class, which will emit the removed item to the list manager when a user presses its remove button:
+Ajoutez un nouvel `@Output` à la classe `TodoItemComponent`, qui émettra l'élément supprimé au gestionnaire de liste lorsque l'utilisateur appuie sur le bouton de suppression :
 
 {% code title="src/app/todo-item/todo-item.component.ts" %}
 ```typescript
@@ -30,7 +30,7 @@ Add a new output to the `TodoItemComponent` class, which will emit the removed i
 ```
 {% endcode %}
 
-Make sure to import both `EventEmitter` and `Output`:
+Assurez-vous d'importer à la fois `EventEmitter` et `Output`:
 
 {% code title="src/app/todo-item/todo-item.component.ts" %}
 ```typescript
@@ -38,7 +38,7 @@ import { Component, Input, EventEmitter, Output } from '@angular/core';
 ```
 {% endcode %}
 
-Add a method to the `ItemComponent` class to actually emit the event. This method will be called when the user clicks the "remove" button:
+Ajoutez une méthode à la classe `ItemComponent` pour émettre l'événement. Cette méthode sera appelée lorsque l'utilisateur clique sur le bouton "remove":
 
 ```typescript
 removeItem() {
@@ -46,11 +46,11 @@ removeItem() {
 }
 ```
 
-## Remove the todo item
+## Supprimez l'item de la liste
 
-Now that each todo item can emit its own removal, let's make sure that the list manager actually removes that same item from the list. For that, we'll work on the file `list-manager.component.ts`.
+Maintenant que chaque item peut émettre sa propre suppression, assurons nous que le gestionnaire de liste supprime effectivement cet item de la liste. Pour cela, nous allons travailler sur le fichier `list-manager.component.ts`.
 
-We need to respond to the `remove` event. Let's add it to the template, inside the `<todo-item>` tag:
+Nous devons répondre à l'événement `remove`. Ajoutons-le au modèle, à l'intérieur de la balise `<todo-item>` :
 
 {% code title="src/app/list-manager/list-manager.component.ts" %}
 ```markup
@@ -59,7 +59,7 @@ We need to respond to the `remove` event. Let's add it to the template, inside t
 ```
 {% endcode %}
 
-Now we just need to add the method `removeItem()` to the `ListManagerComponent` class, and use the `todoListService` 's method `deleteItem` which will remove the item from the list and update the local storage:
+Maintenant nous devons simplement ajouter la méthode `removeItem()` à la classe `ListManagerComponent`, et utiliser la méthode `deleteItem` du service `todoListService` qui supprimera l'item de la liste et mettra à jour le stockage local:
 
 {% code title="src/app/list-manager/list-manager.component.ts" %}
 ```typescript
@@ -70,23 +70,16 @@ removeItem(item) {
 {% endcode %}
 
 {% hint style="info" %}
-💾 **Save your code to GitHub**
-
-StackBlitz users - press **Save** in the toolbar and continue to the next section of the tutorial.
+💾 **Pusher votre code sur GitHub**
 
 Commit all your changes by running this command in your project directory.
 
 ```
-git add -A && git commit -m "Your Message"
+git add -A && git commit -m "votre message de commit"
 ```
 
-Push your changes to GitHub by running this command in your project directory.
+Pusher vos changements sur GitHub en exécutant cette commande dans votre répertoire de projet.
 
 ```
 git push
 ```
-{% endhint %}
-
-{% hint style="success" %}
-[See the results on StackBlitz](https://stackblitz.com/github/ng-girls/todo-list-tutorial/tree/master/examples/0\_18-remove-item)
-{% endhint %}

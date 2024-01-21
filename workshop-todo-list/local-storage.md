@@ -1,23 +1,18 @@
 # #17: 💾Local storage
 
-We would like to persist the todo list on our computer, so that when accessing or reloading the app we'll see the list with the changes we've made. Ideally the list would be saved in a database, but we will implement a simple version using the browser's own storage.
+Nous aimerions persister la liste de tâches sur notre ordinateur, afin que lorsque nous accédons ou rechargeons l'application, nous voyons la liste avec les modifications que nous avons apportées. Idéalement, la liste serait enregistrée dans une base de données, mais nous mettrons en œuvre une version simple à l'aide du stockage du navigateur lui-même.
 
-## What is local storage?
+## Qu'est-ce que le local storage ?
 
-Local storage, as its name implies, is a tool for storing data locally. Similar to cookies, local storage stores the data on the user's computer, and gives us, as developers, a quick way to access this data for both reading and writing.
+Local storage, comme son nom l'indique, est un outil pour stocker des données localement. Tout comme les cookies, le stockage local stocke les données sur l'ordinateur de l'utilisateur et nous donne, en tant que développeurs, un moyen rapide d'accéder à ces données à la fois en lecture et en écriture.
 
-> There are libraries you can use that give you a wider range, more generic, robust methods to manage the data in the local storage. Here we will implement a simple solution.
+## Découvrons l'API du local storage
 
-## Browser support
+Tout d'abord, pour utiliser le local storage, nous pouvons simplement accéder à une instance `localStorage` qui nous est exposée globalement. Cela signifie que nous pouvons appeler toutes les méthodes disponibles dans cette interface en utilisant simplement cette instance.
 
-As local storage was first introduced to us along with HTML5, all browsers that support HTML5 standard will also support local storage.\
-Basically, it's supported by most modern web browsers, including IE 8.
+{% code title="code for example" %}
 
-## We want to see some code!
-
-First, in order to use local storage, we can simply access a `localStorage` instance which is exposed to us globally. That means that we can call all available methods in this interface by simply using this instance.
-
-Local storage stores data as keys and values, and the interface is quite simple. It has two main methods: `getItem` and `setItem`. Here's an example of using them:
+Local storage enregistre les données sous forme de clé/valeur. Il a deux méthodes principales : `getItem` et `setItem`. Voici un exemple de leur utilisation :
 
 {% code title="code for example" %}
 ```typescript
@@ -28,7 +23,7 @@ alert(`Hello ${ name }!`);
 ```
 {% endcode %}
 
-Another useful method is `clear`. It's used to clear all the data from local storage:
+Une autre méthode utile est `clear`. Elle est utilisée pour effacer toutes les données du stockage local :
 
 {% code title="code for example" %}
 ```typescript
@@ -36,25 +31,19 @@ localStorage.clear();
 ```
 {% endcode %}
 
-There are a few more wonderful methods you can use, as described in the [MDN Web Docs](https://developer.mozilla.org/en-US/docs/Web/API/Storage).
+Il existe quelques autres méthodes que vous pouvez utiliser, comme décrit dans la [documentation MDN Web](https://developer.mozilla.org/en-US/docs/Web/API/Storage).
 
-## Angular time (back to our app)
+## Implémentation dans notre application Angular
 
-In the following section, we will build a local storage service that will be used to store our todo list items. It will be a generic service for lists of objects. We'll need to tell it the name of data we're looking for (a key), so we can use it to store other lists as well.
+Dans la section suivante, nous allons construire un service de local storage qui sera utilisé pour stocker les éléments de notre liste de tâches. Ce sera un service générique pour les listes d'objets. Nous devrons lui indiquer le nom des données que nous recherchons (une clé), afin de pouvoir l'utiliser pour stocker d'autres listes également.
 
-As in earlier chapters, we will generate the service using the Angular CLI. We will name the new service `storage`
+Comme pour les chapitres précédents, nous allons générer le service à l'aide du CLI d'Angular. Nous nommerons le nouveau service `storage`.
 
 ```bash
 ng g s services/storage
 ```
 
-{% hint style="info" %}
-**StackBlitz Instructions** ![](<../.gitbook/assets/stackblitz-hint (1) (2).svg>)
-
-Right click on the `services` folder and use the Angular Generator to create a service named `storage`.
-{% endhint %}
-
-The new file, `storage.service.ts`, will be created with the following code:
+Le nouveau fichier, `storage.service.ts`, sera créé avec le code suivant :
 
 {% code title="src/app/services/storage.service.ts" %}
 ```typescript
@@ -71,13 +60,13 @@ export class StorageService {
 ```
 {% endcode %}
 
-If something looks unfamiliar or confusing to you, please refer to the [Creating a Service chapter](creating-a-service.md) for more detailed information about services.
+Si quelque chose vous semble inhabituel ou confus, veuillez vous référer au chapitre [Créer un service](creating-a-service.md) pour plus d'informations détaillées sur les services.
 
-Since we cannot access an item on the list directly in the local storage, we'll implement only two methods: getting the data and setting the data. Changing the list will be done by the TodoListService. To each method we'll pass the key (name) of the data we want.
+Puisque nous ne pouvons pas accéder directement à un élément de la liste dans le stockage local, nous n'implémenterons que deux méthodes : obtenir les données et définir les données. Le changement de la liste sera effectué par le TodoListService. Pour chaque méthode, nous passerons la clé (nom) des données que nous voulons.
 
 ### getData
 
-This method will get and return the data (object, list, etc.) stored in the service under the given key:
+Cette méthode obtiendra et renverra les données (objet, liste, etc.) stockées dans le service sous la clé donnée :
 
 {% code title="src/app/services/storage.service.ts" %}
 ```typescript
@@ -87,11 +76,11 @@ This method will get and return the data (object, list, etc.) stored in the serv
 ```
 {% endcode %}
 
-Wait! Wait! Why `JSON.parse`? The answer is simple: As described above, local storage stores data as key-value pairs, and the values are stored as **strings**. So, if we want to have a real object (or list) to work with, we must parse the string into a valid JavaScript object.
+Pourquoi utiliser `JSON.parse` ? La réponse est simple : comme décrit ci-dessus, le stockage local stocke les données sous forme de paires clé-valeur, et les valeurs sont stockées sous forme de **chaînes de caractères**. Donc, si nous voulons avoir un vrai objet (ou une liste) avec lequel travailler, nous devons analyser la chaîne en un objet JavaScript valide.
 
 ### setData
 
-This method will save the given data (object, list, etc.) under the given key.
+Cette méthode enregistrera les données données (objet, liste, etc.) sous la clé donnée.
 
 {% code title="src/app/services/storage.service.ts" %}
 ```typescript
@@ -101,15 +90,13 @@ This method will save the given data (object, list, etc.) under the given key.
 ```
 {% endcode %}
 
-That's it! Let's use this service in our `ToDoListService`.
+Utilisons ce service dans notre `ToDoListService`.
 
-> As mentioned above, this service could have a wider API with more robust methods. When you write a service for accessing a database you will have other methods for adding, modifying and deleting specific items.
+> Comme mentionné ci-dessus, ce service pourrait avoir une API plus large avec des méthodes plus robustes. Lorsque vous écrivez un service pour accéder à une base de données, vous aurez d'autres méthodes pour ajouter, modifier et supprimer des éléments spécifiques.
 
-## Use the StorageService
+## Utiliser StorageService
 
-We'd like to use the newly created service from within `TodoListService`. First we'll inject the `StorageService` into the `TodoListService`, just like we injected the latter into `ListManagerComponent`. We'll ask for an instance of the service in the constructor, and make sure its class is imported. We'll move the default todo list outside the class. We'll also add a constant with the key of our storage.
-
-> A better practice is to use the environments files for storing keys. This way you can manage different keys for each environment - development, production, staging, etc.
+Nous aimerions utiliser le nouveau service créé à partir de `TodoListService`. Tout d'abord, nous injecterons `StorageService` dans `TodoListService`, tout comme nous avons injecté ce dernier dans `ListManagerComponent`. Nous demanderons une instance du service dans le constructeur, et nous assurerons que sa classe est importée. Nous déplacerons la liste de tâches par défaut en dehors de la classe. Nous ajouterons également une constante avec la clé de notre stockage.
 
 {% code title="src/app/services/todo-list.service.ts" %}
 ```typescript
@@ -139,7 +126,7 @@ export class TodoListService {
 ```
 {% endcode %}
 
-We'll keep a runtime version of the todo list in the service to help us manage it in the app - the `todoList` property. We'll initialize it in the constructor with either the list in the local storage, if exists, or the default one.
+Nous garderons une version de la liste de tâches en mémoire dans le service pour nous aider à la gérer dans l'application - la propriété `todoList`. Nous l'initialiserons dans le constructeur avec soit la liste dans le stockage local, si elle existe, soit la liste par défaut.
 
 {% code title="src/app/services/todo-list.service.ts" %}
 ```typescript
@@ -150,11 +137,11 @@ constructor(private storageService: StorageService) {
 ```
 {% endcode %}
 
-Now we'll implement the methods for managing our list.
+Maintenant nous allons implémenter les méthodes pour gérer notre liste.
 
 ### addItem
 
-We'll push an item to the todoList (same as before) and then update the storage.
+Nous allons pousser un élément dans la todoList (comme avant) et ensuite mettre à jour le stockage.
 
 {% code title="src/app/services/todo-list.service.ts" %}
 ```typescript
@@ -167,7 +154,7 @@ addItem(item: TodoItem): void {
 
 ### updateItem
 
-Here we want to update an existing item. We'll assume that we hold the original item by reference, and can find it in the list. (Other implementations may use an item ID to search the list.) Then we'll replace it with a new version. Finally we'll update the storage.
+Ici nous voulons mettre à jour un élément existant. Nous supposerons que nous détenons l'élément d'origine par référence, et que nous pouvons le trouver dans la liste. (D'autres implémentations peuvent utiliser un ID d'élément pour rechercher la liste.) Ensuite, nous le remplacerons par une nouvelle version. Enfin, nous mettrons à jour le stockage.
 
 {% code title="src/app/services/todo-list.service.ts" %}
 ```typescript
@@ -179,12 +166,12 @@ updateItem(item: TodoItem, changes): void {
 ```
 {% endcode %}
 
-So what is going on here?\
-We locate the item in the list. Then in the same place we assign a new object, which is constructed from the original item and the changes made to it. We're using the spread operator for this: a new object is constructed, composed of the original set of keys and values (`...item`) which are overridden by the keys and values of `changes`. (If a key in `changes` doesn't exist in `item`, it is added to the new object.)
+Que ce passe-t-il ici ?
+Nous localisons l'élément dans la liste. Puis au même endroit, nous assignons un nouvel objet, qui est construit à partir de l'élément d'origine et des modifications qui lui ont été apportées. Nous utilisons l'opérateur de propagation pour cela : un nouvel objet est construit, composé de l'ensemble original de clés et de valeurs (`...item`) qui sont remplacées par les clés et valeurs de `changes`. (Si une clé dans `changes` n'existe pas dans `item`, elle est ajoutée au nouvel objet.)
 
 ### DRY - Don't Repeat Yourself
 
-You may have noticed that we have the same line of code both in `addItem` and in `updateItem`:
+Vous avez peut-être remarqué que nous avons la même ligne de code à la fois dans `addItem` et dans `updateItem` :
 
 {% code title="src/app/services/todo-list.service.ts" %}
 ```typescript
@@ -192,7 +179,7 @@ this.storageService.setData(todoListStorageKey, this.todoList);
 ```
 {% endcode %}
 
-We'd like to reduce code repetition, and extract the repeated code into a method. You can use the IDE to help you extract the method. Select the line above, then right click and search for the option to refactor by extracting a method. The extracted method should look like this:
+Nous aimerions réduire la répétition du code et extraire le code répété dans une méthode. Vous pouvez utiliser l'IDE pour vous aider à extraire la méthode. Sélectionnez la ligne ci-dessus, puis cliquez avec le bouton droit de la souris et recherchez l'option pour refactoriser en extrayant une méthode. La méthode extraite devrait ressembler à ceci :
 
 {% code title="src/app/services/todo-list.service.ts" %}
 ```typescript
@@ -202,11 +189,11 @@ saveList() {
 ```
 {% endcode %}
 
-Now make sure you call `saveList` from within `addItem` and `updateItem`.
+Maintenant, assurez-vous d'appeler `saveList` à partir de `addItem` et `updateItem`.
 
 ### deleteItem
 
-This method will remove an item from the list. We look for the item in the list, remove it, and save the changes.
+Cette méthode supprimera un élément de la liste. Nous recherchons l'élément dans la liste, le supprimons et enregistrons les modifications.
 
 {% code title="src/app/services/todo-list.service.ts" %}
 ```typescript
@@ -218,11 +205,11 @@ deleteItem(item: TodoItem) {
 ```
 {% endcode %}
 
-`splice(i, n)` removes `n` items starting from index `i`. In our code, we remove only one item (that's why we use 1 as the second parameter).
+`splice(i, n)` supprime `n` éléments à partir de l'index `i`. Dans notre code, nous ne supprimons qu'un seul élément (c'est pourquoi nous utilisons 1 comme deuxième paramètre).
 
-### Final result
+### Résultat final
 
-Our TodoListService is ready with methods to get and modify the todo list. We can use these methods from the components.
+Notre TodoListService est prêt avec des méthodes pour obtenir et modifier la liste de tâches. Nous pouvons utiliser ces méthodes à partir des composants.
 
 {% code title="src/app/services/todo-list.service.ts" %}
 ```typescript
@@ -279,28 +266,22 @@ export class TodoListService {
 ```
 {% endcode %}
 
-## Summary
+## Résumé
 
-In this chapter we learned what local storage is and how to use it. We saw that `localStorage` is a great and a pretty straight-forward tool for developers to store data locally on the users' computers/devices. We then implemented a new service that uses `localStorage` to store data, which our `TodoListService` uses to save the todo-list items.
+Dans ce chapitre, nous avons appris ce qu'est le stockage local et comment l'utiliser. Nous avons vu que `localStorage` est un outil formidable et assez simple pour les développeurs pour stocker des données localement sur les ordinateurs/appareils des utilisateurs. Nous avons ensuite implémenté un nouveau service qui utilise `localStorage` pour stocker des données, que notre `TodoListService` utilise pour enregistrer les éléments de la liste de tâches.
 
 {% hint style="info" %}
-💾 **Save your code to GitHub**
-
-StackBlitz users - press **Save** in the toolbar and continue to the next section of the tutorial.
+💾 **Pusher votre code sur GitHub**
 
 Commit all your changes by running this command in your project directory.
 
 ```
-git add -A && git commit -m "Your Message"
+git add -A && git commit -m "votre message de commit"
 ```
 
-Push your changes to GitHub by running this command in your project directory.
+Pusher vos changements sur GitHub en exécutant cette commande dans votre répertoire de projet.
 
 ```
 git push
 ```
-{% endhint %}
 
-{% hint style="success" %}
-[See the results on StackBlitz](https://stackblitz.com/github/ng-girls/todo-list-tutorial/tree/master/examples/0\_17-local-storage)
-{% endhint %}

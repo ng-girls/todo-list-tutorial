@@ -1,26 +1,19 @@
 # #11: ⛓ Interface
 
-We want to use TypeScript's abilities to know what kind of object we pass as an `item` to the `todo-item` component. We'll make sure that the item is of the right type. But its type is not a simple string, number or boolean. We'll define the item's type using an **interface**.
+Nous voulons utiliser les capacités de TypeScript pour savoir quel type d'objet nous passons en tant qu'`item` au composant `todo-item`. Nous nous assurerons que l'élément est du bon type. Mais son type n'est pas une simple chaîne, un nombre ou un booléen. Nous allons définir le type de l'élément en utilisant une **interface**.
 
-> We've already seen an interface provided by Angular: the `OnInit` interface which includes the method `ngOnInit`. Every Class that implements this interface should define this method. Otherwise we'll get an error during compile time.
->
-> Interfaces exist only in TypeScript and are removed when the code is compiled to JavaScript. In JavaScript we cannot enforce type safety out of the box.
 
-Create a `TodoItem` interface in a new `interfaces` folder with the Angular CLI:
+> Les interfaces n'existent que dans TypeScript et sont supprimées lorsque le code est compilé en JavaScript. En JavaScript, nous ne pouvons pas imposer la sécurité des types par défaut.
+
+Créez une interface `TodoItem` dans un nouveau dossier `interfaces` avec l'Angular CLI:
 
 ```bash
 ng g i interfaces/todo-item
 ```
 
-`i` is short for... you guessed it - interface. Adding a path in the command to the Angular CLI generates the folders you specified if they do not already exist.
+`ì` est l'abréviation de... vous l'avez deviné - interface. En ajoutant un chemin dans la commande à l'interface Angular CLI génère les dossiers que vous avez spécifiés s'ils n'existent pas déjà.
 
-{% hint style="info" %}
-**StackBlitz Instructions** ![](<../../.gitbook/assets/stackblitz-hint (1) (2).svg>)
-
-We'll use the Angular Generator to create the interface. Follow the instructions on the [StackBlitz instructions](stackblitz.md) page and return here to continue the worksheet.
-{% endhint %}
-
-In your IDE, open the newly created file `src/app/interfaces/todo-item.ts`:
+Dans votre IDE, ouvrez le fichier nouvellement créé `src/app/interfaces/todo-item.ts`:
 
 {% code title="src/app/interfaces/todo-item.ts" %}
 ```typescript
@@ -29,10 +22,10 @@ export interface TodoItem {
 ```
 {% endcode %}
 
-Now we can define what properties and/or methods every object of type TodoItem should have. At this point we'll add two members:
+Maintenant, nous pouvons définir quelles propriétés et/ou méthodes chaque objet de type TodoItem doit avoir. À ce stade, nous allons ajouter deux membres:
 
-* `title` which must be of type `string`
-* `completed` which is of type `boolean` and is an optional member&#x20;
+* `title` qui doit être de type `string`
+* `completed` qui est de type `boolean` et est un membre facultatif
 
 {% code title="src/app/interfaces/todo-item.ts" %}
 ```typescript
@@ -43,7 +36,7 @@ export interface TodoItem {
 ```
 {% endcode %}
 
-Let's define the item `@Input` to be of the type we've created. This will allow the IDE to suggest us available members when we use item in the component class and template.
+Definissons l'`@Input` de l'élément pour qu'il soit du type que nous avons créé. Cela permettra à l'IDE de nous suggérer les membres disponibles lorsque nous utilisons l'élément dans la classe et le modèle du composant.
 
 {% code title="src/app/todo-item/todo-item.component.ts" %}
 ```typescript
@@ -52,7 +45,7 @@ export class TodoItemComponent implements OnInit {
 ```
 {% endcode %}
 
-You need to import the interface to this file.
+Nous devons importer l'interface dans ce fichier.
 
 {% code title="src/app/todo-item/todo-item.component.ts" %}
 ```typescript
@@ -60,7 +53,7 @@ import { TodoItem } from '../interfaces/todo-item';
 ```
 {% endcode %}
 
-Now, let's define the list of todo items to contain objects of the `TodoItem` type.
+Maintenant, définissons la liste des éléments à faire pour contenir des objets du type `TodoItem`.
 
 {% code title="src/app/app.component.ts" %}
 ```typescript
@@ -78,7 +71,7 @@ export class AppComponent {
 ```
 {% endcode %}
 
-Again, you need to import the interface to this file.
+Encore une fois, vous devez importer l'interface dans ce fichier.
 
 {% code title="src/app/app.component.ts" %}
 ```typescript
@@ -86,7 +79,7 @@ import { TodoItem } from './interfaces/todo-item';
 ```
 {% endcode %}
 
-Now try to delete the title of one of the objects in the list. What happens?
+Maintenant essayez de supprimer le titre de l'un des objets de la liste. Que se passe-t-il?
 
 {% hint style="info" %}
 💾 **Save your code to GitHub**
