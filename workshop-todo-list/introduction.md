@@ -4,13 +4,14 @@ Angular est bien plus qu'un framework. C'est une plateforme complète pour crée
 
 ![](../.gitbook/assets/angular.png)
 
-Dans ce tutoriel, vous apprendrez à développer une application simple en utilisant Angular. Vous apprendrez les bases pour avoir une application fonctionnelle : modules, composants et services. L'Angular CLI vous aidera dans le processus de développement et simplifiera le processus de développement.
+Dans ce tutoriel, vous apprendrez à développer une application simple en utilisant Angular. Vous apprendrez les bases pour avoir une application fonctionnelle : modules, composants et services. 
+L'*Angular CLI* vous aidera dans le processus de développement et vous permettra de le simplifier.
 
 ## Notre objectif
 
-A la fin de ce tutoriel, vous aurez une application todo-list fonctionnelle, qui affiche une liste d'éléments et vous permet d'ajouter ou de supprimer ces éléments. Vous pourrez même modifier le titre d'un élément existant.
+A la fin de ce tutoriel, vous aurez une application fonctionnelle de To-Do List. Elle affichera une liste de taches qui pourront etre supprimés mais vous pourrez également en ajouter. Chaque tache existante sera modifiable et cochable/décochable.
 
-La liste est enregistrée dans le stockage local du navigateur. Toutes les modifications resteront même si vous actualisez le navigateur ou même si vous éteignez votre ordinateur (tant que vous utilisez le même navigateur sur le même ordinateur, et pas en mode privé).
+La liste est enregistrée dans le [stockage local du navigateur](https://developer.mozilla.org/fr/docs/Web/API/Window/localStorage). Toutes les modifications resteront même si vous actualisez le navigateur ou même si vous éteignez votre ordinateur (tant que vous utilisez le même navigateur sur le même ordinateur, et pas en mode privé).
 
 ![](../.gitbook/assets/todo-app-final.gif)
 
