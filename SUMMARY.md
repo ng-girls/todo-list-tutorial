@@ -7,7 +7,6 @@
 * [👀 About](workshop-todo-list/workshop-todo-list.md)
 * [\#0: 💃 Introduction](workshop-todo-list/introduction.md)
 * [\#1: ⌛ Installations](workshop-todo-list/installations/README.md)
-  * [a. StackBlitz instructions](workshop-todo-list/installations/stackblitz.md)
 * [\#2: 🅰 Angular kicks in](workshop-todo-list/angular-kicks-in.md)
 * [\#3: 📐 Component](workshop-todo-list/component.md)
 * [\#4: ✏ A new component](workshop-todo-list/a-new-component/README.md)

@@ -145,11 +145,6 @@ You should see the page like this:
 
 <figure><img src="../../.gitbook/assets/image (1).png" alt=""><figcaption><p>start screen. welcome message depends on project name</p></figcaption></figure>
 
-{% hint style="info" %}
-**StackBlitz Instructions** ![](<../../.gitbook/assets/stackblitz-hint (1) (2).svg>)
-
-Follow the instructions on the [StackBlitz instructions](stackblitz.md) page in this chapter to set up your online development environment.
-{% endhint %}
 
 ## Congratulations!
 
