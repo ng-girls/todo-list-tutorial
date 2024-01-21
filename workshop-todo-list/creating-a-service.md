@@ -1,20 +1,15 @@
 # #15: 🔋 Creating a Service
+# #15: 🔋Créer un service
 
-In Angular, a service is (typically) a JavaScript class that's responsible for performing a specific task needed by your application. In our todo-list application, we'll create a service that will be responsible for saving and managing all the tasks, and we'll use it by injecting it into the components.
+Dans Angular, un service est (typiquement) une classe JavaScript qui est responsable d'effectuer une tâche spécifique nécessaire à votre application. Dans notre application todo-list, nous allons créer un service qui sera responsable de l'enregistrement et de la gestion de toutes les tâches, et nous l'utiliserons en l'injectant dans les composants.
 
-## Create a service with the Angular CLI:
+## Créer un service avec Angular CLI:
 
 ```
 ng g s services/todo-list
 ```
 
-{% hint style="info" %}
-**StackBlitz Instructions** ![](<../.gitbook/assets/stackblitz-hint (1) (2).svg>)
-
-Create the `services` folder inside the `app` folder. Then use the Angular Generator to create the service named `todo-list`.
-{% endhint %}
-
-This command will generate the service in the file `src/app/services/todo-list.service.ts`. The service is a simple Class called `TodoListService`. It has the decorator `@Injectable` which allows it to use Dependency Injection.
+Cette commande va générer le service dans le fichier `src/app/services/todo-list.service.ts`. Le service est une simple classe appelée `TodoListService`. Il a le décorateur `@Injectable` qui lui permet d'utiliser l'injection de dépendance.
 
 {% code title="src/app/services/todo-list.service.ts" %}
 ```
@@ -30,9 +25,9 @@ export class TodoListService {
 ```
 {% endcode %}
 
-## Share data
+## Partager des données
 
-Now we can move the `todoList` array from `ListManagerComponent` to our new service. Go to the generated service file, `src/app/services/todo-list.service.ts`, and add this code inside the `TodoListService` class just above the `constructor`:
+Maintenant nous pouvons déplacer le tableau `todoList` du `ListManagerComponent` vers notre nouveau service. Allez dans le fichier de service généré, `src/app/services/todo-list.service.ts`, et ajoutez ce code à l'intérieur de la classe `TodoListService` juste au-dessus du `constructor`:
 
 {% code title="src/app/services/todo-list.service.ts" %}
 ```typescript
@@ -47,7 +42,7 @@ private todoList: TodoItem[] = [
 ```
 {% endcode %}
 
-Make sure that the TodoItem interface is imported:
+Assurez-vous que l'interface TodoItem est importée:
 
 {% code title="src/app/services/todo-list.service.ts" %}
 ```typescript
@@ -55,9 +50,9 @@ import { TodoItem } from '../interfaces/todo-item';
 ```
 {% endcode %}
 
-## Create a method to return the list
+## Créer une méthode pour retourner la liste
 
-We'll add a `getTodoList` method that will return the `todoList` array. The service will look like this:
+Nous allons ajouter une méthode `getTodoList` qui va retourner le tableau `todoList`. Le service ressemblera à ceci:
 
 {% code title="src/app/services/todo-list.service.ts" %}
 ```typescript
@@ -87,9 +82,9 @@ export class TodoListService {
 ```
 {% endcode %}
 
-## Inject and use the service
+## Injecter et utiliser le service
 
-After creating the service, we can inject it into our `list-manager` component. In Angular Dependency Injection is very simple. We pass it as a parameter in the constructor - the parameter's type is the class name of the service. Angular assigns the instance it created to the parameter name, and we can use it from within the constructor. Before implementing it ourselves, let's see how it works. This is the constructor within the `ListManagerComponent` class:
+Après avoir créé le service, nous pouvons l'injecter dans notre composant `list-manager`. Dans Angular, l'injection de dépendance est très simple. Nous le passons en paramètre dans le constructeur - le type de paramètre est le nom de la classe du service. Angular attribue l'instance qu'il a créée au nom du paramètre, et nous pouvons l'utiliser à partir du constructeur. Avant de l'implémenter nous-mêmes, voyons comment cela fonctionne. Voici le constructeur de la classe `ListManagerComponent`:
 
 {% code title="src/app/list-manager/list-manager.component.ts" %}
 ```typescript
@@ -99,7 +94,7 @@ constructor(todoListService: TodoListService) {
 ```
 {% endcode %}
 
-Typescript helps us furthermore by giving a shortcut for assigning the parameter to a class member. By adding `private` or `public` before the parameter name it is automatically assigned to `this`. So instead of declaring and assigning the property by ourselves:
+Typescript nous aide en nous donnant un raccourci pour assigner le paramètre à un membre de classe. En ajoutant `private` ou `public` avant le nom du paramètre, il est automatiquement assigné à `this`. Donc au lieu de déclarer et d'assigner la propriété par nous-mêmes:
 
 ```typescript
 export class ListManagerComponent {
@@ -111,7 +106,7 @@ export class ListManagerComponent {
 }
 ```
 
-...we can reduce a lot of code like this:
+... nous pouvons réduire beaucoup de code comme ceci:
 
 ```typescript
 export class ListManagerComponent {
@@ -120,10 +115,12 @@ export class ListManagerComponent {
 }
 ```
 
-So let's go on and use the service in the `list-manager` component.
+Utilisons le service dans le composant `list-manager`.
 
-* Remove the hard-coded list from the component, keep only the `todoList` property declaration.
-* Inject the `TodoListService` using the constructor.&#x20;
+* Supprimez la liste codée en dur du composant, ne gardez que la déclaration de la propriété `todoList`.
+* Injectez le `TodoListService` en utilisant le constructeur.&#x20;
+
+{% code title="src/app/list-manager/list-manager.component.ts" %}
 
 ```typescript
 export class ListManagerComponent {
@@ -132,7 +129,7 @@ export class ListManagerComponent {
   constructor(private todoListService: TodoListService) { }
 ```
 
-* Make sure the `TodoListService` is imported.
+* Assurez-vous que le `TodoListService` est importé.
 
 {% code title="src/app/list-manager/list-manager.component.ts" %}
 ```typescript
@@ -140,7 +137,7 @@ import { TodoListService } from '../services/todo-list.service';
 ```
 {% endcode %}
 
-* Get the list from the service in the `constructor`.
+* Récupérez la liste du service dans le `constructor`.
 
 {% code title="src/app/list-manager/list-manager.component.ts" %}
 ```typescript
@@ -150,9 +147,9 @@ constructor(private todoListService: TodoListService) {
 ```
 {% endcode %}
 
-You don't need to change anything in the template since we're assigning the list to the same property we used before. Seems like nothing has changed, but you can check that the list comes from the service by changing it from there (adding an item, changing a title, etc.).
+Vous n'avez pas besoin de changer quoi que ce soit dans le modèle puisque nous assignons la liste à la même propriété que nous avons utilisée auparavant. Il semble que rien n'ait changé, mais vous pouvez vérifier que la liste provient du service en la changeant à partir de là (ajout d'un élément, changement de titre, etc.).
 
-If the list is not shown and no error occures in the compilation, the project might not be synced with the addition of the service file. Stop the running of `ng serve` in the terminal by clickin `Ctrl+C` and run it again.&#x20;
+Si la liste n'est pas affichée et qu'aucune erreur ne se produit lors de la compilation, le projet pourrait ne pas être synchronisé avec l'ajout du fichier de service. Arrêtez l'exécution de `ng serve` dans le terminal en cliquant sur `Ctrl+C` et exécutez-le à nouveau.&#x20;
 
 {% hint style="info" %}
 💾 **Save your code to GitHub**

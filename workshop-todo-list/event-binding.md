@@ -1,10 +1,10 @@
 # #7: 📤Event binding
 
-We want our application to react to the user's actions. We want to update the title of the todo item whenever the user changes it, or to add a new item when the user presses the Save button or the Enter key.
+Nous voulons que notre application réagisse aux actions de l'utilisateur. Nous voulons mettre à jour le titre de l'élément à faire chaque fois que l'utilisateur le modifie, ou ajouter un nouvel élément lorsque l'utilisateur appuie sur le bouton Enregistrer ou sur la touche Entrée.
 
-We still don't have a whole list to show, but at the moment we will use another way to test the action. We will change it to the right functionality later on.
+Nous n'avons toujours pas toute la liste à afficher, mais pour le moment nous allons utiliser une autre façon de tester l'action. Nous changerons pour la bonne fonctionnalité plus tard.
 
-The `input-button-unit` component should look like this:
+Le composant `input-button-unit` devrait ressembler à ceci:
 
 {% code title="src/app/input-button-unit/input-button-unit.component.ts" %}
 ```typescript
@@ -32,9 +32,9 @@ export class InputButtonUnitComponent {
 ```
 {% endcode %}
 
-## The Action
+## Implémenter la méthode changeTitle
 
-First, let's implement `changeTitle`. It will receive the new title as its argument. The best practice is to have our custom methods written after the lifecycle methods (`ngOnInit` in this case):
+Tout d'abord, implémentons `changeTitle`. Il recevra le nouveau titre comme argument. La meilleure pratique est d'avoir nos méthodes personnalisées écrites après les méthodes du cycle de vie (`ngOnInit` dans ce cas):
 
 {% code title="src/app/input-button-unit/input-button-unit.component.ts" %}
 ```typescript
@@ -44,11 +44,11 @@ changeTitle(newTitle: string) {
 ```
 {% endcode %}
 
-## Binding to Events
+## Event binding
 
-Just like binding to element properties, we can bind to events that are emitted by the elements. Again, Angular gives us an easy way to do this. **You just wrap the name of the event with parenthesis, and pass it the method that should be executed when the event is emitted**.
+Tout comme la liaison aux propriétés des éléments, nous pouvons lier aux événements émis par les éléments. Encore une fois, Angular nous donne un moyen facile de le faire. **Il suffit d'entourer le nom de l'événement avec des parenthèses, et de lui passer la méthode qui doit être exécutée lorsque l'événement est émis**.
 
-Let's try a simple example, where the title is changed when the user clicks on the button. Notice the parenthesis around `click`. (We also change the binding of the input's value back to `title`.)
+Essayons un exemple simple, où le titre est modifié lorsque l'utilisateur clique sur le bouton. Remarquez les parenthèses autour de `click`. (Nous changeons également la liaison de la valeur de l'entrée à `title`.)
 
 {% code title="src/app/input-button-unit/input-button-unit.component.ts" %}
 ```markup
@@ -66,19 +66,19 @@ template: `
 ```
 {% endcode %}
 
-> The event is called `click` and not `onClick` - in Angular you remove the `on` prefix from the events in the elements.
+> L'événement s'appelle `click` et non `onClick` - en Angular, vous supprimez le préfixe `on` des événements dans les éléments.
 
-Go to the browser and see the result - click on the Save button.
+Vérifiez le résultat dans le navigateur: cliquez sur le bouton Save.
 
 ## Event Data
 
-We pass a static string to the method call: `Button Clicked!` But we want to pass the value that the user typed in the input box!
+Nous passons une chaîne statique à l'appel de méthode: `Button Clicked!` Mais nous voulons passer la valeur que l'utilisateur a tapée dans la zone de saisie !
 
-In the next chapter we will learn how to use properties of one element in another element in the same template. Then we'll be able to complete the implementation of the click event of the `Save` button. But now we'll bind a method to an event on the input element: when the user clicks Enter, the method `changeTitle` will be called.
+Dans le prochain chapitre, nous apprendrons à utiliser les propriétés d'un élément dans un autre élément dans le même modèle. Ensuite, nous pourrons terminer la mise en œuvre de l'événement de clic du bouton `Save`. Mais maintenant, nous allons lier une méthode à un événement sur l'élément d'entrée: lorsque l'utilisateur clique sur Entrée, la méthode `changeTitle` sera appelée.
 
-### 'keyup' event
+### Evénement 'keyup'
 
-When the user types, keyboard events are emitted. For example `keydown` and `keyup`. We will catch the `keyup` event (when the pressed key is released) and change the title:
+Quand l'utilisateur tape, des événements clavier sont émis. Par exemple `keydown` et `keyup`. Nous allons attraper l'événement `keyup` (lorsque la touche enfoncée est relâchée) et changer le titre:
 
 {% code title="src/app/input-button-unit/input-button-unit.component.ts" %}
 ```markup
@@ -86,9 +86,9 @@ When the user types, keyboard events are emitted. For example `keydown` and `key
 ```
 {% endcode %}
 
-Now when the user types in the input box, the title is changed to "Button Clicked!". But it's still a static string.
+Maintenant lorsque l'utilisateur tape dans la zone de saisie, le titre est changé en "Button Clicked!". Mais c'est toujours une chaîne statique.
 
-**Tip:** When an element becomes long due to its attributes, you should make it easier on the eye by splitting it into several lines:
+**Tip:** Quand un élément devient long en raison de ses attributs, vous devriez le rendre plus facile à lire en le divisant en plusieurs lignes:
 
 {% code title="src/app/input-button-unit/input-button-unit.component.ts" %}
 ```markup
@@ -97,13 +97,13 @@ Now when the user types in the input box, the title is changed to "Button Clicke
 ```
 {% endcode %}
 
-### The $event object
+### L'objet $event
 
-Now we just react when the `keyup` event occurs. Angular allows us to get the event object itself. It is passed to the event binding as `$event` - so we can use it when we call `changeTitle()`.
+Maintenant nous réagissons simplement lorsque l'événement `keyup` se produit. Angular nous permet d'obtenir l'objet événement lui-même. Il est passé à la liaison d'événement en tant que `$event` - nous pouvons donc l'utiliser lorsque nous appelons `changeTitle()`.
 
-The event object emitted on `keyup` events has a reference to the element that emitted the event - the input element. The reference is kept in the event's property `target`. As we've seen before, the input element has a property `value` which holds the current string that's in the input box. We can get the current value of the input element using `$event.target.value.`&#x20;
+L'objet événement émis sur les événements `keyup` a une référence à l'élément qui a émis l'événement - l'élément d'entrée. La référence est conservée dans la propriété `target` de l'événement. Comme nous l'avons vu précédemment, l'élément d'entrée a une propriété `value` qui contient la chaîne actuelle qui se trouve dans la zone d'entrée. Nous pouvons obtenir la valeur actuelle de l'élément d'entrée en utilisant `$event.target.value.`
 
-However, if you try doing this directly in the template, like shown below, you will encounter a problem.&#x20;
+Cependant, si vous essayez de le faire directement dans le modèle, comme indiqué ci-dessous, vous rencontrerez un problème.
 
 {% code title="src/app/input-button-unit/input-button-unit.component.ts" %}
 ```markup
@@ -112,9 +112,9 @@ However, if you try doing this directly in the template, like shown below, you w
 ```
 {% endcode %}
 
-TypeScript can't be sure that `$event.target` is an input element. It could be any kind of element.  And most elements don't have a `value` member.&#x20;
+TypeScript ne peut pas être sûr que `$event.target` est un élément d'entrée. Il pourrait s'agir de n'importe quel type d'élément. Et la plupart des éléments n'ont pas de membre `value`.
 
-We need to tell TypeScript that we know that the `$event.target` object is of type `HTMLInputElement`, as opposed to `EventTarget`. Casting is done with the keyword `as`. However, it can't be done in the template. If you try casting in the template, as shown below, you will get an error.&#x20;
+Nous devons dire à TypeScript que nous savons que l'objet `$event.target` est de type `HTMLInputElement`, par opposition à `EventTarget`. Le casting est fait avec le mot-clé `as`. Cependant, il ne peut pas être fait dans le modèle. Si vous essayez de caster dans le modèle, comme indiqué ci-dessous, vous obtiendrez une erreur.
 
 {% code title="src/app/input-button-unit/input-button-unit.component.ts" %}
 ```html
@@ -123,11 +123,11 @@ We need to tell TypeScript that we know that the `$event.target` object is of ty
 ```
 {% endcode %}
 
-The solution is to perform the casting in a class method. Since we want to keep the method `changeTitle` generic so it can be used also in other places (such as the button), it must receive a string. So we won't use it to receive the event or the target and cast them.
+La solution consiste à effectuer le casting dans une méthode de classe. Comme nous voulons que la méthode `changeTitle` soit générique afin qu'elle puisse être utilisée également dans d'autres endroits (comme le bouton), elle doit recevoir une chaîne. Nous ne l'utiliserons donc pas pour recevoir l'événement ou la cible et les caster.
 
-We'll write another method that will only be used for the casting purpose. This is the solution suggested by the Angular tutorial as well: [Event Binding Concepts](https://angular.io/guide/event-binding-concepts).
+Nous allons écrire une autre méthode qui ne sera utilisée que pour le casting. C'est aussi la solution suggérée par le tutoriel Angular : [Event Binding Concepts](https://angular.io/guide/event-binding-concepts).
 
-Add the following method in the component class, before or after the `changeTitle` method.
+Ajoutez la méthode suivante dans la classe du composant, avant ou après la méthode `changeTitle`.
 
 {% code title="src/app/input-button-unit/input-button-unit.component.ts" %}
 ```typescript
@@ -137,7 +137,7 @@ Add the following method in the component class, before or after the `changeTitl
 ```
 {% endcode %}
 
-Now, adjust the method passed to the `(keyup)` event so that it uses both `changeTitle` and `getInputValue` like this:
+Maintenant ajustez la méthode passée à l'événement `(keyup)` pour qu'elle utilise à la fois `changeTitle` et `getInputValue` comme ceci:
 
 {% code title="src/app/input-button-unit/input-button-unit.component.ts" %}
 ```markup
@@ -146,11 +146,11 @@ Now, adjust the method passed to the `(keyup)` event so that it uses both `chang
 ```
 {% endcode %}
 
-Check it out in the browser. Now with every key stroke, you can see the title changes and reflects the input value.
+Vérifiez le résultat dans le navigateur. Maintenant, à chaque frappe de touche, vous pouvez voir que le titre change et reflète la valeur d'entrée.
 
-### Pressing the Enter key
+### Appuyer sur la touche Entrée
 
-You can limit the change to only a special key stroke, in our case it's the Enter key. Angular makes it really easy for us. The `keyup` event has properties which are more specific events. So just add the name of the key you'd like to listen to - in our case it's `keyup.enter`:
+Vous pouvez limiter le changement à une seule frappe de touche spéciale, dans notre cas c'est la touche Entrée. Angular nous facilite vraiment la tâche. L'événement `keyup` a des propriétés qui sont des événements plus spécifiques. Il suffit donc d'ajouter le nom de la touche à laquelle vous souhaitez écouter - dans notre cas, c'est `keyup.enter` :
 
 {% code title="src/app/input-button-unit/input-button-unit.component.ts" %}
 ```markup
@@ -159,13 +159,13 @@ You can limit the change to only a special key stroke, in our case it's the Ente
 ```
 {% endcode %}
 
-Now the title will change only when the user hits the Enter key while typing in the input.
+Maintenant le titre ne changera que lorsque l'utilisateur appuiera sur la touche Entrée lorsqu'il saisira dans l'entrée.
 
-### Explore the $event
+### Explorer $event
 
-![lab-icon](<../assets/lab (2).jpg>)**Playground:** You can change the `getInputValue` method to log the `$event` object in the console. This way you can explore it and see what properties it has.
+![lab-icon](<../assets/lab (2).jpg>)**Playground:** Vous pouvez modifier la méthode `getInputValue` pour enregistrer l'objet `$event` dans la console. De cette façon, vous pouvez l'explorer et voir quelles propriétés il a.
 
-Change the method `getInputValue`:
+Changez la méthode `getInputValue`:
 
 {% code title="src/app/input-button-unit/input-button-unit.component.ts" %}
 ```typescript
@@ -176,11 +176,11 @@ getInputValue(event) {
 ```
 {% endcode %}
 
-Try it out!
+Essayez-le !
 
-**Don't forget to change back the code before we go on!** (Remove `console.log(event);`)
+** N'oubliez pas de changer le code avant de continuer !** (Supprimez `console.log(event);`)
 
-The file should look like this:
+Le fichier devrait ressembler à ceci:
 
 {% code title="src/app/input-button-unit/input-button-unit.component.ts" %}
 ```typescript

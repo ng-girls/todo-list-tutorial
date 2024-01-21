@@ -1,6 +1,6 @@
-# Appendix 3: Tutorial Extensions
+# Appendice 3: Poursuivre le tutoriel
 
-Here you will find links and ideas for extending the todo-list app:
+Vous trouverez ici des liens et des idées pour étendre l'application todo-list :
 
 * [Add authentication using Auth0](https://kmaida.gitbooks.io/authenticate-angular-with-auth0/)
 

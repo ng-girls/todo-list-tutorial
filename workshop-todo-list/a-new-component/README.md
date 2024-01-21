@@ -1,39 +1,34 @@
 # #4: ✏ A new component
+# #4: ✏ Un nouveau composant
 
-In this chapter we will write a whole new component. It will allow us to add an item to the todo list. It will be composed of the HTML elements `input` and `button`. We will call it Input-Button-Unit.
+Dans ce chapitre, nous allons écrire un tout nouveau composant. Il nous permettra d'ajouter un élément à la liste des tâches à effectuer. Il sera composé des éléments HTML `input` et `button`. Nous l'appellerons Input-Button-Unit.
 
-We'll use the Angular CLI to generate all the needed files and boilerplate for us. The Angular CLI takes commands in a terminal window. This doesn't mean that we have to stop the process `ng serve`. Instead, we can open another terminal window or tab and run the additional commands from there. The changes will be reflected immediately in the browser.
+Nous utiliserons l'interface de ligne de commande Angular pour générer tous les fichiers et le code de démarrage dont nous avons besoin. L'interface de ligne de commande Angular prend des commandes dans une fenêtre de terminal. Cela ne signifie pas que nous devons arrêter le processus `ng serve`. Au lieu de cela, nous pouvons ouvrir une autre fenêtre ou un autre onglet de terminal et exécuter les commandes supplémentaires à partir de là. Les modifications seront immédiatement visibles dans le navigateur.
 
-Open another terminal tab and run:
+Ouvrez un autre onglet de terminal et exécutez :
 
 ```
 ng g c input-button-unit
 ```
 
-{% hint style="info" %}
-**StackBlitz Instructions** ![](../../.gitbook/assets/stackblitz-hint.svg)
+Comme nous l'avons vu précédemment, `ng` est la commande pour utiliser l'interface de ligne de commande Angular. `g` est un raccourci pour `generate`. `c` est un raccourci pour `component`. `input-button-unit` est le nom que nous donnons au composant.
 
-We'll use the Angular Generator to create a component. Follow the instructions on the [StackBlitz instructions](stackblitz.md) page and return here to continue the worksheet.
-{% endhint %}
-
-As we've seen before, `ng` is the command for using the Angular CLI. `g` is a shorthand for `generate`. `c` is a shorthand for `component`. `input-button-unit` is the name we give to the component.
-
-So the long version of the command is (don't run it):
+Donc la version longue de la commande est (ne l'exécutez pas) :
 
 ```
 ng generate component input-button-unit
 ```
 
-Let's take a look of what the Angular CLI created for us.
+Voyons ce que l'interface de ligne de commande Angular a créé pour nous.
 
-It created a new folder called `src/app/input-button-unit`. There are three files there (or four if you're not using inline-template):
+Cela a créé un nouveau dossier appelé `src/app/input-button-unit`. Il y a trois fichiers là-bas \(ou quatre si vous n'utilisez pas le modèle en ligne\):
 
-* `input-button-unit.component.scss` - this is where the style that's specific to the component will be placed.
-* `input-button-unit.component.spec.ts` - this is a file for testing the component. We will not deal with it in this tutorial.
-* `input-button-unit.component.ts` - this is the component file where we will define its logic.
-* `input-button-unit.component.html` - this is the HTML template file, if you're not using inline-template.
+* `input-button-unit.component.scss` - c'est là que le style spécifique au composant sera placé.
+* `input-button-unit.component.spec.ts` - c'est un fichier pour tester le composant. Nous ne nous en occuperons pas dans ce tutoriel.
+* `input-button-unit.component.ts` - c'est le fichier de composant où nous définirons sa logique.
+* `input-button-unit.component.html` - c'est le fichier HTML.
 
-Open the file `input-button-unit.component.ts`. You can see that the Angular CLI has generated the component's configuration for us, including its selector, which is the name we gave preceded by the prefix `app`, and a default template:
+Ouvrez le fichier `input-button-unit.component.ts`. Vous pouvez voir que l'interface de ligne de commande Angular a généré la configuration du composant pour nous, y compris son sélecteur, qui est le nom que nous avons donné précédé du préfixe `app`, et un modèle par défaut :
 
 {% code title="src/app/input-button-unit/input-button-unit.component.ts" %}
 ```typescript
@@ -47,13 +42,13 @@ Open the file `input-button-unit.component.ts`. You can see that the Angular CLI
 ```
 {% endcode %}
 
-> The prefix `app` will be added to the component selector of all the components you will generate. This is to avoid name conflicts with other components and HTML elements. For instance, if you create a component named input it will not conflict with HTML's `<input />` element, since its selector will be `app-input`.
+> Le préfixe `app` sera ajouté au sélecteur du composant de tous les composants que vous générerez. Cela évite les conflits de noms avec d'autres composants et éléments HTML. Par exemple, si vous créez un composant nommé `input`, il ne sera pas en conflit avec l'élément `<input />` de HTML, car son sélecteur sera `app-input`.
 >
-> `app` is the default prefix, which is good for your main application. However, if you're writing a library of components to be used in other projects, you should choose a different prefix. For example, the [Angular Material](https://material.angular.io/) library uses the prefix `mat`. You can create a project stating the prefix of your choice using the flag `--prefix`, or change it afterwards in the file `angular.json`.
+> `app` est le préfixe par défaut, ce qui est bon pour votre application principale. Cependant, si vous écrivez une bibliothèque de composants à utiliser dans d'autres projets, vous devriez choisir un préfixe différent. Par exemple, la bibliothèque [Angular Material](https://material.angular.io/) utilise le préfixe `mat`. Vous pouvez créer un projet en indiquant le préfixe de votre choix en utilisant le drapeau `--prefix`, ou le modifier par la suite dans le fichier `angular.json`.
 
-We can use this component as-is and see the result!
+Nous pouvons utiliser ce composant tel quel et voir le résultat !
 
-Open the root component file, `app.component.ts` and add the app-input-button-unit tag inside the template (remember we refactored the root component to have an inline template):
+Ouvrez le fichier du composant racine, `app.component.ts` et ajoutez la balise app-input-button-unit à l'intérieur du modèle \(rappelez-vous que nous avons refactorisé le composant racine pour avoir un modèle en ligne\):
 
 {% code title="src/app/app.component.ts" %}
 ```markup
@@ -67,9 +62,9 @@ template: `
 ```
 {% endcode %}
 
-Check what's new in the browser!
+Vérifiez ce qui est nouveau dans le navigateur !
 
-Let's add some content in our new component. First, add a `title` member which we will use as the todo item title:
+Ajoutons du contenu dans notre nouveau composant. Tout d'abord, ajoutez un membre `title` que nous utiliserons comme titre de l'élément todo :
 
 {% code title="src/app/input-button-unit/input-button-unit.component.ts" %}
 ```typescript
@@ -78,9 +73,9 @@ export class InputButtonUnitComponent {
 ```
 {% endcode %}
 
-It will not interfere with the `app-root` component's `title`, since each component's content is encapsulated within it.
+Cela n'interférera pas avec le `title` du composant `app-root`, car le contenu de chaque composant est encapsulé à l'intérieur.
 
-Next, add an interpolation of the title member in the template:
+Ensuite ajoutez une interpolation du membre `title` dans le modèle :
 
 {% code title="src/app/input-button-unit/input-button-unit.component.ts" %}
 ```markup
@@ -93,13 +88,9 @@ template: `
 ```
 {% endcode %}
 
-Check out the result!
+Vérifiez le résultat !
 
-This component doesn't do much at this point. In the following chapters, we will learn about the component class, and then implement the component's logic.
-
-{% hint style="success" %}
-[See the results on StackBlitz](https://stackblitz.com/github/ng-girls/todo-list-tutorial/tree/master/examples/0\_04-a-new-component)
-{% endhint %}
+Ce composant ne fait pas grand-chose pour le moment. Dans les chapitres suivants, nous allons apprendre la classe de composant, puis implémenter la logique du composant.
 
 ## 💾 Save your code to GitHub
 

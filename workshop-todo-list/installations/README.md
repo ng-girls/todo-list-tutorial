@@ -24,15 +24,15 @@ Notre prochain outil est l'**IDE** , ou environnement de développement intégr�
 * help you navigate easily through the files in your project
 * and a lot more...
 
-Microsoft [Visual Studio Code](https://code.visualstudio.com/?WT.mc\_id=javascript-38439-shjacobs) is a highly popular IDE. It's lightweight, extendable, open-source, and **free**. You can find many plugins to boost your productivity or just for fun, or even write your own.
+Microsoft [Visual Studio Code](https://code.visualstudio.com/?WT.mc\_id=javascript-38439-shjacobs) est un IDE très populaire. Il est léger, extensible, open-source et **gratuit**. Vous pouvez trouver de nombreux plugins pour améliorer votre productivité ou simplement pour vous amuser, ou même écrire les vôtres.
 
-JetBrains [Webstorm](https://www.jetbrains.com/webstorm/download/) is one of the strongest IDE's in the market. You get the first month for free, and a totally free license if you're a student.
+JetBrains [Webstorm](https://www.jetbrains.com/webstorm/download/) est l'un des IDE les plus puissants du marché. Vous obtenez le premier mois gratuitement, et une licence totalement gratuite si vous êtes étudiant.
 
-Choose the IDE you'd like to work with and follow the installation instructions in its website.
+Choisissez l'IDE avec lequel vous souhaitez travailler et suivez les instructions d'installation sur son site Web.
 
 ### **Plugins**
 
-Plugins help the IDE understand the code. Webstorm ships with the necessary plugins. If you choose to use VS Code, we recommend to install the [Angular Essentials extension pack](https://marketplace.visualstudio.com/items?itemName=johnpapa.angular-essentials\&WT.mc\_id=javascript-38439-shjacobs)
+Les plugins aident l'IDE à comprendre le code. Webstorm est livré avec les plugins nécessaires. Si vous choisissez d'utiliser VS Code, nous vous recommandons d'installer le [pack d'extension Angular Essentials](https://marketplace.visualstudio.com/items?itemName=johnpapa.angular-essentials\&WT.mc\_id=javascript-38439-shjacobs)
 
 ## NodeJS and NPM
 
