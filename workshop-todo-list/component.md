@@ -18,7 +18,7 @@ Voici un diagramme d'un composant dans Angular :
 
 Les directives, les pipes et les services sont d'autres blocs de construction d'Angular, qui peuvent être utilisés dans un composant \(dans le diagramme, nous ne voyons que l'utilisation d'un pipe\). Nous en discuterons plus tard dans le tutoriel.
 
-Jetons un coup d'œil au composant créé par l'_Angular CLI_ qui se trouve dans le dossier `src/app`. Ouvrez le fichier `app.component.ts`.
+Jetons un coup d'œil au composant créé par _Angular CLI_ qui se trouve dans le dossier `src/app`. Ouvrez le fichier `app.component.ts`.
 
 Tout comme les ngModules que nous avons vus dans le chapitre précédent, un composant est également défini par une classe avec un décorateur. Voici la définition de la classe :
 
@@ -117,9 +117,28 @@ Nous ajouterons plus de style plus tard.
 
 Une dernière chose : les deux premières lignes du fichier ts importent du code à partir d'autres fichiers. Par exemple, `Component` définit le décorateur `@Component` \(Un décorateur est une fonction, dont l'un de ses paramètres est ce qui est écrit juste après l'avoir appelé\). Il est nécessaire d'utiliser le décorateur, qui est défini dans le fichier importé \(ou en fait, dans l'un de ses propres imports\). Essayez de supprimer cette ligne, et voyez l'erreur.
 
-## Inline Template
 
-Déplaçons le modèle pour qu'il soit **inline** dans la définition du composant. Cela nous aidera à gérer le template HTML tout en regardant sa fonctionnalité. Dans le fichier `app.component.ts`, remplacez la ligne
+## Modèle simplifiée
+
+Nous allons remplacer le contenu du fichier `app.component.html` original par un modèle plus simple.
+
+{% tabs %}
+{% tab title="src/app/app.component.html" %}
+```markup
+  <h1>
+    Welcome to {{ title }}!
+  </h1>  
+```
+{% endtab %}
+{% endtabs %}
+
+## Inline Template (Optionnel)
+
+Nous avons dit précédemment que nous pouvions écrire le modèle en ligne directement dans l'object avec une autre propriété. C'est le template inline.
+
+Vous pouvez utiliser les templates inline dans les composants dans ce cas il faut un peu de configuration. Sachez que la suite du tutoriel est expliqué avec des modèles dans des fichiers HTML séparés.
+
+Déplaçons le modèle pour qu'il soit **inline** dans la définition du composant. Cela nous permettra de voir le template HTML tout en regardant sa fonctionnalité. Dans le fichier `app.component.ts`, remplacez la ligne
 
 {% tabs %}
 {% tab title="src/app/app.component.ts" %}
@@ -129,26 +148,11 @@ templateUrl: './app.component.html',
 {% endtab %}
 {% endtabs %}
 
-avec
+avec le contenu du fichier
 
 {% tabs %}
 {% tab title="src/app/app.component.ts" %}
 ```typescript
-template: ``,
-```
-{% endtab %}
-{% endtabs %}
-
-Notez l'usage des **backquotes** - **\`\`** - ils sont utilisés pour définir des **Template Literals**, qui existent en JavaScript depuis ES6. De cette façon, vous pouvez définir des chaînes de caractères multilignes. 
-Ils ont une autre capacité intéressante : utiliser facilement des variables et des expressions JavaScript dans la string \(sans rapport avec les expressions de liaison Angular dans le modèle\). Lisez à ce sujet dans la [documentation MDN](https://developer.mozilla.org/en/docs/Web/JavaScript/Reference/Template\_literals).
-
-Assurez-vous de remplacer `templateUrl` par `template`, et n'oubliez pas la virgule à la fin de la ligne.
-
-Maintenant au lieu de prendre le contenu du modèle original donné à la création, nous allons insérer un modèle plus simple avec lequel nous pouvons travailler. Complétez le modèle HTML :
-
-{% tabs %}
-{% tab title="src/app/app.component.ts" %}
-```markup
 template: `
   <h1>
     Welcome to {{ title }}!
@@ -158,15 +162,14 @@ template: `
 {% endtab %}
 {% endtabs %}
 
-C'est plus facile de gérer le modèle lorsque vous voyez son contrôleur en même temps. Enfin, tant que le modèle ne devient pas trop grand et que le contrôleur ne devient pas trop compliqué. Si c'est le cas, c'est un signe que vous devriez refactoriser votre code en le décomposant en composants enfants.
+Notez l'usage des **backquotes** - **\`\`** - ils sont utilisés pour définir des **Template Literals**, qui existent en JavaScript depuis ES6. De cette façon, vous pouvez définir des chaînes de caractères multilignes. 
+Ils ont une autre capacité intéressante : utiliser facilement des variables et des expressions JavaScript dans la string \(sans rapport avec les expressions de liaison Angular dans le modèle\). Lisez à ce sujet dans la [documentation MDN](https://developer.mozilla.org/en/docs/Web/JavaScript/Reference/Template\_literals).
+
+Assurez-vous de remplacer `templateUrl` par `template`, et n'oubliez pas la virgule à la fin de la ligne.
 
 Maintenant vous pouvez supprimer le fichier `app.component.html`.
 
-**Nous vous recommandons de continuer ce tutoriel en utilisant des templates inline dans les composants.** Surtout si vous travaillez sur un ordinateur portable avec un petit écran, où il n'y a pas assez d'espace pour ouvrir deux fichiers côte à côte.
-
-Configurons l'_Angular CLI_ pour qu'il nous donne un modèle inline par défaut. Dans le terminal, exécutez la commande : `ng config schematics.@schematics/angular.component.inlineTemplate true`. Maintenant, chaque composant que vous générerez aura un modèle inline, et un fichier HTML ne sera pas créé.
-
-Si vous souhaitez continuer ce tutoriel avec des modèles dans des fichiers HTML séparés, n'exécutez pas cette commande et utilisez les fichiers `.html` générés pour les modèles.
+Si vous voulez que _Angular CLI_ vous donne un modèle inline par défaut, exécutez la commande dans le terminal: `ng config schematics.@schematics/angular.component.inlineTemplate true`. Maintenant, chaque composant que vous générerez aura un modèle inline, et aucun fichier HTML ne sera créé.
 
 > **Tip**: Vous pouvez spécifier que vous souhaitez utiliser un modèle inline dans tout le projet de plusieurs façons :
 >
@@ -174,9 +177,9 @@ Si vous souhaitez continuer ce tutoriel avec des modèles dans des fichiers HTML
 > * Après avoir généré un projet, ajoutez-le à la configuration afin que les composants générés à partir de ce point auront un modèle inline : `ng config projects.YOURPROJECTNAME.schematics.@schematics/angular:component.inlineTemplate true`. Cela ajoute la ligne `inlineTemplate: true` dans le fichier de configuration Angular CLI `angular.json`. Vous pouvez également modifier le fichier directement.
 > * Si vous n'avez pas configuré les modèles inline comme valeur par défaut, vous pouvez le spécifier par composant lorsque vous le générez, en passant le flag `-it` ou `--inline-template`. Par exemple : `ng generate header -it`.
 
-De la même manière que nous utilisons un modèle inline, nous pouvons également utiliser des styles inline. Mais pour l'instant, nous garderons le style dans un fichier séparé.
+Pour information, de la même manière que nous utilisons un modèle inline, nous pouvons également utiliser des styles inline.
 
 ## Résumé
 
-Nous avons vu le composant racine App qui a été généré pour nous par l'_Angular CLI_, et nous l'avons même remanié. 
+Nous avons vu le composant racine App qui a été généré pour nous par '_Angular CLI_ lors de la création du projet, et nous l'avons même remanié. 
 Dans le prochain chapitre, nous allons créer un nouveau composant nous même et donc commencer à construire l'arbre des composants, qui définit la structure de notre application.

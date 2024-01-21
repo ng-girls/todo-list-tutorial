@@ -14,10 +14,10 @@ Comme nous l'avons vu précédemment, `ng` est la commande pour utiliser _Angula
 
 Voyons ce que _Angular CLI_ a créé pour nous !
 
-Nous avons un nouveau dossier appelé `src/app/input-button-unit`. Il y a trois fichiers dedans \(ou quatre si vous n'utilisez pas le modèle en ligne\):
+Nous avons un nouveau dossier appelé `src/app/input-button-unit`. Il y a quatres fichiers dans ce dossier :
 
 * `input-button-unit.component.scss` - c'est là que le style spécifique au composant sera placé
-* `input-button-unit.component.spec.ts` - c'est un fichier pour tester le composant : nous ne nous en occuperons pas dans ce tutoriel 
+* `input-button-unit.component.spec.ts` - c'est un fichier pour tester le composant : nous ne nous en occuperons pas dans ce tutoriel (rajouter l'option --skip-test à la ligne de commande permet de ne pas créer le fichier)
 * `input-button-unit.component.ts` - c'est le fichier de composant où nous définirons sa logique
 * `input-button-unit.component.html` - c'est le fichier du modèle
 
@@ -39,19 +39,19 @@ Ouvrez le fichier `input-button-unit.component.ts`. Vous pouvez voir que _Angula
 >
 > `app` est le préfixe par défaut, ce qui est bon pour votre application principale. Cependant, si vous écrivez une bibliothèque de composants à utiliser dans d'autres projets, vous devriez choisir un préfixe différent. Par exemple, la bibliothèque [Angular Material](https://material.angular.io/) utilise le préfixe `mat`. Vous pouvez créer un projet en indiquant le préfixe de votre choix en utilisant le drapeau `--prefix`, ou le modifier par la suite dans le fichier `angular.json`.
 
+Ouvrez le fichier `input-button-unit.component.html`. Vous pouvez voir que _Angular CLI_ a généré un modèle par défaut.
+
 Nous pouvons utiliser ce composant tel quel et voir le résultat !
 
-Ouvrez le fichier du composant racine, `app.component.ts` et ajoutez la balise app-input-button-unit à l'intérieur du modèle \(rappelez-vous que nous avons refactorisé le composant racine pour avoir un modèle en ligne\):
+Ouvrez le modèle du composant racine App `app.component.html` et ajoutez la balise app-input-button-unit à l'intérieur :
 
-{% code title="src/app/app.component.ts" %}
+{% code title="src/app/app.component.html" %}
 ```markup
-template: `
   <h1>
     Welcome to {{ title }}!
   </h1>
 
   <app-input-button-unit></app-input-button-unit>
-`,
 ```
 {% endcode %}
 
@@ -70,14 +70,12 @@ Cela n'interférera pas avec le `title` du composant `app-root`, car le contenu 
 
 Ensuite ajoutez une interpolation de `title` dans le modèle :
 
-{% code title="src/app/input-button-unit/input-button-unit.component.ts" %}
+{% code title="src/app/input-button-unit/input-button-unit.component.html" %}
 ```markup
-template: `
   <p>
     input-button-unit works!
     The item title is: {{ title }}
   </p>
-`,
 ```
 {% endcode %}
 
