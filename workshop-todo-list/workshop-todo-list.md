@@ -8,7 +8,7 @@ Ce tutoriel vous guidera pas à pas sur la façon de créer votre propre applica
 
 Ce tutoriel est open source et est écrit par la communauté. N'hésitez pas à envoyer vos suggestions et soumettre vos pull requests. Un grand merci aux membres du groupe **Angular AfterHours meetup group** pour avoir lancé ce tutoriel lors d'un [événement spécial](http://www.meetup.com/Angular-AfterHours/events/235151422/) !
 
-Ce tutoriel est utilisé dans les ateliers [ngGirls](http://ng-girls.org). Nous vous invitons à l'utiliser pour vos propres ateliers and nous aimerions en savoir plus! Ecrivez nous: [hello@ng-girls.org](mailto:hello@ng-girls.org).
+Ce tutoriel est utilisé dans les ateliers [ngGirls](http://ng-girls.org). Nous vous invitons à l'utiliser pour vos propres ateliers et nous aimerions en savoir plus! Ecrivez nous: [hello@ng-girls.org](mailto:hello@ng-girls.org).
 
 ![](<../assets/ngGirls banner transparent.png>)
 
