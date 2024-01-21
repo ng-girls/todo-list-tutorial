@@ -1,28 +1,26 @@
 # #5: 💼 Class
 
-Une class est une structure programmatique spéciale. Elle est définie avec des membres qui peuvent être des propriétés \(variables\) et des méthodes \(fonctions\). Ensuite, des instances de la classe sont créées, généralement en appelant l'opérateur `new` sur la classe: `let myInstance = new myClass();`. L'instance créée est un objet sur lequel vous pouvez appeler les méthodes de la classe et obtenir et définir les valeurs de ses propriétés. Plusieurs instances peuvent être créées à partir d'une classe.
+Une classe est une structure programmatique spéciale. Elle est définie avec des membres qui peuvent être des propriétés \(variables\) et des méthodes \(fonctions\). Ensuite, des instances de la classe sont créées, généralement en appelant l'opérateur `new` sur la classe: `let myInstance = new myClass();`. L'instance créée est un objet sur lequel vous pouvez appeler les méthodes de la classe et obtenir/définir les valeurs de ses propriétés. Plusieurs instances peuvent être créées à partir d'une classe.
 
 ## Dans Angular...
 
-Angular se charge de créer des instances des classes que vous définissez - si elles sont reconnues comme des blocs de construction Angular. Les décorateurs font cette connexion avec Angular.
+Angular se charge de créer les instances des classes que vous définissez si elles sont reconnues comme des blocs de construction Angular. Les décorateurs font cette connexion avec Angular.
 
-A chaque fois que vous utilisez un composant dans un modèle, une nouvelle instance de celui-ci est créée. Par exemple, ici trois instances de la classe InputButtonUnitComponent seront créées:
+A chaque fois que vous utilisez un composant dans un modèle, une nouvelle instance de celui-ci est créée. 
+Par exemple, ici trois instances de la classe InputButtonUnitComponent seront créées:
 
-{% code title="src/app/app.component.ts" %}
+{% code title="src/app/app.component.html" %}
 ```markup
 // example only
-
-template: `
   <app-input-button-unit></app-input-button-unit>
   <app-input-button-unit></app-input-button-unit>
   <app-input-button-unit></app-input-button-unit>
-`,
 ```
 {% endcode %}
 
-La class `InputButtonUnitComponent` est vide. Avant d'ajouter des membres \(propriétés et méthodes\), nous allons présenter le constructeur, qui n'est pas écrit dans la classe du composant par défaut.
+La classe `InputButtonUnitComponent` est vide. Avant d'ajouter des membres \(propriétés et méthodes\), nous allons présenter le constructeur, qui n'est pas écrit dans la classe du composant par défaut.
 
-## constructor
+## Constructeur
 
 Le constructeur est une méthode qui est appelée par JavaScript lorsqu'une instance de la classe est créée. Tout ce qui se trouve à l'intérieur de cette méthode est utilisé pour créer l'instance. Il peut recevoir des paramètres et exécuter une certaine logique pour définir les valeurs des propriétés de l'instance créée.
 
@@ -32,10 +30,10 @@ Une classe peut avoir des méthodes avec différents noms, mais le mot réservé
 
 ```typescript
 class MyClass {
-// members can be defined and initiated here
+// les propriétés peuvent être définies et initialisées ici
 
-  constructor(/* parameters can be defined here */) {
-    // initialization code here
+  constructor(/* les paramètres peuvent être définis ici */) {
+    // le code d'initialisation
   }
 }
 
@@ -49,7 +47,7 @@ Par exemple, la classe `Date` a plusieurs constructeurs. Pour créer un objet `D
 const now = new Date();
 ```
 
-ou avec un paramètre, par exemple une chaîne représentant une date pour créer un objet avec cette valeur:
+ou avec un paramètre, par exemple une string représentant une date pour créer un objet avec cette valeur:
 
 ```typescript
 const ninetyFive = new Date('1995-12-17T03:24:00');
@@ -57,21 +55,21 @@ const ninetyFive = new Date('1995-12-17T03:24:00');
 
 ## Propriétés
 
-La propriété `title` que nous avons ajoutée est utilisée pour stocker une valeur, dans notre cas de type chaîne de caractères. Chaque instance de la classe aura sa propre propriété `title`, ce qui signifie que vous pouvez changer la valeur de `title` dans une instance, mais elle restera la même dans les autres instances.
+La propriété `title` que nous avons ajoutée est utilisée pour stocker une valeur, dans notre cas de type string. Chaque instance de la classe aura sa propre propriété `title`, ce qui signifie que vous pouvez changer la valeur de `title` dans une instance, mais elle restera la même dans les autres instances.
 
 Avec TypeScript, nous devons déclarer les membres de la classe soit dans le corps de la classe en dehors de toute méthode, soit les passer au constructeur - comme nous le verrons lorsque nous utiliserons des services.
 
-Nous pouvons déclarer une propriété sans l'initialiser:
+Nous pouvons déclarer une propriété sans l'initialiser :
 
 ```typescript
 title: string;
 ```
 
-Alors vous pouvez attribuer une valeur à une étape ultérieure, par exemple dans le constructeur. Ici, nous avons explicitement noté que `title` est du type `string`. \(Le type est inféré par TypeScript lorsque nous attribuons immédiatement une valeur, donc il n'est pas nécessaire d'ajouter le type dans ce cas.\)
+Puis vous pourrez attribuer une valeur à une étape ultérieure, par exemple dans le constructeur. Comme nous sommes en TypeScript, nous avons précisé que `title` est du type `string`. \(Le type est inféré par TypeScript lorsque nous attribuons immédiatement une valeur, donc il n'est pas nécessaire d'ajouter le type dans ce cas.\)
 
 Quand on fait référence à un membre de la classe à partir d'une méthode de la classe, on doit le préfixer avec `this`. C'est une propriété spéciale qui pointe vers l'instance actuelle.
 
-Essayez de définir une valeur différente pour `title` à partir du constructeur. Voir le résultat dans le navigateur:
+Essayez de définir une valeur différente pour `title` dans le constructeur et regardez le résultat dans le navigateur:
 
 {% code title="src/app/input-button-unit/input-button-unit.component.ts" %}
 ```typescript
@@ -89,17 +87,17 @@ Ajoutons une méthode qui change la valeur de `title` en fonction de l'argument 
 
 {% code title="src/app/input-button-unit/input-button-unit.component.ts" %}
 ```typescript
-changeTitle(newTitle: string) {
+changeTitle(newTitle: string): void {
   this.title = newTitle;
 }
 ```
 {% endcode %}
 
-**Note:** Les fonctions et les méthodes peuvent renvoyer une valeur qui peut être utilisée lorsque la méthode est appelée. Par exemple:
+**Note:** Les méthodes peuvent renvoyer une valeur qui peut être utilisée lorsqu'elle est appelée. Par exemple:
 
 {% code title="code for example" %}
 ```typescript
-function multiply (x: number, y: number) {
+function multiply (x: number, y: number): number {
   return x * y;
 }
 
@@ -120,7 +118,7 @@ constructor() {
 
 ## Astuce de debugging
 
-Vous pouvez toujours utiliser `console.log(someValue)` à l'intérieur des méthodes de classe. Alors la valeur que vous avez passée comme argument sera imprimée dans la console du navigateur. De cette façon, vous pouvez voir l'ordre d'exécution des méthodes et la valeur de l'argument que vous passez \(s'il s'agit d'une variable\). Par exemple:
+Vous pouvez toujours utiliser `console.log(someValue)` à l'intérieur des méthodes de classe. La valeur que vous passez comme argument sera imprimée dans la console du navigateur. De cette façon, vous pouvez voir l'ordre d'exécution des méthodes et la valeur de l'argument que vous passez \(s'il s'agit d'une variable\). Par exemple:
 
 {% code title="src/app/input-button-unit/input-button-unit.component.ts" %}
 ```typescript
@@ -130,26 +128,25 @@ constructor() {
   console.log(this.title);
 }
 
-changeTitle(newTitle: string) {
-  console.log(newTitle);
+changeTitle(newTitle: string): void {
   this.title = newTitle;
+  console.log(this.title);
 }
 ```
 {% endcode %}
 
-La console du navigateur fait partie de ses outils de développement. Vous pouvez voir comment ouvrir la console dans différents navigateurs ici : [https://webmasters.stackexchange.com/questions/8525/how-do-i-open-the-javascript-console-in-different-browsers](https://webmasters.stackexchange.com/questions/8525/how-do-i-open-the-javascript-console-in-different-browsers)
+La console du navigateur fait partie des outils de développement. Vous pouvez voir comment ouvrir la console dans différents navigateurs [ici](https://webmasters.stackexchange.com/questions/8525/how-do-i-open-the-javascript-console-in-different-browsers)
 
 {% hint style="info" %}
 💾 **Pusher votre code sur GitHub**
 
-Commit all your changes by running this command in your project directory.
 Committez tous vos changements en exécutant cette commande dans votre répertoire de projet.
 
 ```bash
 git add -A && git commit -m "votre message de commit"
 ```
 
-Pusher vos changements sur GitHub en exécutant cette commande dans votre répertoire de projet.
+Puis pusher vos changements sur GitHub en exécutant cette commande dans votre répertoire de projet.
 
 ```
 git push

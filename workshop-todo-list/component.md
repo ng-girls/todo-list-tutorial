@@ -32,9 +32,9 @@ export class AppComponent {
 {% endtab %}
 {% endtabs %}
 
-Il contient une variable "title" à laquelle vous pouvez attribuer une valeur. La valeur qui lui est déjà attribuée est le nom de votre application, la string 'todo-list'.
+Il contient une propriété "title" à laquelle vous pouvez attribuer une valeur. La valeur qui lui est déjà attribuée est le nom de votre application, la string 'todo-list'.
 
-Angular se charge de synchroniser les variables du composant avec son modèle. Nous pouvons donc facilement utiliser `title` dans le modèle. Jetez un coup d'œil au modèle attaché au composant dans le fichier `app.component.html`. Vers le milieu du fichier (ligne 345 environ), vous verrez la ligne :
+Angular se charge de synchroniser les propriétés du composant avec son modèle. Nous pouvons donc facilement utiliser `title` dans le modèle. Jetez un coup d'œil au modèle attaché au composant dans le fichier `app.component.html`. Vers le milieu du fichier (ligne 345 environ), vous verrez la ligne :
 
 {% tabs %}
 {% tab title="src/app/app.component.html" %}
@@ -56,10 +56,10 @@ Essayez chacune des propositions suivantes et voyez le résultat dans le navigat
 * Supprimez les accolades et ne gardez que le contenu `title`.
 * Placez les accolades et remplacez le contenu `title` par une expression mathématique : `{{ 2 + 2 }}`. \(Les espaces ne sont pas obligatoires, ils rendent simplement le code plus lisible.\)
 * Écrivez une expression mathématique combinée avec `title` : `{{ title + 10 }}`
-* Passez une variable non définie à l'expression - une variable qui n'a pas été déclarée dans la classe du composant : `{{ x }}`
+* Passez une propriété non définie à l'expression - une propriété qui n'a pas été déclarée dans la classe du composant : `{{ x }}`
 * Essayez tout ce que vous voulez. Ne vous inquiétez pas - vous ne pouvez pas nuire au navigateur ou à l'ordinateur ! Dans le pire des cas, le navigateur manquera de mémoire et se bloquera. \(Mais vous devrez écrire quelque chose de vraiment compliqué pour que cela se produise !\)
 
-C'est une façon de lier les variables du contrôleur du composant à son modèle. Comment Angular sait-il que c'est le modèle du composant App ?
+C'est une façon de lier les propriétés du contrôleur du composant à son modèle. Comment Angular sait-il que c'est le modèle du composant App ?
 
 Retournons au fichier `app.component.ts` et regardons les métadonnées du composant définies dans le décorateur `@Component` juste au-dessus de la définition de la classe :
 
@@ -118,7 +118,7 @@ Nous ajouterons plus de style plus tard.
 Une dernière chose : les deux premières lignes du fichier ts importent du code à partir d'autres fichiers. Par exemple, `Component` définit le décorateur `@Component` \(Un décorateur est une fonction, dont l'un de ses paramètres est ce qui est écrit juste après l'avoir appelé\). Il est nécessaire d'utiliser le décorateur, qui est défini dans le fichier importé \(ou en fait, dans l'un de ses propres imports\). Essayez de supprimer cette ligne, et voyez l'erreur.
 
 
-## Modèle simplifiée
+## Modèle simplifié
 
 Nous allons remplacer le contenu du fichier `app.component.html` original par un modèle plus simple.
 
@@ -163,7 +163,7 @@ template: `
 {% endtabs %}
 
 Notez l'usage des **backquotes** - **\`\`** - ils sont utilisés pour définir des **Template Literals**, qui existent en JavaScript depuis ES6. De cette façon, vous pouvez définir des chaînes de caractères multilignes. 
-Ils ont une autre capacité intéressante : utiliser facilement des variables et des expressions JavaScript dans la string \(sans rapport avec les expressions de liaison Angular dans le modèle\). Lisez à ce sujet dans la [documentation MDN](https://developer.mozilla.org/en/docs/Web/JavaScript/Reference/Template\_literals).
+Ils ont une autre capacité intéressante : utiliser facilement des propriété et des expressions JavaScript dans la string \(sans rapport avec les expressions de liaison Angular dans le modèle\). Lisez à ce sujet dans la [documentation MDN](https://developer.mozilla.org/en/docs/Web/JavaScript/Reference/Template\_literals).
 
 Assurez-vous de remplacer `templateUrl` par `template`, et n'oubliez pas la virgule à la fin de la ligne.
 
