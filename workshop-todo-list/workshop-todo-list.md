@@ -1,4 +1,4 @@
-# 👀 About
+# 👀 A propos
 
 ## Tutoriel Angular pour les débutants
 
