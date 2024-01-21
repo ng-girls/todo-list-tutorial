@@ -167,12 +167,6 @@ Si vous souhaitez continuer ce tutoriel avec des modèles dans des fichiers HTML
 
 De la même manière que nous utilisons un modèle inline, nous pouvons également utiliser des styles inline. Mais pour l'instant, nous garderons les styles dans un fichier séparé.
 
-{% hint style="info" %}
-**StackBlitz Instructions** ![](<../.gitbook/assets/stackblitz-hint (1) (2).svg>)
-
-StackBlitz doesn't support the inline template configuration setting. We will need to manually move the template code from the `.html` file to the `.component.ts` file each time we create a new component. Don't worry! Just watch for the StackBlitz instructions info panel and we'll walk you through it.
-{% endhint %}
-
 ## Summary
 
 We have explored the root component that was generated for us by the Angular CLI, and even refactored it. In the next chapter, we will create a new component. We will start building the tree of components, which defines the structure of the application.

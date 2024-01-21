@@ -152,23 +152,18 @@ Vous n'avez pas besoin de changer quoi que ce soit dans le modèle puisque nous 
 Si la liste n'est pas affichée et qu'aucune erreur ne se produit lors de la compilation, le projet pourrait ne pas être synchronisé avec l'ajout du fichier de service. Arrêtez l'exécution de `ng serve` dans le terminal en cliquant sur `Ctrl+C` et exécutez-le à nouveau.&#x20;
 
 {% hint style="info" %}
-💾 **Save your code to GitHub**
-
-StackBlitz users - press **Save** in the toolbar and continue to the next section of the tutorial.
+💾 **Pusher votre code sur GitHub**
 
 Commit all your changes by running this command in your project directory.
+Committez tous vos changements en exécutant cette commande dans votre répertoire de projet.
 
-```
-git add -A && git commit -m "Your Message"
+```bash
+git add -A && git commit -m "votre message de commit"
 ```
 
-Push your changes to GitHub by running this command in your project directory.
+Pusher vos changements sur GitHub en exécutant cette commande dans votre répertoire de projet.
 
 ```
 git push
 ```
-{% endhint %}
-
-{% hint style="success" %}
-[See the results on StackBlitz](https://stackblitz.com/github/ng-girls/todo-list-tutorial/tree/master/examples/0\_15-creating-a-service)
 {% endhint %}

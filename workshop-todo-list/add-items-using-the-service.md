@@ -29,23 +29,18 @@ addItem(title: string) {
 * Une meilleure façon de gérer les données est d'utiliser des _objets immuables_, mais c'est un sujet plus vaste que nous ne pouvons le couvrir dans ce tutoriel pour le moment.
 
 {% hint style="info" %}
-💾 **Save your code to GitHub**
-
-StackBlitz users - press **Save** in the toolbar and continue to the next section of the tutorial.
+💾 **Pusher votre code sur GitHub**
 
 Commit all your changes by running this command in your project directory.
+Committez tous vos changements en exécutant cette commande dans votre répertoire de projet.
 
-```
-git add -A && git commit -m "Your Message"
+```bash
+git add -A && git commit -m "votre message de commit"
 ```
 
-Push your changes to GitHub by running this command in your project directory.
+Pusher vos changements sur GitHub en exécutant cette commande dans votre répertoire de projet.
 
 ```
 git push
 ```
-{% endhint %}
-
-{% hint style="success" %}
-[See the results on StackBlitz](https://stackblitz.com/github/ng-girls/todo-list-tutorial/tree/master/examples/0\_16-add-items-using-the-service)
 {% endhint %}

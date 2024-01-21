@@ -92,8 +92,9 @@ Voilà! Nous pouvons continuer.
 💾 **Pusher votre code sur GitHub**
 
 Commit all your changes by running this command in your project directory.
+Committez tous vos changements en exécutant cette commande dans votre répertoire de projet.
 
-```
+```bash
 git add -A && git commit -m "votre message de commit"
 ```
 
@@ -102,3 +103,4 @@ Pusher vos changements sur GitHub en exécutant cette commande dans votre réper
 ```
 git push
 ```
+{% endhint %}

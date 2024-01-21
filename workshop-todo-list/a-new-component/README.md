@@ -92,12 +92,19 @@ Vérifiez le résultat !
 
 Ce composant ne fait pas grand-chose pour le moment. Dans les chapitres suivants, nous allons apprendre la classe de composant, puis implémenter la logique du composant.
 
-## 💾 Save your code to GitHub
-
-Great job adding your first component! Let's save your work to GitHub so your code is accessible outside of your local machine. Go to [Appendix 1: Git and GitHub](../appendix-1-git-and-github.md) for instructions to publish your code.
-
 {% hint style="info" %}
-**StackBlitz Instructions** ![](../../.gitbook/assets/stackblitz-hint.svg)
+💾 **Pusher votre code sur GitHub**
 
-We will save code within StackBlitz so you can skip the GitHub sections below. Save your work in progress by pressing **Save** in the toolbar.
+Commit all your changes by running this command in your project directory.
+Committez tous vos changements en exécutant cette commande dans votre répertoire de projet.
+
+```bash
+git add -A && git commit -m "votre message de commit"
+```
+
+Pusher vos changements sur GitHub en exécutant cette commande dans votre répertoire de projet.
+
+```
+git push
+```
 {% endhint %}
