@@ -8,9 +8,6 @@ Jetez un coup d'œil au [tutoriel vidéo](https://www.facebook.com/719166003/vid
 
 {% embed url="https://www.facebook.com/719166003/videos/1048549972848310/" %}
 
-{% hint style="info" %}
-**Using an online editor**
-
 ## Navigateur
 
 Notre premier outil est le **navigateur**. Nous l'utiliserons pour voir le résultat de notre travail et le déboguer. Nous recommandons [Google Chrome](https://www.google.com/chrome/browser/desktop/) - il a de superbes outils de développement. [Microsoft Edge](https://www.microsoft.com/edge?WT.mc\_id=javascript-38439-shjacobs) est construit sur Chromium (le moteur open-source derrière Chrome) et a toutes les grandes fonctionnalités et les outils de développement. [Firefox](https://www.mozilla.org/en-US/firefox/new/) est également génial. Si vous n'en avez pas déjà un, cliquez simplement sur le lien correspondant et suivez les instructions pour télécharger et installer le navigateur de votre choix.

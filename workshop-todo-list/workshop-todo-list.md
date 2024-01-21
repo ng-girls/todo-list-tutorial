@@ -4,7 +4,7 @@
 
 ## Créer une application Todo-List
 
-Ce tutoriel vous guidera pas à pas sur la façon de créer votre propre application de liste de tâches à l'aide d'Angular (version 6 et supérieure). Tout au long du tutoriel, nous utiliserons **Angular CLI**, enregistrerons les données dans le stockage local et déploierons le code sur GitHub Pages.
+Ce tutoriel vous guidera pas à pas sur la façon de créer votre propre application de liste de tâches à l'aide d'Angular. Tout au long du tutoriel, nous utiliserons **Angular CLI**, enregistrerons les données dans le stockage local et déploierons le code sur GitHub Pages.
 
 Ce tutoriel est open source et est écrit par la communauté. N'hésitez pas à envoyer vos suggestions et soumettre vos pull requests. Un grand merci aux membres du groupe **Angular AfterHours meetup group** pour avoir lancé ce tutoriel lors d'un [événement spécial](http://www.meetup.com/Angular-AfterHours/events/235151422/) !
 
