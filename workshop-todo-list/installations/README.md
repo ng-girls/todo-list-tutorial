@@ -16,20 +16,20 @@ Notre premier outil est le **navigateur**. Nous l'utiliserons pour voir le résu
 
 Notre prochain outil est l'**IDE** , ou environnement de développement intégré. C'est un logiciel qui vous aide à écrire le code. Les IDE peuvent faire beaucoup de choses étonnantes, comme :
 
-* highlight the code so it's easier to identify expressions
-* suggest completions to what you type
-* help you navigate easily through the files in your project
-* and a lot more...
+* colorer le code pour faciliter l'identification des expressions
+* proposer de l'autocompletion
+* aide a naviguer facilement dans les fichiers de votre projet
+* et bien plus ...
 
-Microsoft [Visual Studio Code](https://code.visualstudio.com/?WT.mc\_id=javascript-38439-shjacobs) est un IDE très populaire. Il est léger, extensible, open-source et **gratuit**. Vous pouvez trouver de nombreux plugins pour améliorer votre productivité ou simplement pour vous amuser, ou même écrire les vôtres.
+Microsoft [Visual Studio Code](https://code.visualstudio.com/?WT.mc\_id=javascript-38439-shjacobs) (VS Code) est un IDE très populaire. Il est léger, extensible, open-source et **gratuit**. Vous pouvez trouver de nombreux plugins pour améliorer votre productivité ou simplement pour vous amuser, ou même écrire les vôtres.
 
-JetBrains [Webstorm](https://www.jetbrains.com/webstorm/download/) est l'un des IDE les plus puissants du marché. Vous obtenez le premier mois gratuitement, et une licence totalement gratuite si vous êtes étudiant.
+JetBrains [Webstorm](https://www.jetbrains.com/webstorm/download/) est l'un des IDE les plus puissants du marché. Il est payant mais vous obtiendrez le premier mois gratuitement, et une licence totalement gratuite si vous êtes étudiante.
 
 Choisissez l'IDE avec lequel vous souhaitez travailler et suivez les instructions d'installation sur son site Web.
 
 ### **Plugins**
 
-Les plugins aident l'IDE à comprendre le code. Webstorm est livré avec les plugins nécessaires. Si vous choisissez d'utiliser VS Code, nous vous recommandons d'installer le [pack d'extension Angular Essentials](https://marketplace.visualstudio.com/items?itemName=johnpapa.angular-essentials\&WT.mc\_id=javascript-38439-shjacobs)
+Les plugins aident l'IDE à comprendre le code. Webstorm est livré avec les plugins nécessaires. Si vous choisissez d'utiliser VS Code, nous vous recommandons d'installer le [pack d'extension Angular Essentials](https://marketplace.visualstudio.com/items?itemName=johnpapa.angular-essentials\&WT.mc\_id=javascript-38439-shjacobs).
 
 ## NodeJS and NPM
 
