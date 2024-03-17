@@ -4,7 +4,7 @@ Although it is possible to develop web applications with a simple text editor al
 
 In addition, we recommend Git to manage versions of your code, and GitHub to publish and share it.
 
-Take a look at the [video tutorial](https://www.facebook.com/719166003/videos/1048549972848310/) in the ngGirls Facebook group where Shmuela shows how to check and update the development environment. (You may need to join the group to have access.) Note that this video was recorded with version 16 of Angular, and later versions have differences in the content of the created files and the initial boilerplate application. Also, Shmuela instructs installing the Angular-CLI globally on the computer. However, we will use `npx` to create the project.&#x20;
+Take a look at the [video tutorial](https://www.facebook.com/719166003/videos/1048549972848310/) in the ngGirls Facebook group where Shmuela shows how to check and update the development environment. (You may need to join the group to have access.) Note that this video was recorded with version 16 of Angular, and later versions have differences in the content of the created files and the initial boilerplate application. Also, Shmuela instructs installing the Angular-CLI globally on the computer. However, we will use `npx` to create the project.
 
 {% embed url="https://www.facebook.com/719166003/videos/1048549972848310/" %}
 
@@ -114,13 +114,26 @@ npx @angular/cli@latest new todo-list
 
 Angular CLI will ask a couple of questions to help create a new application. Answer the questions as shown below:
 
-1. Would you like to add Angular routing? (y/N): **N**
-2. Which stylesheet format would you like to use? (Use arrow keys): Select **SCSS**
-3. Do you want to enable Server-Side Rendering (SSR) and Static Site Generation (SSG/Prerendering)?  (y/N): **N**
+```
+? Which stylesheet format would you like to use? (Use arrow keys)
+  CSS 
+❯ SCSS   [ https://sass-lang.com/documentation/syntax#scss                ] 
+  Sass   [ https://sass-lang.com/documentation/syntax#the-indented-syntax ] 
+  Less   [ http://lesscss.org                                             ] 
+```
 
-This can take a while, since many packages are being downloaded from the web and installed.
+Use the arrow keys to highlight `SCSS` and hit Enter.
 
-_**If, for any reason the command**** ****`npx`**** ****doesn't work, follow the**_[ _**instructions in the bottom of this page**_](./#if-npx-doesnt-work)_**, and then come back here to run your project.**_
+```
+? Do you want to enable Server-Side Rendering (SSR) and Static Site Generation 
+(SSG/Prerendering)? (y/N) 
+```
+
+The default is no ('N' is capitalized in `y/N`), which is what we prefer for this project, so just hit Enter.&#x20;
+
+Now the project folder and files are created. This can take a while, since many packages are being downloaded from the web and added to the project.
+
+_**If, for any reason the command\*\*\*\***** ****`npx`**** ****\*\*\*\*doesn't work, follow the**_[ _**instructions in the bottom of this page**_](./#if-npx-doesnt-work)_**, and then come back here to run your project.**_
 
 Read more about the Angular CLI in the following section.
 
