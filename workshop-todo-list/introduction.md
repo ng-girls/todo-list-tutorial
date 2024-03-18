@@ -2,7 +2,7 @@
 
 Angular is much more than a framework. It's a whole platform for creating applications that can run anywhere, not only on a browser. It gives you tools to advanced capabilities, such as easily creating dynamic components, routes definitions and much more.
 
-![](../.gitbook/assets/angular.png)
+![](<assets/2023-angular.png>)
 
 In this tutorial you'll learn how to develop a basic application using Angular. You will get to know the building blocks to have a working application: modules, components and services. The Angular CLI will help you in the process in many ways and will simplify the development process.
 
