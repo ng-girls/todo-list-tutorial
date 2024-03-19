@@ -30,10 +30,7 @@ after we created the project we will get file in this format
 
 ```text
 ├── angular.json // Angular CLI configuration
-├── e2e // end to end testing
-├── karma.conf.js // testing configuration file
 ├── package.json // package configuration file
-├── protractor.conf.js // testing configuration file
 ├── README.md // your readme
 ├── src // your code in here
 │   ├── app
@@ -41,8 +38,7 @@ after we created the project we will get file in this format
 │   │   ├── app.component.html
 │   │   ├── app.component.spec.ts
 │   │   ├── app.component.ts
-│   │   ├── app.module.ts
-│   │   └── index.ts
+│   │   └── app.config.ts
 │   ├── assets // pictures etc
 │   ├── environments // environments variables
 │   │   ├── environment.prod.ts
@@ -50,12 +46,8 @@ after we created the project we will get file in this format
 │   ├── favicon.ico // the browser icon
 │   ├── index.html
 │   ├── main.ts
-│   ├── polyfills.ts
-│   ├── styles.scss
-│   ├── test.ts
-│   ├── tsconfig.json // typescript configuration
-│   └── typings.d.ts
-└── tslint.json // linting configuration
+│   └──  styles.scss
+└── tsconfig*.json // multiple typescript configuration
 ```
 
 lets skip all the configurations files for now and jump right to the folder structure.  
