@@ -2,7 +2,7 @@
 
 One approach in Web development (and software development in general) is component-based architecture. In the past years it has gained a lot of popularity. What is a component?
 
-In [Service-Oriented Architecture (SOA) vs. Component Based Architecture](http://petritsch.co.at/download/SOA\_vs\_component\_based.pdf), Helmut Petritsch defines a component as follows:
+In [Service-Oriented Architecture (SOA) vs. Component Based Architecture](http://www.worldcolleges.info/sites/default/files/enggnotes/soa_vs_component_based.pdf), Helmut Petritsch defines a component as follows:
 
 > A component is a software object, meant to interact with other components, encapsulating certain functionality or a set of functionalities. A component has a clearly defined interface and conforms to a prescribed behaviour common to all components within an architecture.
 
