@@ -72,7 +72,7 @@ Let's go back to the file `app.component.ts` and look at the component's metadat
 
 We pass an object of definitions to the decorator. The property `templateUrl` tells Angular where to look for the template attached to the component. There is another option to point to the template, which we'll discuss later: to write the whole template inline here, in the component definition.
 
-The property `styleUrl`, tells Angular where to look for the style file that defines the style of this component.  SCSS is a pre-processor for CSS. It provides conveniant syntax for writing CSS rules, and is compiled to CSS. In SCSS you can write regular CSS with or without using the special capabilities of the pre-processotr. You can take a look at the SCSS file `app.component.scss` - you'll see that it's empty. You can add some CSS style here, for example:
+The property `styleUrl`, tells Angular where to look for the style file that defines the style of this component.  SCSS is a pre-processor for CSS. It provides convenient syntax for writing CSS rules, and is compiled to CSS. In SCSS you can write regular CSS with or without using the special capabilities of the pre-processor. You can take a look at the SCSS file `app.component.scss` - you'll see that it's empty. You can add some CSS style here, for example:
 
 {% tabs %}
 {% tab title="src/app/app.component.scss" %}
