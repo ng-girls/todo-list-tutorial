@@ -18,7 +18,7 @@ import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 })
 export class InputButtonUnitComponent implements OnInit {
 
-  @Output() submitItem: EventEmitter<string> = new EventEmitter();
+  @Output() submit: EventEmitter<string> = new EventEmitter();
 
   title = 'Hello World';
 
@@ -30,7 +30,7 @@ export class InputButtonUnitComponent implements OnInit {
 
   submitValue(newTitle: string) {
     if (newTitle) {
-      this.submitItem.emit(newTitle);
+      this.submit.emit(newTitle);
     } else {
       alert('Value cannot be empty');
     }
