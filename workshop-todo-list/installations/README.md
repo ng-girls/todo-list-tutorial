@@ -131,6 +131,8 @@ Use the arrow keys to highlight `SCSS` and hit Enter.
 
 The default is no ('N' is capitalized in `y/N`), which is what we prefer for this project, so just hit Enter.&#x20;
 
+👉 In the current version the CLI also asks if you want to create a `zoneless application` (prefer for now: no `N`) and `Which AI tools do you want to configure with Angular best practices?` (default: `none` but its your choice)
+
 Now the project folder and files are created. This can take a while, since many packages are being downloaded from the web and added to the project.
 
 _**If, for any reason the command\*\*\*\***** ****`npx`**** ****\*\*\*\*doesn't work, follow the**_[ _**instructions in the bottom of this page**_](./#if-npx-doesnt-work)_**, and then come back here to run your project.**_
