@@ -1,7 +1,11 @@
+import { CommonModule } from '@angular/common';
 import { Component, Input, OnInit } from '@angular/core';
 import { TodoItem } from '../interfaces/todo-item';
 
 @Component({
+  standalone: true,
+  imports: [CommonModule],
+
   selector: 'app-todo-item',
   template: `
     {{ item.title }}
@@ -9,7 +13,7 @@ import { TodoItem } from '../interfaces/todo-item';
   styleUrls: ['./todo-item.component.scss']
 })
 export class TodoItemComponent implements OnInit {
-  @Input() item: TodoItem;
+  @Input() item!: TodoItem;
 
   constructor() { }
 

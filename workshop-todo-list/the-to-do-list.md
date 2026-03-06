@@ -4,6 +4,19 @@ Now you are going to add the to do list itself to the component `app-root`. Open
 
 {% code title="src/app/app.component.ts" %}
 ```typescript
+import { Component } from '@angular/core';
+import { CommonModule } from '@angular/common';
+import { InputButtonUnitComponent } from './input-button-unit/input-button-unit.component';
+
+@Component({
+  selector: 'app-root',
+  standalone: true,
+  imports: [CommonModule, InputButtonUnitComponent],
+  template: `
+    <!-- template contents... -->
+  `,
+  styleUrl: './app.component.scss'
+})
 export class AppComponent {
   title = 'todo-list';
   todoList = [

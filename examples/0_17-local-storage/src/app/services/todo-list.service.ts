@@ -17,7 +17,7 @@ const defaultTodoList: TodoItem[] = [
   providedIn: 'root'
 })
 export class TodoListService {
-  todoList: TodoItem[];
+  todoList!: TodoItem[];
 
   constructor(private storageService: StorageService) {
     this.todoList = storageService.getData(todoListStorageKey) || defaultTodoList;

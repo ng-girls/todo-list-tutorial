@@ -1,7 +1,13 @@
+import { InputButtonUnitComponent } from '../input-button-unit/input-button-unit.component';
+import { TodoItemComponent } from '../todo-item/todo-item.component';
+import { CommonModule } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
 import { TodoItem } from '../interfaces/todo-item';
 
 @Component({
+  standalone: true,
+  imports: [CommonModule, InputButtonUnitComponent, TodoItemComponent],
+
   selector: 'app-list-manager',
   template: `
     <app-input-button-unit (submit)="addItem($event)"></app-input-button-unit>

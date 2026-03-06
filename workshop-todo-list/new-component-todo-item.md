@@ -53,6 +53,7 @@ The component should look like this now:
 {% code title="src/app/todo-item/todo-item.component.ts" %}
 ```typescript
 import { Component, Input, OnInit } from '@angular/core';
+import { CommonModule } from '@angular/common'; // Important for standalone components
 
 @Component({
   selector: 'app-todo-item',
@@ -64,12 +65,12 @@ import { Component, Input, OnInit } from '@angular/core';
   styleUrl: './todo-item.component.scss'
 })
 export class TodoItemComponent {
-  @Input() item;
+  @Input() item: any; // Using : any to suppress TypeScript strict mode warnings for now
 }
 ```
 {% endcode %}
 
-Now we need to pass an item where we use the component. Go back to `app-root` component and pass the item title to the `todo-item`:
+Now we need to pass an item where we use the component. Go back to `app-root` component (`app.component.ts`), make sure to **import** the `TodoItemComponent` and add it to the `imports: [...]` array of your `@Component` decorator. Then, pass the item title to the `todo-item` in the template:
 
 {% code title="src/app/app.component.ts" %}
 ```markup
