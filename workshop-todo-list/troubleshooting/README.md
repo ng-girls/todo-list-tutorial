@@ -22,18 +22,23 @@ button-unit>
 ```
 ✅ solution
 
-In older versions of Angular you need to put your components in that case to the declerations of angular module.
+✅ solution
 
-🗎 app.module.ts
-```
-@NgModule({
-  declarations: [
-    AppComponent,  // <= here
-  ],
+In Angular Standalone components, you need to import the component into the `imports` array of the component where you are trying to use it.
+
+🗎 src/app/app.component.ts (or whichever component is the parent)
+```typescript
+import { InputButtonUnitComponent } from './input-button-unit/input-button-unit.component';
+
+@Component({
+  selector: 'app-root',
+  standalone: true,
   imports: [
-    BrowserModule
+    CommonModule, 
+    InputButtonUnitComponent // <= import it here
   ],
-  providers: [],
-  bootstrap: [AppComponent]
+  templateUrl: './app.component.html',
+  styleUrls: ['./app.component.scss']
 })
+export class AppComponent { }
 ```

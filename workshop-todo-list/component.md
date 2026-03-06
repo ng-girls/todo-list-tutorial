@@ -16,7 +16,7 @@ Directives, pipes and services are other building blocks in Angular, which can b
 
 Let's take a look at the component that was created by the Angular CLI. All the relevant files exist in the folder `src/app`. Open the file `app.component.ts`.
 
-Just like ngModules that we saw in the previous chapter, a component is also defined by a class with a decorator. This is the class definition:
+A component is defined by a class with a decorator. The decorator tells Angular how to use the class. This is the class definition:
 
 {% tabs %}
 {% tab title="src/app/app.component.ts" %}
@@ -102,9 +102,9 @@ The first property, `selector`, tells Angular what will be the name of the tag t
 
 The element `app-root` is not an HTML element. It is the component that was created with the selector `app-root`. Try changing the selector. You'll see that if you change it in only one of the files, nothing will be displayed, since the element is no longer replaced with an Angular component. You can see an error message in the browser's console.
 
-The `standalone` property tells Angular and us that the component is not part of anyAngular Module - `NgModule`.  Angular Modules were mandatory in previous versions of Angular. In later versions they have become optional, and components can be defined without them, hence standalone.
+The `standalone` property tells Angular and us that the component is not part of any Angular Module - `NgModule`. Angular Modules were mandatory in previous versions of Angular. In later versions they have become optional, and components can be defined without them, hence standalone.
 
-The `imports` array is used to state Angulae capabilities that are needed in this component. `CommonModule` enables built-in control flow, directives, and more. `RouterModule` is needed to define routing capabilities - router outlet (which is used in the boilerplate template) and links. When using Angular Modules, the imports can be defined there.&#x20;
+The `imports` array is used to state Angular capabilities that are needed in this component. `CommonModule` enables built-in control flow, directives, and more. `RouterModule` is needed to define routing capabilities - router outlet (which is used in the boilerplate template) and links. When using Angular Modules, the imports can be defined there.&#x20;
 
 One last thing: the first two lines in the component file import code from other files. For instance,  `Component`  defines the decorator `@Component`. (A decorator is a function, which one of its parameters is what's written right after calling it.) It is needed to use the decorator, which is defined in the imported file (or actually, in one of its own imports). Try removing this line, and see the error.
 

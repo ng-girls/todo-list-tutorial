@@ -203,7 +203,7 @@ template: `
     <app-input-button-unit (submit)="addItem($event)"></app-input-button-unit>
 
     <ul>
-      @for(let todoItem of todoList; track todoItem.title) {
+      @for(todoItem of todoList; track todoItem.title) {
         <li>
           <app-todo-item [item]="todoItem"></app-todo-item>
         </li>
