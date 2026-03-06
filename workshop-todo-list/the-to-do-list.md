@@ -49,7 +49,7 @@ template: `
   <app-input-button-unit></app-input-button-unit>
 
   <ul>
-    @for(let todoItem of todoList; track todoItem.title) {
+    @for(todoItem of todoList; track todoItem.title) {
       <li>
         {{ todoItem.title }}
       </li>

@@ -21,7 +21,7 @@ Use the new component in the template of `app-root` component - inside the `<li>
 {% code title="src/app/app.component.ts" %}
 ```markup
 <ul>
-  @for(let todoItem of todoList; track todoItem.title) {
+  @for(todoItem of todoList; track todoItem.title) {
     <li>
       <app-todo-item></app-todo-item>
     </li>
@@ -52,7 +52,7 @@ The component should look like this now:
 
 {% code title="src/app/todo-item/todo-item.component.ts" %}
 ```typescript
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { CommonModule } from '@angular/common'; // Important for standalone components
 
 @Component({
@@ -70,12 +70,12 @@ export class TodoItemComponent {
 ```
 {% endcode %}
 
-Now we need to pass an item where we use the component. Go back to `app-root` component (`app.component.ts`), make sure to **import** the `TodoItemComponent` and add it to the `imports: [...]` array of your `@Component` decorator. Then, pass the item title to the `todo-item` in the template:
+Now we need to pass an item where we use the component. Go back to `app-root` component (`app.component.ts`). Since we're using standalone components, we must **import** `TodoItemComponent` and add it to the `imports: [...]` array of the `@Component` decorator so Angular knows about it. Then, pass the item title to the `todo-item` in the template:
 
 {% code title="src/app/app.component.ts" %}
 ```markup
 <ul>
-  @for(let todoItem of todoList; track todoItem.title) {
+  @for(todoItem of todoList; track todoItem.title) {
     <li>
       <app-todo-item [item]="todoItem"></app-todo-item>
     </li>
