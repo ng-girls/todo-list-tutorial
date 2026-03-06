@@ -111,7 +111,7 @@ Check out the result!
 This component doesn't do much at this point. In the following chapters, we will learn about the component class, and then implement the component's logic.
 
 {% hint style="success" %}
-[See the results on StackBlitz](https://stackblitz.com/github/ng-girls/todo-list-tutorial/tree/master/examples/0\_04-a-new-component)
+[See the results on StackBlitz](https://stackblitz.com/github/dominika-zajac/todo-list-tutorial/tree/master/examples/0\_04-a-new-component)
 {% endhint %}
 
 ## 💾 Save your code to GitHub

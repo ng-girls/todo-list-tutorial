@@ -177,5 +177,5 @@ StackBlitz doesn't support the inline template configuration setting. We will ne
 We have explored the root component that was generated for us by the Angular CLI, and even refactored it. In the next chapter, we will create a new component. We will start building the tree of components, which defines the structure of the application.
 
 {% hint style="success" %}
-[See the results on StackBlitz](https://stackblitz.com/github/ng-girls/todo-list-tutorial/tree/master/examples/0\_03-component)
+[See the results on StackBlitz](https://stackblitz.com/github/dominika-zajac/todo-list-tutorial/tree/master/examples/0\_03-component)
 {% endhint %}

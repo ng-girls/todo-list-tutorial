@@ -107,5 +107,5 @@ git push
 {% endhint %}
 
 {% hint style="success" %}
-[See the results on StackBlitz](https://stackblitz.com/github/ng-girls/todo-list-tutorial/tree/master/examples/0\_10-new-component-todo-item)
+[See the results on StackBlitz](https://stackblitz.com/github/dominika-zajac/todo-list-tutorial/tree/master/examples/0\_10-new-component-todo-item)
 {% endhint %}

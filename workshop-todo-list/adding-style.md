@@ -272,5 +272,5 @@ git push
 {% endhint %}
 
 {% hint style="success" %}
-[See the results on StackBlitz](https://stackblitz.com/github/ng-girls/todo-list-tutorial/tree/master/examples/0\_14-adding-style)
+[See the results on StackBlitz](https://stackblitz.com/github/dominika-zajac/todo-list-tutorial/tree/master/examples/0\_14-adding-style)
 {% endhint %}

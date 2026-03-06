@@ -47,5 +47,5 @@ git push
 {% endhint %}
 
 {% hint style="success" %}
-[See the results on StackBlitz](https://stackblitz.com/github/ng-girls/todo-list-tutorial/tree/master/examples/0\_16-add-items-using-the-service)
+[See the results on StackBlitz](https://stackblitz.com/github/dominika-zajac/todo-list-tutorial/tree/master/examples/0\_16-add-items-using-the-service)
 {% endhint %}
