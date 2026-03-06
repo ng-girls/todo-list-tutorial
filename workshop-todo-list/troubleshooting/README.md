@@ -1,27 +1,22 @@
 # Troubleshooting
 
 ## Error: <component> "is not a known element"
-🖥️ sample error message:
+🖥️ sample error message (the wording may vary depending on your Angular version):
 ```
-Template parse errors: 
-‘app-input-button-unit' is not a known element:
+'app-input-button-unit' is not a known element:
 
-1. If ‘app-input-button-unit' is an Angular 
-component, then verify that it is part of this
-module.
+1. If 'app-input-button-unit' is an Angular 
+component, then verify that it is included in
+the 'imports' of this component.
 
-2. If ‘app-input-button-unit' is a Web
+2. If 'app-input-button-unit' is a Web
 Component then add 'CUSTOM_ELEMENTS_SCHEMA' to
-the '@NgModule.schemas' of this component to
-suppress this message. ("
-
-</h1>
+the 'schemas' of this component to suppress 
+this message.
 
 [ERROR ->]<app-input-button-unit></app-input-
 button-unit>
 ```
-✅ solution
-
 ✅ solution
 
 In Angular Standalone components, you need to import the component into the `imports` array of the component where you are trying to use it.
@@ -34,7 +29,6 @@ import { InputButtonUnitComponent } from './input-button-unit/input-button-unit.
   selector: 'app-root',
   standalone: true,
   imports: [
-    CommonModule, 
     InputButtonUnitComponent // <= import it here
   ],
   templateUrl: './app.component.html',

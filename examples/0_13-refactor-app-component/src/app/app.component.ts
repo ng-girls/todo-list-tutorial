@@ -1,9 +1,9 @@
-import { CommonModule } from '@angular/common';
+import { ListManagerComponent } from './list-manager/list-manager.component';
 import { Component } from '@angular/core';
 
 @Component({
   standalone: true,
-  imports: [CommonModule, ListManagerComponent],
+  imports: [ListManagerComponent],
 
   selector: 'app-root',
   template: `
@@ -16,5 +16,5 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  title = 'My To Do List APP';
+  title = 'My To-Do List App';
 }

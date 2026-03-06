@@ -5,12 +5,11 @@ In the last chapter, we ended with our input component able to display and chang
 {% code title="src/app/input-button-unit/input-button-unit.component.ts" %}
 ```typescript
 import { Component } from '@angular/core';
-import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-input-button-unit',
   standalone: true,
-  imports: [CommonModule],
+  imports: [],
   template: `
     <p>
       input-button-unit works!

@@ -1,9 +1,9 @@
-import { CommonModule } from '@angular/common';
+import { InputButtonUnitComponent } from './input-button-unit/input-button-unit.component';
 import { Component } from '@angular/core';
 
 @Component({
   standalone: true,
-  imports: [CommonModule],
+  imports: [InputButtonUnitComponent],
 
   selector: 'app-root',
   template: `

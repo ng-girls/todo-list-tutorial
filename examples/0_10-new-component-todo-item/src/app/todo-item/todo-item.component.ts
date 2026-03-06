@@ -1,9 +1,8 @@
-import { CommonModule } from '@angular/common';
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, Input } from '@angular/core';
 
 @Component({
   standalone: true,
-  imports: [CommonModule],
+  imports: [],
 
   selector: 'app-todo-item',
   template: `
@@ -11,12 +10,7 @@ import { Component, Input, OnInit } from '@angular/core';
   `,
   styleUrls: ['./todo-item.component.scss']
 })
-export class TodoItemComponent implements OnInit {
-  @Input() item!: TodoItem;
-
-  constructor() { }
-
-  ngOnInit(): void {
-  }
+export class TodoItemComponent {
+  @Input() item!: any;
 
 }

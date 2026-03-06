@@ -40,9 +40,9 @@ Open the file `input-button-unit.component.ts`. You can see that the Angular CLI
 @Component({
   selector: 'app-input-button-unit',
   standalone: true,
-  imports: [CommonModule],
+  imports: [],
   templateUrl: './input-button-unit.component.html',
-  styleUrl: './input-button-unit.component.scss'
+  styleUrls: ['./input-button-unit.component.scss']
 })
 ```
 {% endcode %}
@@ -58,13 +58,12 @@ Open the root component file, `app.component.ts`. We need to explicitly **import
 {% code title="src/app/app.component.ts" %}
 ```typescript
 import { Component } from '@angular/core';
-import { CommonModule } from '@angular/common';
 import { InputButtonUnitComponent } from './input-button-unit/input-button-unit.component';
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [CommonModule, InputButtonUnitComponent],
+  imports: [InputButtonUnitComponent],
   template: `
     <h1>
       Welcome to {{ title }}!
@@ -72,7 +71,7 @@ import { InputButtonUnitComponent } from './input-button-unit/input-button-unit.
 
     <app-input-button-unit></app-input-button-unit>
   `,
-  styleUrl: './app.component.scss'
+  styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
   title = 'todo-list';

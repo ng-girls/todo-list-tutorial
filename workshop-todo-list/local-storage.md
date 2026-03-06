@@ -96,7 +96,7 @@ This method will save the given data (object, list, etc.) under the given key.
 
 {% code title="src/app/services/storage.service.ts" %}
 ```typescript
-  setData(key: string, data: any) {
+  setData(key: string, data: any): void {
     localStorage.setItem(key, JSON.stringify(data));
   }
 ```
@@ -236,7 +236,7 @@ import { StorageService } from './storage.service';
 
 const todoListStorageKey = 'Todo_List';
 
-const defaultTodoList = [
+const defaultTodoList: TodoItem[] = [
   {title: 'install NodeJS'},
   {title: 'install Angular CLI'},
   {title: 'create new app'},
@@ -256,31 +256,30 @@ export class TodoListService {
       storageService.getData(todoListStorageKey) || defaultTodoList;
   }
 
-  saveList() {
+  saveList(): void {
     this.storageService.setData(todoListStorageKey, this.todoList);
-  }
-
-  addItem(item: TodoItem) {
-    this.todoList.push(item);
-    this.saveList();
-  }
-
-  updateItem(item: TodoItem, changes: any) {
-    const index = this.todoList.indexOf(item);
-    this.todoList[index] = { ...item, ...changes };
-    this.saveList();
-  }
-
-  deleteItem(item: TodoItem) {
-    const index = this.todoList.indexOf(item);
-    this.todoList.splice(index, 1);
-    this.saveList();
   }
 
   getTodoList(): TodoItem[] {
     return this.todoList;
   }
 
+  addItem(item: TodoItem): void {
+    this.todoList.push(item);
+    this.saveList();
+  }
+
+  updateItem(item: TodoItem, changes: any): void {
+    const index = this.todoList.indexOf(item);
+    this.todoList[index] = { ...item, ...changes };
+    this.saveList();
+  }
+
+  deleteItem(item: TodoItem): void {
+    const index = this.todoList.indexOf(item);
+    this.todoList.splice(index, 1);
+    this.saveList();
+  }
 }
 ```
 {% endcode %}

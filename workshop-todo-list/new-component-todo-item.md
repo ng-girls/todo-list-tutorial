@@ -53,16 +53,15 @@ The component should look like this now:
 {% code title="src/app/todo-item/todo-item.component.ts" %}
 ```typescript
 import { Component, Input } from '@angular/core';
-import { CommonModule } from '@angular/common'; // Important for standalone components
 
 @Component({
   selector: 'app-todo-item',
   standalone: true,
-  imports: [CommonModule],
+  imports: [],
   template: `
     {{ item.title }}
   `,
-  styleUrl: './todo-item.component.scss'
+  styleUrls: ['./todo-item.component.scss']
 })
 export class TodoItemComponent {
   @Input() item: any; // Using : any to suppress TypeScript strict mode warnings for now

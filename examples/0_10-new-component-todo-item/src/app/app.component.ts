@@ -1,9 +1,10 @@
-import { CommonModule } from '@angular/common';
+import { TodoItemComponent } from './todo-item/todo-item.component';
+import { InputButtonUnitComponent } from './input-button-unit/input-button-unit.component';
 import { Component } from '@angular/core';
 
 @Component({
   standalone: true,
-  imports: [CommonModule],
+  imports: [InputButtonUnitComponent, TodoItemComponent],
 
   selector: 'app-root',
   template: `
@@ -14,9 +15,11 @@ import { Component } from '@angular/core';
     <app-input-button-unit></app-input-button-unit>
 
     <ul>
-      <li *ngFor="let todoItem of todoList">
-        <app-todo-item [item]="todoItem"></app-todo-item>
-      </li>
+      @for(todoItem of todoList; track todoItem.title) {
+        <li>
+          <app-todo-item [item]="todoItem"></app-todo-item>
+        </li>
+      }
     </ul>
   `,
   styleUrls: ['./app.component.scss']

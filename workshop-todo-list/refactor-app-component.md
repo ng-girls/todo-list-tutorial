@@ -21,19 +21,18 @@ Use the Angular Generator to create the component, then make the component [use 
 {% code title="src/app/app.component.ts" %}
 ```typescript
 import { Component } from '@angular/core';
-import { CommonModule } from '@angular/common';
 import { ListManagerComponent } from './list-manager/list-manager.component';
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [CommonModule, ListManagerComponent],
+  imports: [ListManagerComponent],
   template: `
     <h1>
       Welcome to {{ title }}!
     </h1>
   `,
-  styleUrl: './app.component.scss'
+  styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
   title = 'My To-Do List App';
@@ -48,7 +47,6 @@ The `list-manager` component uses `<app-input-button-unit>` and `<app-todo-item>
 {% code title="src/app/list-manager/list-manager.component.ts" %}
 ```typescript
 import { Component } from '@angular/core';
-import { CommonModule } from '@angular/common';
 import { TodoItem } from '../interfaces/todo-item';
 import { InputButtonUnitComponent } from '../input-button-unit/input-button-unit.component';
 import { TodoItemComponent } from '../todo-item/todo-item.component';
@@ -56,7 +54,7 @@ import { TodoItemComponent } from '../todo-item/todo-item.component';
 @Component({
   selector: 'app-list-manager',
   standalone: true,
-  imports: [CommonModule, InputButtonUnitComponent, TodoItemComponent],
+  imports: [InputButtonUnitComponent, TodoItemComponent],
   template: `
     <app-input-button-unit (submit)="addItem($event)"></app-input-button-unit>
 
@@ -68,7 +66,7 @@ import { TodoItemComponent } from '../todo-item/todo-item.component';
       }       
     </ul>
   `,
-  styleUrl: './list-manager.component.scss'
+  styleUrls: ['./list-manager.component.scss']
 })
 export class ListManagerComponent {
   todoList: TodoItem[] = [

@@ -5,12 +5,12 @@ import { StorageService } from './storage.service';
 const todoListStorageKey = 'Todo_List';
 
 const defaultTodoList: TodoItem[] = [
-  {title: 'install NodeJS'},
-  {title: 'install Angular CLI'},
-  {title: 'create new app'},
-  {title: 'serve app'},
-  {title: 'develop app'},
-  {title: 'deploy app'},
+  { title: 'install NodeJS' },
+  { title: 'install Angular CLI' },
+  { title: 'create new app' },
+  { title: 'serve app' },
+  { title: 'develop app' },
+  { title: 'deploy app' },
 ];
 
 @Injectable({
@@ -36,9 +36,9 @@ export class TodoListService {
     this.saveList();
   }
 
-  updateItem(item: TodoItem, changes): void {
+  updateItem(item: TodoItem, changes: any): void {
     const index = this.todoList.indexOf(item);
-    this.todoList[index] = {...item, ...changes};
+    this.todoList[index] = { ...item, ...changes };
     this.saveList();
   }
 

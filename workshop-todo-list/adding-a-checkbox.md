@@ -49,7 +49,6 @@ export class TodoItemComponent {
   @Output() remove: EventEmitter<TodoItem> = new EventEmitter<TodoItem>();
   @Output() update: EventEmitter<any> = new EventEmitter<any>();
 
-  // put this method below ngOnInit
   completeItem(): void {
     this.update.emit({
       item: this.item,
