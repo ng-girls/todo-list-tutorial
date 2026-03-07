@@ -1,10 +1,6 @@
-import { InputButtonUnitComponent } from './input-button-unit/input-button-unit.component';
 import { Component } from '@angular/core';
 
 @Component({
-  standalone: true,
-  imports: [InputButtonUnitComponent],
-
   selector: 'app-root',
   template: `
     <h1>
@@ -14,11 +10,9 @@ import { Component } from '@angular/core';
     <app-input-button-unit></app-input-button-unit>
 
     <ul>
-      @for(todoItem of todoList; track todoItem.title) {
-        <li>
-          {{ todoItem.title }}
-        </li>
-      }
+      <li *ngFor="let todoItem of todoList">
+        {{ todoItem.title }}
+      </li>
     </ul>
   `,
   styleUrls: ['./app.component.scss']

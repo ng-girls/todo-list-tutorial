@@ -1,35 +1,30 @@
-import { InputButtonUnitComponent } from '../input-button-unit/input-button-unit.component';
-import { TodoItemComponent } from '../todo-item/todo-item.component';
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { TodoItem } from '../interfaces/todo-item';
 import { TodoListService } from '../services/todo-list.service';
 
 @Component({
-  standalone: true,
-  imports: [InputButtonUnitComponent, TodoItemComponent],
-
   selector: 'app-list-manager',
   template: `
     <div class="todo-app">
       <app-input-button-unit (submit)="addItem($event)"></app-input-button-unit>
 
       <ul>
-        @for(todoItem of todoList; track todoItem.title) {
-          <li>
-            <app-todo-item [item]="todoItem"
-                           (remove)="removeItem($event)"
-                           (update)="updateItem($event.item, $event.changes)"></app-todo-item>
-          </li>
-        }
+        <li *ngFor="let todoItem of todoList">
+          <app-todo-item [item]="todoItem"
+                         (remove)="removeItem($event)"
+                         (update)="updateItem($event.item, $event.changes)"></app-todo-item>
+        </li>
       </ul>
     </div>
   `,
   styleUrls: ['./list-manager.component.scss']
 })
-export class ListManagerComponent {
-  todoList!: TodoItem[];
+export class ListManagerComponent implements OnInit {
+  todoList: TodoItem[];
 
-  constructor(private todoListService: TodoListService) {
+  constructor(private todoListService: TodoListService) { }
+
+  ngOnInit(): void {
     this.todoList = this.todoListService.getTodoList();
   }
 
@@ -37,11 +32,11 @@ export class ListManagerComponent {
     this.todoListService.addItem({ title });
   }
 
-  removeItem(item: any): void {
+  removeItem(item): void {
     this.todoListService.deleteItem(item);
   }
 
-  updateItem(item: any, changes: any): void {
+  updateItem(item, changes): void {
     this.todoListService.updateItem(item, changes);
   }
 }

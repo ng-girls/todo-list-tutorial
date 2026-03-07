@@ -4,12 +4,10 @@ In the last chapter, we ended with our input component able to display and chang
 
 {% code title="src/app/input-button-unit/input-button-unit.component.ts" %}
 ```typescript
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-input-button-unit',
-  standalone: true,
-  imports: [],
   template: `
     <p>
       input-button-unit works!
@@ -17,7 +15,7 @@ import { Component } from '@angular/core';
     </p>
 
     <input [value]="title"
-           (keyup.enter)="changeTitle(getInputValue($event))">
+           (keyup.enter)="changeTitle($event.target.value)">
 
     <button (click)="changeTitle('Button Clicked!')">
       Save
@@ -25,15 +23,16 @@ import { Component } from '@angular/core';
   `,  
   styleUrls: ['./input-button-unit.component.scss']  
 })    
-export class InputButtonUnitComponent {
+export class InputButtonUnitComponent implements OnInit {
   title = 'Hello World';
+
+  constructor() { }                     
+
+  ngOnInit(): void {
+  }
 
   changeTitle(newTitle: string): void {
     this.title = newTitle;
-  }
-
-  getInputValue(event: Event) {
-    return (event.target as HTMLInputElement).value;
   }
 }
 ```
@@ -61,7 +60,7 @@ Angular helps us do exactly that. **We can store a reference to the element we w
 template: `
   <input #inputElementRef
          [value]="title"
-         (keyup.enter)="changeTitle(getInputValue($event))">
+         (keyup.enter)="changeTitle($event.target.value)">
 
   <button (click)="changeTitle(inputElementRef.value)">
     Save

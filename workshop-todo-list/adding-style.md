@@ -6,9 +6,9 @@ We can also state general style rules to be used across the application. This is
 
 Angular gives us different style encapsulation methods, but we'll stick to the default.
 
-The Angular CLI has generated a general stylesheet for us at `src/styles.scss`. Paste the following code into this file:
+The Angular CLI has generated a general stylesheet for us at `src/style.scss`. Paste the following code into this file:
 
-{% code title="src/styles.scss" %}
+{% code title="src/style.scss" %}
 ```css
 html, body, div, span,
 h1, p, ul, li {
@@ -144,7 +144,7 @@ We need to add the `todo-input` class to the `input` element:
 <input class="todo-input"
        #inputElementRef
        [value]="title"
-       (keyup.enter)="submitValue($event.target.value)">
+       (keyup.enter)="submitValue(getInputValue($event))">
 ```
 {% endcode %}
 
@@ -203,7 +203,7 @@ template: `
     <app-input-button-unit (submit)="addItem($event)"></app-input-button-unit>
 
     <ul>
-      @for(todoItem of todoList; track todoItem.title) {
+      @for(let todoItem of todoList; track todoItem.title) {
         <li>
           <app-todo-item [item]="todoItem"></app-todo-item>
         </li>

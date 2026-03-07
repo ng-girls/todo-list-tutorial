@@ -73,8 +73,13 @@ First, your application project has to be hosted on GitHub. If you haven't done 
 
 ### Building for Production
 
-The build command is defined in the file `package.json`. Building the project means compiling it to JavaScript and combining to only few files so it's ready to be deployed. Modern versions of the Angular CLI (v12 and up) will configure this command to build for production automatically when running `ng build`. Thus, you do not need to add any special flags.
+The build command is defined in the file `package.json`. Building the project means compiling it to JavaScript and combining to only few files so it's ready to be deployed. However, Angular-CLI configures this command without the needed `--prod` flag which makes the build artifacts ready for production. For instance, without this flag the environment file (which includes variables specific to the environment) that is used is the development version and not the production version.&#x20;
 
+Go to `package.json` . Under `"scripts"` you'll find the build command `"build": ...`. **Add the `--prod` flag to the command.** The line should look like this:
+
+```
+"build": "ng build --prod",
+```
 
 **Commit** the change and **push** it to GitHub.
 

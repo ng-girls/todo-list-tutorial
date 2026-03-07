@@ -24,7 +24,7 @@ Make sure that `Output` and `EventEmitter` are added to the import declaration i
 
 {% code title="src/app/input-button-unit.component.ts" %}
 ```typescript
-import { Component, Output, EventEmitter} from '@angular/core';
+import { Component, OnInit, Output, EventEmitter} from '@angular/core';
 ```
 {% endcode %}
 

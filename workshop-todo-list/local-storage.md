@@ -82,13 +82,12 @@ This method will get and return the data (object, list, etc.) stored in the serv
 {% code title="src/app/services/storage.service.ts" %}
 ```typescript
   getData(key: string): any {
-    const data = localStorage.getItem(key);
-    return data ? JSON.parse(data) : null;
+    return JSON.parse(localStorage.getItem(key));
   }
 ```
 {% endcode %}
 
-Wait! Wait! Why `JSON.parse`? The answer is simple: As described above, local storage stores data as key-value pairs, and the values are stored as **strings**. So, if we want to have a real object (or list) to work with, we must parse the string into a valid JavaScript object. Note that we also check if the data exists before parsing, since `localStorage.getItem` returns `null` if the key doesn't exist.
+Wait! Wait! Why `JSON.parse`? The answer is simple: As described above, local storage stores data as key-value pairs, and the values are stored as **strings**. So, if we want to have a real object (or list) to work with, we must parse the string into a valid JavaScript object.
 
 ### setData
 
@@ -96,7 +95,7 @@ This method will save the given data (object, list, etc.) under the given key.
 
 {% code title="src/app/services/storage.service.ts" %}
 ```typescript
-  setData(key: string, data: any): void {
+  setData(key: string, data: any) {
     localStorage.setItem(key, JSON.stringify(data));
   }
 ```
@@ -133,12 +132,9 @@ const defaultTodoList: TodoItem[] = [
   providedIn: 'root'
 })
 export class TodoListService {
-  todoList!: TodoItem[];
+  todoList: TodoItem[];
 
-  constructor(private storageService: StorageService) {
-    this.todoList = 
-      storageService.getData(todoListStorageKey) || defaultTodoList;
-  }
+  constructor(private storageService: StorageService) { }
 }
 ```
 {% endcode %}
@@ -175,7 +171,7 @@ Here we want to update an existing item. We'll assume that we hold the original 
 
 {% code title="src/app/services/todo-list.service.ts" %}
 ```typescript
-updateItem(item: TodoItem, changes: any): void {
+updateItem(item: TodoItem, changes): void {
   const index = this.todoList.indexOf(item);
   this.todoList[index] = { ...item, ...changes };
   this.storageService.setData(todoListStorageKey, this.todoList);
@@ -236,7 +232,7 @@ import { StorageService } from './storage.service';
 
 const todoListStorageKey = 'Todo_List';
 
-const defaultTodoList: TodoItem[] = [
+const defaultTodoList = [
   {title: 'install NodeJS'},
   {title: 'install Angular CLI'},
   {title: 'create new app'},
@@ -245,41 +241,40 @@ const defaultTodoList: TodoItem[] = [
   {title: 'deploy app'},
 ];
 
-@Injectable({
-  providedIn: 'root'
-})
+@Injectable()
 export class TodoListService {
-  todoList!: TodoItem[];
+  todoList: TodoItem[];
 
   constructor(private storageService: StorageService) {
     this.todoList = 
       storageService.getData(todoListStorageKey) || defaultTodoList;
   }
 
-  saveList(): void {
+  saveList() {
     this.storageService.setData(todoListStorageKey, this.todoList);
+}
+
+  addItem(item: TodoItem) {
+    this.todoList.push(item);
+    this.saveList();
+  }
+
+  updateItem(item, changes) {
+    const index = this.todoList.indexOf(item);
+    this.todoList[index] = { ...item, ...changes };
+    this.saveList();
+  }
+
+  deleteItem(item) {
+    const index = this.todoList.indexOf(item);
+    this.todoList.splice(index, 1);
+    this.saveList();
   }
 
   getTodoList(): TodoItem[] {
     return this.todoList;
   }
 
-  addItem(item: TodoItem): void {
-    this.todoList.push(item);
-    this.saveList();
-  }
-
-  updateItem(item: TodoItem, changes: any): void {
-    const index = this.todoList.indexOf(item);
-    this.todoList[index] = { ...item, ...changes };
-    this.saveList();
-  }
-
-  deleteItem(item: TodoItem): void {
-    const index = this.todoList.indexOf(item);
-    this.todoList.splice(index, 1);
-    this.saveList();
-  }
 }
 ```
 {% endcode %}

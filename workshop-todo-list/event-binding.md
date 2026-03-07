@@ -9,11 +9,12 @@ The `input-button-unit` component should look like this:
 {% code title="src/app/input-button-unit/input-button-unit.component.ts" %}
 ```typescript
 import { Component } from '@angular/core';
+import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-input-button-unit',
   standalone: true,
-  imports: [],
+  imports: [CommonModule],
   template: `
     <p>
       input-button-unit works!
@@ -33,7 +34,7 @@ export class InputButtonUnitComponent {
 
 ## The Action
 
-First, let's implement `changeTitle`. It will receive the new title as its argument:
+First, let's implement `changeTitle`. It will receive the new title as its argument. The best practice is to have our custom methods written after the lifecycle methods (`ngOnInit` in this case):
 
 {% code title="src/app/input-button-unit/input-button-unit.component.ts" %}
 ```typescript
@@ -184,11 +185,12 @@ The file should look like this:
 {% code title="src/app/input-button-unit/input-button-unit.component.ts" %}
 ```typescript
 import { Component } from '@angular/core';
+import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-input-button-unit',
   standalone: true,
-  imports: [],
+  imports: [CommonModule],
   template: `
     <p>
       input-button-unit works!
@@ -202,7 +204,7 @@ import { Component } from '@angular/core';
       Save
     </button>
   `,
-  styleUrls: ['./input-button-unit.component.scss']
+  styleUrl: './input-button-unit.component.scss'
 })
 export class InputButtonUnitComponent {
   title = 'Hello World';

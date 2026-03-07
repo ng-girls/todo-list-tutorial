@@ -17,8 +17,3 @@ _book
 
 # IDE
 .idea
-
-# Angular build artifacts
-.angular/
-dist/
-*.tsbuildinfo

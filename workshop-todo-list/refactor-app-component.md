@@ -20,19 +20,16 @@ Use the Angular Generator to create the component, then make the component [use 
 
 {% code title="src/app/app.component.ts" %}
 ```typescript
-import { Component } from '@angular/core';
-import { ListManagerComponent } from './list-manager/list-manager.component';
-
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [ListManagerComponent],
+  imports: [CommonModule],
   template: `
     <h1>
       Welcome to {{ title }}!
     </h1>
   `,
-  styleUrls: ['./app.component.scss']
+  styleUrl: './app.component.scss'
 })
 export class AppComponent {
   title = 'My To-Do List App';
@@ -40,33 +37,28 @@ export class AppComponent {
 ```
 {% endcode %}
 
-Since we are using standalone components, we need to **import** `ListManagerComponent` into `AppComponent`'s `imports` array so Angular knows about it.
-
-The `list-manager` component uses `<app-input-button-unit>` and `<app-todo-item>` in its template. With standalone components, we must explicitly import those child components:
-
 {% code title="src/app/list-manager/list-manager.component.ts" %}
 ```typescript
 import { Component } from '@angular/core';
+import { CommonModule } from '@angular/common';
 import { TodoItem } from '../interfaces/todo-item';
-import { InputButtonUnitComponent } from '../input-button-unit/input-button-unit.component';
-import { TodoItemComponent } from '../todo-item/todo-item.component';
 
 @Component({
   selector: 'app-list-manager',
   standalone: true,
-  imports: [InputButtonUnitComponent, TodoItemComponent],
+  imports: [CommonModule],
   template: `
     <app-input-button-unit (submit)="addItem($event)"></app-input-button-unit>
 
     <ul>
-      @for(todoItem of todoList; track todoItem.title) {
+      @for(let todoItem of todoList; track todoItem.title) {
         <li>
           <app-todo-item [item]="todoItem"></app-todo-item>
         </li>
       }       
     </ul>
   `,
-  styleUrls: ['./list-manager.component.scss']
+  styleUrl: './list-manager.component.scss'
 })
 export class ListManagerComponent {
   todoList: TodoItem[] = [
@@ -85,9 +77,7 @@ export class ListManagerComponent {
 ```
 {% endcode %}
 
-> **Key concept:** With standalone components, Angular doesn't have a central module that "knows" about all your components. Each component must declare what other components, directives, and pipes it uses via its own `imports` array.
-
-* Call the new component from the `app-root` template. Remember, we already imported `ListManagerComponent` in the `imports` array above, so we can now use it:
+* Call the new component from the `app-root` template:
 
 {% code title="src/app/app.component.ts" %}
 ```markup

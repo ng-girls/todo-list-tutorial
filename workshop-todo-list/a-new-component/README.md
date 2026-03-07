@@ -40,9 +40,9 @@ Open the file `input-button-unit.component.ts`. You can see that the Angular CLI
 @Component({
   selector: 'app-input-button-unit',
   standalone: true,
-  imports: [],
+  imports: [CommonModule],
   templateUrl: './input-button-unit.component.html',
-  styleUrls: ['./input-button-unit.component.scss']
+  styleUrl: './input-button-unit.component.scss'
 })
 ```
 {% endcode %}
@@ -53,29 +53,17 @@ Open the file `input-button-unit.component.ts`. You can see that the Angular CLI
 
 We can use this component as-is and see the result!
 
-Open the root component file, `app.component.ts`. We need to explicitly **import** our new component into the `AppComponent` so it can be used, and then add its tag to the template. Update it to look like this:
+Open the root component file, `app.component.ts` and add the app-input-button-unit tag inside the template (remember we refactored the root component to have an inline template):
 
 {% code title="src/app/app.component.ts" %}
-```typescript
-import { Component } from '@angular/core';
-import { InputButtonUnitComponent } from './input-button-unit/input-button-unit.component';
+```markup
+template: `
+  <h1>
+    Welcome to {{ title }}!
+  </h1>
 
-@Component({
-  selector: 'app-root',
-  standalone: true,
-  imports: [InputButtonUnitComponent],
-  template: `
-    <h1>
-      Welcome to {{ title }}!
-    </h1>
-
-    <app-input-button-unit></app-input-button-unit>
-  `,
-  styleUrls: ['./app.component.scss']
-})
-export class AppComponent {
-  title = 'todo-list';
-}
+  <app-input-button-unit></app-input-button-unit>
+`,
 ```
 {% endcode %}
 

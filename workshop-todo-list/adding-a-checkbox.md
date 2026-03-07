@@ -33,22 +33,13 @@ Now, in order for the checkbox to do anything, we need to add a `click` event ha
 When we click on the checkbox, it will run the `completeItem` method. Let's talk about what this method needs to accomplish. We want to be able to toggle some CSS styling on the item's title so that when the checkbox is checked it will have a strikethrough. We also want to save the status of the item in the local storage. In order to achieve this, we will emit an update event with the new status of the item and catch it in the parent component.
 
 {% code title="src/app/todo-item/todo-item.component.ts" %}
-```typescript
-import { Component, Input, Output, EventEmitter } from '@angular/core';
-import { CommonModule } from '@angular/common';
-import { TodoItem } from '../interfaces/todo-item'; // Make sure to import the interface
-
-@Component({
-  // ...
-  standalone: true,
-  imports: [CommonModule],
-  // ...
-})
+```javascript
 export class TodoItemComponent {
-  @Input() item!: TodoItem;
+  @Input() item: TodoItem;
   @Output() remove: EventEmitter<TodoItem> = new EventEmitter<TodoItem>();
   @Output() update: EventEmitter<any> = new EventEmitter<any>();
 
+  // put this method below ngOnInit
   completeItem(): void {
     this.update.emit({
       item: this.item,
@@ -123,7 +114,7 @@ Then create additional method to handle this update item event. It will look ver
 
 {% code title="src/app/list-manager/list-manager.component.ts" %}
 ```typescript
-updateItem(item: any, changes: any) {
+updateItem(item, changes) {
   this.todoListService.updateItem(item, changes);
 }
 ```

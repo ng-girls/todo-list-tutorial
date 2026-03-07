@@ -17,7 +17,7 @@ const defaultTodoList: TodoItem[] = [
   providedIn: 'root'
 })
 export class TodoListService {
-  todoList!: TodoItem[];
+  todoList: TodoItem[];
 
   constructor(private storageService: StorageService) {
     this.todoList = storageService.getData(todoListStorageKey) || defaultTodoList;
@@ -36,7 +36,7 @@ export class TodoListService {
     this.saveList();
   }
 
-  updateItem(item: TodoItem, changes: any): void {
+  updateItem(item: TodoItem, changes): void {
     const index = this.todoList.indexOf(item);
     this.todoList[index] = {...item, ...changes};
     this.saveList();

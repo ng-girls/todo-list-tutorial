@@ -9,18 +9,19 @@ We'll revert the component to its state before our experiments with its methods:
 {% code title="src/app/input-button-unit/input-button-unit.component.ts" %}
 ```typescript
 import { Component } from '@angular/core';
+import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-input-button-unit',
   standalone: true,
-  imports: [],
+  imports: [CommonModule],
   template: `
     <p>
       input-button-unit works!
       The title is: {{ title }}
     </p>
   `,  
-  styleUrls: ['./input-button-unit.component.scss']
+  styleUrl: './input-button-unit.component.scss'
 })    
 export class InputButtonUnitComponent {
   title = 'Hello World';           

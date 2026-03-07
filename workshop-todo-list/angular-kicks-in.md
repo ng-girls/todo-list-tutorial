@@ -30,7 +30,7 @@ bootstrapApplication(AppComponent, appConfig)
 {% endtab %}
 {% endtabs %}
 
-We bootstrap our root `AppComponent` using `bootstrapApplication`. This way we tell Angular what component to use as the starting point of our application. The `bootstrapApplication` function from `@angular/platform-browser` knows how to take our code and add the relevant data (elements, attributes, etc.) to the browser's DOM.
+We bootstrap our root `AppComponent` to a renderer. This way we tell Angular what component to use as the starting point of our application. And we also choose a renderer: `platformBrowserDynamic`. It knows how to take our code and add the relevant data (elements, attributes, etc.) to the browser's DOM.
 
 If there's an error, it is caught and logged in the browser's console (seen only when the browser's dev-tools are open).
 
