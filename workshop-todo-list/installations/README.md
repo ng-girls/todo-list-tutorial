@@ -116,9 +116,9 @@ Angular CLI will ask a couple of questions to help create a new application. Ans
 
 ```
 ? Which stylesheet system would you like to use?
- CSS             [ https://developer.mozilla.org/docs/Web/CSS                     ]
-❯ Tailwind CSS    [ https://tailwindcss.com                                        ]
-  Sass (SCSS)     [ https://sass-lang.com/documentation/syntax#scss                ]
+  CSS             [ https://developer.mozilla.org/docs/Web/CSS                     ]
+  Tailwind CSS    [ https://tailwindcss.com                                        ]
+❯ Sass (SCSS)     [ https://sass-lang.com/documentation/syntax#scss                ]
   Sass (Indented) [ https://sass-lang.com/documentation/syntax#the-indented-syntax ]
   Less            [ http://lesscss.org                                             ]
 ```
