@@ -1,6 +1,6 @@
 # a. StackBlitz instructions
 
-Every developer needs a set of tools and libraries to start working. In our case, we'll use the online editor [StackBlitz](https://stackblitz.com/) with our own 📄 [Stackblitz starter template](https://stackblitz.com/github/ng-girls/todo-list-tutorial/tree/master/examples/0\_01-installations).
+Every developer needs a set of tools and libraries to start working. In our case, we'll use the online editor [StackBlitz](https://stackblitz.com/) with our own 📄 [Stackblitz starter template](https://stackblitz.com/github/dominika-zajac/todo-list-tutorial/tree/master/examples/0\_01-installations).
 
 To get your development environment going, follow these steps:
 
@@ -10,11 +10,11 @@ To get your development environment going, follow these steps:
 
 You should see a page similar this:
 
-![Initial App](https://github.com/ng-girls/todo-list-tutorial/raw/stackblitz/assets/initial-app-stackblitz.png)
+![Initial App](https://github.com/dominika-zajac/todo-list-tutorial/raw/master/assets/initial-app-stackblitz.png)
 
 StackBlitz is an online editor that provides all the functionality of an online **IDE** by bundling **Visual Studio Code**, the **Angular CLI**, and a preview mode of your application together.
 
-We want to use the starter application for ngGirls. Open the 📄 [ngGirls tutorial starter application](https://stackblitz.com/github/ng-girls/todo-list-tutorial/tree/master/examples/0\_01-installations) and click the **Fork** button on the toolbar. This is your own copy of the starter application to use for the tutorial. You can now close any other StackBlitz tabs in your browser.
+We want to use the starter application for ngGirls. Open the 📄 [ngGirls tutorial starter application](https://stackblitz.com/github/dominika-zajac/todo-list-tutorial/tree/master/examples/0\_01-installations) and click the **Fork** button on the toolbar. This is your own copy of the starter application to use for the tutorial. You can now close any other StackBlitz tabs in your browser.
 
 ## Using StackBlitz for the tutorial
 
@@ -28,5 +28,5 @@ You have a running Angular application and are all ready to start developing!
 
 
 {% hint style="success" %}
-[See the results on StackBlitz]([https://stackblitz.com/github/ng-girls/todo-list-tutorial/tree/master/examples/0_04-a-new-component](https://stackblitz.com/github/ng-girls/todo-list-tutorial/tree/master/examples/0\_01-installations)https://stackblitz.com/github/ng-girls/todo-list-tutorial/tree/master/examples/0\_01-installations)
+[See the results on StackBlitz](https://stackblitz.com/github/dominika-zajac/todo-list-tutorial/tree/master/examples/0\_01-installations)
 {% endhint %}

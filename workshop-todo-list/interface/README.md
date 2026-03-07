@@ -2,7 +2,7 @@
 
 We want to use TypeScript's abilities to know what kind of object we pass as an `item` to the `todo-item` component. We'll make sure that the item is of the right type. But its type is not a simple string, number or boolean. We'll define the item's type using an **interface**.
 
-> We've already seen an interface provided by Angular: the `OnInit` interface which includes the method `ngOnInit`. Every Class that implements this interface should define this method. Otherwise we'll get an error during compile time.
+> Angular itself provides interfaces you can implement - for example, `OnInit` which includes the method `ngOnInit` for running initialization logic. Every Class that implements an interface must define its required methods. Otherwise we'll get an error during compile time.
 >
 > Interfaces exist only in TypeScript and are removed when the code is compiled to JavaScript. In JavaScript we cannot enforce type safety out of the box.
 
@@ -47,8 +47,8 @@ Let's define the item `@Input` to be of the type we've created. This will allow 
 
 {% code title="src/app/todo-item/todo-item.component.ts" %}
 ```typescript
-export class TodoItemComponent implements OnInit {
-  @Input() item: TodoItem;
+export class TodoItemComponent {
+  @Input() item!: TodoItem;
 ```
 {% endcode %}
 
@@ -107,5 +107,5 @@ git push
 {% endhint %}
 
 {% hint style="success" %}
-[See the results on StackBlitz](https://stackblitz.com/github/ng-girls/todo-list-tutorial/tree/master/examples/0\_11-interface)
+[See the results on StackBlitz](https://stackblitz.com/github/dominika-zajac/todo-list-tutorial/tree/master/examples/0\_11-interface)
 {% endhint %}

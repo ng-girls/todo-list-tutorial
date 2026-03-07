@@ -9,19 +9,18 @@ We'll revert the component to its state before our experiments with its methods:
 {% code title="src/app/input-button-unit/input-button-unit.component.ts" %}
 ```typescript
 import { Component } from '@angular/core';
-import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-input-button-unit',
   standalone: true,
-  imports: [CommonModule],
+  imports: [],
   template: `
     <p>
       input-button-unit works!
       The title is: {{ title }}
     </p>
   `,  
-  styleUrl: './input-button-unit.component.scss'
+  styleUrls: ['./input-button-unit.component.scss']
 })    
 export class InputButtonUnitComponent {
   title = 'Hello World';           
@@ -163,5 +162,5 @@ git push
 {% endhint %}
 
 {% hint style="success" %}
-[See the results on StackBlitz](https://stackblitz.com/github/ng-girls/todo-list-tutorial/tree/master/examples/0\_06-property-binding)
+[See the results on StackBlitz](https://stackblitz.com/github/dominika-zajac/todo-list-tutorial/tree/master/examples/0\_06-property-binding)
 {% endhint %}

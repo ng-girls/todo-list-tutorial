@@ -6,9 +6,9 @@ We can also state general style rules to be used across the application. This is
 
 Angular gives us different style encapsulation methods, but we'll stick to the default.
 
-The Angular CLI has generated a general stylesheet for us at `src/style.scss`. Paste the following code into this file:
+The Angular CLI has generated a general stylesheet for us at `src/styles.scss`. Paste the following code into this file:
 
-{% code title="src/style.scss" %}
+{% code title="src/styles.scss" %}
 ```css
 html, body, div, span,
 h1, p, ul, li {
@@ -144,7 +144,7 @@ We need to add the `todo-input` class to the `input` element:
 <input class="todo-input"
        #inputElementRef
        [value]="title"
-       (keyup.enter)="submitValue(getInputValue($event))">
+       (keyup.enter)="submitValue($event.target.value)">
 ```
 {% endcode %}
 
@@ -203,7 +203,7 @@ template: `
     <app-input-button-unit (submit)="addItem($event)"></app-input-button-unit>
 
     <ul>
-      @for(let todoItem of todoList; track todoItem.title) {
+      @for(todoItem of todoList; track todoItem.title) {
         <li>
           <app-todo-item [item]="todoItem"></app-todo-item>
         </li>
@@ -272,5 +272,5 @@ git push
 {% endhint %}
 
 {% hint style="success" %}
-[See the results on StackBlitz](https://stackblitz.com/github/ng-girls/todo-list-tutorial/tree/master/examples/0\_14-adding-style)
+[See the results on StackBlitz](https://stackblitz.com/github/dominika-zajac/todo-list-tutorial/tree/master/examples/0\_14-adding-style)
 {% endhint %}

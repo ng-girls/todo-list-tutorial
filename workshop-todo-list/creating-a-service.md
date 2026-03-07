@@ -123,11 +123,11 @@ export class ListManagerComponent {
 So let's go on and use the service in the `list-manager` component.
 
 * Remove the hard-coded list from the component, keep only the `todoList` property declaration.
-* Inject the `TodoListService` using the constructor.&#x20;
+* Inject the `TodoListService` using the constructor. 
 
 ```typescript
 export class ListManagerComponent {
-  todoList: TodoItem[];
+  todoList!: TodoItem[];
 
   constructor(private todoListService: TodoListService) { }
 ```
@@ -173,5 +173,5 @@ git push
 {% endhint %}
 
 {% hint style="success" %}
-[See the results on StackBlitz](https://stackblitz.com/github/ng-girls/todo-list-tutorial/tree/master/examples/0\_15-creating-a-service)
+[See the results on StackBlitz](https://stackblitz.com/github/dominika-zajac/todo-list-tutorial/tree/master/examples/0\_15-creating-a-service)
 {% endhint %}

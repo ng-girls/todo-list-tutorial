@@ -4,6 +4,18 @@ Now you are going to add the to do list itself to the component `app-root`. Open
 
 {% code title="src/app/app.component.ts" %}
 ```typescript
+import { Component } from '@angular/core';
+import { InputButtonUnitComponent } from './input-button-unit/input-button-unit.component';
+
+@Component({
+  selector: 'app-root',
+  standalone: true,
+  imports: [InputButtonUnitComponent],
+  template: `
+    <!-- template contents... -->
+  `,
+  styleUrls: ['./app.component.scss']
+})
 export class AppComponent {
   title = 'todo-list';
   todoList = [
@@ -24,7 +36,7 @@ export class AppComponent {
 
 Now you have to tell the browser to display those items. For this, you will use the **Angular built-in control flow block,** `@for`. It works like a loop in any programming language, iterating over an array and rendering the given template, with the current item's data.&#x20;
 
-To display a list in HTML we can use an ordered list with `<ol>` or an unordered list with `<ul>`. Within this element, every item will be inserted within a `<li>` element. The `@for` loop notation will surrpond the list item. Insert the `<ul>` and the loop right after `<app-input-button-unit></app-input-button-unit>` like this:
+To display a list in HTML we can use an ordered list with `<ol>` or an unordered list with `<ul>`. Within this element, every item will be inserted within a `<li>` element. The `@for` loop notation will surround the list item. Insert the `<ul>` and the loop right after `<app-input-button-unit></app-input-button-unit>` like this:
 
 {% code title="src/app/app.component.ts" %}
 ```markup
@@ -36,7 +48,7 @@ template: `
   <app-input-button-unit></app-input-button-unit>
 
   <ul>
-    @for(let todoItem of todoList; track todoItem.title) {
+    @for(todoItem of todoList; track todoItem.title) {
       <li>
         {{ todoItem.title }}
       </li>
@@ -88,5 +100,5 @@ git push
 {% endhint %}
 
 {% hint style="success" %}
-[See the results on StackBlitz](https://stackblitz.com/github/ng-girls/todo-list-tutorial/tree/master/examples/0\_09-the-to-do-list)
+[See the results on StackBlitz](https://stackblitz.com/github/dominika-zajac/todo-list-tutorial/tree/master/examples/0\_09-the-to-do-list)
 {% endhint %}

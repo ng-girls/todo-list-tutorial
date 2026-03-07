@@ -40,9 +40,9 @@ Open the file `input-button-unit.component.ts`. You can see that the Angular CLI
 @Component({
   selector: 'app-input-button-unit',
   standalone: true,
-  imports: [CommonModule],
+  imports: [],
   templateUrl: './input-button-unit.component.html',
-  styleUrl: './input-button-unit.component.scss'
+  styleUrls: ['./input-button-unit.component.scss']
 })
 ```
 {% endcode %}
@@ -53,17 +53,29 @@ Open the file `input-button-unit.component.ts`. You can see that the Angular CLI
 
 We can use this component as-is and see the result!
 
-Open the root component file, `app.component.ts` and add the app-input-button-unit tag inside the template (remember we refactored the root component to have an inline template):
+Open the root component file, `app.component.ts`. We need to explicitly **import** our new component into the `AppComponent` so it can be used, and then add its tag to the template. Update it to look like this:
 
 {% code title="src/app/app.component.ts" %}
-```markup
-template: `
-  <h1>
-    Welcome to {{ title }}!
-  </h1>
+```typescript
+import { Component } from '@angular/core';
+import { InputButtonUnitComponent } from './input-button-unit/input-button-unit.component';
 
-  <app-input-button-unit></app-input-button-unit>
-`,
+@Component({
+  selector: 'app-root',
+  standalone: true,
+  imports: [InputButtonUnitComponent],
+  template: `
+    <h1>
+      Welcome to {{ title }}!
+    </h1>
+
+    <app-input-button-unit></app-input-button-unit>
+  `,
+  styleUrls: ['./app.component.scss']
+})
+export class AppComponent {
+  title = 'todo-list';
+}
 ```
 {% endcode %}
 
@@ -98,7 +110,7 @@ Check out the result!
 This component doesn't do much at this point. In the following chapters, we will learn about the component class, and then implement the component's logic.
 
 {% hint style="success" %}
-[See the results on StackBlitz](https://stackblitz.com/github/ng-girls/todo-list-tutorial/tree/master/examples/0\_04-a-new-component)
+[See the results on StackBlitz](https://stackblitz.com/github/dominika-zajac/todo-list-tutorial/tree/master/examples/0\_04-a-new-component)
 {% endhint %}
 
 ## 💾 Save your code to GitHub

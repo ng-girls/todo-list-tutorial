@@ -1,7 +1,11 @@
-import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
+import { CommonModule } from '@angular/common';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { TodoItem } from '../interfaces/todo-item';
 
 @Component({
+  standalone: true,
+  imports: [CommonModule],
+
   selector: 'app-todo-item',
   template: `
     <div class="todo-item">
@@ -22,15 +26,10 @@ import { TodoItem } from '../interfaces/todo-item';
   `,
   styleUrls: ['./todo-item.component.scss']
 })
-export class TodoItemComponent implements OnInit {
-  @Input() item: TodoItem;
+export class TodoItemComponent {
+  @Input() item!: TodoItem;
   @Output() remove: EventEmitter<TodoItem> = new EventEmitter<TodoItem>();
   @Output() update: EventEmitter<any> = new EventEmitter<any>();
-
-  constructor() { }
-
-  ngOnInit(): void {
-  }
 
   removeItem(): void {
     this.remove.emit(this.item);

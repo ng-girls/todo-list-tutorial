@@ -4,10 +4,12 @@ In the last chapter, we ended with our input component able to display and chang
 
 {% code title="src/app/input-button-unit/input-button-unit.component.ts" %}
 ```typescript
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 
 @Component({
   selector: 'app-input-button-unit',
+  standalone: true,
+  imports: [],
   template: `
     <p>
       input-button-unit works!
@@ -23,18 +25,12 @@ import { Component, OnInit } from '@angular/core';
   `,  
   styleUrls: ['./input-button-unit.component.scss']  
 })    
-export class InputButtonUnitComponent implements OnInit {
+export class InputButtonUnitComponent {
   title = 'Hello World';
-
-  constructor() { }                     
-
-  ngOnInit(): void {
-  }
 
   changeTitle(newTitle: string): void {
     this.title = newTitle;
   }
-  
   
   getInputValue(event: Event) {
     return (event.target as HTMLInputElement).value;
@@ -103,5 +99,5 @@ git push
 {% endhint %}
 
 {% hint style="success" %}
-[See the results on StackBlitz](https://stackblitz.com/github/ng-girls/todo-list-tutorial/tree/master/examples/0\_08-element-ref)
+[See the results on StackBlitz](https://stackblitz.com/github/dominika-zajac/todo-list-tutorial/tree/master/examples/0\_08-element-ref)
 {% endhint %}
