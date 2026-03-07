@@ -40,9 +40,6 @@ after we created the project we will get file in this format
 │   │   ├── app.component.ts
 │   │   └── app.config.ts
 │   ├── assets // pictures etc
-│   ├── environments // environments variables
-│   │   ├── environment.prod.ts
-│   │   └── environment.ts
 │   ├── favicon.ico // the browser icon
 │   ├── index.html
 │   ├── main.ts

@@ -115,12 +115,11 @@ npx @angular/cli@latest new todo-list
 Angular CLI will ask a couple of questions to help create a new application. Answer the questions as shown below:
 
 ```
-? Which stylesheet system would you like to use?
-  CSS             [ https://developer.mozilla.org/docs/Web/CSS                     ]
-  Tailwind CSS    [ https://tailwindcss.com                                        ]
-❯ Sass (SCSS)     [ https://sass-lang.com/documentation/syntax#scss                ]
-  Sass (Indented) [ https://sass-lang.com/documentation/syntax#the-indented-syntax ]
-  Less            [ http://lesscss.org                                             ]
+? Which stylesheet format would you like to use? (Use arrow keys)
+  CSS 
+❯ SCSS   [ https://sass-lang.com/documentation/syntax#scss                ] 
+  Sass   [ https://sass-lang.com/documentation/syntax#the-indented-syntax ] 
+  Less   [ http://lesscss.org                                             ] 
 ```
 
 Use the arrow keys to highlight `SCSS` and hit Enter.

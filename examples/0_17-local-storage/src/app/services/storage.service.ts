@@ -8,7 +8,8 @@ export class StorageService {
   constructor() { }
 
   getData(key: string): any {
-    return JSON.parse(localStorage.getItem(key));
+    const data = localStorage.getItem(key);
+    return data ? JSON.parse(data) : null;
   }
 
   setData(key: string, data: any): void {

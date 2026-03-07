@@ -1,6 +1,9 @@
-import { Component, EventEmitter, OnInit, Output } from '@angular/core';
+import { Component, EventEmitter, Output } from '@angular/core';
 
 @Component({
+  standalone: true,
+  imports: [],
+
   selector: 'app-input-button-unit',
   template: `
     <input #inputElementRef
@@ -12,14 +15,9 @@ import { Component, EventEmitter, OnInit, Output } from '@angular/core';
   `,
   styleUrls: ['./input-button-unit.component.scss']
 })
-export class InputButtonUnitComponent implements OnInit {
+export class InputButtonUnitComponent {
   @Output() submit: EventEmitter<string> = new EventEmitter<string>();
   title = 'Hello World';
-
-  constructor() { }
-
-  ngOnInit(): void {
-  }
 
   submitValue(newTitle: string): void {
     this.submit.emit(newTitle);
