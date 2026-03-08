@@ -3,6 +3,7 @@ import { TodoItem } from '../interfaces/todo-item';
 
 @Component({
   selector: 'app-list-manager',
+  standalone: false,
   template: `
     <app-input-button-unit (submit)="addItem($event)"></app-input-button-unit>
 

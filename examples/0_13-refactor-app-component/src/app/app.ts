@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 
 @Component({
   selector: 'app-root',
+  standalone: false,
   template: `
     <h1>
       Welcome to {{ title }}!
@@ -9,8 +10,8 @@ import { Component } from '@angular/core';
 
     <app-list-manager></app-list-manager>
   `,
-  styleUrls: ['./app.component.scss']
+  styleUrls: ['./app.scss']
 })
-export class AppComponent {
+export class App {
   title = 'My To Do List APP';
 }
