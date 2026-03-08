@@ -28,5 +28,5 @@ You have a running Angular application and are all ready to start developing!
 
 
 {% hint style="success" %}
-[See the results on StackBlitz]([https://stackblitz.com/github/ng-girls/todo-list-tutorial/tree/master/examples/0_04-a-new-component](https://stackblitz.com/github/ng-girls/todo-list-tutorial/tree/master/examples/0\_01-installations)https://stackblitz.com/github/ng-girls/todo-list-tutorial/tree/master/examples/0\_01-installations)
+[See the results on StackBlitz](https://stackblitz.com/github/ng-girls/todo-list-tutorial/tree/master/examples/0\_01-installations)
 {% endhint %}
