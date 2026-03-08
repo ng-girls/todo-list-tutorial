@@ -2,6 +2,7 @@ import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 
 @Component({
   selector: 'app-input-button-unit',
+  standalone: false,
   template: `
     <input class="todo-input"
            #inputElementRef
