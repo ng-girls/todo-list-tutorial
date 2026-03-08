@@ -3,6 +3,7 @@ import { TodoItem } from '../interfaces/todo-item';
 
 @Component({
   selector: 'app-todo-item',
+  standalone: false,
   template: `
     <div class="todo-item">
       <div>
