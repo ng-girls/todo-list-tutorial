@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-input-button-unit',
+  standalone: false,
   template: `
     <p>
       input-button-unit works!
