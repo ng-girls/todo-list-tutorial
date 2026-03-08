@@ -3,6 +3,7 @@ import { TodoItem } from './interfaces/todo-item';
 
 @Component({
   selector: 'app-root',
+  standalone: false,
   template: `
     <h1>
       Welcome to {{ title }}!
@@ -16,9 +17,9 @@ import { TodoItem } from './interfaces/todo-item';
       </li>
     </ul>
   `,
-  styleUrls: ['./app.component.scss']
+  styleUrls: ['./app.scss']
 })
-export class AppComponent {
+export class App {
   title = 'todo-list';
   todoList: TodoItem[] = [
     {title: 'install NodeJS'},
