@@ -44,3 +44,10 @@ testem.log
 # System Files
 .DS_Store
 Thumbs.db
+
+# newer angular version
+.angular
+dist
+node_modules
+.env
+
