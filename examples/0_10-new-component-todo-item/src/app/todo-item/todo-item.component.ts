@@ -2,6 +2,7 @@ import { Component, Input, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-todo-item',
+  standalone: false,
   template: `
     {{ item.title }}
   `,

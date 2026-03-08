@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 
 @Component({
   selector: 'app-root',
+  standalone: false,
   template: `
     <h1>
       Welcome to {{ title }}!
@@ -15,9 +16,9 @@ import { Component } from '@angular/core';
       </li>
     </ul>
   `,
-  styleUrls: ['./app.component.scss']
+  styleUrls: ['./app.scss']
 })
-export class AppComponent {
+export class App {
   title = 'todo-list';
   todoList = [
     {title: 'install NodeJS'},
