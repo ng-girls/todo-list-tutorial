@@ -4,6 +4,7 @@ import { TodoListService } from '../services/todo-list.service';
 
 @Component({
   selector: 'app-list-manager',
+  standalone: false,
   template: `
     <div class="todo-app">
       <app-input-button-unit (submit)="addItem($event)"></app-input-button-unit>
